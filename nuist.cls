@@ -67,7 +67,7 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[dvipsnames, svgnames, x11names]{xcolor}
-\RequirePackage[CJKbookmarks=true,colorlinks=true,linkcolor=black,citecolor=blue,urlcolor=cyan,breaklinks=true,anchorcolor=blue]{hyperref}
+\RequirePackage[CJKbookmarks=true,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=cyan,breaklinks=true,anchorcolor=black]{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                     
@@ -203,7 +203,8 @@
 %%          设置参考文献格式
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage[numbers, sort, compress,comma,square,super]{natbib}
+% \RequirePackage[numbers, sort, compress,comma,square,super]{natbib}
+\RequirePackage[authoryear, round]{natbib}
 \setlength{\bibsep}{0.5em}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
