@@ -70,7 +70,7 @@ FUNCTION {load.config}
   #3 'bibliography.et.al.use.first :=
   #0 'uppercase.name :=
   #0 'terms.in.macro :=
-  #1 'year.after.author :=
+  #0 'year.after.author :=
   #0 'period.after.author :=
   #0 'italic.book.title :=
   #1 'sentence.case.title :=
