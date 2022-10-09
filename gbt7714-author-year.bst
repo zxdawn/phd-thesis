@@ -79,7 +79,7 @@ FUNCTION {load.config}
   #0 'show.patent.country :=
   #1 'show.mark :=
   #0 'space.before.mark :=
-  #1 'show.medium.type :=
+  #0 'show.medium.type :=
   "slash" 'component.part.label :=
   #0 'short.journal :=
   #0 'italic.journal :=
@@ -600,7 +600,7 @@ FUNCTION {format.name}
     { bbl.et.al }
     { t get.str.lang 'name.lang :=
       name.lang lang.en =
-        { t #1 "{vv~}{ll}{ f{~}}" format.name$
+        { t #1 "{vv~}{ll}{ f.}" format.name$
           uppercase.name
             { "u" change.case$ }
             'skip$
