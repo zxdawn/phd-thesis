@@ -67,7 +67,7 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[dvipsnames, svgnames, x11names]{xcolor}
-\RequirePackage[CJKbookmarks=true,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=cyan,breaklinks=true,anchorcolor=black]{hyperref}
+\RequirePackage[CJKbookmarks=true,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black,breaklinks=true,anchorcolor=black]{hyperref}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                     
