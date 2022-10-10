@@ -34,9 +34,9 @@ LNO$_x$全球产量大约为2–8 Tg N/a，是上对流层NO$_x$的主要来源\
 
 深对流云对大气化学成分的垂直输送，是近三十年来国际大气科学界一直高度关注的科学问题。
 除了在TOGA-COARE\citep{Webster.1992}、TRACE-A\citep{Fishman.1996}和TRACE-P\citep{Jacob.2003}等一些重大国际合作项目中有关深对流的课题占了很大比重外，先后组织了一系列专门研究深对流云在大气化学成分再分布方面的大型综合观测试验，
-其中包括于1998 年在欧洲进行的闪电与氮氧化物试验(EULINO$_x$，\citeauthor{Holler.2000} \citeyear{Holler.2000})、
+其中包括于1998 年在欧洲进行的闪电与氮氧化物试验(EULINOX，\citeauthor{Holler.2000} \citeyear{Holler.2000})、
 2002 年在佛罗里达进行的CRYSTAL-FACE 试验\citep{Toon.2003}、
-2003至2005年在巴西实施的欧共体项目TROCCINO$_x$\citep{Huntrieser.2008}，
+2003至2005年在巴西实施的欧共体项目TROCCINOX\citep{Huntrieser.2008}，
 以及2012年在美国进行的深对流云和化学试验(DC3，\citeauthor{Barth.2019} \citeyear{Barth.2019})等。
 在这些试验中，深对流云对气溶胶及其主要前始气体以及闪电对对流层上层NO$_x$和臭氧浓度的影响是研究的重点。
 与此同时，各种尺度和复杂程度的数值模式也用来模拟和解释外场观测结果。
@@ -106,6 +106,143 @@ H$_2$O$_2$是由HO$_2$自由基与其自身反应形成的。 CH$_2$O和CH$_3$OO
 
 
 \subsection{闪电氮氧化物的观测和估算}
+
+除了垂直输送，深对流伴随的闪电对大气痕量气体（O$_3$，NO和NO$_2$等）也有着重大影响\citep{DeCaria.2005,Schumann.2007,Ott.2010,Banerjee.2014}。
+\citet{Levy.1996}指出，对流层上层的NO$_x$主要由闪电活动产生，生命史较长，控制着对流层O$_3$和OH自由基的含量，进而会给大气层乃至全球气候带来至关重要的影响。在热带和亚热带地区，对流层顶70\%以上的NO$_x$来自闪电，在一些高纬度地区的夏季，这一比例也可达20\%以上\citep{Jourdain.2001,Martin.2002}。
+此外，前人也开展了闪电对臭氧垂直分布的影响。
+在大陆边界层内排放的O$_3$前体物，可通过上升气流进入自由对流层，和LNO$_x$一起参与生成O$_3$的光化学反应\citep{Bond.2002}。
+\citet{Tie.2001}利用全球化学传输模式（MOZART）发现闪电可导致NO$_x$, HNO$_3$和过氧乙酰硝酸酯(PAN)显著增加。
+\citet{Cooper.2009}指出闪电对美国东部地区上对流层NO$_x$的贡献高于80\%。
+而夏季上对流层的反气旋可将LNO$_x$与由对流输送的O$_3$及其前体物聚在一起，产生北美东部向夏季上对流层O$_3$的高值区。
+\citet{Kang.2020}将NDLN资料融合进CMAQ的闪电模块，发现美国山区LNO$_x$与人为排放NO$_x$相当，每日8小时最大O$_3$值因此提高17 ppb，更接近地表观测值。
+
+局地或全球LNO$_x$产量主要通过野外观测及实验室试验结果推算得到。早期主要是结合一些地面观测仪器来分析雷暴下或地闪附近的NO$_x$含量。
+从上世纪90 年代开始，欧美对LNO$_x$的空中观测实验越来越多，如LINOX试验\citep{Huntrieser.1998}、 MOZAIC试验\citep{Marenco.1998}、
+STERAO试验\citep{Dye.2000}、EULINOX试验\citep{Holler.2000}、TROCCINOX试验\citep{Huntrieser.2007}等。
+这些实验利用配备了测量NO$_x$、O$_3$、CO$_2$等痕量气体设备的飞机进行穿云实验，可直接观测雷暴云中及附近地区NO$_x$的变化。
+表\ref{table:NO/NOx}详细列出了2005年之前在雷暴附近开展野外观测的研究结果。
+
+\clearpage
+{
+\centering
+\scriptsize
+\begin{longtable}
+{|p{3em}|p{5.2em}|p{3.3em}|p{2em}|p{5.5em}|p{4em}|p{5.5em}|p{4em}|p{4em}|p{4.4em}|}
+\caption{雷暴附近NO和NO$_x$混合比}
+\label{table:NO/NOx} \\
+\hline
+年份 & 试验，地区  & 仪器$^{(a)}$  & 物种 & 平均值 (nmol mol$^{−1}$) &
+平均尺度 (km) $^{(b)}$  &  峰值 \newline(nmol mol$^{−1}$)  &  峰值 \newline 持续时间  & 峰值高度(km) &   参考文献 \\ \hline
+$\sim$1960s & 德国南部万克山观测站              & KI     & NO$_2$ & -   &  -    &  $\sim$3, <50  & -    & 1.7   &  \citet{Reiter.1970} \\ \hline
+1981年四月   & 伊利诺伊州，阿尔贡市              & CL     & NO$_x$ & -   &  -    &  20            & 40 s  & 地表  &  \citet{Drapcho.1983} \\ \hline
+1982年十二月 & 法兰克福–圣保罗航班               & CL     & NO$_x$ & 0.3 & > 100 &  0.5           & ~ min &  9.5 & \citet{Dickerson.1984} \\ \hline
+1983年十一月 & GTE / CITE 1A，夏威夷附近的太平洋 & TP-LIF & NO  & 1    & 40    &   1            & 2 min & 9    & \citet{Chameides.1987,Davis.1987} \\ \hline
+1983年      & 美国中西部                       & CL     & NO$_x$ & 0.6 & -     & 1.2            & 10 s  & 10–-11 & \citet{Dickerson.1987} \\ \hline
+1985年六月   & PRE-STORM，科罗拉多州大平原       & CL     & NO  & 0.3 & -     & 1.2，4.1       & 20--60 s， 10 s &  10.6  &  \citet{Luke.1992} \\ \hline
+1985年七月十二日  & GTE / ABLE 2A，巴西马瑙斯附近的亚马逊地区 & CL  & NO  & 0.06 & 60-100 & 0.17  & 5-40 s & 5  & \citet{Torres.1988} \\ \hline
+1989年六月   & NDTP，北达科他州                 & CL     & NO  & 0.25  & -   & 0.9            & 20 s   &  11  & \citet{Poulida.1996} \\ \hline
+1989年七--八月 &  ELCHEM，新墨西哥州            & CL      & NO  & 0.1--0.8 & 20--44  & 1.3--1.9 & 4 s  & 10.5--10.9   & \citet{Ridley.1996} \\ \hline
+1992年九月27日  & GTE / TRACE A，巴西塞拉多，6$^{\circ}$--12$^{\circ}$S & TP-LIF & NO$_x$ & 0.3--0.9 & - &  1.4 & 3 min  & 9.5 & \citet{Pickering.1996} \\ \hline
+1994年二月    & PEM-West，西太平洋，4$^{\circ}$--10$^{\circ}$S & CL  &  NO  & 0.05--0.2 &~100 & 0.2 & 30 s  &  9.5 & \citet{Kawakami.1997} \\ \hline
+1995年七月一日 &  POLINAT，爱尔兰               & CL      & NO  & 0.6  & 27--90 & - &  -  & 9.5 & \citet{Huntrieser.1996} \\ \hline
+1996年六-七月  & STERAO，科罗拉多州             & CL      & NO  & 0.2--0.8 & 20--40  & 4.2, 19 & 1-10 s，(100-960 m) & 7-12 s &  \citet{Dye.2000} \\ \hline
+1996年七月    & LINOX，德国南部                & CL       & NO NO$_x$ & 0.4--1.3，0.8--2.2 & 10--45  & 3.8，20 & 2 s & 8.2， 9 & \citet{Huntrieser.1998} \\ \hline
+1997年八月和十一月 & NO$_x$AR / POLINAT-2，北大西洋  & CL     & NO  & 0.8, 3  & 1000, 300 & -   & -  & - & \citet{Jeker.2000} \\ \hline
+1998年七月 & EULINOX，德国南部                  & CL      & NO$_x$  & 0.5--3.0 & 15--60 &  25， >20 &  2--10 s & 8--10 &    \citet{Huntrieser.2002} \\ \hline
+1998年七月 & STREAM，加拿大安大略省                &  CL     & NO  & 0.6--2    & 100  & 2.5 & 1 min &  10 & \citet{Lange.2001} \\ \hline
+1999年九月 & BIBLE，达尔文和比亚克之间的太平洋     & CL      & NO  & 0.1--0.3 & 800   & 1.4 & 1 s & 13  & \citet{Kondo.2003} \\ \hline
+2000年三月 & INCA，南美西海岸                    & CL     & NO  & 0.04--0.8  & 400 & 1.3 & 1 s & 11.5 & \citet{Baehr.2003} \\ \hline
+2000年十二月九日 & BIBLE-C，靠近澳大利亚达尔文     & CL     & NO$_x$  & 0.4       & 140-620 & 1.6 & 10 s  &  11.5--14 & \citet{Koike.2007} \\ \hline
+2002年七月 & CRYSTAL FACE，佛罗里达             & CL      & NO  & 1--4      & 60--120 & 9.5, 325 & 0.3 s & 13.8 & \citet{Ridley.2005} \\ \hline
+2004年一月至三月，2005年二月 & TROCCINOX 巴西，圣保罗州 & CL & NO  & 0.5--1.5 & 25--40  & 45  & 1 s & 8 &  \citet{Huntrieser.2007} \\ \hline
+\end{longtable}\par
+\textsuperscript{\emph{a}} CL：来自NO + O$_3$反应的化学发光分析； KI：基于NO$_2$气体与稀释的KI溶液之间的化学反应； TP-LIF：双光子激光诱导的荧光。
+\textsuperscript{\emph{b}} 平均NO或NO$_x$增强的水平平均尺度； -： 无资料。
+来源：\citet{Schumann.2007}。
+}
+
+闪电外推法将全球LNO$_x$的产率定义为，每次闪电LNO$_x$的产率与全球闪电频率的乘积\citep{Lawrence.1995}。
+一次闪电的LNO$_x$产率可由单次放电单位能量（或峰值电流，\citet{Wang.1998}）乘以一次闪电的放电能量（或峰值电流）来确定。
+此外，还有一种方法是将单位闪电长度的LNO$_x$产率与闪电长度的估算值相乘。
+其他方法则是直接估算单次闪电的LNO$_x$产率。
+所有这些方法都基于一个假设，一组估算值代表全球的闪电特性。
+表\ref{table:LNOx/J}列出了该方法估算所得的LNO$_x$产率，该值的范围是1--50$\cdot$10$^{16}$分子J$^{-1}$。
+如果消耗所有放电能量都用来分裂分子氮的三键(0.94 MJ mol$^{-1}$)，则LNO$_x$产量最多可达到64$\cdot$10$^{16}$分子J$^{-1}$。
+\citet{Wang.1998}指出，LNO$_x$并不是闪电放电中能量转化为热量的单一函数，而是随大气压（近似线性）和峰值电流（近似二次方）增加。
+例如，地表的峰值电流从10 kA增加到30 kA，NO分子的产率从15$\cdot$10$^{16}$ J$^{-1}$增加到40$\cdot$10$^{16}$ J$^{-1}$。
+NO生成量与闪电峰值电流和环境压力之间的相关性为估算LNO$_x$提供了一种新的方法，
+即通过识别闪电和峰值电流的雷电探测系统来估算每次闪电的LNO$_x$产量。
+然而可惜的是，像OTD这样的卫星系统虽然可以在全球范围内识别与闪电能量相关的辐射\citep{Baker.1999}，但不能识别闪电的峰值电流。
+
+{
+\centering
+% \scriptsize
+\footnotesize
+\begin{longtable}
+{|p{15em}|p{13em}|p{10em}|}
+\caption{雷暴附近NO和NO$_x$混合比}
+\label{table:LNOx/J} \\
+\hline
+LNO$_x$产量（10$^{16}$ molecules J$^{-1}$）   & 方法                          & 参考文献 \\ \hline
+1.4$\pm$0.7                                  & 实验室模拟电晕放电              & \citet{Hill.1988} \\ \hline
+8.5$\pm$4.7                                  & 综述                          & \citet{Lawrence.1995} \\ \hline
+9 (5--17)                                    & 综述                          & \citet{Biazar.1995} \\ \hline
+9$\pm$2                                      & 实验室放电研究, NO/NOx 测量     & \citet{Stark.1996} \\ \hline
+10                                           & 理论研究                      & \citet{Price.1997a,Price.1997b} \\ \hline
+10--50                                       & 实验室试验                    & \citet{Wang.1998} \\ \hline
+1.1$\pm$0.2                                  & 低能火花的实验室实验            & \citet{Cook.2000} \\ \hline
+15$\pm$5    & 脉冲Nd-YAG激光在实验室模拟的热等离子体中产生闪电。初始温度接近105K。    & \citet{Navarro-Gonzalez.2001} \\ \hline
+20--30      & 实验室同轴圆柱池中的流光放电                                       & \citet{Cooray.2005} \\ \hline
+\end{longtable}\par
+}
+
+
+一些飞机试验通过测量雷暴附近闪电烟羽中NO$_x$的浓度，得出单位闪电长度的LNO$_x$产量（表\ref{table:LNOx/length}）。
+为了将这些值外推至每次闪电的LNO$_x$产量，我们需要知道闪电的长度。
+一些研究者使用一些典型的长度范围，如中纬度地闪（CG）长度为5--7 km，IC长度范围为1--6 km \citep{Price.1997b}，
+但是详细的研究表明，闪电的长度可能更长\citep{Defer.2001,Thery.2001,Peterson.2020b}。
+对于STERAO个例，从VHF雷电观测和模型研究得出的闪电长度约为20--30 km\citep{Defer.2001}。
+对于EULINOX超级单体，从VHF闪电和雷达观测得出的云闪（IC）和CG闪电的典型长度为，IC：43 km，CG-：26.5 km，CG+：29.5 km \citep{Dotzek.2000}。
+而最近的GLM探测到709 km长度的闪电，为WMO新的闪电长度记录\citep{Peterson.2020b}。
+
+{
+\centering
+% \scriptsize
+\footnotesize
+\begin{longtable}
+{|p{15em}|p{13em}|p{10em}|}
+\caption{单位闪电长度的LNO$_x$产率}
+\label{table:LNOx/length} \\
+\hline
+单位闪电长度LNO$_x$产率（10$^{21}$分子m$^{-1}$   & 方法                          & 参考文献 \\ \hline
+1.4--5.2                                     & 实验室NO测量和闪光化学模型，包括闪光长度的曲折系数3.6   & \citet{Wang.1998} \\ \hline
+13                                           & 机载NO测量，二维云模型，闪电定位和跟踪系统  & \citet{Holler.1999} \\ \hline
+2.5 (0.2--10)                                & 机载NO测量                     & \citet{Stith.1999} \\ \hline
+2.7 (0.07--10)                               & 机载NO测量                     & \citet{Huntrieser.2002} \\ \hline
+1                                            & 机载NO测量，三维云模式           & \citet{Skamarock.2003} \\ \hline
+7.5                                          & 机载NO测量，三维云模式           & \citet{Ott.2007} \\ \hline
+\end{longtable}\par
+}
+
+大气中每次闪电的LNO$_x$产率可通过地面观测\citep{Noxon.1976}，飞机试验\citep{Chameides.1987}和卫星探测\citep{Beirle.2004}得出。
+这些方法通常区分CG和IC，因为他们有着不同的性质：
+\begin{equation}
+G = P\textrm{$_{CG}$}f\textrm{$_{CG}$}  + P\textrm{$_{IC}$}f\textrm{$_{IC}$}
+\end{equation}
+\begin{equation}
+f\textrm{$_{f}$}  = f\textrm{$_{CG}$}  + f\textrm{$_{IC}$}
+\end{equation}
+闪电外推法对产率比值Z ＝ P\textrm{$_{IC}$} / P\textrm{$_{CG}$}，即单次CG和IC闪电形成的NO$_x$分子数的比值，非常敏感\citep{Bond.2002}。
+若采取云地闪比例（f\textrm{$_{IC}$} / f\textrm{$_{CG}$}）为3，Z = 1时的总产率G是Z = 0.1时的3倍\citep{Gallardo.1996,Ridley.2004,Ridley.2005}。
+然而闪电数量比（f\textrm{$_{IC}$} / f\textrm{$_{CG}$}）和云地闪产率之比（Z）都有很大不确定性。
+f\textrm{$_{IC}$} / f\textrm{$_{CG}$}在雷暴生命周期中变化很大，并且有观测显示该比例超过100 \citep{Dye.2000,DeCaria.2005,Ott.2007}。
+Z = 1与一些理论研究\citep{Cooray.1997}和实验室结果\citep{Cooray.2005}相一致。
+除此以外，将云模式模拟、闪电观测和机载测量应用于对STERAO \citep{DeCaria.2000}，EULINOX \citep{Fehr.2004}和CRYSTAL-FACE试验的结果表示，IC产生的NO量与CG相同。
+图1总结了部分理论，实验室研究，野外观测和综述研究得出的单次闪电LNO$_x$的产量。
+由图1可知，每次闪电低于3$\cdot$10$^{25}$分子的数值值主要来自1980年代的理论研究和一些实验室研究。
+当用如今的闪电频率和闪电能量的知识重新计算，这些早期结果中的许多数值将会产生变化。目前的估计与近年来越来越多的观测相一致。
+
+
 
 \subsection{闪电氮氧化物的影响}
 
