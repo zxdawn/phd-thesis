@@ -177,6 +177,7 @@
 \RequirePackage{makecell}
 \RequirePackage{tabularx}
 \RequirePackage{booktabs}
+\RequirePackage{longtable}
 
 % 图片所需宏包
 \RequirePackage{graphicx}
