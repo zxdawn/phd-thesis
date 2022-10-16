@@ -32,8 +32,9 @@
 \setmainfont{Times New Roman} 
 
 % 设置 1.5 倍行距
+% https://blog.csdn.net/weixinhum/article/details/104594454
 \RequirePackage{setspace}
-\setstretch{1.5}
+\setstretch{1.625}
 % 每个自然段之间增加 10% 的距离
 \setlength{\parskip}{0.1\baselineskip}  
 
@@ -87,7 +88,7 @@
 \fancyhf{}  
 
 % 偶数页页眉
-\fancyhead[CE]{\zihao{-5} 南京信息工程大学硕士学位论文}
+\fancyhead[CE]{\zihao{-5} 南京信息工程大学博士学位论文}
 % 奇数页页眉为 第*章 章题目
 \fancyhead[CO]{\zihao{-5} \leftmark}
 % 页脚页码居中
@@ -182,6 +183,8 @@
 % 图片所需宏包
 \RequirePackage{graphicx}
 \RequirePackage{subfig}
+% https://tex.stackexchange.com/a/141598
+\RequirePackage[figuresright]{rotating}
 
 % 修改图标标签格式为 “章节号-图表号 图表名”
 \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
@@ -195,8 +198,8 @@
 
 % 修改浮动体标题的格式
 \RequirePackage{caption}
-\captionsetup{font=small,labelsep=quad,belowskip = 0bp, aboveskip = 0bp}
-\captionsetup[figure]{position = bottom, ,aboveskip = 10pt}
+\captionsetup{font=small,labelsep=quad,belowskip = 0bp, aboveskip = 0bp, justification=centering}
+\captionsetup[figure]{position = bottom, ,aboveskip = 10pt, font={stretch=1.625}}
 \captionsetup[table]{position = top, aboveskip = 4pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -217,6 +220,7 @@
 \renewcommand{\cftchapleader}{\cftdotfill{\cftchapdotsep}}
 \renewcommand{\cftchapdotsep}{\cftdotsep}
 \setcounter{tocdepth}{2}  % 目录的深度，2 表示到 subsection
+\newcommand\specialsectioning{\setcounter{secnumdepth}{-2}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
