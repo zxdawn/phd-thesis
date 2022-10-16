@@ -1,3 +1,5 @@
+%!TEX root = ../thesis.tex
+
 \chapter{闪电氮氧化物产率的估算}
 
 \section{清洁地区（北极）}
@@ -10,6 +12,21 @@
 
 
 \section{污染地区（中国及美国大陆）}
+
+\subsection{模式设置}
+
+使用的WRF-Chem版本为3.5.1，水平网格大小为12 km $\times$ 12 km （图 ？？a），垂直层数为29层，时间步长为72 s。
+气象条件的初始场和边界场为时间分辨率3小时的北美区域再分析(NARR)数据集，每3小时应用一次边界条件和四维数据分析（FDDA）逼近，
+其中温度、水汽和水平风以0.0003 s$^{-1}$ 的系数逼近\citep{Laughner.2017}。
+微物理过程采用Lin方案\citep{Lin.1983}，积云参数化为Grell 3D方案\citep{Grell.1993a,Grell.2002a}，长波辐射采用RRTM方案\citep{Iacono.2008}，短波辐射采用Goddard方案，陆面过程使用Noah陆面模式\citep{Koren.1999}，边界层采用YSU方案\citep{Hong.2006}。
+闪电参数化采用基于对流参数化的中性浮力水平\citep{Pickering.1992}，云闪与地闪的比例基于\citet{Boccippio.2001}.
+
+采用臭氧和相关化学示踪剂模型第4版（MOZART-4；\citet{Emmons.2010}）的输出场作为化学的初始场和边界场。
+人为排放由2011年美国国家排放清单（NEI）驱动，并根据环境保护署年度总排放量，按模拟的年份进行调整\citep{EPA.2015}。
+生物排放使用MEGAN源，化学机制是区域大气化学机制第2版（RACM2；\citet{Goliff.2013}），并由\citet{Browne.2014}和\citet{Schwantes.2015}进行了更新。
+此外，LNO$_x$参数化采用每次闪电产生200 mol NO，调整因子为1，以下简称“1$\times$200 mol NO per flash”）。
+基于\citet{Ott.2010}的双峰型闪电NO（LNO）廓线\citep{Laughner.2017}被用作 WRF-Chem中LNO的垂直分布，而LNO和LNO$_2$廓线是指有和没有闪电的模拟之间垂直廓线的差异。
+
 
 \subsection{适合反演闪电氮氧化物的条件}
 \subsection{不同反演方法的对比}

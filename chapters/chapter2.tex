@@ -6,19 +6,21 @@
 
 \subsection{臭氧探空}
 
-针对强对流天气，本小组成员于2019年7月25日和2020年9月1日，在南京国家基准气候站（31.93$^{\circ}$N，118.90$^{\circ}$E）共释放了五台臭氧探空仪。
+针对中国东南部的强对流天气，本小组成员于2019年7月25日和2020年9月1日，在南京国家基准气候站（31.93$^{\circ}$N，118.90$^{\circ}$E）共释放了五台臭氧探空仪。
 为了研究对流的影响，我们分别在对流发生前和对流发生中/对流发生后各释放一次探空。
-深对流概况及臭氧探空仪轨迹见图\ref{figure:ozonesonde}（a）和（b）。
+深对流概况及臭氧探空仪轨迹见图\ref{fig:ozonesonde}（a）和（b）。
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=35em]{./figures/ozonesonde.png}
-\caption{(a, b) 在对流后/对流中的臭氧探空仪达到约 10 km时，风云4A先进地球静止辐射成像仪(AGRI)可见通道(0.65 $\mu$m)探测到的对流。
-对流前的臭氧探空仪轨迹为为蓝色，其他为红色。白星符号代表观测站，细黄线是TROPOMI像素条带。
-图（c）和（d）是在对流前（虚线）和对流后/对流期间（实线）探空观测到的O$_3$（红色）和Q$_v$（黑色）廓线。
-模式初始（虚线）和对流后或对流期间（实线）的O$_3$廓线为蓝色。
-深灰色阴影是50\%的置信区间，浅色是90\%的置信区间，灰线是第一对流层顶。}
-\label{figure:ozonesonde}
+\includegraphics[width=0.9\textwidth]{./figures/ozonesonde.png}
+\caption{在对流后/对流中的臭氧探空仪达到约 10 km时，风云4A先进地球静止辐射成像仪(AGRI)可见通道(0.65 $\mu$m)探测到的对流。
+对流前的臭氧探空仪轨迹为为蓝色，其他为红色。白星符号代表观测站，细黄线是TROPOMI像素条带。\\
+Figure \ref{fig:ozonesonde} The convection detected by the FY-4A Advanced Geostationary Radiation Imager (AGRI)
+visible channel (0.65 $\mu$m) field at the time when the post-convection/during-convection ozonesondes reached around 10 km.
+The pre-convection ozonesonde trajectories are colored blue while others are in red.
+The white star symbol stands for the observation station and the thin yellow lines are the TROPOMI swath pixels.
+}
+\label{fig:ozonesonde}
 \end{figure}
 
 
@@ -27,7 +29,7 @@ IAP 臭氧探空仪使用电化学浓差电池 (ECC)，其完整参数和性能�
 总体而言，从地表到2.5 km平均偏差小于0.3 mPa，9 km以下接近零，9--18 km之间小于0.5 mPa。
 释放的第一台IAP臭氧探空仪于7月23日（晴天）05:35 UTC释放，另外两台分别于7月25日05:10 UTC（对流前）和06:35 UTC（对流后）释放。
 由于防水故障，对流前释放的探空仪在释放后几秒钟就失去了信号，故而我们选择了7月23日释放的臭氧探空仪作为对流前的数据。
-虽然时间间隔为2天，但10 km以上预报的O$_3$剖面最大相对差异通常小于25\%（图\ref{figure:waccm_forcast_o3}）。
+虽然时间间隔为2天，但10 km以上预报的O$_3$剖面最大相对差异通常小于25\%（图\ref{fig:waccm_forcast_o3}）。
 因此，臭氧日变化不足以解释探空观测到的超过65\%的差异。
 
 此外，两台维萨拉（VAISALA）ECC臭氧探空仪分别于8月31日23:45 UTC（对流前）和9月1日06:10 UTC（对流期间）成功释放。
@@ -39,10 +41,14 @@ IAP 臭氧探空仪使用电化学浓差电池 (ECC)，其完整参数和性能�
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=35em]{./figures/waccm_forcast_o3.pdf}
+\includegraphics[width=0.9\textwidth]{./figures/waccm_forcast_o3.pdf}
 \caption{(a)WACCM预测的区域平均(118.5$^{\circ}$E -- 119.5$^{\circ}$E, 31.5$^{\circ}$N – 32.5$^{\circ}$N)臭氧廓线。
-蓝色为对流前，橙色为对流后。(b)为(a)中O$_3$剖面的百分比差异。}
-\label{figure:waccm_forcast_o3}
+蓝色为对流前，橙色为对流后。(b)为(a)中O$_3$剖面的百分比差异。\\
+Figure \ref{fig:waccm_forcast_o3} (a) Regional mean (118.5$^{\circ}$E – 119.5$^{\circ}$E, 31.5$^{\circ}$N – 32.5$^{\circ}$N)
+preconvection (blue) and postconvection (orange) O$_3$ profiles from the 6-hour WACCM forecasts.
+(b) The percent difference of O$_3$ profiles in (a).
+}
+\label{fig:waccm_forcast_o3}
 \end{figure}
 
 \subsection{闪电数据集}
@@ -151,50 +157,29 @@ AMF_{\textrm{LNO$_2$Vis}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) 
 其中f$_g$为云几何分数。以上各式中的NO$_2$和LNO$_2$廓线均来自于WRF-Chem的模拟结果。
 由于北极地区排放源及对流模拟结果不确定性较大，本文利用基于云压假设的高斯分布来代替廓线。
 高斯分布的峰宽设置为60 hPa，峰位为最高（数值最低）的OMI/TROPOMI云压。
-北极地区对流云的云压范围为130$\sim$987 hPa，主要集中于250--300 hPa最常见的值（图\ref{figure:pcld_ptropo}）。
+北极地区对流云的云压范围为130$\sim$987 hPa，主要集中于250--300 hPa最常见的值（图\ref{fig:pcld_ptropo}）。
 由于云内部的NO$_2$浓度高，而云层之上的NO$_2$由于光解作用而浓度低，故假设的LNO$_2$廓线更加现实\citep{Beirle.2009}。
 对于高而厚的云层，云层上方的散射权重相当均匀，LNO$_2$的灵敏度在云层中部附近最高，所以受LNO$_2$廓线假设的影响已降到最低\citep{Laughner.2017}。
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=20em]{./figures/pcld_ptropo.png}
-\caption{云辐射分数大于0.7的像素上TROPOMI测得的云压和对流层顶高度直方图。}
-\label{figure:pcld_ptropo}
+\includegraphics[width=0.5\textwidth]{./figures/pcld_ptropo.png}
+\caption{云辐射分数大于0.7的像素上TROPOMI测得的云压和对流层顶高度直方图。\\
+Figure \ref{fig:pcld_ptropo} The histogram of TROPOMI cloud pressure and tropopause pressure over lightning
+pixels with the cloud radiance fraction larger than 0.7.
+}
+\label{fig:pcld_ptropo}
 \end{figure}
 
-\section{模式设置}
+\section{WRF-Chem模式}
 
-\subsection{气象设置}
+\subsection{模式简介}
 
-针对美国大陆地区的研究使用的WRF-Chem版本为3.5.1，水平网格大小为12 km $\times$ 12 km （图 ？？a），垂直层数为29层，时间步长为72 s。
-气象条件的初始场和边界场为时间分辨率3小时的北美区域再分析(NARR)数据集，每3小时应用一次边界条件和四维数据分析（FDDA）逼近，
-其中温度、水汽和水平风以0.0003 s$^{-1}$ 的系数逼近\citep{Laughner.2017}。
-微物理过程采用Lin方案\citep{Lin.1983}，积云参数化为Grell 3D方案\citep{Grell.1993a,Grell.2002a}，长波辐射采用RRTM方案\citep{Iacono.2008}，短波辐射采用Goddard方案，陆面过程使用Noah陆面模式\citep{Koren.1999}，边界层采用YSU方案\citep{Hong.2006}。
-闪电参数化采用基于对流参数化的中性浮力水平\citep{Pickering.1992}，云闪与地闪的比例基于\citet{Boccippio.2001}.
+\subsection{动力框架和物理方案}
 
-针对中国地区的研究使用WRF-Chem4.1.4，气象初始场和边界场来自1小时分辨率的欧洲中心大气再分析数据（ERA5，\citet{Hersbach.2020}），垂直层为75层，对流层顶为50 hPa。
-嵌套设置如图？？（b）所示。
-微物理过程使用WSM6方案\citep{Hong.2006a}，而短波和长波辐射使用RRTMG方案，陆面过程由Noah方案模拟。
-但是，我们使用不同的边界层参数化来模拟两次对流个例，2019年的个例使用YSU方案，而2020年的隔离使用QNSE方案\citep{Sukoriansky.2005}。
-闪电部分未使用参数化，用闪电同化代替，详见\ref{sect:lightning_assimilation}节。
+\subsection{化学方案}
 
-\subsection{化学设置}
+\subsection{大气再分析资料}
 
-美国大陆地区研究采用臭氧和相关化学示踪剂模型第4版（MOZART-4；\citet{Emmons.2010}）的输出场作为化学的初始场和边界场。
-人为排放由2011年美国国家排放清单（NEI）驱动，并根据环境保护署年度总排放量，按模拟的年份进行调整\citep{EPA.2015}。
-生物排放使用来自自然界的气体和气溶胶排放模型（MEGAN；\citet{Guenther.2006}）。
-化学机制是区域大气化学机制第2版（RACM2；\citet{Goliff.2013}），并由\citet{Browne.2014}和\citet{Schwantes.2015}进行了更新。
-此外，LNO$_x$参数化采用每次闪电产生200 mol NO，调整因子为1，以下简称“1$\times$200 mol NO per flash”）。
-基于\citet{Ott.2010}的双峰型闪电NO（LNO）廓线\citep{Laughner.2017}被用作 WRF-Chem中LNO的垂直分布，而LNO和LNO$_2$廓线是指有和没有闪电的模拟之间垂直廓线的差异。
-
-中国地区研究采用整个大气社区气候模型（WACCM，\url{https://www.acom.ucar.edu/waccm/}）的输出作为化学初始场和边界场。
-其中2020年个例的初始O$_3$廓线使用臭氧探空仪观测所得的O$_3$廓线。
-人为排放使用2016年中国多分辨率排放清单 (MEIC，\url{http://www.meicmodel.org/})1.3版驱动，生物排放采用MEGAN源。
-化学机理使用气相化学的臭氧和相关化学示踪剂模式（MOZART）和气溶胶的Goddard化学气溶胶辐射和传输（GOCART）模式\citep{Pfister.2011}。
-其中光解方案采用基于云光学厚度（cloud\_fraction$^{1.5}$）的新 TUV（对流层紫外线和可见光）方案，即光解速率依赖于气溶胶和云。
-LNO的垂直廓线也采用双峰型\citep{Laughner.2017}，而 LNO$_x$参数化调整为每次闪电产生500 mol NO\citep{Zhu.2019}。
-
-
-
-\subsection{闪电资料同化} \label{sect:lightning_assimilation}
+\subsection{排放源}
 
