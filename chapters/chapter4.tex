@@ -16,7 +16,7 @@
 
 \subsection{模式设置}
 
-使用的WRF-Chem版本为3.5.1，水平网格大小为12 km $\times$ 12 km （图 ？？a），垂直层数为29层，时间步长为72 s。
+使用的WRF-Chem版本为3.5.1，水平网格大小为12 km $\times$ 12 km （图 ？？（a）），垂直层数为29层，时间步长为72 s。
 气象条件的初始场和边界场为时间分辨率3小时的北美区域再分析(NARR)数据集，每3小时应用一次边界条件和四维数据分析（FDDA）逼近，
 其中温度、水汽和水平风以0.0003 s$^{-1}$ 的系数逼近\citep{Laughner.2017}。
 微物理过程采用Lin方案\citep{Lin.1983}，积云参数化为Grell 3D方案\citep{Grell.1993a,Grell.2002a}，长波辐射采用RRTM方案\citep{Iacono.2008}，短波辐射采用Goddard方案，陆面过程使用Noah陆面模式\citep{Koren.1999}，边界层采用YSU方案\citep{Hong.2006}。
@@ -31,9 +31,30 @@
 
 \subsection{反演闪电氮氧化物的步骤}
 
+首先我们使用恒定值网格化法，将公式（\ref{eq:AMF_LNO2}）所得的LNO$_x$垂直柱密度（V$_{\textrm{NO$_x$}}$）分配至0.05$^{\circ}$ $\times$ 0.05$^{\circ}$网格\citep{Kuhlmann.2014}。
+接着在 1$^{\circ}$ $\times$ 1$^{\circ}$的网格中进行分析，要求每个网格至少有50个有效的0.05$^{\circ}$ $\times$ 0.05$^{\circ}$网格数据，从而最小化噪点数据。
+具体LNO$_x$的主要计算步骤如下。
+
+云辐射分数（CRF，CRF $\geq$ 70\%，CRF $\geq$ 90\%，CRF = 100\%）和 云压（CP，CP $\leq$ 650 hPa）是OMI像素是否包含深对流云的判断标准\citep{Ziemke.2009,Choi.2014,Pickering.2016}。
+不同CRF对LNO$_x$产品的影响将在\ref{subsec:criteria}节探讨。
+此外，我们将另一个云分数 (CF) 标准应用于 WRF-Chem 的模拟结果，以确保对流被成功模拟。
+具体而言，CF是由 Xu-Randall 方法计算的 350--400 hPa 之间的最大云分数\citep{Xu.1996,Strode.2017}。
+选择350--400 hPa的大气层，可避免模拟高云中的偏差。
+我们选择\citet{Strode.2017}建议的 CF $\geq$ 40\%来判断模拟所处的网格是多云或晴空。
+
+除了云特性之外，OMI能探测到新生LNO$_x$的另一条件为一段时间内有足够的闪电（或闪击）。
+其中，时间窗口 (t$_{window}$) 是 OMI 过境之前的时间段。
+\citet{Lapierre.2020}利用1$^{\circ}$ $\times$ 1$^{\circ}$网格的对角线长度和OMI过境时美国大陆上空500--100 hPa的平均风速计算得到t$_{window}$为2.4 h。
+同时，\citet{Lapierre.2020}定义在t$_{window}$时间段内，发生2400次闪电或8160次闪击的网格才能提供足够的LNO$_x$给OMI探测。
+\citet{Bucsela.2019}研究表明，低频率的闪电具有更高的LNO$_x$产率（PE），而该段数据被\citet{Lapierre.2020}使用的标准所剔除。
+由于我们的研究重点是开发一种新的空气质量转换因（AMF），并将结果与使用类似闪电阈值的其他产品进行比较（Lapierre 等人，2020；Pickering 等人，2016），
+因此我们将仅根据正文中的严格标准讨论结果。
+为了比较每箱 2400 次闪光和每箱 1 次闪光的标准，附录 B 中提供了使用不同闪电标准的散点图。
 
 
-\subsection{适合反演闪电氮氧化物的条件}
+\subsection{适合反演闪电氮氧化物的条件} \label{subsec:criteria}
+
+
 
 \subsection{不同反演方法的对比}
 
