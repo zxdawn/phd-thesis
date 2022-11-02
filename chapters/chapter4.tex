@@ -187,7 +187,7 @@ CRF 从 70\% 增加到 90\% 引起的 LNO$_x$ PE 增加与\citet{Pickering.2016}
 在图\ref{fig:pe_timeseries}中，根据 CRF $\geq$ 90\% 和每 2.4 h 2400次闪电的阈值，绘制了2014年5--8月美国大陆每天 NO$_2$Vis、LNO$_2$Vis、LNO$_2$ 和 LNO$_2$Clean 产率的时间序列图。
 其中，LNO$_2$ PE 大多在 20 至 80 mol每闪电的范围内，LNO$_2$Vis PE 小于 LNO$_2$ PE，因为后者在云层下含有 LNO$_2$。
 \citet{Pickering.2016}的GMI模拟结果表明，25\%--30\%的LNO$_x$柱密度位于 云压（CP）以下，而我们的 WRF-Chem 模拟结果显示该比例为 56$\pm$20\%。
-云属性对 LNO$_x$ PE 的影响将在第\ref{susbec:china_uncertainty}节中更详细地讨论。
+云属性对 LNO$_x$ PE 的影响将在第\ref{susbec:china_uncertainty}节中进行更详细地讨论。
 总体而言，估算得到的每日PE顺序为LNO$_2$Clean > LNO$_2$ > NO$_2$Vis > LNO$_2$Vis。
 通过NO$_2$Vis 和 LNO$_2$Vis 估算得到的PE之间的差异($\Delta$PE)表明有一定量的背景 NO$_2$ 存在于云层之上。
 总体而言，该 $\Delta$PE 的趋势与 NO$_2$Vis 和 LNO$_2$Clean 之间的$\Delta$PE 一致。
@@ -198,12 +198,24 @@ CRF 从 70\% 增加到 90\% 引起的 LNO$_x$ PE 增加与\citet{Pickering.2016}
 \begin{figure}[h]
 \centering
 \includegraphics[width=12cm]{./figures/pe_timeseries.pdf}
-\caption{(top) Time series of NO$_\textrm{2}$Vis, LNO$_\textrm{2}$Vis, LNO$_\textrm{2}$ and LNO$_\textrm{2}$Clean production per day over the CONUS for MJJA 2014 with CRF $\geq$ 90\% and a flash threshold of 2400 flashes per 2.4 h.
-(bottom) Time series of the percent differences between NO$_\textrm{2}$Vis and LNO$_\textrm{2}$Vis and the percent differences between NO$_\textrm{2}$Vis and LNO$_\textrm{2}$Clean with CRF $\geq$ 90\%.
+\caption{（上图）NO$_2$Vis、LNO$_2$Vis、LNO$_2$ 和 LNO$_2$Clean产率的时间序列（2014年5--8月美国大陆），筛选条件为CRF $\geq$ 90\% 和每 2.4 小时 至少2400 次闪电。
+（下图）在CRF$\geq$ 90\%的条件下，NO$_2$Vis 和 LNO$_2$Vis 之间百分比差异以及 NO$_2$Vis 和 LNO$_2$Clean 之间百分比差异的时间序列。
+8 月 23 日黑点的值（未显示）为 1958\%。\\ (top) Time series of NO$_2$Vis, LNO$_2$Vis, LNO$_2$ and LNO$_2$Clean production per day over the CONUS for MJJA 2014 with CRF $\geq$ 90\% and a flash threshold of 2400 flashes per 2.4 h.
+(bottom) Time series of the percent differences between NO$_2$Vis and LNO$_2$Vis and the percent differences between NO$_2$Vis and LNO$_2$Clean with CRF $\geq$ 90\%.
 The value of black dot on August 23 (not shown) is 1958\%.}
 \label{fig:pe_timeseries}
 \end{figure}
 
+如图\ref{fig:pe_linear}所示，ENTLN 数据与 NO$_2$Vis、LNO$_2$Vis、LNO$_2$ 和 LNO$_2$Clean的线性回归，其筛选条件与图 \ref{fig:pe_timeseries} 相同。
+LNO$_2$Clean PE为 25.2$\pm$22.3 mol NO$_2$ 每闪电，相关系数为 0.25 和 2.3$\pm$2.1 mol NO$_2$每闪击，相关系数为 0.22。
+如图\ref{fig:pe_timeseries}所示，NO$_2$Vis PE 和 LNO$_2$Clean PE 之间的正百分比差异发生的频率远低于负差异的发生频率。
+因此，NO$_2$Vis PE（17.1$\pm$17.2 mol NO$_2$ 每闪电和0.4$\pm$1.0 mol NO$_2$ 每闪击）小于使用线性回归方法得到的 LNO$_2$Clean PE。
+
+\begin{figure}[t]
+    \includegraphics[width=15cm]{./figures/pe_linear.pdf}
+    \caption{(a) Daily NO$_\textrm{2}$Vis, LNO$_\textrm{2}$Vis, LNO$_\textrm{2}$ and LNO$_\textrm{2}$Clean versus ENTLN total flashes data. (b) Same as (a) but for strokes. (c) Daily LNO$_\textrm{x}$Vis and LNO$_\textrm{x}$ versus total flashes. (d) Same as (c) but for strokes.}
+    \label{fig:pe_linear}
+\end{figure}
 
 \subsection{背景氮氧化物浓度对反演的影响}
 
