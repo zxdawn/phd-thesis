@@ -5,8 +5,128 @@
 \section{清洁地区（北极）}
 
 \subsection{闪电的分布}
-\subsection{反演闪电氮氧化物的步骤}
-\subsection{闪电氮氧化物的聚类}
+
+气候变暖正在引发全球闪电的变化\citep{Reeve.1999,Williams.2005a,Price.2009a}。
+在过去的 30 年中，研究学者针对闪电预测提出了多种模拟方案\citep{Price.1992,Price.1997b,Allen.2002,Futyan.2007,Finney.2014,Romps.2014}。
+气候模式结果显示，中纬度地区的闪电有所增加\citep{Michalon.1999,Romps.2014,Luhar.2021}，
+而在热带地区不同方案的预测结果目前仍存在分歧\citep{Finney.2018,Romps.2019}。
+此外，虽然北极地区的变暖速度是全球平均水平的四倍\citep{Rantanen.2022}，但针对北极闪电的研究还很少。
+最近，\citet{Chen.2021a}针对北极地区开发了一个闪电参数化方案，结果表明，到本世纪末若全球平均气温上升3.7$^{\circ}$C，永冻区的闪电将增加74\%--150\%。
+地基闪电观测结果显示，从 2010 年到 2020 年北极闪电占全球闪电的比例增加了三倍\citep{Holzworth.2021}。
+此外，北极地区夏季更多的水汽辐合将加强对流系统，从而导致更多闪电\citep{Bintanja.2020}。
+
+为了研究北极地区的闪电变化，我们将光学瞬态探测器（OTD, 1996--1999）\citep{Christian.2003} 的卫星闪电数据与维萨拉全球地基雷电数据集（GLD360，2019--2021）进行比较。
+其中OTD仪器的观测范围为75$^{\circ}$ N以南，且其数据产品只包含闪电次数，一次闪电可包含一个或多个闪击。
+虽然GLD360官方产品只包含闪击，但是我们的目的是研究闪电分布的变化，故未将闪击聚类成闪电。
+由于 GLD360 数据覆盖了整个北极地区，因此它包含的数据比 OTD 多。
+
+在图\ref{fig:arctic_lightning_distribution} 中，我们使用卫星和地面闪电观测比较了高纬度地区夏季（6--8 月）闪电的空间分布。
+两个数据集都显示西伯利亚和阿拉斯加永冻区具有较高的闪电频率（60$^{\circ}$--65$^{\circ}$ N，图\ref{fig:arctic_lightning_distribution}（a） 和 \ref{fig:arctic_lightning_distribution} （b）），这是北极火灾的主要来源\citep{McCarty.2021}。
+OTD 平均闪电频率和 GLD360 平均闪击频率分别为 0.22 km$^{-2}$ 每月 和 0.61 km$^{-2}$ 每月。
+然而，OTD 在楚科奇海（Chukchi Sea）附近记录的闪电较少，但在伊明格海（Irminger Sea）上空较多。
+这种现象归因于北极降水的年际变化，与向极地输送的水分有关\citep{Bintanja.2020}。
+
+为了判断 TROPOMI 是否可以探测到 LNO$_2$，我们首先计算了每次TROPOMI过境前6 h内发生在条带里的GLD360闪电数。
+虽然TROPOMI不会连续对北极进行探测，但在夏季该地区每天有14个重叠轨道，从而覆盖了北极的大部分地区。
+TROPOMI条带内的闪击数约占总计数的 26\%（图\ref{fig:arctic_lightning_distribution}（c）），并且它们具有相同的地理分布（图\ref{fig:arctic_lightning_distribution}（a））。
+由于在高纬度地区有更多的重叠条带，条带内雷击的比例随着纬度增大而增大（ 图\ref{fig:arctic_lightning_distribution}（d）），从$<$ 30\% （60$^{\circ}$--70$^{\circ}$ N） 增加到 22\%--62\% （70 $^{\circ}$--80$^{\circ}$ N） 和 45\%--100\%（80$^{\circ}$--90$^{\circ}$ N） 。
+而地表观测\citep{Schmale.2018} 和飞机观测\citep{Jacob.2010}的NO$_2$数据有限，因此TROPOMI的NO$_2$卫星观测数据在分析北极的 LNO$_2$ 方面非常有利。
+鉴于 70$^{\circ}$ N 以北具有更高的 TROPOMI 覆盖率和更少的其他NO$_2$排放源（例如野火或天然气），我们选择该区域来计算 LNO$_2$ 产率（PE）。
+GLD360在70$^{\circ}$ N 以北探测到的夏季（6--8 月）闪击数分别为 1.2$\cdot$10$^6$ （2019）、1.6$\cdot$10$^6$ （2020） 和 9.8$\cdot$10$^5$ （ 2021）（表\ref{table:stroke_count}）。
+其中在TROPOMI 覆盖率最高的地区（80$^{\circ}$--90$^{\circ}$ N），2021 年的闪击数约为 2.9$\cdot$10$^4$，是前九年总数的近两倍\citep{networktotal.2021}。
+最北端可达89.5$^{\circ}$ N，世界闪电定位网络 （WWLLN） 也报告了该闪击（89.6 $^{\circ}$ N）\citep{Holzworth.2021}。
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=10.5cm]{./figures/arctic_lightning_distribution.pdf}
+\caption{
+(a) 2019--2021年6--8月GLD360平均闪击率；
+(b) 1996--1999年6--8月OTD平均闪电频率；
+(c) 与 (b) 相同，但只计算 TROPOMI 过境前 6 h内 TROPOMI 条带内的闪电。
+没有闪电的网格在 (a)--(c) 子图中设置为透明。
+(d) (c) 与 (b) 的月比例。\\
+Figure \ref{fig:arctic_lightning_distribution}. (a) Mean GLD360 lightning stroke rate over June--August of 2019--2021;
+(b) Mean OTD lightning flash rate over June--August of 1996--1999;
+(c) Same as (b) but only counting the lightning inside the TROPOMI swaths during the 6 hour period before the TROPOMI overpass time.
+Grids with no lightning are set as transparent in (a)--(c) panels.
+(d) The monthly ratio of (c) to (b).
+}
+\label{fig:arctic_lightning_distribution}
+\end{figure}
+
+
+\begin{table}[h]
+\centering
+\caption{2019--2021期间高纬度地区GLD360探测到的闪击数\\Table \ref{table:stroke_count}. The GLD360 stroke counts in high-latitude regions from 2019 to 2021.}
+\label{table:stroke_count}
+\begin{tabular}{rrrrr}
+\hline
+{} & 60$^{\circ}$--70$^{\circ}$ N & 70$^{\circ}$--80$^{\circ}$ N & 80$^{\circ}$--90$^{\circ}$ N &       总数 \\
+\hline
+2019 &                   20,810,084 &                    1,182,952 &                       6,392 &  21,999,428 \\
+2020 &                   21,590,880 &                    1,636,084 &                       5,552 &  23,232,516 \\
+2021 &                   30,958,236 &                     951,544 &                       29,112 &  31,938,892 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{反演闪电氮氧化物}
+
+LNO$_2$的估计包括三个主要步骤：
+
+1. 使用风场数据将NO$_2$柱密度高值区与闪电数据匹配。
+
+2. 基于新算法来计算LNO$_2$柱密度。
+
+3. 使用连续的TROPOMI观测数据来计算LNO$_2$的产率。
+
+\subsubsection*{闪电的聚类}
+
+我们使用具有噪声的基于密度的聚类方法（DBSCAN）将TROPOMI过境前12 h内\citep{Allen.2021a}的闪击以40km进行聚类\citep{backlund2011density,Schubert.2017}。
+由于野火也会产生 NO$_2$，因此使用可见光/红外成像仪/辐射计套件（VIIRS）375 m 主动火点产品，来识别和过滤受野火排放影响的闪电聚类。
+VIIRS 搭载在 Suomi 国家极地轨道合作伙伴 （Suomi-NPP） 上，它与搭载TROPOMI的S5P在同一轨道上，但比 S5P 提前 3.5 分钟。
+我们将内部没有火点的闪电集群视为一个清洁的聚类。
+
+对于每个清洁的闪电聚类，我们根据观测到的闪击所在位置及时间来在三个气压层（300 hPa、500 hPa 和 700 hPa）上定义受 LNO$_2$ 影响的空气块（图 \ref{fig:workflow}（a））。
+如图 \ref{fig:workflow}（b） 所示，含 LNO$_2$ 的空气块通过水平平流传输。
+为了确定 TROPOMI 过境时空气块的位置，我们使用 ECMWF 小时大气再分析资料（ERA5） 的风场数据\citep{Hersbach.2020}。
+最终的空气块组合成一个闪电掩膜（图 \ref{fig:workflow}（c）中的橙色圆圈），即三个等压面的前向轨迹构成了一个近似的 LNO$_2$ 区域。
+
+
+我们首先使用分水岭方法得到NO$_2$垂直柱密度（V$_{\textrm{NO$_2$}}$）的高值区（图 \ref{fig:workflow}（c）中的像素）。
+具体而言，分水岭方法将输入数据视为高程值，并将它们分成称为集水盆地的各个区域\citep{Soille.1990,Heikenfeld.2019a}。
+在本研究中，我们应用从 4$\cdot$10$^{14}$ 到 1$\cdot$10$^{15}$ molec. cm$^{-2}$ 的阈值，步长为 2$\cdot$10$^{14}$ molec. cm$^{-2}$。
+该V$_{\textrm{NO$_2$}}$高值区的面积通常小于闪电掩膜，这意味着闪电掩膜中包含了背景 NO$_2$。
+接着选择具有一个或多个NO$_2$高值区的闪电聚类来确定最终的LNO$_2$区域。
+最终的 LNO$_2$ 区域（图 \ref{fig:workflow}（d） 中的亮像素）是闪电掩模中的对流层NO$_2$ 斜柱（$S_{\textrm{NO$_2$}}$）高值区.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=14cm]{./figures/workflow.pdf}
+\caption{
+从 TROPOMI 轨道 09458（2019 年 8 月 1 日）数据选择闪电 NO$_2$ 像素的示意图。
+背景填色为TROPOMI 检测到的 NO$_2$ 对流层柱， (a) 观测到的雷击，
+(b) 在三个气压层（300 hPa、500 hPa 和 700 hPa）上水平传输的闪电 NO$_2$ 空气块，
+(c) 将空气块组合成一个闪电掩膜（橙色圆圈），高 NO$_2$高值区（填充像素）重叠。
+不同的像素颜色代表基于多个 NO$_2$ 阈值的不同 NO$_2$ 选择。
+(d) 通过过滤掉低 NO$_2$（灰色）的像素来提取掩模中的闪电 NO$_2$\\
+Figure \ref{fig:workflow}. Schematic overview of selecting lightning NO$_2$ pixels from TROPOMI orbit 09458 (on 1 August, 2019).
+The TROPOMI-detected NO$_2$ tropospheric columns overlaid with (a) observed lightning strokes and
+(b) transported air parcels of lightning NO$_2$ at three pressure levels (300 hPa, 500 hPa, and 700 hPa).
+(c) Parcels are combined into one lightning mask (orange circle), which is overlapped with the high NO$_2$ selections (filled pixels). The different pixel colors stand for different NO$_2$ selections based on multiple NO$_2$ thresholds.
+(d) Selection of lightning NO$_2$ in the mask by filtering out the low NO$_2$ (grey pixels).
+}
+\label{fig:workflow}
+\end{figure}
+
+\subsubsection*{计算闪电氮氧化物柱密度}
+
+\subsubsection*{计算闪电氮氧化物产率}
+
+
+
 \subsection{闪电氮氧化物浓度与其他氮氧化物源的对比}
 \subsection{闪电氮氧化物的寿命及产率}
 \subsection{不确定性分析}
@@ -38,7 +158,7 @@ Figure \ref{fig:us_domain}. Domain and terrain height (m) of the WRF-Chem simula
 \end{figure}
 
 
-\subsection{反演闪电氮氧化物的步骤}
+\subsection{反演闪电氮氧化物}
 
 首先我们使用恒定值网格化法，将公式（\ref{eq:AMF_LNO2}）所得的LNO$_x$垂直柱密度（V$_{\textrm{NO$_x$}}$）分配至0.05$^{\circ}$ $\times$ 0.05$^{\circ}$网格\citep{Kuhlmann.2014}。
 接着在 1$^{\circ}$ $\times$ 1$^{\circ}$的网格中进行分析，要求每个网格至少有50个有效的0.05$^{\circ}$ $\times$ 0.05$^{\circ}$网格数据，从而最小化噪点数据。
