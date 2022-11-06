@@ -4,7 +4,7 @@
 
 \section{清洁地区（北极）}
 
-\subsection{闪电的分布}
+\subsection{闪电的分布} \label{subsect:lightning_distribution}
 
 气候变暖正在引发全球闪电的变化\citep{Reeve.1999,Williams.2005a,Price.2009a}。
 在过去的 30 年中，研究学者针对闪电预测提出了多种模拟方案\citep{Price.1992,Price.1997b,Allen.2002,Futyan.2007,Finney.2014,Romps.2014}。
@@ -32,7 +32,7 @@ TROPOMI条带内的闪击数约占总计数的 26\%（图\ref{fig:arctic_lightni
 由于在高纬度地区有更多的重叠条带，条带内雷击的比例随着纬度增大而增大（ 图\ref{fig:arctic_lightning_distribution}（d）），从$<$ 30\% （60$^{\circ}$--70$^{\circ}$ N） 增加到 22\%--62\% （70 $^{\circ}$--80$^{\circ}$ N） 和 45\%--100\%（80$^{\circ}$--90$^{\circ}$ N） 。
 而地表观测\citep{Schmale.2018} 和飞机观测\citep{Jacob.2010}的NO$_2$数据有限，因此TROPOMI的NO$_2$卫星观测数据在分析北极的 LNO$_2$ 方面非常有利。
 鉴于 70$^{\circ}$ N 以北具有更高的 TROPOMI 覆盖率和更少的其他NO$_2$排放源（例如野火或天然气），我们选择该区域来计算 LNO$_2$ 产率（PE）。
-GLD360在70$^{\circ}$ N 以北探测到的夏季（6--8 月）闪击数分别为 1.2$\cdot$10$^6$ （2019）、1.6$\cdot$10$^6$ （2020） 和 9.8$\cdot$10$^5$ （ 2021）（表\ref{table:stroke_count}）。
+GLD360在70$^{\circ}$ N 以北探测到的夏季（6--8 月）闪击数分别为 1.2$\cdot$10$^6$ （2019）、1.6$\cdot$10$^6$ （2020） 和 9.8$\cdot$10$^5$ （ 2021）（表\ref{table:arctic_stroke_count}）。
 其中在TROPOMI 覆盖率最高的地区（80$^{\circ}$--90$^{\circ}$ N），2021 年的闪击数约为 2.9$\cdot$10$^4$，是前九年总数的近两倍\citep{networktotal.2021}。
 最北端可达89.5$^{\circ}$ N，世界闪电定位网络 （WWLLN） 也报告了该闪击（89.6 $^{\circ}$ N）\citep{Holzworth.2021}。
 
@@ -58,8 +58,8 @@ Grids with no lightning are set as transparent in (a)--(c) panels.
 
 \begin{table}[h]
 \centering
-\caption{2019--2021期间高纬度地区GLD360探测到的闪击数\\Table \ref{table:stroke_count}. The GLD360 stroke counts in high-latitude regions from 2019 to 2021.}
-\label{table:stroke_count}
+\caption{2019--2021期间高纬度地区GLD360探测到的闪击数\\Table \ref{table:arctic_stroke_count}. The GLD360 stroke counts in high-latitude regions from 2019 to 2021.}
+\label{table:arctic_stroke_count}
 \begin{tabular}{rrrrr}
 \hline
 {} & 60$^{\circ}$--70$^{\circ}$ N & 70$^{\circ}$--80$^{\circ}$ N & 80$^{\circ}$--90$^{\circ}$ N &       总数 \\
@@ -123,13 +123,275 @@ The TROPOMI-detected NO$_2$ tropospheric columns overlaid with (a) observed ligh
 
 \subsubsection*{计算闪电氮氧化物柱密度}
 
+
+正如\citet{Zhang.2022a}中所讨论的，官方 TROPOMI 算法在 NO$_2$反演中不包括 LNO$_2$。
+因此，我们从官方 S$_{\textrm{NO$_2$}}$产品中减去背景 NO$_2$，并将差值通过空气质量因子 (AMF) 转换为对流层LNO$_2$垂直柱密度。
+该算法具体为下式
+
+
+\begin{equation} \label{eq:arctic_LNO2}
+V_{\textrm{LNO$_2$}} = \frac{S_\textrm{NO$_2$} - S_\textrm{BG}}{AMF_\textrm{LNO$_2$}}
+\end{equation}
+
+
+其中 $V_{\textrm{LNO$_2$}}$ 是对流层 LNO$_2$ 垂直柱密度，
+$S_{\textrm{NO$_2$}}$ 是 TROPOMI 测得的对流层 NO$_2$ 斜柱密度，
+AMF$_{\textrm{LNO$_2$}}$ 是新定义的闪电空气质量因子。
+根据\citet{Allen.2021a}的研究，我们将闪电掩膜内NO$_2$ 低值的第 30 个百分位$S_{\textrm{NO$_2$}}$定义为背景 $S_{\textrm{NO$_2$}}$ （S$_{BG}$）。
+NO$_2$低值区（图 \ref{fig:workflow}（d）中的灰色像素）是由分水岭技术得到的$S_{\textrm{NO$_2$}}$高值区的相反区域。
+AMF$_\textrm{LNO$_2$}$ 是“可见”LNO$_2$ 斜柱密度与对流层 LNO$_2$ 垂直柱密度之比：
+
+\begin{equation} \label{eq:arctic_AMFLNO2}
+AMF_{\textrm{LNO$_2$}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) LNO_2(p) \: dp + f_r \int_{p_{cloud}}^{p_{tp}} w_{cloudy}(p) LNO_2(p) \: dp}{\int_{p_{surf}}^{p_{tp}} LNO_2(p) \: dp}
+\end{equation}
+
+其中 $f_{r}$ 是NO$_2$窗区的云辐射率分数，
+$p_{surf}$ 是地表气压，
+$p_{cloud}$ 是云压，
+$p_{tp}$ 是对流层顶气压，
+$w_{clear}$ 和 $w_{cloudy}$ 分别是来自查找表 \citep{Lorente.2017}的晴天和阴天部分的散射权重，
+$LNO_2(p)$ 是高斯分布的先验 LNO$_2$廓线。
+与\citet{Lapierre.2020}相似，我们将高斯分布的峰值宽度设置为60 hPa，峰值高度设置为闪电掩模中最高的TROPOMI云压。
+我们剔除云层高于对流层顶的个例，因为 NO$_2$ 浓度可能会受到平流层 O$_3$ 的影响\citep{Frey.2015a,Zhang.2022a}
+
+
 \subsubsection*{计算闪电氮氧化物产率}
 
 
+如\ref{subsect:lightning_distribution}节所述，TROPOMI 可多次扫过 70$^{\circ}$ N 以北的同一点。
+因此，两个连续的轨道可以观测到相同的雷暴。
+故$V_{\textrm{LNO$_2$}}$ (mol m$^{-2}$) 在相邻过境时间之间的关系可以定义为
+
+\begin{equation} \label{eq:relationship}
+\sum_{p_{(T2)}} V_{\textrm{LNO$_2$}_{i}} A_{i} = \sum_{p_{(T1)}} V_{\textrm{LNO$_2$}_{j}} A_{j} e^\frac{{-(T_2-T_1)}}{\tau} + PE \sum_{N} e^\frac{{-(t_k-T_1)}}{\tau}
+\end{equation}
+
+其中 $p$ 是 LNO$_2$ 区域中的像素数，
+$A$ 是每个像素的面积（m$^2$），
+$T$ 是 TROPOMI 过境时间，
+$t$ 是闪电发生的时间，
+$\tau$ 是对流附近 LNO$_2$ 的寿命，
+$PE$ 是 LNO$_2$ 的产率 (mol stroke$^{-1}$),
+$N$ 是发生在相邻过境时间内的总闪击数，
+而指数成分考虑了 NO$_2$ 的化学损失。
+
+如果相邻过境时间内没有闪电发生，式（\ref{eq:relationship}）可以简化为：
+
+\begin{equation} \label{eq:LNO2_nolightning}
+\sum_{p_{(T2)}} V_{\textrm{LNO$_2$}_{i}} A_{i} = \sum_{p_{(T1)}} V_{\textrm{LNO$_2$}_{j}} A_{j} e^\frac{{-(T_2-T_1)}}{\tau}
+\end{equation}
+
+根据这些在相邻过境时间内没有闪电发生的个例，我们算得 $\tau$ 为 6 $\pm$ 2 h，
+并将其代入方程 (\ref{eq:relationship}) 来计算剩余个例的 LNO$_2$ PE。
+
+在前人的研究中有其他三种方法来估算热带和中纬度地区的 LNO$_2$ 产量：
+
+（1）背景NO$_2$加上LNO$_2$（LNO$_2$$^*$）与闪电之间的线性回归 \citep{Pickering.2016,Allen.2019,Lapierre.2020}；
+
+（2）使用定义的空气质量因子直接得到NO$_2$ \citep{Beirle.2009,Zhang.2020b,Zhang.2022a}；
+
+（3）算出LNO$_2$$^*$并减去背景 NO$_2$，其中背景 NO$_2$取自飞机观测 \cite{Pickering.2016,Perez-Invernon.2022} 或未发生闪电的对流像素处的平均NO$_2$ \citep{Bucsela.2019，Bucsela.2010，Allen.2021a}。
+
+由于背景 NO$_2$ 随太阳天顶角而变化，线性回归不适用于我们的情况。
+
+第二种方法需要使用闪电参数化进行详细的 LNO$_2$ 模拟，而目前闪电参数化的不确定性仍非常大 \cite{Finney.2018,Romps.2019,Chen.2021a}，尤其是在闪电数据集很少的北极地区 \citep{Holzworth.2021}。
+最后一种方法需要的平均背景 NO$_2$数据集适用于北极地区的每个网格单元（即 1 $^{\circ}$ $\times$ 1 $^{\circ}$），因为 TROPOMI 检测到70$^{\circ}$ N 以北的非闪电对流个例有限。
+
 
 \subsection{闪电氮氧化物浓度与其他氮氧化物源的对比}
-\subsection{闪电氮氧化物的寿命及产率}
-\subsection{不确定性分析}
+
+图 \ref{fig:no2_comp}（a）显示了 2019--2021 年 6 月至 8 月 TROPOMI 在北极观测到的平均 NO$_2$ 浓度。
+虽然从背景中无法看出平均LNO$_2$，但在城市、工业和野火地区仍然可以观察到 NO$_2$ 的增强。
+例如，可以清楚地观察到与阿拉斯加、挪威和俄罗斯的采矿作业相关的 NO$_2$ (17 $\pm$ 2 $\mu$mol m$^{-2}$)。
+其他例子是与加拿大北极麦肯齐谷、北阿拉斯加普拉德霍湾/库帕鲁克和俄罗斯亚马尔天然气管道/乌连戈气田相关的石油和天然气活动 \citet{VanDerA.2020}。
+ß格陵兰海岸沿线的 NO$_2$ 峰值可能是与复杂地形反演相关的错误信号\citep{Hachmeister.2022}。
+与 NO$_2$ 污染相反，70$^{\circ}$ N 以北的 TROPOMI 观测显示低浓度的背景 NO$_2$（4.35 $\pm$ 1.26 $\mu$mol m$^{-2}$），
+比 60$^{\circ}$ N 和 65$^{\circ}$ N 之间的平均 NO$_2$ 少 45\%。
+
+
+通过将每个个例中LNO$_2$柱密度的最大值(35 $\pm$ 29 $\mu$mol m$^{-2}$) 与北极地区典型的人为和野火 NO$_2$ 进行比较，
+我们发现 LNO$_2$ 的浓度具有可比性，尽管排放的时间尺度是小时数量级（图 \ref{fig:no2_comp}（b））。
+其中在拉普捷夫海上空发生的深层对流（图\ref{fig:arctic_large_lno2}），
+其LNO$_2$最大值 为 783 $\mu$mol m$^{-2}$，是美国最高 NO$_2$ 浓度的 2.3 倍 \citep{Goldberg.2021a}。
+考虑到LNO$_2$在短时间内的巨大贡献，因此计算北极地区LNO$_2$的排放很重要。
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=15cm]{./figures/no2_comp.pdf}
+\caption{
+(a) 2019 年 8 月至 2021 年 6 月当地下午TROPOMI测的的对流层 NO$_2$ 平均柱密度（4 km $\times$ 4 km）。
+采矿和石油 \& 加油站是面板（a）中显示的灰色和红色圆圈。
+(b) NO$_2$ 四种来源的比较：闪电、采矿、石油\&天然气和野火。
+其中闪电LNO$_2$的浓度为每次闪电个例的所有像素上NO$_2$的最大值，而野火、采矿和石油 \& 天然气的浓度是典型位置的每日最大 NO$_2$ 值。
+框内的线分别是中值（黑色）和平均值（红色）。
+下边界和上边界分别是第 25 和第 75 个百分位数。
+上下误差线分别是第 10 和第 90 个百分位数，\\
+Figure \ref{fig:no2_comp}（a） Mean 4 km $\times$ 4 km TROPOMI tropospheric NO$_2$ column density in the local afternoon during June--August of 2019--2021.
+The mining and oil \& gas stations are gray and red circles shown in panel (a).
+(b) Comparisons of NO$_2$ among four sources: lightning, mining, oil \& gas, and wildfire.
+The bar of lightning represents the maximum NO$_2$ values over pixels of each lightning case.
+The wildfire, mining, and oil \& gas bars are the daily maximum NO$_2$ values over typical locations.
+The lines inside box are median (black) and mean (red) values, respectively.
+Lower and upper box boundaries are 25th and 75th percentiles, respectively.
+Lower and upper error lines are 10th and 90th percentiles, respectively,
+}
+\label{fig:no2_comp}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=18cm]{./figures/arctic_large_lno2.pdf}
+\caption{
+(a) 在 500 hPa气压层水平传输的包含闪电 NO$_2$ 的空气块。
+(b) TROPOMI 检测到的 NO$_2$ 对流层柱密度。
+(c) TROPOMI 检测到的云压。\\
+(a) Transported air parcels containing lightning NO$_2$ at 500 hPa pressure level.
+(b) The TROPOMI-detected NO$_2$ tropospheric columns.
+(c) The TROPOMI-detected cloud pressures.
+}
+\label{fig:arctic_large_lno2}
+\end{figure}
+
+\subsection{闪电氮氧化物的产率}
+
+LNO$_2$ 排放是闪击计数和 LNO$_2$ PE（LNO$_2$每闪击）的乘积。
+然而我们不可能直接根据来自单个轨道的数据推导出 LNO$_2$ PE，
+因为 TROPOMI 检测到的 LNO$_2$ 由生产和消耗组成，故时间维度需要第二个过境数据。
+这里我们利用连续轨道的 LNO$_2$ 来估算 LNO$_2$ PE。
+基于对 LNO$_2$ 和闪击的筛选，我们共获得了46个个例，123 个 LNO$_2$ 掩膜。
+其中，60$^{\circ}$ W 和 180$^{\circ}$ W 之间的个例由于 LNO$_2$ 不显著或没有足够的观测值而被剔除。
+大多数个例位于 60$^{\circ}$ E 和 180$^{\circ}$ E 之间（图 \ref{fig:arctic_lno2_production}（a））。
+通过比较闪电分布（图 \ref{fig:arctic_lno2_production}（a））与LNO$_2$总和的分布（图 \ref{fig:arctic_lno2_production}（b）），
+我们发现 TROPOMI 观测到的 LNO$_2$ 远离LNO$_2$的排放源。
+例如，喀拉海没有闪电发生 （77$^{\circ}$--80$^{\circ}$ N, 65$^{\circ}$--105$^{\circ}$ E）,
+但此处的LNO$_2$ 总共约为 3.3 $\cdot$ 10$^6$ mol。
+这是由于上对流层主导的东风对LNO$_2$的输送作用，从而揭示了匹配闪电和 NO$_2$的重要性。
+尽管如此，LNO$_2$ 与闪击仍具有高空间相关性。
+研究结果表明，LNO$_2$ PE在陆地、海洋和沿岸处为 0.9 (0.3--4.3) mol每闪击、6.4 (1.2--28.4) mol每闪击 和 6.5 (1.3--33.8) mol每闪击（图 \ref{fig:arctic_pe_rate}（a））。
+此外，排名前10的LNO$_2$ PE 中有 9 个（43--334 mol每闪击）属于海洋或沿海地区（\ref{table:arctic_pe_lno2}）。
+不幸的是，由于案例有限，我们无法得出具有统计学意义的结论。
+然而，在热带和中纬度地区 \citet{Marais.2018,Allen.2019,Bucsela.2019} 也发现了海洋上的 LNO$_2$ PE 是陆地上的两倍，因为海洋上的闪电能量更高\citep{Beirle.2014,Hutchins.2013}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=15cm]{./figures/arctic_lno2_production.pdf}
+\caption{
+(a) 每 0.5$^{\circ}$ $\times$ 0.5$^{\circ}$ 网格中所选个例的 GLD360 闪击总和。
+(b) 每 0.5$^{\circ}$ $\times$ 0.5$^{\circ}$ 网格中由TROPOMI观测数据所得的个例LNO$_2$ 总和。\\
+(a) Summed GLD360 lightning strokes for selected cases per 0.5$^{\circ}$ $\times$ 0.5$^{\circ}$ grid.
+(b) Summed lightning NO$_2$ derived by TROPOMI observations for selected cases per 0.5$^{\circ}$ $\times$ 0.5$^{\circ}$ grid.
+}
+\label{fig:arctic_lno2_production}
+\end{figure}
+
+\begin{table}[ht]
+\caption{2019--2021 年前 10 大LNO$_2$产率 \\
+Table \ref{table:arctic_pe_lno2}. The top 10 lightning NO$_2$ (LNO$_2$) production efficiencies (PE) from 2019 to 2021.}
+\label{table:arctic_pe_lno2}
+\begin{tabular}{llllllll}
+\hline
+时间 &       条带 &   经度 &   纬度 &
+区域\textsuperscript{\emph{a}} &
+闪击数\textsuperscript{\emph{b}}  & \shortstack{LNO$_2$ 产率 \\ (mol每闪击)} \\
+\hline
+2021-06-28 00:30:00 &  19204 &  137.4 &  71.8 &  沿岸 &         152 &  334.3 \\
+2021-07-09 03:49:00 &  19362 &   52.8 &  70.4 &  海洋 &         352 &  257.1 \\
+2019-06-20 20:09:00 &  08731 &  121.8 &  73.2 &  沿岸 &         396 &  193.6 \\
+2019-08-11 01:54:00 &  09458 &  123.1 &  84.4 &  海洋 &         404 &  156.4 \\
+2019-06-26 21:37:00 &  08817 &  115.3 &  76.3 &  海洋 &        2516 &   81.5 \\
+2019-06-20 18:29:00 &  08730 &  122.3 &  72.7 &  沿岸 &         436 &   74.1 \\
+2021-07-30 00:30:00 &  19658 &  139.1 &  74.0 &  海洋 &        2412 &   55.2 \\
+2019-07-11 21:55:00 &  09030 &  129.6 &  70.1 &   陆地 &         992 &   54.0 \\
+2019-08-11 00:13:00 &  09457 &  117.8 &  84.1 &  海洋 &        1068 &   47.4 \\
+2019-08-11 03:35:00 &  09459 &  127.38 &  84.2 &  海洋 &         464 &   43.4 \\
+\hline
+\end{tabular}
+\footnotesize
+\textsuperscript{\emph{a}} 陆地和海洋由50 m Natural Earth数据分类，其中沿岸地区定义为海岸线周围500 m半径。 \\
+\textsuperscript{\emph{b}} 连续轨道间隔期间的总闪击数。
+\textsuperscript{\emph{a}} The land and ocean are classified by the 50 m Natural Earth data, where the coastal region is defined as a 500 m radius around the coastline. \\
+\textsuperscript{\emph{b}} The total number of strokes during the interval between consecutive orbits.
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=15cm]{./figures/arctic_pe_rate.pdf}
+\caption{
+(a) 三个区域（沿岸、陆地和海洋）的LNO$_2$产率和闪击频率，其中沿岸地区为海岸线周围 500 m 的半径。
+(b) LNO$_2$ 产率与闪击频率的关系，叠加每个 5$\cdot$10$^{-9}$ m$^{-2}$ h$^{-1}$ 中个例占比的直方图。\\
+(a) The lightning NO$_2$ (LNO$_2$) production efficiency and stroke rate over three regions (coast, land, and ocean).
+The coast region is defined as a 500 m radius around the coastline.
+(b) The LNO$_2$ production efficiency versus stroke rate, overlaid by the histograms of case fractions in each 5$\cdot$10$^{-9}$ m$^{-2}$ h$^{-1}$ stroke rate bin.
+}
+\label{fig:arctic_pe_rate}
+\end{figure}
+
+
+由于闪击频率计算所用到的面积取决于TROPOMI中LNO$_2$的选区，
+我们直接将闪击数乘以三个地区的 LNO$_2$ PE 中值，并将它们相加作为北极地区LNO$_2$的总排放量（$>$ 66.5$^{\circ}$ N，表 \ref{table:arctic_lno2_emission}）。
+结果表明，2020 年 LNO$_2$ 排放量为 179 Mg(N)，比 2019 年和 2021 年的 LNO$_2$ 平均排放量（132 Mg(N)）高出 36\%。
+其主要贡献者是位于66.5$^{\circ}$ N 和 80$^{\circ}$ N 之间的排放增多（36\%）。
+而北极点附近由于闪电增多，LNO$_2$ 排放量 (2.6 Mg(N)) (80$^{\circ}$--90$^{\circ}$ N) 在 2021 年增加了 391\% （补充表 \ref{table:arctic_stroke_count}）。
+假设 NO$_x$ 与 NO$_2$ 的比率为 2.4 \citep{Silvern.2018}，我们将 LNO$_x$ 排放量与夏季土壤、船舶和野火 NO$_x$ 排放量进行比较（图\ref{fig:arctic_emission_comp}）。
+虽然野火主要分布在西伯利亚和阿拉斯加，但它每月排放 2.0 $\cdot$ 10$^4$ Mg (N)，在北极地区的 NO$_x$排放源中占主导地位。
+土壤排放是第二高的排放源（1.2 $\cdot$ 10$^4$ Mg (N) 月$^{-1}$）。
+船舶排放 (2.0 $\cdot$ 10$^3$ Mg (N) 月$^{-1}$) 是北极海洋上的主要 NO$_x$ 来源，但 LNO$_x$在东北部北极海洋（90$^{\circ}$--180$^{\circ}$ E, 80$^{\circ}$--90$^{\circ}$ N）的NO$_x$中占比高达78\%。
+由于上对流层温度较低，远离雷暴处的NO$_2$寿命为 $\sim$ 0.5--8 天\citep{Schumann.2007,Nault.2017}，故需要更多的研究来评估 LNO$_2$对O$_3$、CO 和 CH$_4$的影响。
+
+\begin{table}
+\centering
+\caption{LNO$_2$ 排放量（Mg(N)每年）\\LNO$_2$ emissions (Mg(N) per year).}
+\label{table:arctic_lno2_emission}
+\begin{tabular}{rrrrr}
+\hline
+{} & 66.5$^{\circ}$--70$^{\circ}$ N & 70$^{\circ}$--80$^{\circ}$ N & 80$^{\circ}$--90$^{\circ}$ N &       Total \\
+\hline
+2019 &   70.5  & 71.7 &  0.57  &  143 \\
+2020 &   91.3  & 87.5 &  0.50  &  179 \\
+2021 &   69.7  & 50.2 &  2.60  &  122 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=11.5cm]{./figures/arctic_emission_comp.pdf}
+\caption{
+北极地区6--8月的NO$_x$月排放量
+(a) 野火，(b) 土壤，
+(c) 船舶，(d) 闪电。
+闪电 NO$_x$ 排放是 2019 年至 2021 年的平均值。
+其他排放来自哥白尼大气监测服务 (CAMS) 2018 年全球排放清单。\\
+The monthly NO$_x$ emissions from June to August in the Arctic from
+(a) wildfire, (b) soil,
+(c) ships, and (d) lightning.
+The lightning NO$_x$ emission is the mean values from 2019 to 2021.
+Other emissions are from the Copernicus Atmosphere Monitoring Service (CAMS) 2018 global emission inventories.
+}
+\label{fig:arctic_emission_comp}
+\end{figure}
+
+
+\subsection{本章小结}
+
+在这项研究中，我们根据北极地区连续的 TROPOMI NO$_2$ 观测估算了 LNO$_2$ 的寿命和产率（PE）。
+其6 h的寿命比污染地区更长，例如美国地区的3 h \citep{Nault.2017}。
+而北极陆地地区的LNO$_2$ PE (0.9 (0.3--4.3) mol stroke$^{-1}$) 与美国的 (1.6 $\pm$ 0.1 mol stroke$^{-1}$) 相似\citep{Lapierre.2020}。
+此外，北极海洋性闪电产生的 NO$_2$ 是陆地性闪电的 6 倍。
+因此，当闪电在北极海洋和陆地上增加相同数量时，海洋性闪电将产生更多的 LNO$_2$。
+
+我们得到的LNO$_2$ 产品是在没有反演LNO$_2$垂直廓线的情况下得出的LNO$_2$柱密度。
+虽然云切片技术 \citep{BelmonteRivas.2015,Marais.2021} 可以从 TROPOMI 观测中推导出 LNO$_2$ 廓线，
+但均匀分布的条件和粗的垂直分辨率（例如 100 hPa）\citep{BelmonteRivas.2015} 不能应用于模式中LNO$_2$的排放廓线\citep{Ott.2010,Luo.2017}。
+像类似于深对流云和化学观测项目 (DC3) \citep{Barth.2019} 的飞机观测将更好地量化 LNO$_2$ 廓线，以改进LNO$_x$和北极空气污染的分析\citep{Law.2007,Schmale.2018}。
+
+由于预计北极闪电会随着全球变暖而增加，因此准确的闪电观测、模拟和验证对于 LNO$_2$ 分析非常重要。
+由于北极大部分地区被海洋或冰覆盖，地基闪电探测网的探测效率仍然很低\citep{Vagasky.2022}。
+此外，北极目前可用的闪电参数化主要集中在陆地，尤其是永久冻土\citep{Chen.2021a}。
+因此，一致的卫星观测（例如 OTD）对于北极闪电研究至关重要。
+虽然热带降雨测量任务 \citep{Cecil.2014} 和国际空间站 \citep{Blakeslee.2020} 上都配备了闪电成像传感器 (LIS)
+但是它们只探测热带和中纬度闪电。
+将来水文气象卫星（例如 Arktika-M）\cite{Asmus.2021} 与闪电传感器（例如全球闪电测绘仪（GLM）和闪电测绘成像仪（LMI））\citep{Goodman.2013,Yang.2017a } 可以帮助我们更好地了解北极闪电的变化。
 
 
 \section{污染地区（中国及美国大陆）}
