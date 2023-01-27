@@ -20,7 +20,7 @@
 此外，LNO的垂直廓线使用\citet{Ott.2010}的双峰型闪电NO（LNO）廓线\citep{Laughner.2017}，而LNO和LNO$_2$廓线是指开启和关闭闪电选项的模拟之间垂直廓线的差异。
 其中LNO$_x$参数化调整为每次闪电产生500 mol NO\citep{Zhu.2019}。
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.9\textwidth]{./figures/domains_china.png}
 \caption{2019年和2020年个例的WRF-Chem模拟区域和地形高度(m)图。
@@ -76,7 +76,7 @@ Q_{v}=A Q_{\mathrm{sat}}+B Q_{\mathrm{sat}} \tanh (C X)\left[1-\tanh \left(D Q_{
 本研究仅详细讨论前两个因素，因为闪电直接产生的O$_3$超出了本研究的范围，并且有限的观测和模式模拟结果显示其产量仍不确定\citep{Morris.2010,Ripoll.2014}。
 
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.9\textwidth]{./figures/comp_crf_2019.png}
 \caption{在 (a) 04:20 UTC、(b) 05:40 UTC 和 (c) 06:50 UTC 观测到的雷达组合反射率。
@@ -92,7 +92,7 @@ Q_{v}=A Q_{\mathrm{sat}}+B Q_{\mathrm{sat}} \tanh (C X)\left[1-\tanh \left(D Q_{
 \label{fig:comp_crf_2019}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.9\textwidth]{./figures/comp_crf_2020.png}
 \caption{与图\ref{fig:comp_crf_2019} 相同，但针对2020年9月1日的对流个例，模拟时间比雷达观测提前30分钟。\\
@@ -101,7 +101,7 @@ The simulation time is 30 minutes ahead of each radar observation.}
 \label{fig:comp_crf_2020}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{./figures/comp_dbzcross_2019.png}
 \caption{沿着图\ref{fig:comp_crf_2019}中AB线剖得的2019年7月25日（a）WRF-Chem模拟的和（b）雷达观测的雷达反射率。\\
@@ -109,7 +109,7 @@ Figure \ref{fig:comp_dbzcross_2019}. Vertical cross sections of (a) WRF-Chem sim
 \label{fig:comp_dbzcross_2019}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{./figures/comp_dbzcross_2019.png}
 \caption{与图\ref{fig:comp_dbzcross_2019}相同，但针对2020年9月1日的对流个例。\\
@@ -118,7 +118,7 @@ Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019}
 \end{figure}
 
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.8\textwidth]{./figures/ozonesonde_profile.png}
 \caption{对流前（虚线）和对流后/对流期间（实线）探空观测到的O$_3$（红色）和Q$_v$（黑色）廓线。
@@ -137,11 +137,132 @@ The gray lines are the lapse rate tropopauses.
 
 \section{结果与讨论：全球地区}
 
-\subsection{云上臭氧柱密度的分布}
-
 \subsection{臭氧的垂直分布}
 
+图\ref{fig:uto3_tropomi}为2019年6--8月TROPOMI云切片方法得到的不同高度O$_3$的平均浓度，
+其中有效范围比图\ref{fig:utno2_tropomi}更广，尤其是在中高云条件下的中纬度地区（图\ref{fig:uto3_tropomi} b--d）。
+这是由于TROPOMI O$_3$二级产品的云分数为光学云识别算法（OCRA）云分数，而NO$_2$二级产品中使用从氧气A波段版本S（FRESCO-S）中快速检索云的方案。
+总体上，由于布鲁尔-多普森环流，纬度越高，同一气压层的O$_3$浓度越高。
+对于热带地区，非洲中部（20$^{\circ}$ W--50$^{\circ}$ E，0--20$^{\circ}$ N）的O$_3$浓度比同纬度地区的O$_3$浓度高，尤其是在中云和高云条件下可高出40\%--48\%，该现象与\citet{Cooper.2013}研究中215 hPa处MLS的O$_3$观测结果相符。
+他们的研究指出，低O$_3$事件经常发生在热带西太平洋，很少发生在热带其他地方，
+而热带海洋区域在低O$_3$事件和高云的频率之间存在一致的空间特征，表明这些事件来自于对流。
+虽然非洲中部也是强对流频发地区，但陆地边界层O$_3$浓度往往高于海洋，因此深对流产生较少的低O$_3$事件。
+
+为了进一步利用MERRA2-GMI分析动力输送和化学反应在其中的作用，我们首先将各个高度的MERRA2-GMI模式结果与TROPOMI观测数据相比较。
+图\ref{fig:uto3_merra2}为2019年6--8月与TROPOMI对应的MERRA2-GMI O$_3$模拟结果，
+图\ref{fig:uto3_delta}为TROPOMI与MERRA2-GMI在各层的结果之差。
+总体上，非洲中部的$\Delta$ O$_3$在中云和高云条件下可小于-20 pptv（图\ref{fig:uto3_delta} a--d），中纬度地区的$\Delta$ O$_3$在高云条件下可大于 40 pptv（图\ref{fig:uto3_tropomi} b），
+该两处之外的$\Delta$ O$_3$绝对值小于10。
+此外，通过对比$\Delta$ NO$_2$（图\ref{fig:utno2_tropomi}）和$\Delta$ O$_3$（图\ref{fig:uto3_delta}），
+我们发现由于清洁的上对流层属于NO$_x$控制区\citep{Brown.2022}，因此MERRA2-GMI的NO$_2$较TROPOMI高估，导致MERRA2-GMI的O$_3$亦高估。
+只有在$\Delta$ NO$_2$ $>$ 60 pptv的条件下，$\Delta$ O$_3$ $>$ 10 pptv（图\ref{fig:uto3_delta} a--b），
+在$\Delta$ NO$_2$ $<$ -10 pptv的条件下，$\Delta$ O$_3$ $<$ -40 pptv，该现象与NO$_x$控制区内EKMA曲线在低NO$_x$值区更密集的结论相符。
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=15cm]{./figures/uto3_tropomi.pdf}
+    \caption{
+    TROPOMI云切片算法所得的2019年6--8月北半球中低纬度O$_3$浓度分布图。 \\
+    The O$_3$ vertical mixing ratios derived from the cloud-slicing results of TROPOMI O$_3$ observations at the northern middle and low latitudes for June--August in 2019.
+    }
+    \label{fig:uto3_tropomi}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=15cm]{./figures/uto3_merra2-gmi.pdf}
+    \caption{
+    同图\ref{fig:uto3_tropomi}但数据为MERRA2-GMI。 \\
+    Same as Fig. \ref{fig:uto3_tropomi} but for MERRA2-GMI.
+    }
+    \label{fig:uto3_merra2}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=15cm]{./figures/uto3_delta.pdf}
+    \caption{
+    图\ref{fig:uto3_tropomi}与图\ref{fig:uto3_merra2}之差。 \\
+    Differences between Fig. \ref{fig:uto3_tropomi} and Fig. \ref{fig:uto3_merra2}.
+    }
+    \label{fig:uto3_delta}
+\end{figure}
+
+
+低云条件下的云切片O$_3$的低估，也反映了几何AMF（AMF$_{geo}$）在低云和污染条件下的高估\citep{BelmonteRivas.2015}。
+鉴于高云条件下的云切片结果在中纬度地区有效数较少（图\ref{fig:uto3_tropomi}a），
+我们将MLS于261 hPa高度观测的O$_3$浓度与MERRA2-GMI的模拟结果，在晴空和有云条件下进行对比。
+如图\ref{fig:mls_o3_261hpa}所示，在低纬度地区两者均表明有云条件下海洋上O$_3$浓度较晴空降低5\%--60\%，而非洲中部和印度北部的O$_3$浓度较晴空增大1\%--46\%。
+晴空条件下两者在中纬度地区的O$_3$浓度一致，但有云时两者的变化相反，具体而言，MLS观测显示有云条件下261 hPa高度的O$_3$浓度比晴空时的浓度高，而MERRA2-GMI模拟显示O$_3$浓度比晴空时的浓度低。
+由于MERRA2-GMI模拟结果与MLS观测在30--60$^{\circ}$ N区域内差异需要将来进一步地结合模式和探空数据进行研究，下一节的动力和化学贡献分析限定于0--30$^{\circ}$ N区域内。
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=15cm]{./figures/mls_o3_261hpa.pdf}
+    \caption{
+    2019年6--8月北半球中低纬度晴空（a--b）和有云（c--d）条件下261 hPa高度O$_3$的平均浓度，以及相对百分比变化（e--f）。
+    第一列为MLS观测数据，第二列为MERRA2-GMI模拟结果。 \\
+    The mean O$_3$ concentrations at 261 hPa with clear (a--b) and cloudy (c--d) conditions at the northern middle and low latitudes for June--August in 2019. The percentage differences are shown in panel (e) and (f).
+    The first column is the MLS observations while the second column is the MERRA2-GMI simulations.
+    }
+    \label{fig:mls_o3_261hpa}
+\end{figure}
+
+
+除了各层O$_3$浓度的地理分布之外，我们选取了区域内云切片有效层数为6层的格点（中国南部、印度中部、美国东南部、以及太平洋，图\ref{fig:no2_ltngcount}a），
+进行MERRA2-GMI和TROPOMI的廓线对比分析。
+如图\ref{fig:uto3_profile}所示，O$_3$浓度在中云和高云的条件下随着高度升高而降低，
+但是由于几何AMF的限制，低云条件下的O$_3$浓度在中国南部、印度中部、和美国东南部没有显示出O$_3$的高值，故接下来只比较MERRA2-GMI和TROPOMI在对流层中上层的O$_3$浓度。
+对于中国南部和印度中部，MERRA2-GMI的模拟值高于TROPOMI的观测值，两者之差从570--670 hPa的20 pptv逐渐下降至180--330 hPa的2 pptv。
+对于美国东南部，TROPOMI的观测值在330--450 hPa间有一峰值，与图\ref{fig:utno2_profile}c中LNO$_2$峰值相对应，
+而MERRA2-GMI的模拟结果在该高度不存在O$_3$峰值，即MERRA2-GMI中上对流层LNO$_2$的差异导致O$_3$的低估。
+对于清洁的太平洋地区，两者趋势一致，且误差小于5 pptv。
+总之，TROPOMI的观测结果和MERRA2-GMI的模拟结果在对流层中上层存在显著的一致性，
+局部的差异表明云切片方法可以用来检验模式中LNO$_x$的产量和影响。
+
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=12cm]{./figures/uto3_profile.pdf}
+    \caption{
+    MERRA2-GMI（蓝色）和TROPOMI云切片算法（橙色）所得到的区域平均O$_3$廓线
+    （a）中国南部、（b）印度中部、（c）美国东南部、（d）太平洋（区域示意图见图\ref{fig:no2_ltngcount}a）。
+    其中廓线的误差棒为平均值$\pm$标准差。\\
+    Regional average NO$_2$ profiles obtained by MERRA2-GMI (blue) and TROPOMI cloud slice algorithm (orange)
+    (a) southern China, (b) central India, (c) southeastern United States, and (d) Pacific Ocean
+    (Definitions of region are shown in Fig. \ref{fig:no2_ltngcount}a).
+    where the error bars are the mean values $\pm$ standard deviations.
+    }
+    \label{fig:uto3_profile}
+\end{figure}
+
+
+
+
+
+
+
+
 \subsection{动力输送和化学反应的贡献}
+
+
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=10cm]{./figures/uto3_tendency.pdf}
+    \caption{
+    2019年6--8月北半球中低纬度MERRA2-GMI模拟的300 hPa高度O$_3$的平均趋势：
+    （a）动力（b）物理（c）化学。\\
+    The mean tendency of O$_3$ simulated by MERRA2-GMI at 300 hPa due to (a) dynamics, (b) physics, and (c) chemistry at the northern middle and low latitudes for June--August in 2019.
+    }
+    \label{fig:uto3_tendency}
+\end{figure}
+
 
 \section{结果与讨论：中国东南部地区}
 
@@ -163,7 +284,7 @@ The gray lines are the lapse rate tropopauses.
 具体来说，在两次个例中化学反应对O$_3$起到了正贡献，其影响程度是动力输送的5--10倍，这表明化学贡献在对流的整个生命期中占主导地位。
 
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\textwidth]{./figures/tendency_o3.png}
 \caption{
