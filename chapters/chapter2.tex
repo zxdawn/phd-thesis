@@ -84,8 +84,13 @@ WWLLN的详细处理算法由\citet{Rodger.2004}给出。
 \subsection{臭氧监测仪（OMI）}
 
 臭氧监测仪（OMI）搭载在Aura卫星（2004年发射）上，该卫星是下午列车（A-train）卫星组的成员\citep{Levelt.2006,Levelt.2018}。
-OMI在$\sim$13:45 LT（升交点）经过赤道，条带宽度为2600 km，星下点分辨率为13 km $\times$ 24 km。
-自2007年初以来，由于被称为“行异常”的异常辐射\citep{Dobber.2008}，一些测量数据变得无效。
+OMI在当地时$\sim$13:45（升交点）经过赤道，在 705 公里的高度以 98.2$^{\circ}$ 的倾角运行，幅宽为2600 km，最高分辨率为13 km $\times$ 24 km。
+OMI是一种紫外/可见光光谱仪，光谱范围在270 nm--500 nm，光谱分辨率约为0.5 nm，可用来观测NO$_2$、SO$_2$、HCHO、BrO 和 OClO等痕量气体。
+OMI 使用二维探测器，其中在探测器的一个轴上对跨轨道地面像素进行成像，在另一个轴上记录光谱信息。 这种传感技术允许同时测量条带中的所有地面像素，因此，OMI 没有扫描镜，且该二维检测器可实现宽幅、良好空间分辨率和高信噪比的组合。
+OMI采用差分光学吸收光谱（DOAS）拟合来确定NO$_2$和O$_3$的垂直柱密度，其中NO$_2$数据通常用于研究城市空气污染，评估NO$_x$排放源的影响，监测NO$_2$污染物的变化趋势等。
+OMI的观测数据可以与其他大气环境监测仪器数据相结合，共同为研究者提供更全面的大气环境数据。
+
+然而自2007年初以来，由于被称为“行异常”的异常辐射\citep{Dobber.2008}，一些测量数据变得无效。
 对于当前的研究，我们使用NASA标准产品v3.0\citep{Krotkov.2017}作为LNO$_x$反演算法的输入。
 
 对流层NO$_2$垂直柱密度($V_{\ch{LNO2}}$)的计算主要包括以下步骤。
@@ -107,7 +112,18 @@ OMI在$\sim$13:45 LT（升交点）经过赤道，条带宽度为2600 km，星�
 
 \subsection{对流层观测仪（TROPOMI）}
 
-2017年10月13日，搭载对流层观测仪（TROPOMI）的哨兵5号（Sentinel-5 Precursor）卫星成功发射\citep{Veefkind.2012}。
+2017年10月13日，搭载对流层观测仪（TROPOMI）的哨兵5号（Sentinel-5 Precursor）卫星成功发射\citep{Veefkind.2012}，同OMI一样，也于每日当地时间13:30左右穿过赤道。
+TROPOMI提供在四个通道（紫外、可见光、近红外和短波红外）中测量各种痕量气体浓度，以及云和气溶胶特性。
+在用于NO$_2$反演的可见光通道（400–496 nm）中，光谱分辨率和采样分别为 0.54 和 0.20 nm，信噪比约为 1500。
+
+单个地面像素为7.2 km（截至2019年8月6日为5.6 km），沿着轨迹的积分时间为1.08 s（0.84 s），在条带中间的跨轨迹方向为 3.6 km。
+轨道上有450个地面像素（行），它们的大小朝向条带边缘或多或少保持不变（最大像素宽约14km）。
+扫描幅宽约为2600 km，TROPOMI每天都实现全球覆盖，除了赤道处约0.5$^{\circ}$宽度的轨道之间的窄带。
+由于处理中太阳天顶角（$\theta_0$ $\leq$ 88$^{\circ}$）的限制，约有15\%的地面像素未处理。
+
+在非常明亮的辐射场景（例如高云）中，包含波段4（可见；例如用于NO$_2$反演）和波段6（近红外；例如用于云数据反演）的电荷耦合器件（CCD） 探测器可能会出现饱和效应\citep{Ludewig.2020}，导致某些光谱（即波长）像素的辐射率低于预期。
+在饱和度大的情况下，可能会发生电荷溢出：过量电荷从饱和的行方向流入相邻的像素，导致某些光谱像素的辐射率高于预期。
+1.0.0版的1b级光谱包含饱和度标记，但不包含溢出标记；2.0.0 版开始有溢出标记\citep{Ludewig.2020}。
 对于本文的研究，我们使用Sentinel-5P产品算法实验室（S5P-PAL）再处理产品（v2.3.1）。
 与v1.2/v1.3版本相比，新版本的产品包含的尖峰去除功能，以更好地处理探测器饱和和光晕效应，从而在对流产生的明亮云层上提供更有效的数据\citep{Ludewig.2020,VanGeffen.2022}。
 其中具有较大检索错误（processing\_quality\_flags > 0）的像素被过滤掉。
@@ -129,6 +145,27 @@ NO$_2$(p)是示踪剂模型v5（TM5）模拟的NO$_2$垂直廓线。
 下文中，“云上”或“云下”都是相对于OMI或TROPOMI测得的云压而言。
 \citet{Beirle.2009}的敏感性研究比较了云底和云顶的化学成分，发现云中大部分来自闪电的二氧化氮可以被卫星探测到。
 云压的概念不仅应用于LNO$_x$的研究，还应用于计算上对流层O$_3$和NO$_x$的云切片方法\citep{Ziemke.2009,Choi.2014,Strode.2017,Ziemke.2017,Marais.2018}。
+
+
+\subsection{微波临边探测器（MLS）}
+
+微波临边探测仪 (MLS) 搭载在Aura卫星上，在当地时$\sim$13:45（升交点）经过赤道。
+MLS是一种热发射微波临边探测仪，可测量中间层、平流层和对流层上层温度、臭氧和其他几种痕量气体的垂直剖面。
+MLS仪器主要使用240 GHz 微波波段进行臭氧反演，在 38 个压力层上（0.0215--261 hPa）具有有效的科学数据。
+这些层的垂直间距在1 hPa 以下各处约为1.3 km，在 1 hPa 以上的大多数高度约为 2.7 km。
+相比之下，O$_3$反演的垂直分辨率为$\approx$3 km，从 261 hPa 向上延伸到中间层。
+本研究中使用的MLS O$_3$廓线数据（5.0版本）的时间段为2019年6月至8月，为了与OMI和TROPOMI匹配，我们仅使用白天的O$_3$廓线数据。
+由于本文研究对象为对流云，我们参考\citet{Livesey.2013}利用冰水含量（IWC）来获得对流云条件的有效O$_3$廓线数据。
+MLS的IWC产品与O$_3$数据一样，是基于 240 GHz 光谱区域（~1.2 mm）的观测结果。
+在此波长下只能观察到具有大粒径的厚云（215 hPa高度的IWC $>$ 0.6 mg m$^{-3}$，\citep{Wu.2008}）。 这种云通常与深对流核有关，而不是外流或局地形成的卷云。
+因此，MLS IWC在本研究中用作深对流的量度，其有效范围为 215 hPa 至 83 hPa。
+IWC加权函数的分析表明，215 hPa高度IWC的垂直分辨率约为4 km\citep{Wu.2008}。
+\citet{Livesey.2013}采用迭代拟合算法以去除IWC产品中的一些残余晴空信号。
+具体来说，这涉及计算IWC产品的每日 10$^{\circ}$纬度分辨率纬向均值，反复剔除大于均值两个标准差的数据，
+并在每次迭代中重新计算剩余总体的均值和标准差。
+一旦该方法收敛（通常在5--10次迭代内），任何大于 3$\sigma$ 的 IWC值都被认为是具有统计显著性的对流云并包含在平均值中（去除了纬向平均“背景”）。
+此外我们使用MLS O$_3$的数据质量标志来进一步提取有效数据：准确度 $>$ 0、状态为偶数、数据质量 $>$ 1.0以及收敛度 $<$ 1.03。
+
 
 \subsection{闪电氮氧化物的反演} \label{section:amf_definition}
 
@@ -182,11 +219,11 @@ pixels with the cloud radiance fraction larger than 0.7.
 \centering
 \includegraphics[width=\textwidth]{./figures/cloud-slicing_schematic.png}
 \caption{云切片技术示意图（未按比例）：(a) 在不同云压条件下的两次云上NO$_2$ 柱密度测量（蓝色：云压低的柱密度；红色：云压高的柱密度）；
-(b) 在压力柱坐标平面上显示的测量值； (c) NO$_2$体积混合比（VMR）源自云上NO$_2$垂直柱密度（VCD）与云压的斜率，置信区间为水平误差条和气压范围为垂直误差条。\\
+(b) 在压力柱坐标平面上显示的测量值； (c) NO$_2$体积混合比（VMR）源自云上NO$_2$垂直柱密度（VCD）与云压的斜率，置信区间为水平误差条和气压范围为垂直误差条。[图片来源：\citet{Choi.2014}]\\
 Figure \ref{fig:cloud-slicing_schematic}. Schematic view of the cloud-slicing technique (not to scale):
 (a) two above-cloud NO$_2$ column measurements at different cloud scene pressures (blue: column with lower scene pressure; and red: column with higher scene pressure);
 (b) the measurements shown on a pressure-column coordinate plane;
-(c) NO$_2$ volume mixing ratios (VMR) derived from the slope of above-cloud NO$_2$ vertical column densities (VCD) versus cloud scene pressure with confidence interval (horizontal error bar) and pressure range (vertical error bar).
+(c) NO$_2$ volume mixing ratios (VMR) derived from the slope of above-cloud NO$_2$ vertical column densities (VCD) versus cloud scene pressure with confidence interval (horizontal error bar) and pressure range (vertical error bar). [Image source: \citet{Choi.2014}]
 }
 \label{fig:cloud-slicing_schematic}
 \end{figure}
@@ -243,11 +280,24 @@ V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
 
 
 
-\section{大气化学模式模式}
+\section{大气化学模式}
 
 \subsection{WRF-Chem模式}
 
+WRF-CHEM是一个先进的大气化学模型，专注于模拟大气中微量气体和颗粒物的行为。它将Weather Research and Forecasting (WRF)模型与全面的大气化学组分结合起来，研究大气动力学和化学过程之间的相互作用。
+该模型包含了大量的化学反应、气溶胶过程和辐射，可以准确模拟大气中各种微量气体和颗粒物的行为。它还包括了各种来源的排放（如电力厂、交通和工业过程）的处理，使其成为研究空气污染和人类活动对空气质量影响的有价值的工具。
+WRF-CHEM模型的一个关键优势是它能够在高空间和时间分辨率下模拟大气化学，使研究人员可以详细研究地区和局部范围内微量气体和颗粒物的行为。此外，该模型可以采用在线和离线配置，使其成为一种灵活的工具，可以针对不同的研究问题和计算资源进行调整。
+WRF-CHEM模型的另一个优势是它与其他模型（如陆地表模型和海洋模型）兼容，使研究人员可以研究土地利用、海洋和大气的相互影响和相关的化学过程。这些模型结合可以给出一个全面的地球系统研究方案。
+另外，WRF-CHEM模型的数据输入和输出也很灵活，可以从大量的气象数据和大气化学数据源中获取数据，并将模拟结果输出到不同的数据格式，以方便进一步分析和研究。
+总体而言，WRF-CHEM是一个强大的大气化学模型，具有高空间和时间分辨率、灵活性、兼容性和数据灵活性等优势，是研究大气动力学和化学过程的有力工具。
 
+WRF-CHEM的动力框架基于NCAR Community Atmosphere Model（CAM），具有高效的大气动力学模拟能力。它的物理方案包括对大气温度、压力、风速等的模拟，同时考虑了太阳辐射、长波辐射、短波辐射等因素。
+该模型的化学方案包括大气中多种物质的模拟，如空气污染物（如二氧化硫，氮氧化物等）、温室气体（如二氧化碳，甲烷等）、气溶胶等。同时，WRF-CHEM还考虑了多种化学反应，如光化学反应、氧化反应等。这些物理和化学方案的结合使得WRF-CHEM模型具有更高的科学性和实际应用价值。
+
+WRF-CHEM的化学方案主要包括MOZCART，CBMZ和RADM2等多种模型。
+MOZCART（Model for Ozone and Related Chemical Tracers）是一种基于大气化学的模型，它用于模拟大气中的臭氧和相关物质。该模型考虑了光化学反应、氧化反应等多种影响大气臭氧的因素，并且可以通过数据和实验结果进行校验。
+CBMZ（Carbon Bond Mechanism）是一种基于碳键机制的模型，主要用于模拟大气中的温室气体和污染物。该模型通过考虑碳键反应和物理过程，以及温室气体和污染物的源和汇，对大气中温室气体和污染物的分布进行模拟。
+RADM2（Regional Acid Deposition Model 2）是一种用于模拟大气酸沉降的化学模型。该模型考虑了大气中的酸性物质（如硫酸根和氮酸根）的源和汇，以及气溶胶等对酸沉降的影响。通过使用RADM2，可以评估大气中酸沉降的影响，并且为减少酸沉降提供有力的科学依据。
 
 \subsection{MERRA2-GMI模式}
 
