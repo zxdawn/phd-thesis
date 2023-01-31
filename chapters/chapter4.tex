@@ -13,9 +13,9 @@
 
 \section{结果与讨论}
 
-\subsection{云上二氧化氮柱密度的分布}
+\subsection{云上二氧化氮柱浓度的分布}
 
-由上一章分析可知，将卫星观测所得的NO$_2$柱密度和闪电数据相结合，可以得出LNO$_2$的产率，然而NO$_2$的垂直分布无法由此直接得出。
+由上一章分析可知，将卫星观测所得的NO$_2$柱浓度和闪电数据相结合，可以得出LNO$_2$的产率，然而NO$_2$的垂直分布无法由此直接得出。
 因此本章将采用云切片的方法，利用卫星针对不同高度深厚对流云的观测，得到云间的平均NO$_2$浓度，从而获得对流状态下的NO$_2$平均廓线，并与全球模式进行对比分析。
 
 图\ref{fig:no2geo_tropomi}为TROPOMI观测的2019年中低纬度云上NO$_2$分布图，
@@ -25,9 +25,9 @@
 这些地区与图\ref{fig:no2_ltngcount}（c）的闪电高值区相对应。
 前人研究表明，中低纬LNO$_2$的峰值分布在100--500 hPa之间\citep{Pickering.1988,Ott.2010,Luo.2017}，
 故330 hPa和450 hPa的云上NO$_2$包含了LNO$_2$的贡献。
-然而TROPOMI的晴空NO$_2$平均柱密度产品显示（图\ref{fig:no2_ltngcount}b），这些地区属于NO$_2$高污染区，所以上对流层的NO$_2$也有来自深对流垂直输送的污染NO$_2$。
+然而TROPOMI的晴空NO$_2$平均柱浓度产品显示（图\ref{fig:no2_ltngcount}b），这些地区属于NO$_2$高污染区，所以上对流层的NO$_2$也有来自深对流垂直输送的污染NO$_2$。
 中云（570 hPa和670 hPa）的云上NO$_2$有效数据更多，云上NO$_2$高值区包含了高云（330 hPa和450 hPa）的云上NO$_2$高值区。
-其中污染NO$_2$的贡献更为明显，与晴空NO$_2$平均柱密度产品分布更为接近，如中国东部、欧洲、和美国东北部的工业源以及非洲中部的生物质燃烧。
+其中污染NO$_2$的贡献更为明显，与晴空NO$_2$平均柱浓度产品分布更为接近，如中国东部、欧洲、和美国东北部的工业源以及非洲中部的生物质燃烧。
 污染物排放在低云（770 hPa和870 hPa）的云上NO$_2$最为明显，然而由于热带地区云顶较高，有效数据更少。
 
 
@@ -35,7 +35,7 @@
     \centering
     \includegraphics[width=15cm]{./figures/no2geo_tropomi.pdf}
     \caption{
-    2019年6--8月北半球中低纬度TROPOMI观测的云上NO$_2$柱密度分布图：
+    2019年6--8月北半球中低纬度TROPOMI观测的云上NO$_2$柱浓度分布图：
     高云（[a] 330 hPa 和 [b] 450 hPa)，中云 ([c] 570 hPa 和 [d] 670 hPa)，
     及低云 ([e] 770 hPa 和 [f] 870 hPa)。 \\
     NO$_2$ above cloud at the middle and low latitudes for June--August in 2019:
@@ -48,10 +48,10 @@
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=13cm]{./figures/no2_ltngcount.pdf}
+    \includegraphics[width=12cm]{./figures/no2_ltngcount.pdf}
     \caption{
     (a) 云切片的总有效气压层数，层数$\leq$ 5为蓝色，= 6 为橙色，白色方框为NO$_2$廓线选区（图\ref{fig:utno2_profile}）。
-    (b)2019--2021年中低纬度夏季(6--8月)TROPOMI测得的NO$_2$平均柱密度。
+    (b)2019--2021年中低纬度夏季(6--8月)TROPOMI测得的NO$_2$平均柱浓度。
     (c) 1995--2014年中低纬度夏季(6--8月)LIS/OTD的闪电密度产品。 \\
     (a) Number of total valid cloud-slicing pressure levels.
     Grids with number of levels $leq$ 5 and = 6 are filled in blue and orange, respectively.
@@ -65,7 +65,7 @@
 \subsection{二氧化氮的垂直分布}
 
 
-上节得到的云上NO$_2$为对流层NO$_2$柱密度，柱底为云的中心气压，
+上节得到的云上NO$_2$为对流层NO$_2$柱浓度，柱底为云的中心气压，
 通过\ref{sec:cloud-slicing}章的云切片算法可进一步得到每层的NO$_2$浓度，即NO$_2$廓线。
 
 图\ref{fig:utno2_tropomi}为2019年6--8月不同高度的NO$_2$平均浓度。
@@ -90,7 +90,7 @@
 接着选取TROPOMI云切片各层均有有效数据的区域，结合过境期间模拟的LNO$_2$排放速率垂直分布进行廓线分析。
 图\ref{fig:utno2_merra2}为2019年6--8月与TROPOMI对应的MERRA2-GMI NO$_2$模拟结果。
 由两者浓度之差（图\ref{fig:utno2_delta}）可知，无论位于陆地还是海洋，MERRA2-GMI较TROPOMI存在20--80 pptv的低估，
-其中海洋上的误差可能由TROPOMI NO$_2$反演过程中低估的平流层NO$_2$柱密度或高估的辐射强度所导致\citep{VanGeffen.2020}。
+其中海洋上的误差可能由TROPOMI NO$_2$反演过程中低估的平流层NO$_2$柱浓度或高估的辐射强度所导致\citep{VanGeffen.2020}。
 
 
 \begin{figure}[!htbp]
@@ -121,7 +121,7 @@
 由LIS/OTD数据（图\ref{fig:no2_ltngcount}c）可知，青藏高原西南部闪电强度较弱，故模式的高估主要应来自于亚洲夏季风的污染物输送。
 
 中云的云切片结果有效范围最广，总体上来看TROPOMI和MERRA2-GMI之间误差较低（-10--30 pptv），
-且两者具有相似的高值区分布：北美、东欧、印度、以及中国华北地区，这些地区与污染NO$_2$柱密度高值区对应。
+且两者具有相似的高值区分布：北美、东欧、印度、以及中国华北地区，这些地区与污染NO$_2$柱浓度高值区对应。
 中云的NO$_2$可能来源有对流输送的地表污染和污染的出流区，如中国华北地区的NO$_2$高值传输至东部的黄海（其中一部分也来自于船舶排放）。
 其中$>$ 40 pptv的正误差集中于南美洲北部、缅甸、和泰国北部，由于这些地区地基NO$_2$稀缺，
 所以该误差应归因于卫星反演误差还是模式NO$_x$排放源需更新，有待进一步研究。
@@ -180,7 +180,7 @@
     \includegraphics[width=12cm]{./figures/flash_scd.png}
     \caption{
     2019 年 7 月 25 日（左）和 2020 年 9 月 7 日（右）的个例。
-    (a, b) 对流层 NO$_2$ 斜柱密度（SCD$_\textrm{tropNO$_2$}$，填充色）和云压（线条颜色）。
+    (a, b) 对流层 NO$_2$ 斜柱浓度（SCD$_\textrm{tropNO$_2$}$，填充色）和云压（线条颜色）。
     这些白色网格单元代表缺失的 TROPOMI 数据，黑色实线为江苏省。
      (c, d) NO$_2$ 窗区中的云辐射分数和闪电。闪电的颜色取决于相对于TROPOMI过境的发生时间。\\
     Figure \ref{fig:flash_scd}. Events on 25 July 2019 (left) and 07 September 2020 (right).
@@ -203,7 +203,7 @@
 
 \begin{figure}[!htbp]
     \includegraphics[width=17cm]{./figures/s5p_apriori_scd.png}
-    \caption{使用不同闪电NO排放的WRF-Chem结果，重新计算得到的对流层NO$_2$斜柱密度 (SCD$_\textrm{tropNO$_2$}$)：
+    \caption{使用不同闪电NO排放的WRF-Chem结果，重新计算得到的对流层NO$_2$斜柱浓度 (SCD$_\textrm{tropNO$_2$}$)：
     Figure \ref{fig:s5p_apriori_scd}. (a, e) 0 mol每闪电, (b, f ) 330 mol每闪电, (c, g) 500 mol每闪电 和 (d, h) 700 mol每闪电。\\
     The tropospheric NO$_2$ slant column density (SCD$_\textrm{tropNO$_2$}$) recalculated using the WRF-Chem results with different lightning NO settings: (a, e) 0 mol/flash, (b, f) 330 mol/flash, (c, g) 500 mol/flash and (d, h) 700 mol/flash.
     }

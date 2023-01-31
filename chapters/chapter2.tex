@@ -93,24 +93,24 @@ WWLLN的详细处理算法由\citet{Rodger.2004}给出。
 OMI在当地时$\sim$13:45（升交点）经过赤道，在 705 公里的高度以 98.2$^{\circ}$ 的倾角运行，幅宽为2600 km，最高分辨率为13 km $\times$ 24 km。
 OMI是一种紫外/可见光光谱仪，光谱范围在270 nm--500 nm，光谱分辨率约为0.5 nm，可用来观测NO$_2$、SO$_2$、HCHO、BrO 和 OClO等痕量气体。
 OMI 使用二维探测器，其中在探测器的一个轴上对跨轨道地面像素进行成像，在另一个轴上记录光谱信息。 这种传感技术允许同时测量条带中的所有地面像素，因此，OMI 没有扫描镜，且该二维检测器可实现宽幅、良好空间分辨率和高信噪比的组合。
-OMI采用差分光学吸收光谱（DOAS）拟合来确定NO$_2$和O$_3$的垂直柱密度，其中NO$_2$数据通常用于研究城市空气污染，评估NO$_x$排放源的影响，监测NO$_2$污染物的变化趋势等。
+OMI采用差分光学吸收光谱（DOAS）拟合来确定NO$_2$和O$_3$的垂直柱浓度，其中NO$_2$数据通常用于研究城市空气污染，评估NO$_x$排放源的影响，监测NO$_2$污染物的变化趋势等。
 OMI的观测数据可以与其他大气环境监测仪器数据相结合，共同为研究者提供更全面的大气环境数据。
 
 然而自2007年初以来，由于被称为“行异常”的异常辐射\citep{Dobber.2008}，一些测量数据变得无效。
 对于当前的研究，我们使用NASA标准产品v3.0\citep{Krotkov.2017}作为LNO$_x$反演算法的输入。
 
-对流层NO$_2$垂直柱密度($V_{\ch{LNO2}}$)的计算主要包括以下步骤。
+对流层NO$_2$垂直柱浓度($V_{\ch{LNO2}}$)的计算主要包括以下步骤。
 
-（1）NO$_2$总斜柱密度由 OMI 优化的差分光学吸收光谱（DOAS）拟合确定。
+（1）NO$_2$总斜柱浓度由 OMI 优化的差分光学吸收光谱（DOAS）拟合确定。
 
-（2）通过从测量的总斜柱密度中减去由仪器引起的跨道偏差，得到校正（“去条纹”）的总斜柱密度。
+（2）通过从测量的总斜柱浓度中减去由仪器引起的跨道偏差，得到校正（“去条纹”）的总斜柱浓度。
 
 （3）平流层或对流层的空气质量因子（$AMF_{\ch{strat}}$，$AMF_{\ch{trop}}$）是由考虑加权散射权重的NO$_2$先验廓线的垂直积分计算得到。
 这些先验廓线是GMI模式模拟的月平均先验廓线（2004--2007 年）。
 
-（4）平流层NO$_2$垂直柱密度（$V_{\ch{strat}}$）是通过减去对流层NO$_2$的先验贡献和三步（插值、过滤和平滑）算法计算得出\citep{Bucsela.2013}。
+（4）平流层NO$_2$垂直柱浓度（$V_{\ch{strat}}$）是通过减去对流层NO$_2$的先验贡献和三步（插值、过滤和平滑）算法计算得出\citep{Bucsela.2013}。
 
-（5）$V_{\ch{strat}}$ 使用 $AMF_{\ch{strat}}$ 转换为斜柱密度，并从测量的总斜柱密度中减去，从而得到对流层NO$_2$斜柱密度（$S_{\ch{NO2}}$），进而 $V_{\ch{NO2}}$ = $S_{\ch{NO2}}$/$AMF_{\ch{trop}}$。
+（5）$V_{\ch{strat}}$ 使用 $AMF_{\ch{strat}}$ 转换为斜柱浓度，并从测量的总斜柱浓度中减去，从而得到对流层NO$_2$斜柱浓度（$S_{\ch{NO2}}$），进而 $V_{\ch{NO2}}$ = $S_{\ch{NO2}}$/$AMF_{\ch{trop}}$。
 
 （6）基于这种方法，我们开发了一种新的 $AMF_{\ch{LNO_x}}$，通过替换原来的步骤来获得所需的 $V_{\ch{LNO_x}}$（$V_{\ch{LNO_x}}$ = $S_{\ch{NO2}}$/$AMF_{\ch{LNO_x}}$）。
 
@@ -173,9 +173,9 @@ IWC加权函数的分析表明，215 hPa高度IWC的垂直分辨率约为4 km\ci
 此外我们使用MLS O$_3$的数据质量标志来进一步提取有效数据：准确度 $>$ 0、状态为偶数、数据质量 $>$ 1.0以及收敛度 $<$ 1.03。
 
 
-\subsection{闪电氮氧化物的反演} \label{section:amf_definition}
+\subsection{闪电氮氧化物的计算} \label{section:amf_definition}
 
-基于$AMF_{\ch{trop}}$，为了得到对流层LNO$_2$或LNO$_x$的垂直柱密度，我们只需将分母改成LNO$_2$或LNO$_x$的垂直积分即可。
+基于$AMF_{\ch{trop}}$，为了得到对流层LNO$_2$或LNO$_x$的垂直柱浓度，我们只需将分母改成LNO$_2$或LNO$_x$的垂直积分即可。
 
 \begin{equation} \label{eq:AMF_LNO2}
 AMF_{\ch{LNO_2}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) NO_2(p) \: dp + f_r \int_{p_{cloud}}^{p_{tp}} w_{cloudy}(p) NO_2(p) \: dp}{\int_{p_{surf}}^{p_{tp}} LNO_2(p) \: dp}
@@ -217,15 +217,15 @@ pixels with the cloud radiance fraction larger than 0.7.
 \subsection{云切片算法} \label{sec:cloud-slicing}
 
 前人研究表明，云切片方法（cloud-slicing）可用于计算云内的O$_3$和NO$_2$的浓度，
-该方法是计算O$_3$总柱密度的对流云微分法（CCD）的拓展\citep{Ziemke.1998,Ziemke.2001}。
-简要来说，是通过线性拟合OMI或TROPOMI测得的云上NO$_2$或O$_3$柱密度和云压（$p_{cloud}$）的斜率，从而得到NO$_2$或O$_3$的浓度，计算方法的框架见图\ref{fig:cloud-slicing_schematic}。
+该方法是计算O$_3$总柱浓度的对流云微分法（CCD）的拓展\citep{Ziemke.1998,Ziemke.2001}。
+简要来说，是通过线性拟合OMI或TROPOMI测得的云上NO$_2$或O$_3$柱浓度和云压（$p_{cloud}$）的斜率，从而得到NO$_2$或O$_3$的浓度，计算方法的框架见图\ref{fig:cloud-slicing_schematic}。
 
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=\textwidth]{./figures/cloud-slicing_schematic.png}
-\caption{云切片技术示意图（未按比例）：(a) 在不同云压条件下的两次云上NO$_2$ 柱密度测量（蓝色：云压低的柱密度；红色：云压高的柱密度）；
-(b) 在压力柱坐标平面上显示的测量值； (c) NO$_2$体积混合比（VMR）源自云上NO$_2$垂直柱密度（VCD）与云压的斜率，置信区间为水平误差条和气压范围为垂直误差条。[图片来源：\citet{Choi.2014}]\\
+\caption{云切片技术示意图（未按比例）：(a) 在不同云压条件下的两次云上NO$_2$ 柱浓度测量（蓝色：云压低的柱浓度；红色：云压高的柱浓度）；
+(b) 在压力柱坐标平面上显示的测量值； (c) NO$_2$体积混合比（VMR）源自云上NO$_2$垂直柱浓度（VCD）与云压的斜率，置信区间为水平误差条和气压范围为垂直误差条。[图片来源：\citet{Choi.2014}]\\
 Figure \ref{fig:cloud-slicing_schematic}. Schematic view of the cloud-slicing technique (not to scale):
 (a) two above-cloud NO$_2$ column measurements at different cloud scene pressures (blue: column with lower scene pressure; and red: column with higher scene pressure);
 (b) the measurements shown on a pressure-column coordinate plane;
@@ -270,13 +270,13 @@ V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
 \end{split}
 \end{equation}
 
-其中$S_{\ch{total}}$是总NO$_2$斜柱密度，$V_{\ch{strat}}$为平流层NO$_2$垂直柱密度，$AMF_{\ch{strat}}$为平流层空气质量分子。
+其中$S_{\ch{total}}$是总NO$_2$斜柱浓度，$V_{\ch{strat}}$为平流层NO$_2$垂直柱浓度，$AMF_{\ch{strat}}$为平流层空气质量分子。
 
 
-虽然云切片方法无需知道具体的平流层NO$_2$柱密度，即可推导出对流层的$VMR_{\ch{NO2}}$，但它依赖于以下假设和条件：
+虽然云切片方法无需知道具体的平流层NO$_2$柱浓度，即可推导出对流层的$VMR_{\ch{NO2}}$，但它依赖于以下假设和条件：
 1）该方法仅适用于有相对大量的多云像素处于邻近位置，且这些像素具有足够的云压变化；
 2）NO$_2$在给定的云压和空间范围内需在垂直和水平方向上充分混合；
-3）平流层柱密度在像素区域内保持不变；
+3）平流层柱浓度在像素区域内保持不变；
 4）导出的$VMR_{\ch{NO2}}$绝对量级仅与$V_{\ch{NO2Vis}}$具有一样的准确度，云压也可会带来额外的不确定性。
 因此，我们参考\citet{Marais.2021}设置了以下限制条件来获得有效的云切片结果。
 首先将SZA $\geq$ 80$^{\circ}$ 和表面反照率 $\geq$  30\%的像素数据去除。
