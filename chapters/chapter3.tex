@@ -580,19 +580,19 @@ Figure \ref{fig:us_domain}. Domain and terrain height (m) of the WRF-Chem simula
 \citet{Lapierre.2020}利用1$^{\circ}$ $\times$ 1$^{\circ}$网格的对角线长度和OMI过境时美国大陆上空500--100 hPa的平均风速计算得到t$_{window}$为2.4 h。
 同时，\citet{Lapierre.2020}定义在t$_{window}$时间段内，至少发生2400次闪电或8160次闪击的网格才能提供足够的LNO$_x$给OMI探测。
 \citet{Bucsela.2019}的研究表明，低频率的闪电具有更高的LNO$_x$产率（PE），而该段数据在\citet{Lapierre.2020}研究中被剔除。
-通过比较使用每个网格至少2400次闪电和至少1次闪电的标准所得结果，我们也得到相同的结论（图\ref{fig:flash_threshold}）。
+通过比较使用每个网格至少2400次闪电和至少1次闪电的标准所得结果，我们也得到相同的结论（图\ref{fig:us_flash_threshold}）。
 由于我们的研究重点是开发一种新的空气质量转换因子（AMF），并将计算结果与使用类似闪电阈值的其他产品进行比较\citep{Pickering.2016,Lapierre.2020}，
 因此我们接下来使用相同的至少2400次闪电标准来进行结果分析。
 
 
 \begin{figure}[htbp]
-    \includegraphics[width=15cm]{./figures/flash_threshold.pdf}
+    \includegraphics[width=15cm]{./figures/us_flash_threshold.pdf}
     \caption{
     (a) 每日 LNO$_x$ 产率与 ENTLN 总闪的关系，筛选条件为CRF $\geq$ 90\% 且1$^{\circ}$ $\times$ 1$^{\circ}$网格中至少有1次闪电。
      (b) 与 (a) 相同，但针对闪击。\\
-    Figure \ref{fig:flash_threshold}. (a) Daily LNO$_\textrm{x}$ production efficiencies versus ENTLN total flashes data, with CRF $\geq$ 90\% and a flash threshold of 1 flash box$^{-1}$.
+    Figure \ref{fig:us_flash_threshold}. (a) Daily LNO$_\textrm{x}$ production efficiencies versus ENTLN total flashes data, with CRF $\geq$ 90\% and a flash threshold of 1 flash box$^{-1}$.
     (b) Same as (a) but for strokes.}
-    \label{fig:flash_threshold}
+    \label{fig:us_flash_threshold}
 \end{figure}
 
 
@@ -718,7 +718,7 @@ CRF 从 70\% 增加到 90\% 引起的 LNO$_x$ PE 增加与\citet{Pickering.2016}
 
 \citet{Lapierre.2020}基于 BEHR NO$_2$ 产品得出 LNO$_2$ 产量，
 为了使本研究的结果与\citet{Pickering.2016}和\citet{Lapierre.2020}的结果具有可比性，我们选择 NO$_2$  而不是 NO$_x$  来计算每次闪电的产量（产率，PE）。
-在图\ref{fig:pe_timeseries}中，根据 CRF $\geq$ 90\% 和每 2.4 h 2400次闪电的阈值，绘制了2014年5--8月美国大陆每天 NO$_2$Vis、LNO$_2$Vis、LNO$_2$ 和 LNO$_2$Clean 产率的时间序列图。
+在图\ref{fig:us_pe_timeseries}中，根据 CRF $\geq$ 90\% 和每 2.4 h 2400次闪电的阈值，绘制了2014年5--8月美国大陆每天 NO$_2$Vis、LNO$_2$Vis、LNO$_2$ 和 LNO$_2$Clean 产率的时间序列图。
 其中，LNO$_2$ PE 大多在 20 至 80 mol每闪电的范围内，LNO$_2$Vis PE 小于 LNO$_2$ PE，因为后者在云层下含有 LNO$_2$。
 \citet{Pickering.2016}的GMI模拟结果表明，25\%--30\%的LNO$_x$柱密度位于 云压（CP）以下，而我们的 WRF-Chem 模拟结果显示该比例为 56$\pm$20\%。
 云属性对 LNO$_x$ PE 的影响将在第\ref{sec:uncertainty}节中进行更详细地讨论。
@@ -731,30 +731,30 @@ CRF 从 70\% 增加到 90\% 引起的 LNO$_x$ PE 增加与\citet{Pickering.2016}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=12cm]{./figures/pe_timeseries.pdf}
+\includegraphics[width=12cm]{./figures/us_pe_timeseries.pdf}
 \caption{（上图）NO$_2$Vis、LNO$_2$Vis、LNO$_2$ 和 LNO$_2$Clean产率的时间序列（2014年5--8月美国大陆），筛选条件为CRF $\geq$ 90\% 和每 2.4 小时 至少2400 次闪电。
 （下图）在CRF$\geq$ 90\%的条件下，NO$_2$Vis 和 LNO$_2$Vis 之间百分比差异以及 NO$_2$Vis 和 LNO$_2$Clean 之间百分比差异的时间序列。
 8 月 23 日黑点的值（未显示）为 1958\%。\\
-Figure \ref{fig:pe_timeseries}. (top) Time series of NO$_2$Vis, LNO$_2$Vis, LNO$_2$ and LNO$_2$Clean production per day over the CONUS for MJJA 2014 with CRF $\geq$ 90\% and a flash threshold of 2400 flashes per 2.4 h.
+Figure \ref{fig:us_pe_timeseries}. (top) Time series of NO$_2$Vis, LNO$_2$Vis, LNO$_2$ and LNO$_2$Clean production per day over the CONUS for MJJA 2014 with CRF $\geq$ 90\% and a flash threshold of 2400 flashes per 2.4 h.
 (bottom) Time series of the percent differences between NO$_2$Vis and LNO$_2$Vis and the percent differences between NO$_2$Vis and LNO$_2$Clean with CRF $\geq$ 90\%.
 The value of black dot on August 23 (not shown) is 1958\%.}
-\label{fig:pe_timeseries}
+\label{fig:us_pe_timeseries}
 \end{figure}
 
-如图\ref{fig:pe_linear}所示，ENTLN 数据与 NO$_2$Vis、LNO$_2$Vis、LNO$_2$ 和 LNO$_2$Clean的线性回归，其筛选条件与图 \ref{fig:pe_timeseries} 相同。
+如图\ref{fig:us_pe_linear}所示，ENTLN 数据与 NO$_2$Vis、LNO$_2$Vis、LNO$_2$ 和 LNO$_2$Clean的线性回归，其筛选条件与图 \ref{fig:us_pe_timeseries} 相同。
 LNO$_2$Clean PE为 25.2$\pm$22.3 mol NO$_2$ 每闪电，相关系数为 0.25 和 2.3$\pm$2.1 mol NO$_2$每闪击，相关系数为 0.22。
-如图\ref{fig:pe_timeseries}所示，NO$_2$Vis PE 和 LNO$_2$Clean PE 之间的正百分比差异发生的频率远低于负差异的发生频率。
+如图\ref{fig:us_pe_timeseries}所示，NO$_2$Vis PE 和 LNO$_2$Clean PE 之间的正百分比差异发生的频率远低于负差异的发生频率。
 因此，NO$_2$Vis PE（17.1$\pm$17.2 mol NO$_2$ 每闪电和0.4$\pm$1.0 mol NO$_2$ 每闪击）小于使用线性回归方法得到的 LNO$_2$Clean PE。
 
 \begin{figure}[t]
-    \includegraphics[width=15cm]{./figures/pe_linear.pdf}
+    \includegraphics[width=15cm]{./figures/us_pe_linear.pdf}
     \caption{（a） 每日 NO$_2$Vis、LNO$_2$Vis、LNO$_2$ 和 LNO$_2$Clean 与 ENTLN 总闪的关系。
     （b） 与 （a） 相同，但针对闪击数据。
     （c） 每日 LNO$_x$Vis 和 LNO$_x$ 与总闪的关系。
     （d） 与 （c） 相同，但针对闪击数据。\\
-    Figure \ref{fig:pe_linear}. (a) Daily NO$_2$Vis, LNO$_2$Vis, LNO$_2$ and LNO$_2$Clean versus ENTLN total flashes data.
+    Figure \ref{fig:us_pe_linear}. (a) Daily NO$_2$Vis, LNO$_2$Vis, LNO$_2$ and LNO$_2$Clean versus ENTLN total flashes data.
     (b) Same as (a) but for strokes. (c) Daily LNO$_x$Vis and LNO$_x$ versus total flashes. (d) Same as (c) but for strokes.}
-    \label{fig:pe_linear}
+    \label{fig:us_pe_linear}
 \end{figure}
 
 为了将我们的结果与\citet{Lapierre.2020}的结果进行比较，
@@ -774,17 +774,17 @@ LNO$_2$Clean PE为 25.2$\pm$22.3 mol NO$_2$ 每闪电，相关系数为 0.25 和
 这比BEHR 每日产品（1 h）输出间隔更短，但 AMF 可能会受到不同 NO$_2$ 剖面的影响。
 鉴于这些因素，我们在所得数据的基础上来比较不同的方法，以尽量减少这些影响。
 
-同时，LNO$_2$ PE（18.7$\pm$18.1 mol每闪电，2.1$\pm$1.8 mol每闪击）介于 LNO$_2$Clean PE 和 NO$_2$Vis PE 之间，与图 \ref{fig:pe_timeseries} 中的日结果一致。
+同时，LNO$_2$ PE（18.7$\pm$18.1 mol每闪电，2.1$\pm$1.8 mol每闪击）介于 LNO$_2$Clean PE 和 NO$_2$Vis PE 之间，与图 \ref{fig:us_pe_timeseries} 中的日结果一致。
 此外，基于每日LNO$_x$ PE 求和值的线性回归结果为114.8$\pm$18.2 mol每闪电（或17.8$\pm$2.9 mol每闪击），该结果大于\citet{Pickering.2016}的91 mol每闪电。
 这一差异可能是由地理位置、闪电数据和化学模型所共同导致的。
 
 在 CRF $\geq$ 90\% 下，LNO$_2$ PE 的平均值和标准差为 46.2$\pm$35.1 mol 每闪电和 9.9$\pm$8.1 mol 每闪电，
-而 LNO$_x$ PE 为 125.6$\pm$95.9 mol 每闪电和 26.7$\pm$21.6 mol 每闪电（图\ref{fig:pe_sum}）。
-美国东南部的 LNO$_2$ PE 和 LNO$_x$ PE 均较高（由图\ref{fig:pe_sum}中的红框表示，25--37$^{\circ}$ N，75--95$^{\circ}$ W），这与\citet{Lapierre.2020} 和 \citet{Bucsela.2019}的研究结果相一致。
-而与图\ref{fig:pe_timeseries}相比，图\ref{fig:delta}（a）和（b）显示NO$_2$Vis PE 和 LNO$_2$Vis PE 之间的一些较大差异，这与我们对污染区域的预期一致。
+而 LNO$_x$ PE 为 125.6$\pm$95.9 mol 每闪电和 26.7$\pm$21.6 mol 每闪电（图\ref{fig:us_pe_sum}）。
+美国东南部的 LNO$_2$ PE 和 LNO$_x$ PE 均较高（由图\ref{fig:us_pe_sum}中的红框表示，25--37$^{\circ}$ N，75--95$^{\circ}$ W），这与\citet{Lapierre.2020} 和 \citet{Bucsela.2019}的研究结果相一致。
+而与图\ref{fig:us_pe_timeseries}相比，图\ref{fig:us_delta}（a）和（b）显示NO$_2$Vis PE 和 LNO$_2$Vis PE 之间的一些较大差异，这与我们对污染区域的预期一致。
 同时，LNO$_2$ PE 和 NO$_2$Vis PE 之间的差异取决于背景 NO$_2$、上升气流的强度和廓线分布。
-负差异是由上升气流携带的背景 NO$_2$ 引起的，而云下 LNO$_2$ 的部分导致 LNO$_2$ PE 高于 NO$_2$Vis PE（图\ref{fig:delta}（c））。
-图\ref{fig:delta}（d） 显示 LNO$_2$Vis 与 LNO$_2$占比为 10\%--80\%。
+负差异是由上升气流携带的背景 NO$_2$ 引起的，而云下 LNO$_2$ 的部分导致 LNO$_2$ PE 高于 NO$_2$Vis PE（图\ref{fig:us_delta}（c））。
+图\ref{fig:us_delta}（d） 显示 LNO$_2$Vis 与 LNO$_2$占比为 10\%--80\%。
 这可能是由云层的高度和 LNO$_2$ 的廓线造成的。
 如果CP在300 hPa附近，由于云层的覆盖，该比值将更小。
 因此，需要更好地了解LNO$_2$ 廓线和 云下的LNO$_x$。
@@ -792,37 +792,38 @@ LNO$_2$Clean PE为 25.2$\pm$22.3 mol NO$_2$ 每闪电，相关系数为 0.25 和
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=13cm]{./figures/pe_sum.png}
+\includegraphics[width=13cm]{./figures/us_pe_sum.png}
 \caption{（a） 和 （c） 在CRF $\geq$ 90\%条件下，2014年5--8月 1$^{\circ}$ $\times$ 1$^{\circ}$ LNO$_\textrm{x}$ 和LNO$_\textrm{2}$的平均产率分布图。
      （b） 和 （d） 与 （a） 和 （c） 相同，但针对闪击数据。美国东南部由红框表示。\\
-     Figure \ref{fig:pe_sum}. (a) and (c) Maps of 1$^{\circ}$ $\times$ 1$^{\circ}$ gridded values of mean LNO$_\textrm{x}$
+     Figure \ref{fig:us_pe_sum}. (a) and (c) Maps of 1$^{\circ}$ $\times$ 1$^{\circ}$ gridded values of mean LNO$_\textrm{x}$
     and LNO$_\textrm{2}$ production per flash with CRF $\geq$ 90\% for MJJA 2014.
     (b) and (d) Same as (a) and (c) except for strokes.
     The southeastern US is denoted by the red box in panels a--d.
 }
-\label{fig:pe_sum}
+\label{fig:us_pe_sum}
 \end{figure}
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=13cm]{./figures/delta.png}
+\includegraphics[width=13cm]{./figures/us_delta.png}
 \caption{(a) 2014年5--8月  平均对流层NO$_\textrm{2}$柱浓度。
 污染城市用星星表示：兰辛、新奥尔良和奥兰多，而清洁城市用三角形表示：休伦、查尔斯镇和塔伯勒。
 (b) 在CRF $\geq$ 90\%条件下，NO$_\textrm{2}$Vis 和 LNO$_\textrm{2}$Vis平均产率的差异。
 (c) 与 (b) 相同，但为 LNO$_\textrm{2}$ 和 NO$_\textrm{2}$Vis 之间的差异。
 (d) LNO$_\textrm{2}$Vis 与 LNO$_\textrm{2}$ 的比例。\\
+Figure \ref{fig:us_delta}.
 (a) Mean (MJJA 2014) NO$_\textrm{2}$ tropospheric column.
 Polluted cities are denoted by stars: Lansing, New Orleans and Orlando while clean cities are denoted by triangles: Huron, Charles Town and Tarboro.
 (b) The differences of the estimated mean production efficiency between NO$_\textrm{2}$Vis and LNO$_\textrm{2}$Vis with CRF $\geq$ 90\%.
 (c) The same differences as (b) but between LNO$_\textrm{2}$ and NO$_\textrm{2}$Vis.
 (d) The ratio of LNO$_\textrm{2}$Vis to LNO$_\textrm{2}$.
 }
-\label{fig:delta}
+\label{fig:us_delta}
 \end{figure}
 
 \subsection{反演的影响因素及不确定性分析} \label{sec:uncertainty}
 
-鉴于图\ref{fig:delta}表明我们方法对于LNO$_2$产率估算的改进在污染和清洁地区是不同的。
+鉴于图\ref{fig:us_delta}表明我们方法对于LNO$_2$产率估算的改进在污染和清洁地区是不同的。
 为了简化量化，我们选择了CRF = 100\%条件下，具有相似云上NO$_2$廓线（$\approx$ 100 pptv）的六个网格，这样AMF之间的差异取决于较少的参数。
 
 \begin{equation} \label{AMFLNO2_crf100}
@@ -837,25 +838,25 @@ AMF_{\textrm{NO$_2$Vis}} = \frac{\int_{p_{\textrm cloud}}^{p_{\textrm tp}} w_{\t
 AMF_{\textrm{LNO$_2$Clean}} = \frac{\int_{p_{\textrm cloud}}^{p_{\textrm tp}} w_{\textrm cloudy}(p) LNO_2(p) \: dp}{\int_{p_{\textrm surf}}^{p_{\textrm tp}} LNO_2(p) \: dp}
 \end{equation}
 
-这些网格框分别包含图\ref{fig:delta}（a）中由星形和三角形表示的污染城市和清洁城市。
-图\ref{fig:bkgd_comp}比较了污染和清洁网格内NO$_2$、背景 NO$_2$ 和背景 NO$_2$占比的平均廓线。
+这些网格框分别包含图\ref{fig:us_delta}（a）中由星形和三角形表示的污染城市和清洁城市。
+图\ref{fig:us_bkgd_comp}比较了污染和清洁网格内NO$_2$、背景 NO$_2$ 和背景 NO$_2$占比的平均廓线。
 通常，由于上对流层LNO$_2$ 浓度高于背景 NO$_2$ 浓度，背景 NO$_2$ 与总 NO$_2$ 的比例曲线呈 C 形。
-然而，随着背景 NO$_2$ 增加和 LNO$_2$ 的减少，图\ref{fig:bkgd_comp}（e）中的比例分布在云压和对流层顶之间有一个峰值。
+然而，随着背景 NO$_2$ 增加和 LNO$_2$ 的减少，图\ref{fig:us_bkgd_comp}（e）中的比例分布在云压和对流层顶之间有一个峰值。
 此外，污染地区的上对流层背景NO$_2$占比稳定且高于清洁地区。
 
 \begin{figure}[htbp]
-\includegraphics[width=18cm]{./figures/bkgd_comp.pdf}
+\includegraphics[width=18cm]{./figures/us_bkgd_comp.pdf}
 \caption{在CRF $\geq$ 100\%条件下，六个网格中WRF-Chem 平均NO$_\textrm{2}$ 和背景 NO$_\textrm{2}$ 廓线。
-顶行数据选自污染区域（图 \ref{fig:delta}（a）中的星号），而底行数据来自清洁区域（图 \ref{fig:delta}（a）中的三角形）。
+顶行数据选自污染区域（图 \ref{fig:us_delta}（a）中的星号），而底行数据来自清洁区域（图 \ref{fig:us_delta}（a）中的三角形）。
 绿色虚线是背景 NO$_\textrm{2}$ 与总 NO$_\textrm{2}$ 的平均比例廓线。
 放大图显示了从云压到对流层顶的廓线。
 标题基于\ref{section:amf_definition}节定义的三种不同方法估算得到的产量。\\
-Figure \ref{fig:bkgd_comp}. Comparisons of mean WRF-Chem NO$_\textrm{2}$ and background NO$_\textrm{2}$ profiles in six grids with CRF $\geq$ 100\% on specific days during MJJA 2014.
-The top row data are selected from polluted regions (stars in Fig. \ref{fig:delta}a) while the bottom row data are from clean regions (triangles in Fig. \ref{fig:delta}a).
+Figure \ref{fig:us_bkgd_comp}. Comparisons of mean WRF-Chem NO$_\textrm{2}$ and background NO$_\textrm{2}$ profiles in six grids with CRF $\geq$ 100\% on specific days during MJJA 2014.
+The top row data are selected from polluted regions (stars in Fig. \ref{fig:us_delta}a) while the bottom row data are from clean regions (triangles in Fig. \ref{fig:us_delta}a).
 The green dashed lines are the mean ratio profiles of background NO$_\textrm{2}$ to total NO$_\textrm{2}$.
 The zoomed figures show the profiles from the cloud pressure to the tropopause.
 The titles present the mean productions based on three different methods mentioned in Sect. \ref{section:amf_definition}.}
-\label{fig:bkgd_comp}
+\label{fig:us_bkgd_comp}
 \end{figure}
 
 
@@ -863,20 +864,20 @@ The titles present the mean productions based on three different methods mention
 AMFLNO$_2$ (式\ref{AMFLNO2_crf100}) 和 AMFLNO$_2$Clean (式\ref{AMFLNO2Clean_crf100})之间的区别是分子：
 $\int_{p_{\textrm cloud}}^{p_{\textrm tp}} w_{\textrm cloudy}(p) NO_2(p) \: dp$
 和$\int_{p_{\textrm cloud}}^{p_{\textrm tp}} w_{\textrm cloudy}(p) LNO_2(p) \: dp$。
-当 LNO$_2$ 的比例较高或区域较清洁时，相对差异较小（例如 5.0\%--12.0\%，图\ref{fig:bkgd_comp}（d）--（f））。
-最大的相对差异（46.3\%）发生在上对流层中背景 NO$_2$ 所占比例一直较高的情况下（图\ref{fig:bkgd_comp}（c））。
+当 LNO$_2$ 的比例较高或区域较清洁时，相对差异较小（例如 5.0\%--12.0\%，图\ref{fig:us_bkgd_comp}（d）--（f））。
+最大的相对差异（46.3\%）发生在上对流层中背景 NO$_2$ 所占比例一直较高的情况下（图\ref{fig:us_bkgd_comp}（c））。
 因此，我们的方法对背景 NO$_2$ 不太敏感，更适用于受污染地区的对流情况。
 相比之下，由于云层下方的 LNO$_2$，我们方法估算的产量大于基于 NO$_2$Vis 的产量。
-当云层较高时，特别是 LNO廓线的峰值低于云层时（图\ref{fig:bkgd_comp}（b）），
+当云层较高时，特别是 LNO廓线的峰值低于云层时（图\ref{fig:us_bkgd_comp}（b）），
 相对差异较大（121.2\%），因为更多的 LNO$_2$ 不能包含在 NO$_2$Vis 中。
 AMFLNO$_2$Clean (式\ref{AMFLNO2Clean_crf100}) 和 AMFNO$_2$Vis (式\ref{AMFNO2Vis_crf100}) 之间的相对变化取决于
 $\int_{p_{\textrm cloud}}^{p_{\textrm tp}} w_{\textrm cloudy}(p) LNO_2(p) \: dp / \int_{p_{\textrm surf}}^{p_{\textrm tp}} w_{\textrm cloudy}(p) LNO_2(p) \: dp$，这也是受云影响，而不是背景NO$_2$。
 其中最大的相对变化（153.8\%）发生在新奥尔良，它的云压最低，因此可见的柱密度最小。
 
-图\ref{fig:cp_ratio_lno2}（a）为2014年5--8月在CRF$\geq$90\%的条件下，云压（CP）和LNO$_2$Vis与LNO$_2$比例的日分布。
+图\ref{fig:us_cp_ratio_lno2}（a）为2014年5--8月在CRF$\geq$90\%的条件下，云压（CP）和LNO$_2$Vis与LNO$_2$比例的日分布。
 当CP从600降低到300 hPa时，LNO$_2$Vis 与 LNO$_2$之比从 0.8 降低到 0.2，故在相对清洁的区域，NO$_2$Vis PE 小于 LNO$_2$ PE。
 除了 LNO$_2$Vis，LNO$_2$ PE 也是受CP影响。
-对于大于 30 mol每闪击的LNO$_2$ PE，CP 均小于 550 hPa（图\ref{fig:cp_ratio_lno2}（b）），
+对于大于 30 mol每闪击的LNO$_2$ PE，CP 均小于 550 hPa（图\ref{fig:us_cp_ratio_lno2}（b）），
 而较小的 LNO$_2$ PE（<30 mol每闪击）出现在 650 和 200 hPa 之间。
 由于较高的LNO$_2$ PE 和闪电数据数量有限，现阶段我们无法推出 LNO$_2$ PE 与CP或其他闪电属性之间的关系。
 由于CP仅代表云的发展，因此不能仅从CP值推导出闪电的垂直结构。
@@ -901,18 +902,18 @@ $\int_{p_{\textrm cloud}}^{p_{\textrm tp}} w_{\textrm cloudy}(p) LNO_2(p) \: dp 
                                    & Charles Town     & 12.0\%  & 82.2\%   & 104.1\%  \\
                                    & Tarboro          & 5.0\%   & 86.0\%   & 95.3\%   \\
 \hline
-\multicolumn{5}{l}{$^1$城市地址见图\ref{fig:delta}（a）。}\\
-\multicolumn{5}{l}{$^1$Locations are denoted in Fig. \ref{fig:delta}(a).}
+\multicolumn{5}{l}{$^1$城市地址见图\ref{fig:us_delta}（a）。}\\
+\multicolumn{5}{l}{$^1$Locations are denoted in Fig. \ref{fig:us_delta}(a).}
 \end{tabular}
 \label{table:production_comp}
 \end{table*}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=15cm]{./figures/cp_ratio_lno2.pdf}
+\includegraphics[width=15cm]{./figures/us_cp_ratio_lno2.pdf}
 \caption{（a） LNO$_\textrm{2}$Vis 与 LNO$_\textrm{2}$之比的核密度估计（b）LNO$_\textrm{2}$产率与OMI测得的云压的核密度估计（2014年5--8月，CRF $\geq$ 90\%）。\\
-Figure \ref{fig:cp_ratio_lno2}. Kernel density estimation of the (a) daily ratio of LNO$_\textrm{2}$Vis to LNO$_\textrm{2}$ and (b) daily LNO$_\textrm{2}$ production efficiency versus the daily cloud pressure measured by OMI with CRF $\geq$ 90\% for MJJA 2014.}
-\label{fig:cp_ratio_lno2}
+Figure \ref{fig:us_cp_ratio_lno2}. Kernel density estimation of the (a) daily ratio of LNO$_\textrm{2}$Vis to LNO$_\textrm{2}$ and (b) daily LNO$_\textrm{2}$ production efficiency versus the daily cloud pressure measured by OMI with CRF $\geq$ 90\% for MJJA 2014.}
+\label{fig:us_cp_ratio_lno2}
 \end{figure}
 
 
@@ -924,20 +925,20 @@ WRF-Chem中LNO排放的设置在不同的研究中有所不同。
 \citet{Wang.2015a}假设每次闪电产生大约 500 mol NO，这是通过云尺度化学传输模型和云中飞机观测得出的\citep{Ott.2010}。
 为了评估 LNO$_x$参数化对 LNO$_x$估算的影响，我们将另一个 WRF-Chem NO$_2$ 廓线（2$\times$基本闪率，500 mol NO每闪电，以下简称“2$\times$500 mol NO每闪电”）
 应用于先验廓线并评估 AMF$_\textrm{LNO$_2$}$、AMF$_\textrm{LNO$_x$}$、LNO$_2$ PE 和 LNO$_x$ PE 的变化。
-对于线性回归方法（图 \ref{fig:pe_linear_2x500}），LNO$_2$ PE 为 29.8$\pm$20.5 mol每闪电，比基本方法（18.7$\pm$18.1 mol每闪电）大59.4 \%。
+对于线性回归方法（图 \ref{fig:us_pe_linear_2x500}），LNO$_2$ PE 为 29.8$\pm$20.5 mol每闪电，比基本方法（18.7$\pm$18.1 mol每闪电）大59.4 \%。
 同时，LNO$_x$ PE（从54.5$\pm$48.1 mol每闪电增加到88.5$\pm$61.1 mol每闪电）也取决于 WRF-Chem 中 LNO产率的设置。
-通过比较图\ref{fig:pe_linear}和图\ref{fig:pe_linear_2x500}，我们发现当LNO$_2$ PE和 NO$_2$Vis PE 呈现相同趋势时，LNO$_2$Clean PE 和 LNO$_2$ PE 更相似。
+通过比较图\ref{fig:us_pe_linear}和图\ref{fig:us_pe_linear_2x500}，我们发现当LNO$_2$ PE和 NO$_2$Vis PE 呈现相同趋势时，LNO$_2$Clean PE 和 LNO$_2$ PE 更相似。
 目前尚不清楚 NO-NO$_2$-O$_3$ 循环或其他 LNO$_x$ 汇对LNO$_x$ PE变化的贡献。
 这需利用 WRF-Chem进行详细的来源解析，超出了本研究的范围。
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=15cm]{./figures/pe_linear_2x500.pdf}
-\caption{与图\ref{fig:pe_linear}相同，但是模式中NO产率设置为2$\times$500 mol每闪电 \\Figure \ref{fig:pe_linear_2x500}. Same as Fig. \ref{fig:pe_linear} except for the 2$\times$500 mol NO flash$^{-1}$ configuration.}
-\label{fig:pe_linear_2x500}
+\includegraphics[width=15cm]{./figures/us_pe_linear_2x500.pdf}
+\caption{与图\ref{fig:us_pe_linear}相同，但是模式中NO产率设置为2$\times$500 mol每闪电 \\Figure \ref{fig:us_pe_linear_2x500}. Same as Fig. \ref{fig:us_pe_linear} except for the 2$\times$500 mol NO flash$^{-1}$ configuration.}
+\label{fig:us_pe_linear_2x500}
 \end{figure}
 
-图\ref{fig:simulation_diff}显示了基于 1$\times$200 和 2$\times$500 mol NO 每闪电得到的AMF$_\textrm{LNO$_2$}$、AMF$_\textrm{LNO$_x$}$、LNO$_2$和 LNO$_x$ 的平均百分比变化。
+图\ref{fig:us_simulation_diff}显示了基于 1$\times$200 和 2$\times$500 mol NO 每闪电得到的AMF$_\textrm{LNO$_2$}$、AMF$_\textrm{LNO$_x$}$、LNO$_2$和 LNO$_x$ 的平均百分比变化。
 更高的LNO产率设置对LNO$_2$和 LNO$_x$的影响趋势相同：较小的AMF$_\textrm{LNO$_2$}$和AMF$_\textrm{LNO$_x$}$导致较大的LNO$_2$和 LNO$_x$，但变化幅度具有区域性。
 这是由AMF$_\textrm{LNO$_2$}$和AMF$_\textrm{LNO$_x$}$的非线性计算引起的。
 随着LNO$_2$的贡献增大，方程式的分子和分母都增大。
@@ -950,47 +951,47 @@ WRF-Chem中LNO排放的设置在不同的研究中有所不同。
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=13cm]{./figures/simulation_diff.png}
+\includegraphics[width=13cm]{./figures/us_simulation_diff.png}
 \caption{2014年5--8月在CRF $\geq$ 90\% 条件下，(a) AMF$_{\textrm{LNO$_2$}}$, (b) AMF$_{\textrm{LNO$_x$}}$, (c) LNO$_\textrm{2}$ 和 (d) LNO$_\textrm{x}$的平均百分比差异。
 廓线之间的差异为 2$\times$500 mol NO每闪电 和 1$\times$200 mol NO每闪电所得结果之差。\\
-Average percent differences in (a) AMF$_{\textrm{LNO$_2$}}$, (b) AMF$_{\textrm{LNO$_x$}}$, (c) LNO$_\textrm{2}$ and (d) LNO$_\textrm{x}$ with CRF $\geq$ 90\% over MJJA 2014.
+Figure \ref{fig:us_simulation_diff}. Average percent differences in (a) AMF$_{\textrm{LNO$_2$}}$, (b) AMF$_{\textrm{LNO$_x$}}$, (c) LNO$_\textrm{2}$ and (d) LNO$_\textrm{x}$ with CRF $\geq$ 90\% over MJJA 2014.
 Differences between profiles are generated by 2$\times$500 mol NO flash$^{-1}$ and 1$\times$200 mol NO flash$^{-1}$.}
-\label{fig:simulation_diff}
+\label{fig:us_simulation_diff}
 \end{figure}
 
-图\ref{fig:lno2_profile}显示了两个特定区域的平均 LNO 和 LNO$_2$ 曲线的比较，其中 2$\times$500 mol NO 每闪电设置分别导致较低和较高的 LNO$_2$ PE。
-第一个所选区域（36--37$^{\circ}$ N，89--90$^{\circ}$ W，图\ref{fig:lno2_profile}（a）是 LNO$_2$ 负百分比变化最小的区域（图\ref{fig:simulation_diff}（c））。
-第二个所选区域（31--32$^{\circ}$ N，97--98$^{\circ}$ W），图\ref{fig:lno2_profile}（b）是LNO$_2$ 正百分比变化最大的区域（图\ref{fig:simulation_diff}（c））。
+图\ref{fig:us_lno2_profile}显示了两个特定区域的平均 LNO 和 LNO$_2$ 曲线的比较，其中 2$\times$500 mol NO 每闪电设置分别导致较低和较高的 LNO$_2$ PE。
+第一个所选区域（36--37$^{\circ}$ N，89--90$^{\circ}$ W，图\ref{fig:us_lno2_profile}（a）是 LNO$_2$ 负百分比变化最小的区域（图\ref{fig:us_simulation_diff}（c））。
+第二个所选区域（31--32$^{\circ}$ N，97--98$^{\circ}$ W），图\ref{fig:us_lno2_profile}（b）是LNO$_2$ 正百分比变化最大的区域（图\ref{fig:us_simulation_diff}（c））。
 尽管两个区域的平均 LNO 和 LNO$_2$廓线的相对分布相似，但量级相差10 倍。
 这意味着 WRF-Chem中闪电参数化的表现具有区域性，并且上对流层可能会出现不切实际的廓线。
 虽然这种敏感性分析在某些地区是错误的，但它可得到由于 LNO 和 LNO$_2$ 廓线而影响NO$_2$的上限。
 正如\citet{Laughner.2017}中所讨论的，在多云条件下散射权重是均匀的，并且由于高反照率，NO$_2$ 的灵敏度在不同高度上几乎是恒定的。
 但是，我们应仔细考虑上对流层LNO$_2$ 的相对分布。
-如果云层上方的 LNO$_2$∕NO$_2$ 足够大（图\ref{fig:lno2_profile}（a）），
+如果云层上方的 LNO$_2$∕NO$_2$ 足够大（图\ref{fig:us_lno2_profile}（a）），
 AMFLNO$_2$ 很大程度上取决于 LNO$_2$Vis 与 LNO$_2$ 的比值，
 这与相对分布有关。
-当不满足高 LNO$_2$∕NO$_2$ 的条件时，相对分布和比例都很重要（图\ref{fig:lno2_profile}（b））。
+当不满足高 LNO$_2$∕NO$_2$ 的条件时，相对分布和比例都很重要（图\ref{fig:us_lno2_profile}（b））。
 
-为了说明这一点，我们使用了不同的LNO产率设置来对LNO$_2$、LNO$_2$Vis、LNO$_2$Clean 和 NO$_2$Vis进行敏感性试验（图\ref{fig:lno2_profile}）。
+为了说明这一点，我们使用了不同的LNO产率设置来对LNO$_2$、LNO$_2$Vis、LNO$_2$Clean 和 NO$_2$Vis进行敏感性试验（图\ref{fig:us_lno2_profile}）。
 其中CRF 的阈值设置为 100 \% 以简化等式。
 总体上来说，LNO$_2$Clean 和 NO$_2$Vis 的差异小于 LNO$_2$ 和 LNO$_2$Vis 的差异。
-通过比较方程中的分子和分母，可得知为何不同模拟 LNO 量的影响在图\ref{fig:lno2_profile}（c） 和 （d） 中较小。
+通过比较方程中的分子和分母，可得知为何不同模拟 LNO 量的影响在图\ref{fig:us_lno2_profile}（c） 和 （d） 中较小。
 对于 LNO$_2$Clean 和 NO$_2$Vis，当更多（更少）LNO$_2$ 或 NO$_2$ 存在时，SCD 和 VCD 都会增加（减少）。
-图\ref{fig:lno2_profile}（a） 和 （b） 的区别是分母：分别为总对流层 LNO$_2$ 垂直柱密度和可见 LNO$_2$ 垂直柱密度。
-因此，图\ref{fig:lno2_profile}（a） 中的负值是由云下的 LNO$_2$ 部分引起的。
+图\ref{fig:us_lno2_profile}（a） 和 （b） 的区别是分母：分别为总对流层 LNO$_2$ 垂直柱密度和可见 LNO$_2$ 垂直柱密度。
+因此，图\ref{fig:us_lno2_profile}（a） 中的负值是由云下的 LNO$_2$ 部分引起的。
 故该误差可导致LNO$_2$ 和 LNO$_x$ PE 的不确定性，我们保守估计这分别为 $\pm$13 \% 和 $\pm$25 \%。
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=13cm]{./figures/lno2_profile.pdf}
+\includegraphics[width=13cm]{./figures/us_lno2_profile.pdf}
 \caption{当LNO 设置从 1$\times$200 mol NO每闪电 更改为 2$\times$500 mol NO每闪电 时，
 (a) 包含 LNO$_\textrm{2}$ 的最小负百分比变化的区域和 (b) 包含最大正百分比变化的区域中LNO 和 LNO$_\textrm{2}$ 的平均廓线廓线。
 使用 1$\times$200 (2$\times$500) mol NO flash$^{-1}$ 的曲线以蓝色（红色）线显示。
 绿色实线（虚线）是 在1$\times$200 (2$\times$500) mol NO每闪电设置下，LNO$_\textrm{2}$ 与 NO$_\textrm{2}$ 的平均比例。\\
-LNO and LNO$_\textrm{2}$ profiles with different LNO settings at (a) the region containing the minimal negative percent change in LNO$_\textrm{2}$ and (b) the region containing the largest positive percent change in LNO$_\textrm{2}$ when the LNO setting is changed from 1$\times$200 mol NO flash$^{-1}$ to 2$\times$500 mol NO flash$^{-1}$, averaged over MJJA 2014.
+Figure \ref{fig:us_lno2_profile}. LNO and LNO$_\textrm{2}$ profiles with different LNO settings at (a) the region containing the minimal negative percent change in LNO$_\textrm{2}$ and (b) the region containing the largest positive percent change in LNO$_\textrm{2}$ when the LNO setting is changed from 1$\times$200 mol NO flash$^{-1}$ to 2$\times$500 mol NO flash$^{-1}$, averaged over MJJA 2014.
 The profiles using 1$\times$200 (2$\times$500) mol NO flash$^{-1}$ are shown in blue (red) lines.
 Solid (dashed) green lines are the mean ratio of LNO$_\textrm{2}$ to NO$_\textrm{2}$ with 1$\times$200 (2$\times$500) mol NO flash$^{-1}$.}
-\label{fig:lno2_profile}
+\label{fig:us_lno2_profile}
 \end{figure}
 
 
