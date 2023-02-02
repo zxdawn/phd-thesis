@@ -53,7 +53,7 @@ preconvection (blue) and postconvection (orange) O$_3$ profiles from the 6-hour 
 
 \subsection{闪电数据集}
 
-在北极的研究中，我们使用了维萨拉全球雷电数据集（GLD360）。
+在第\ref{sec:arctic}节北极的研究中，我们使用了维萨拉全球雷电数据集（GLD360）。
 该闪电探测网建立于2009年，由全球极低频闪电探测传感器组成，可检测地闪和云闪\citep{Said.2010,Said.2013,Said.2017}。
 地闪和云闪在北极洋面上的探测效率分别为50\%--60\% 和 < 10\%\citep{Vagasky.2022}。
 因此，我们使用恒定的云闪地闪比率（约 1）来计算总闪，即修正后的总闪击为检测到的地闪闪击的四倍
@@ -64,7 +64,7 @@ preconvection (blue) and postconvection (orange) O$_3$ profiles from the 6-hour 
 为了评估使用常数比的敏感性，我们在研究中设置了不同的值（1:2 和 2:1）来评估计算得到的LNO$_x$排放量的不确定性。
 
 
-在美国大陆的研究中，我们使用了整体闪电探测网（ENTLN; \citet{Marchand.2019}）。
+在第\ref{sec:us}节美国大陆的研究中，我们使用了整体闪电探测网（ENTLN; \citet{Marchand.2019}）。
 ENTLN运营着一个由全球1500多个地面站组成的系统，在美国大陆安装有900多个传感器\citep{Zhu.2017}。
 云闪和地闪均由传感器根据电场脉冲极性和波形进行定位，检测频率范围为1 Hz 至 12 MHz。
 如果脉冲组在700 ms和10 km范围内，则它们被归类为闪电。
@@ -75,7 +75,7 @@ ENTLN运营着一个由全球1500多个地面站组成的系统，在美国大�
 由于我们和\citet{Lapierre.2020}一样仅使用2014年的ENTLN数据，我们采用同样的方法得到总闪的量。
 具体而言，云闪闪电除以0.88，云闪闪击除以0.45，而地闪由于探测效率高，故不进行矫正。
 
-在中国东南部的研究中，我们融合了三种闪电数据集：中国国家闪电探测网(CNLDN; \citet{Yang.2015}）、
+在第\ref{sec:china}节中国东南部的研究中，我们融合了三种闪电数据集：中国国家闪电探测网(CNLDN; \citet{Yang.2015}）、
 ENTLN和全球闪电定位网（WWLLN；\citet{Rodger.2006}）。
 江苏省CNLDN数据的地闪闪电探测效率约为90\% \citep{Li.2017a}，
 而ENTLN和WWLLN以特定的频率（ENTLN 为 1 Hz -- 12 MHz，WWLLN 为 3--30 kHz）同时探测云闪和地闪。
@@ -114,7 +114,7 @@ OMI的观测数据可以与其他大气环境监测仪器数据相结合，共�
 
 （6）基于这种方法，我们开发了一种新的 $AMF_{\ch{LNO_x}}$，通过替换原来的步骤来获得所需的 $V_{\ch{LNO_x}}$（$V_{\ch{LNO_x}}$ = $S_{\ch{NO2}}$/$AMF_{\ch{LNO_x}}$）。
 
-（7）该算法的具体细节将在\ref{section:amf_definition}节中讨论.
+（7）该算法的具体细节将在第\ref{sec:amf_definition}节中讨论.
 
 \subsection{对流层观测仪（TROPOMI）}
 
@@ -173,7 +173,7 @@ IWC加权函数的分析表明，215 hPa高度IWC的垂直分辨率约为4 km\ci
 此外我们使用MLS O$_3$的数据质量标志来进一步提取有效数据：准确度 $>$ 0、状态为偶数、数据质量 $>$ 1.0以及收敛度 $<$ 1.03。
 
 
-\subsection{闪电氮氧化物的计算} \label{section:amf_definition}
+\subsection{闪电氮氧化物的计算} \label{sec:amf_definition}
 
 基于$AMF_{\ch{trop}}$，为了得到对流层LNO$_2$或LNO$_x$的垂直柱浓度，我们只需将分母改成LNO$_2$或LNO$_x$的垂直积分即可。
 
@@ -307,7 +307,7 @@ WRF-Chem的化学方案主要包括MOZCART，CBMZ和RADM2等多种方案，本�
 对流层化学以81种化学物种为代表，参与38种光解和159种气相反应。
 MOZART-4机制包括非甲烷挥发性有机物（NMVOC）、乙烷、丙烷、乙烯、丙烯、甲醇、异戊二烯和$\alpha$-蒎烯，
 其他NMVOC物种则基于反应性官能团表示。
-由于本文为了更好的模拟出深对流系统，不同的个例使用了各自的方案，具体配置见第\ref{sec:model_settings}节。
+由于本文为了更好的模拟出深对流系统，不同的个例使用了各自的方案，具体配置见第\ref{sec:model_settings_us}节和第\ref{sec:model_settings_china}节。
 
 
 
@@ -315,16 +315,6 @@ MOZART-4机制包括非甲烷挥发性有机物（NMVOC）、乙烷、丙烷、�
 
 现代研究和应用回顾分析 (MERRA-2) GMI 模拟是基于Goddard地球观测系统 (GEOS) 框架\citep{Molod.2015}，使用的再分析资料为MERRA-2\citep{Gelaro.2017}，化学机制为GMI（Global Modeling Initiative）的平流层和对流层化学相结合的机制\citep{Duncan.2007,Oman.2013,Nielsen.2017}。
 GMI机制包括对O$_3$-NO$_x$-碳氢化合物化学的详细描述，有100多个物种和大约400个化学反应，以约50 km的水平分辨率运行并输出到原生 MERRA-2网格（0.625$^{\circ}$ $\times$ 0.5$^{\circ}$）。
-
-MERRA2-GMI的模拟包括来自化石燃料、生物燃料、生物质燃烧和生物来源排放的NO、CO 和其他NMVOC。
-除此之外，NO的排放还源自于闪电和土壤。
-化石燃料和生物燃料的排放是取自测量大气成分和气候特大城市-放大环境（MACCity）清单\citep{Granier.2011}
-，从十年大气化学和气候模型比较项目（ACCMIP）中插值到每年的排放量并应用季节性比例因子\citep{Lamarque.2010}。
-生物质燃烧排放来自全球火灾排放数据集 (GFED) 第4版\citep{Giglio.2013}。
-生物来源使用自然界气体和气溶胶排放模型 (MEGAN，\citet{Guenther.1999}）在线计算异戊二烯和其他生物化合物的排放量，并响应于MERRA2-GMI 气象场。
-土壤的NO排放基于\citet{Yienger.1995}，也响应于MERRA-2气象场。
-闪电NO的排放使用 MERRA-2 中对流层中层的去趋势累积质量通量\citep{Allen.2010}，并受 OTD LIS闪电气候学的季节性约束\citep{Cecil.2014}。
-将全球平均比例因子应用于去趋势的累积质量通量，以便模拟每年的全球平均闪电 NO$_x$产量为 6.5 Tg N。
 
 
 

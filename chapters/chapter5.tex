@@ -4,37 +4,14 @@
 
 \section{模式设置}
 
-\subsection{气象及化学设置}
 
-该研究使用的WRF-Chem版本号为4.1.4，气象条件的初始场和边界场来自1小时分辨率的欧洲中心大气再分析数据（ERA5，\citet{Hersbach.2020}）。
-模式的垂直分层为75层，对流层顶设置为50 hPa，嵌套区域如图\ref{fig:domains_china}所示。
-微物理过程使用WSM6方案\citep{Hong.2006a}，而短波和长波辐射使用RRTMG方案\citep{Iacono.2008}，陆面过程由Noah方案模拟\citep{Koren.1999}。
-但是，我们使用不同的边界层参数化来模拟两次对流个例，2019年的个例使用YSU方案\citep{Hong.2006}，而2020年的个例使用QNSE方案\citep{Sukoriansky.2005}。
-闪电部分未使用参数化，用闪电同化代替，详见\ref{sect:lightning_assimilation}节。
+% \subsection{气象及化学设置}
+% \section{模式评估}
 
-化学初始场和边界场采用整个大气社区气候模型（WACCM，\url{https://www.acom.ucar.edu/waccm/}）的输出数据。
-其中2020年个例的初始O$_3$廓线使用臭氧探空仪观测所得的O$_3$廓线。
-人为排放使用2016年中国多分辨率排放清单 (MEIC，\url{http://www.meicmodel.org/})1.3版驱动，生物排放采用来自自然界的气体和气溶胶排放模型（MEGAN；\citet{Guenther.2006}）。
-化学机理使用气相化学的臭氧和相关化学示踪剂模式（MOZART）和气溶胶的Goddard化学气溶胶辐射和传输（GOCART）模式\citep{Pfister.2011}。
-其中光解方案采用基于云光学厚度（cloud\_fraction$^{1.5}$）的新 TUV（对流层紫外线和可见光）方案，即光解速率依赖于气溶胶和云。
-此外，LNO的垂直廓线使用\citet{Ott.2010}的双峰型闪电NO（LNO）廓线\citep{Laughner.2017}，而LNO和LNO$_2$廓线是指开启和关闭闪电选项的模拟之间垂直廓线的差异。
-其中LNO$_x$参数化调整为每次闪电产生500 mol NO\citep{Zhu.2019}。
+本章第\ref{sec:o3_profile}节和\ref{sec:convec_impacts}节中的全球模拟设置与第\ref{sec:model_settings_gmi}节相同。
+本章第\ref{sec:lnox_effects}节中的中国东南部模拟设置与第\ref{sec:model_settings_china}节相同。
+由于中国东南部的对流生命期短，我们采用了闪电同化并利用晴空条件下的O$_3$探空资料修正了O$_3$的初始场，然后将模拟结果与探空和雷达对比。
 
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.9\textwidth]{./figures/domains_china.png}
-\caption{2019年和2020年个例的WRF-Chem模拟区域和地形高度(m)图。
-2019年个例的水平网格分辨率为15 km（D01）、3 km（D02）和 0.6 km（D03）。
-对于2020年个例，分别为27 km（D01）、9 km（D02）、3 km（D03）和 1 km（D04）。\\
-Figure \ref{fig:domains_china}. Domain and terrain height (m) of the WRF-Chem simulations for the 2019 and 2020 cases. The horizontal grid resolution of
-domains for the 2019 case is 15 km (D01), 3 km (D02) and 0.6 km (D03). For the 2020 case, it is 27 km (D01), 9 km (D02), 3 km (D03),
-and 1 km (D04).}
-\label{fig:domains_china}
-\end{figure}
-
-\subsection{闪电同化} \label{sect:lightning_assimilation}
-
-为了更准确地模拟出对流和LNO$_x$，我们将闪电数据同化应用于 WRF-Chem。
 闪电数据同化方法详见\citet{Fierro.2012}和\citet{Li.2017b}，主要步骤为在发生闪电所处网格的垂直恒温层间，增加水汽质量混合比。
 
 \begin{equation} \label{eq:lda}
@@ -50,8 +27,6 @@ Q_{v}=A Q_{\mathrm{sat}}+B Q_{\mathrm{sat}} \tanh (C X)\left[1-\tanh \left(D Q_{
 因此，闪电数即闪电频率的密度（单位：flash每10 min 每dx km 每dy km），其中dx和dy分别是模型网格在x和y方向的分辨率。
 如\citet{Fierro.2012}和\citet{Li.2017b}所述，这可以确保所有嵌套层中的闪电密度相同。
 此外，闪电数也被直接同化进WRF-Chem中，该方法已被应用于社区多尺度空气质量（CMAQ，\citet{Kang.2019,Kang.2019a,Kang.2020}模式中。
-
-\section{模式评估}
 
 与雷达观测相比，2019年7月25日和2020年9月1日模拟的对流初生时间，较实际情况分别提前了60分钟和30分钟（图\ref{fig:comp_crf_2019}和图\ref{fig:comp_crf_2020}），闪电数据也以相同的时间间隔提前同化。
 对于下文的结果比较，我们选择匹配的阶段而不是相同的时间。
@@ -113,7 +88,7 @@ Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019}
 
 \section{结果与讨论}
 
-\subsection{臭氧的垂直分布}
+\subsection{臭氧的垂直分布} \label{sec:o3_profile}
 
 在不同对流阶段所测的O$_3$和Q$_v$分布如图\ref{fig:ozonesonde_profile}所示。
 一般来说，对流导致上对流层O$_3$和Q$_v$浓度增大，且增强的最大值所在区域为10--16 km 之间。
@@ -121,7 +96,7 @@ Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019}
 此外，两个个例都存在双谷形状的O$_3$剖面，但高度不同：2019年的热对流个例为2 km和8 km，2020年的飑线为4 km和10 km。
 尽管WRF-Chem模型倾向于分别低估2019年和2020年的下对流层和上对流层中的O$_3$浓度，但再现了详细的O$_3$垂直分布结构，故能用以分析对流影响O$_3$的机制。
 共有三个来源可以解释上对流层O$_3$的增加：对流输送、化学反应和闪电直接产生的O$_3$。
-本研究（第\ref{subsect:convec_impacts}节）仅详细讨论前两个因素，因为闪电直接产生的O$_3$超出了本研究的范围，并且有限的观测和模式模拟结果显示其产量仍不确定\citep{Morris.2010,Ripoll.2014}。
+本研究（第\ref{sec:convec_impacts}节）仅详细讨论前两个因素，因为闪电直接产生的O$_3$超出了本研究的范围，并且有限的观测和模式模拟结果显示其产量仍不确定\citep{Morris.2010,Ripoll.2014}。
 
 
 \begin{figure}[!htbp]
@@ -245,7 +220,7 @@ MLS的O$_3$廓线在上对流层的分辨率为3--6 km，而261 hPa所在高度�
 \end{figure}
 
 
-\subsection{动力输送和化学反应的贡献} \label{subsect:convec_impacts}
+\subsection{动力输送和化学反应的贡献} \label{sec:convec_impacts}
 
 为了探究中国东南部对流后上对流层O$_3$浓度增大的原因，我们将对流分为三个阶段（初生、发展和消散）来分析臭氧探空仪所经区域中O$_3$平均浓度的垂直廓线变化（图\ref{fig:tendency_o3}a 和 d）。
 其中，2020年个例的上对流层O$_3$在整个周期内一直在增加，而2019年的个例由于发展阶段低浓度O$_3$空气的抬升，O$_3$浓度降低，接着又开始增大，这种现象可以用发展阶段的O$_3$垂直剖面来解释（图\ref{fig:tendency_o3}b和e）。
@@ -315,7 +290,7 @@ The cloud boundaries (the sum of cloud liquid water mixing ratio [q$_{cloud}$] a
 \end{figure}
 
 
-\subsection{闪电氮氧化物的影响}
+\subsection{闪电氮氧化物的影响} \label{sec:lnox_effects}
 
 我们将开启和不开启LNO排放所得到的中国东南部O$_3$累计物理变化速率进行对比，从而得到LNO$_x$对O$_3$的影响（表1）。
 在2019年个例的对流旺盛期和整个生命周期中，LNO$_x$使得O$_3$的净产量降低了25\%。
@@ -349,7 +324,7 @@ Convective Period   & 2019-07-25      & 0              & -19.6 (140.0 \%)       
 \end{table*}
 
 
-此外，我们利用TROPOMI数据将对流分为三个区域：新生闪电区、闪电下风向和闪电老化区（详见第\ref{subsect:lnox_affects_tropomi}节和图\ref{fig:s5p_amf_diff}）。
+此外，我们利用TROPOMI数据将对流分为三个区域：新生闪电区、闪电下风向和闪电老化区（详见第\ref{sec:lnox_affects_tropomi}节和图\ref{fig:s5p_amf_diff}）。
 首先使用基于不同LNO产率的模拟结果，获得O$_3$差异($\Delta$O$_3$) 的廓线（图\ref{fig:irr_timeseries}（a--c））。
 $\Delta$O$_3$在2--5 km之间大部分为正（< 1 ppbv），在5--12 km 之间为负，
 这与\citet{Ott.2007}研究的个例结论不一致，他们得出在所有高度上的臭氧都产生净损失（< 4 ppbv）。
@@ -367,7 +342,7 @@ $\Delta$O$_3$在2--5 km之间大部分为正（< 1 ppbv），在5--12 km 之间�
 
 其中k$_i$是过氧自由基 (R$_i$O$_2$)与NO之间的反应速率系数。
 每个反应对O$_3$贡献的时间序列如图\ref{fig:irr_timeseries}（d--i）所示。
-总体而言，由于2019年个例的垂直运动更强（见第\ref{subsect:convec_impacts}节），故积分反应速率的时间序列变化更大，且所选两层的O$_3$总净化学产量保持正值。
+总体而言，由于2019年个例的垂直运动更强（见第\ref{sec:convec_impacts}节），故积分反应速率的时间序列变化更大，且所选两层的O$_3$总净化学产量保持正值。
 具体而言，NO和HO$_2$之间的反应始终占主导地位，而RO$_2$对NO的氧化约占该产量的40\%--60\%。
 O$_3$的主要损耗是光解反应（O(1D)和H$_2$O的反应），而O$_3$和OH之间的反应在对流期间与之相当。
 O$_3$损耗的最低贡献，O$_3$ + HO$_2$ $\,\to\,$ OH + 2O$_2$，在对流旺盛期减少，因为LNO的产生捕获了本应与O$_3$反应的HO$_2$。

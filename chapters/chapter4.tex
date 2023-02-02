@@ -2,18 +2,28 @@
 
 \chapter{深对流对氮氧化物垂直分布的影响}
 
-\section{模式设置}
+\section{模式设置} \label{sec:model_settings_gmi}
 
-\subsection{气象及化学设置}
+第\ref{sec:no2_vcd_cld}节中MERRA2-GMI的模拟包括来自化石燃料、生物燃料、生物质燃烧和生物来源排放的NO、CO 和其他NMVOC。
+除此之外，NO的排放还源自于闪电和土壤。
+化石燃料和生物燃料的排放是取自测量大气成分和气候特大城市-放大环境（MACCity）清单\citep{Granier.2011}
+，从十年大气化学和气候模型比较项目（ACCMIP）中插值到每年的排放量并应用季节性比例因子\citep{Lamarque.2010}。
+生物质燃烧排放来自全球火灾排放数据集 (GFED) 第4版\citep{Giglio.2013}。
+生物来源使用自然界气体和气溶胶排放模型 (MEGAN，\citet{Guenther.1999}）在线计算异戊二烯和其他生物化合物的排放量，并响应于MERRA2-GMI 气象场。
+土壤的NO排放基于\citet{Yienger.1995}，也响应于MERRA-2气象场。
+闪电NO的排放使用 MERRA-2 中对流层中层的去趋势累积质量通量\citep{Allen.2010}，并受 OTD LIS闪电气候学的季节性约束\citep{Cecil.2014}。
+将全球平均比例因子应用于去趋势的累积质量通量，以便模拟每年的全球平均闪电 NO$_x$产量为 6.5 Tg N。
+第\ref{sec:lnox_affects_tropomi}节中的WRF-Chem模拟设置见第\ref{sec:model_settings_china}节。
 
-\subsection{闪电参数化}
+% \subsection{气象及化学设置}
+% \subsection{闪电参数化}
 
 % \section{模式评估}
 
 
 \section{结果与讨论}
 
-\subsection{云上二氧化氮柱浓度的分布}
+\subsection{云上二氧化氮柱浓度的分布} \label{sec:no2_vcd_cld}
 
 由上一章分析可知，将卫星观测所得的NO$_2$柱浓度和闪电数据相结合，可以得出LNO$_2$的产率，然而NO$_2$的垂直分布无法由此直接得出。
 因此本章将采用云切片的方法，利用卫星针对不同高度深厚对流云的观测，得到云间的平均NO$_2$浓度，从而获得对流状态下的NO$_2$平均廓线，并与全球模式进行对比分析。
@@ -62,7 +72,7 @@
     \label{fig:no2_ltngcount}
 \end{figure}
 
-\subsection{二氧化氮的垂直分布}
+\subsection{二氧化氮的垂直分布} \label{sec:no2_profile}
 
 
 上节得到的云上NO$_2$为对流层NO$_2$柱浓度，柱底为云的中心气压，
@@ -168,49 +178,9 @@
 
 % \subsection{闪电氮氧化物的影响} \label{subsect:lnox_affects_tropomi}
 % \subsection{不同排放源对氮氧化物垂直分布的贡献}
-\subsection{闪电氮氧化物对TROPOMI产品的影响}  \label{subsect:lnox_affects_tropomi}
+\subsection{闪电氮氧化物对TROPOMI产品的影响}  \label{sec:lnox_affects_tropomi}
 
 鉴于LNO$_2$在对流层中上层的主导地位和更长寿命，我们接着探讨了LNO$_x$对官方NO$_2$柱浓度产品的影响。
-图\ref{fig:flash_scd}（a--d）将对流层NO$_2$斜柱浓度（S$_{\textrm{NO$_2$}}$）的分布与观测的闪电分布进行了比较。
-尽管由于探测器饱和和光晕效应，闪电最活跃像素上的S$_{\textrm{NO$_2$}}$无效，但附近或对流出流区仍有有效数据。
-在2019年的个例中，闪电发生在TROPOMI过境前不到30分钟，但2020年的个例中既有新生的也有老化的LNO$_2$（图\ref{fig:flash_scd}（d））。
-
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=12cm]{./figures/flash_scd.png}
-    \caption{
-    2019 年 7 月 25 日（左）和 2020 年 9 月 7 日（右）的个例。
-    (a, b) 对流层 NO$_2$ 斜柱浓度（SCD$_\textrm{tropNO$_2$}$，填充色）和云压（线条颜色）。
-    这些白色网格单元代表缺失的 TROPOMI 数据，黑色实线为江苏省。
-     (c, d) NO$_2$ 窗区中的云辐射分数和闪电。闪电的颜色取决于相对于TROPOMI过境的发生时间。\\
-    Figure \ref{fig:flash_scd}. Events on 25 July 2019 (left) and 07 September 2020 (right).
-    (a, b) The tropospheric NO$_2$ slant column density (SCD$_\textrm{tropNO$_2$}$, filled color) and cloud optical pressure (line color).
-    These white grid cells stand for missing TROPOMI data.
-    The solid black border is Jiangsu province.
-    (c, d) The cloud radiance fraction in the NO$_2$ window and flashes whose color depends on the occurring time relative to the TROPOMI overpass time.
-    }
-    \label{fig:flash_scd}
-\end{figure}
-
-具体而言，对流旺盛处（f$_r$ $\geq$ 0.7）的S$_{\textrm{NO$_2$}}$小于其他区域。
-这与之前针对具有高闪电密度的大规模对流系统的研究结果相反\citep{Beirle.2009}。
-导致这一差距的因素有四点：云顶高度、闪电次数、闪电发生时间和背景NO$_2$浓度。
-由于TROPOMI只能探测到处于云层上方的LNO$_2$，因此当fr $\approx$ 1时，闪电次数不足或对流较弱都可能导致对流旺盛区的S$_{\textrm{NO$_2$}}$更小。
-即如果f$_r$<1，则破碎或稀薄云层下方的污染NO$_2$则会部分被TROPOMI探测到。
-而WRF-Chem的先验S$_{\textrm{NO$_2$}}$敏感性试验可以清楚地解释这种现象（图\ref{fig:s5p_apriori_scd}）。
-具有低f$_r$和高S$_{\textrm{NO$_2$}}$像素源自于背景 NO$_2$ 污染（图\ref{fig:s5p_apriori_scd}（a）和（e）），
-但与没有LNO$_2$贡献的低S$_{\textrm{NO$_2$}}$相比，上对流层LNO$_2$增加的S$_{\textrm{NO$_2$}}$仍然可见（图\ref{fig:s5p_apriori_scd}（b）--（d） 和 （f）--（h））。
-
-\begin{figure}[!htbp]
-    \includegraphics[width=17cm]{./figures/s5p_apriori_scd.png}
-    \caption{使用不同闪电NO排放的WRF-Chem结果，重新计算得到的对流层NO$_2$斜柱浓度 (SCD$_\textrm{tropNO$_2$}$)：
-    Figure \ref{fig:s5p_apriori_scd}. (a, e) 0 mol每闪电, (b, f ) 330 mol每闪电, (c, g) 500 mol每闪电 和 (d, h) 700 mol每闪电。\\
-    The tropospheric NO$_2$ slant column density (SCD$_\textrm{tropNO$_2$}$) recalculated using the WRF-Chem results with different lightning NO settings: (a, e) 0 mol/flash, (b, f) 330 mol/flash, (c, g) 500 mol/flash and (d, h) 700 mol/flash.
-    }
-    \label{fig:s5p_apriori_scd}
-\end{figure}
-
-
 为了研究LNO$_x$对AMF$_\textrm{trop}$和AMF$_\textrm{LNO$_x$}$计算的重要性，我们将LNO产率的上限700 mol NO 每闪电\citep{Ott.2010}应用于WRF-Chem 。
 接着我们通过独立替换三个对流层层中的NO$_2$廓线：对流层中层（MT，800 到 400 hPa）、对流层上层（UT，400 到 150 hPa）和整个对流层（地表到对流层顶）。
 除非另有说明，否则后文AMF的变化是通过增加LNO$_x$获得的。
