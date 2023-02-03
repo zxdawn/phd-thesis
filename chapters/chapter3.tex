@@ -2,6 +2,21 @@
 
 \chapter{闪电氮氧化物的产率估算} \label{chapter:PE}
 
+由于地表人为排放的NO$_x$需经过传输过程，才能到达自由对流层进而影响该层的O$_3$浓度，
+而闪电直接在对流层的中上层产生NO$_x$，该层的低温导致LNO$_x$寿命更长，
+所以LNO$_x$可对该层的O$_3$浓度产生更大的影响。
+然而，尽管前人针对LNO$_x$开展了一系列研究（见\ref{sec:intro_lnox}节），
+由于难以原位观测或实验室重现，所以LNO$_x$的产率仍有很高的不确定性。
+本章旨在通过使用卫星观测和云分辨化学模型来改进对LNO$_x$的估算。
+
+本章余下部分按照以下方式组织：
+\ref{sec:arctic}节将TROPOMI NO$_2$观测和GLD 360闪电探测数据相结合；
+利用相邻过境数据计算旺盛对流的LNO$_x$产率和产量，并与其他NO$_x$排放源对比；
+\ref{sec:us}节利用WRF-Chem的高分辨率结果，定义筛选条件和新的OMI AMF用于计算旺盛对流的LNO$_x$柱浓度和产率；
+\ref{sec:china}节在\ref{sec:us}节的基础上计算中国东南部消散对流的LNO$_x$柱浓度和产率，
+最后是本章小结。
+
+
 \section{清洁地区（北极）} \label{sec:arctic}
 
 \subsection{闪电的分布} \label{subsect:lightning_distribution}
@@ -46,7 +61,7 @@ TROPOMI条带内的闪击数约占总计数的 9\%（图\ref{fig:arctic_lightnin
 鉴于 70$^{\circ}$ N 以北具有更高的 TROPOMI 覆盖率和更少的其他NO$_2$排放源（例如野火或天然气），我们选择该区域来计算LNO$_2$ 产率（PE）。
 GLD360在70$^{\circ}$ N 以北探测到的夏季（6--8 月）闪击数分别为 1.2$\cdot$10$^6$ （2019）、1.6$\cdot$10$^6$ （2020） 和 9.8$\cdot$10$^5$ （ 2021）（表\ref{table:arctic_emission}）。
 其中在TROPOMI 覆盖率最高的地区（80$^{\circ}$--90$^{\circ}$ N），2021 年的闪击数约为 2.9$\cdot$10$^4$，是前九年总数的近两倍\citep{networktotal.2021}。
-最北端可达89.5$^{\circ}$ N，世界闪电定位网络 （WWLLN）也探测到了该闪击（89.6 $^{\circ}$ N）\citep{Holzworth.2021}。
+最北端可达89.5$^{\circ}$ N，世界闪电定位网络 （WWLLN）也探测到了该闪击（89.6 $^{\circ}$ N，\citet{Holzworth.2021}）。
 
 
 \begin{figure}[!htbp]
@@ -1235,22 +1250,23 @@ $V_{\ch{LNO_x}}$的范围仍然可以清楚地识别（图 \ref{fig:china_vcd_ln
 
 
 \begin{table*}[!htbp]
-\caption{LNO$_\textrm{x}$产率估算的不确定性\\
+\centering
+\caption{LNO$_{\ch{x}}$产率估算的不确定性\\
 Table \ref{table:uncertainty_china}. Uncertainties for the estimation of LNO$_\textrm{x}$ production efficiency.}
-\begin{tabular}{ll}
+\begin{tabularx}{.8\textwidth}{c X}
 \hline
-\textbf{来源} & \textbf{不确定性 (\%)} \\
+\textbf{来源} & \makecell[cc]{\textbf{不确定性 (\%)}} \\
 \hline
-LNO$_x$ 寿命                & 27 \% \\
-闪电探测效率  & 27 \% \\
-NO/NO$_2$ 比例                 & 30 \% \\
-LNO 廓线                     & 26 \% \\
-平流层垂直柱浓度   & 7 \% \\
-其他                          & 10 \% \\
+LNO$_x$ 寿命                & \makecell[cc]{27 \%} \\
+闪电探测效率                  & \makecell[cc]{27 \%} \\
+NO/NO$_2$ 比例               & \makecell[cc]{30 \%} \\
+LNO 廓线                     & \makecell[cc]{26 \%} \\
+平流层垂直柱浓度                & \makecell[cc]{7 \%} \\
+其他                          & \makecell[cc]{10 \%} \\
 \hline
-净不确定性                             & 56 \% \\
+净不确定性                             & \makecell[cc]{56 \%} \\
 \hline
-\end{tabular}
+\end{tabularx}
 \label{table:uncertainty_china}
 \end{table*}
 
@@ -1258,22 +1274,27 @@ LNO 廓线                     & 26 \% \\
 \section{本章小结}
 
 本章建立了基于卫星遥感NO$_2$柱浓度定量分析不同污染背景下LNO$_2$的
-计算方法，得到了北极地区和的闪电NO$_x$排放量，并与其他NO$_x$排放源进行了对比。主要结论如下：
+计算方法，得到了不同污染程度地区的闪电NO$_x$产率，并与其他NO$_x$排放源进行了对比。主要结论如下：
 
 （1）针对清洁地区（北极）的深对流，我们利用极轨卫星在北极地区连续过境的特性，
 开发了TROPOMI LNO$_2$柱浓度高值区的自主识别系统，提出了通过相邻过境数据来定量 LNO$_2$ 的寿命和产率的方法。
 
 （2）2019--2021年6--8月的分析结果表明，北极地区对流附近的LNO$_2$寿命为3 h，与污染地区的LNO$_2$寿命相似，例如美国地区的3 h \citep{Nault.2017}。
-北极陆地地区的LNO$_2$ 产率 (2.0 [1.3--3.1] mol stroke$^{-1}$) 与美国的结果 (1.6 $\pm$ 0.1 mol stroke$^{-1}$) 也相似\citep{Lapierre.2020}。
+）］
+北极陆地地区的LNO$_2$ 产率 [2.0（1.3--3.1）mol stroke$^{-1}$] 与美国的结果 (1.6 $\pm$ 0.1 mol stroke$^{-1}$) 也相似\citep{Lapierre.2020}。
 此外，结果表明北极海洋性闪电产生的 NO$_2$ 是陆地性闪电的 6 倍。
 因此，当闪电在北极海洋和陆地上增加相同数量时，海洋性闪电将产生更多的 LNO$_2$。
 基于得到的LNO$_2$产率，我们进一步得出北极地区夏季（6--8 月）LNO$_x$ 的平均排放量为219 Mg (N)，约等于人为 NO$_x$ 排放量的 5\%。
 
 （3）针对污染地区的深对流，我们利用WRF-Chem的高分辨率模拟结果，定义了LNO$_2$和LNO$_x$的空气质量因子（AMF），
 从而得到包含了云下LNO$_2$和LNO$_x$的柱浓度。
-我们利用云辐射分数、地基探测的闪电阈值、模拟的闪电数$\geq$1000 和云上LNO$_2$占比$\geq$50 \%来确保WRF-Chem 成功模拟出对流并且LNO$_2$能够被OMI检测。
+% 我们利用云辐射分数、地基探测的闪电阈值、模拟的闪电数$\geq$1000 和云上LNO$_2$占比$\geq$50 \%来确保WRF-Chem 成功模拟出对流并且LNO$_2$能够被OMI检测。
 由于新定义的AMF考虑了对流层的背景污染，因此该方法同时适用于清洁和污染区域。
 
 （4）2014年5--8月的分析结果表明，美国大陆的夏季 LNO$_2$ 和 LNO$_x$平均产率为32$\pm$15 mol LNO$_2$每闪电、90$\pm$50 mol LNO$_x$每闪电、6$\pm$3 mol LNO$_2$每闪击，以及17$\pm$10 mol LNO$_x$每闪击。
 由于现阶段其他地区（如中国和印度）NO$_2$ 污染比美国大陆严重，因此LNO$_x$的估算有必要详细考虑NO$_2$背景污染。
 此外，区域和全球模式还需开发更为完善的闪电参数化来提高局地和全球范围内LNO$_x$排放估算的准确性。
+
+（5）2019年和2020年中国东南部的两个对流个例分析表明，TROPOMI 的像素饱和效应导致无法获得旺盛对流处的LNO$_x$，
+因此我们提出计算消散阶段的LNO$_x$，结果表明中国东南部的LNO$_x$产率为 60 $\pm$ 33 mol NO$_x$每闪电。
+未来的研究可同时利用旺盛和消散对流期间 OMI或TROPOMI 的有效数据，从而量化和改进 LNO$_x$ 的产量估计。
