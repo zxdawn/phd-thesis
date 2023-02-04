@@ -2,13 +2,20 @@
 
 \chapter{深对流对臭氧垂直分布的影响}
 
+由第\ref{sec:effects_on_nox_profile}章分析可知，云切片算法得到的不同高度对流云内NO$_2$平均浓度，
+可用于分析LNO$_2$和污染NO$_2$的地理分布并校验MERRA2-GMI的模拟结果。
+由于LNO$_x$和对流输送可共同对O$_3$的垂直分布产生影响，因此本章利用同样的云切片方法得到云间的O$_3$平均浓度，
+并分析输送和化学过程对其的贡献。
+
+本章余下部分按照以下方式组织：
+\ref{sec:model_settings_assimilation}节介绍WRF-Chem模式使用的闪电同化方案；
+\ref{sec:o3_profile}节将O$_3$探空与WRF-Chem模式结果进行对比，并利用云切片方法计算1$^{\circ}$ $\times$ 1$^{\circ}$ 网格内不同高度的O$_3$平均浓度和MLS观测的O$_3$廓线与MERRA2-GMI模拟的O$_3$廓线进行对比分析；
+\ref{sec:convec_impacts}节利用MERRA2-GMI和WRF-Chem的趋势诊断量分析动力输送和化学过程对O$_3$浓度变化的贡献；
+\ref{sec:lnox_effects}节通过WRF-Chem的敏感性试验探讨了LNO$_x$在对流不同阶段对O$_3$垂直分布的影响；
+最后是本章小结。
 
 
-
-
-\section{模式设置}
-% \subsection{气象及化学设置}
-% \section{模式评估}
+\section{模式设置} \label{sec:model_settings_assimilation}
 
 本章第\ref{sec:o3_profile}节和\ref{sec:convec_impacts}节中的全球模拟设置与第\ref{sec:model_settings_gmi}节相同。
 本章第\ref{sec:lnox_effects}节中的中国东南部模拟设置与第\ref{sec:model_settings_china}节相同。
@@ -98,7 +105,7 @@ Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019}
 此外，两个个例都存在双谷形状的O$_3$剖面，但高度不同：2019年的热对流个例为2 km和8 km，2020年的飑线为4 km和10 km。
 尽管WRF-Chem模型倾向于分别低估2019年和2020年的下对流层和上对流层中的O$_3$浓度，但再现了详细的O$_3$垂直分布结构，故能用以分析对流影响O$_3$的机制。
 共有三个来源可以解释上对流层O$_3$的增加：对流输送、化学反应和闪电直接产生的O$_3$。
-本研究（第\ref{sec:convec_impacts}节）仅详细讨论前两个因素，因为闪电直接产生的O$_3$超出了本研究的范围，并且有限的观测和模式模拟结果显示其产量仍不确定\citep{Morris.2010,Ripoll.2014}。
+本研究（\ref{sec:convec_impacts}节）仅详细讨论前两个因素，因为闪电直接产生的O$_3$超出了本研究的范围，并且有限的观测和模式模拟结果显示其产量仍不确定\citep{Morris.2010,Ripoll.2014}。
 
 
 \begin{figure}[!htbp]
@@ -130,7 +137,7 @@ The gray lines are the lapse rate tropopauses.
 
 为了进一步利用MERRA2-GMI的模式结果分析动力输送和化学反应在其中的作用，我们首先将各个高度的MERRA2-GMI模式结果与TROPOMI观测数据相比较。
 图\ref{fig:uto3_merra2}为2019年6--8月与TROPOMI对应的MERRA2-GMI O$_3$模拟结果，
-图\ref{fig:uto3_delta}为TROPOMI与MERRA2-GMI在各层的结果之差。
+图\ref{fig:uto3_delta}为TROPOMI与MERRA2-GMI在各层的结果之差（$\Delta$ O$_3$）。
 总体上，非洲中部的$\Delta$ O$_3$在中云和高云条件下为负（可小于-20 pptv，图\ref{fig:uto3_delta} a--d），中纬度地区的$\Delta$ O$_3$在高云条件下为正（可大于 40 pptv，图\ref{fig:uto3_tropomi} b），
 该两处之外的$\Delta$ O$_3$绝对值均小于10。
 此外，通过对比$\Delta$ NO$_2$（图\ref{fig:utno2_tropomi}）和$\Delta$ O$_3$（图\ref{fig:uto3_delta}），
@@ -370,3 +377,27 @@ O$_3$损耗的最低贡献，O$_3$ + HO$_2$ $\,\to\,$ OH + 2O$_2$，在对流旺
 \end{figure}
 
 \section{本章小结}
+
+
+本章不仅将云切片的O$_3$平均浓度和MLS O$_3$廓线与MERRA2-GMI模拟结果进行对比分析，
+而且将中国东南部对流个例的探空试验与WRF-Chem模式结果相结合，对O$_3$垂直分布变化的贡献项进行了详细讨论；
+主要结论如下：
+
+（1）闪电同化后的对流模拟结果与观测相符，虽然WRF-Chem模式结果倾向于低估O$_3$浓度，
+但其再现了O$_3$探空观测到的垂直分布结构及变化，即对流发生后上对流层的O$_3$和Q$_v$均增大；
+
+（2）在低纬地区，TROPOMI、MLS和MERRA2-GMI均显示上对流层的低O$_3$事件常发生于热带西太平洋，
+而非洲中部由于对流输送的边界层的高O$_3$浓度，上对流层O$_3$在有云条件下浓度更高；
+
+（3）在中纬地区，TROPOMI的云切片结果较少，MLS和MERRA2-GMI的上对流层O$_3$趋势相反：
+MERRA2-GMI模拟显示上对流层O$_3$浓度在有云时比晴空时浓度更低，MLS观测表明有云时上对流层O$_3$浓度增大，
+鉴于MERRA2-GMI与TROPOMI的相近，我们将MLS在261 hPa高度层高估的O$_3$浓度归因于平流层过度的外推；
+
+（4）MERRA2-GMI在闪电频发的美国东南部的模拟结果显示，330--450 hPa高度不存在TROPOMI观测到的O$_3$峰值，
+故MERRA2-GMI模拟中上对流层LNO$_2$的差异导致了O$_3$浓度的低估；
+
+（5）MERRA2-GMI和WRF-Chem的O$_3$趋势分析结果表明，虽然动力输送项在对流旺盛期间占主导，
+但在污染地区化学反应的正贡献在整个生命期更为重要。
+
+（6）中国东南部的对流个例模拟显示，LNO$_x$对于上对流层O$_3$的总贡献为负，而其中以NO和HO$_2$为主导的化学贡献为正，
+即由于动力传输和化学反应的综合作用导致O$_3$净产量的降低。
