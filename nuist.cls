@@ -1,5 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}% 必选项，class类都要写
 \ProvidesClass{nuist}[2021/06/06 南京信息工程大学硕博大论文模板]% 对外提供的接口
+% 更新记录
+% 2022-02-04 (Xin): 修正封面字体
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 载入预定义模板，在此基础上更改                                 
@@ -233,17 +235,17 @@
 \RequirePackage{boldline}            % \hlineB{num} \clineB{c1-c2}{num}
 
 % 封面题目使用
-\IfFileExists{STZhongsong.ttf}{%
-	% 使用华文中宋 ttf 文件
-	\newCJKfontfamily\Zhongsong{STZhongsong.ttf}[AutoFakeBold=4]
-	% 普通粗细的华文中宋
-	\newCJKfontfamily\ZhongsongNormal{STZhongsong.ttf}[AutoFakeBold=false]
-}{
-	% 使用系统华文中宋
-	\newCJKfontfamily\Zhongsong{STZhongsong}[AutoFakeBold=4]
-	% 普通粗细的华文中宋
-	\newCJKfontfamily\ZhongsongNormal{STZhongsong}[AutoFakeBold=false]
-}
+% \IfFileExists{STZhongsong.ttf}{%
+% 	% 使用华文中宋 ttf 文件
+% 	\newCJKfontfamily\Zhongsong{STZhongsong.ttf}[AutoFakeBold=4]
+% 	% 普通粗细的华文中宋
+% 	\newCJKfontfamily\ZhongsongNormal{STZhongsong.ttf}[AutoFakeBold=false]
+% }{
+% 	% 使用系统华文中宋
+% 	\newCJKfontfamily\Zhongsong{STZhongsong}[AutoFakeBold=4]
+% 	% 普通粗细的华文中宋
+% 	\newCJKfontfamily\ZhongsongNormal{STZhongsong}[AutoFakeBold=false]
+% }
 
 \RequirePackage{afterpage}
 \RequirePackage{xkeyval}
