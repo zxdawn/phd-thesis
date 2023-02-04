@@ -39,7 +39,6 @@
 \setlength{\parskip}{0.1\baselineskip}  
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                     
 %%               页面尺寸    
@@ -236,15 +235,15 @@
 % 封面题目使用
 \IfFileExists{STZhongsong.ttf}{%
 	% 使用华文中宋 ttf 文件
-	\newCJKfontfamily\Zhongsong{STZhongsong.ttf}[AutoFakeBold=4] 
+	\newCJKfontfamily\Zhongsong{STZhongsong.ttf}[AutoFakeBold=4]
 	% 普通粗细的华文中宋
-	\newCJKfontfamily\ZhongsongNormal{STZhongsong.ttf}[AutoFakeBold=false] 
+	\newCJKfontfamily\ZhongsongNormal{STZhongsong.ttf}[AutoFakeBold=false]
 }{
 	% 使用系统华文中宋
-	\newCJKfontfamily\Zhongsong{STZhongsong}[AutoFakeBold=4] 
+	\newCJKfontfamily\Zhongsong{STZhongsong}[AutoFakeBold=4]
 	% 普通粗细的华文中宋
-	\newCJKfontfamily\ZhongsongNormal{STZhongsong}[AutoFakeBold=false] 
-}                   
+	\newCJKfontfamily\ZhongsongNormal{STZhongsong}[AutoFakeBold=false]
+}
 
 \RequirePackage{afterpage}
 \RequirePackage{xkeyval}
@@ -272,7 +271,8 @@
 	}
 }
 
-\providecommand{\titlesep}{\\ \cline{2-2} &}
+% \providecommand{\titlesep}{\\ \cline{2-2} &}
+\providecommand{\titlesep}{\\ &}
 \providecommand{\keysepcn}{，}  % 中文关键字分隔符
 \providecommand{\keysepen}{,~}  % 英文关键字分隔符    
 
@@ -491,11 +491,11 @@
 			% NUIST
 			\noindent\centering\includegraphics{logo/nuist}
 			
-			% 黑体35号“硕士学位论文”
+			% 黑体35号“博士学位论文”
 			\setstretch{1}
 			\zihao{-0}{
 				\justify{9em}{
-					\noindent\centering\heiti{\nuist@degree 学位论文}
+					\noindent\centering\textbf{\nuist@degree 学位论文}
 				}
 			}
 			
@@ -508,32 +508,33 @@
 			\; \\
 			\; \\
 			
-			\zihao{5}{~}
+			% \zihao{5}{~}
 			
 			% 中文标题
-			\setstretch{1.5}  
-			\heiti\zihao{-2}
-			\begin{tabularx}{1\linewidth}{r>{\centering\arraybackslash}X}
-				论文题目：& \nuist@title \\ \cline{2-2}
+			\setstretch{1.5}
+			\zihao{-2}
+			\begin{tabularx}{1\linewidth}{r>{\bfseries\centering\arraybackslash}X}
+				& \nuist@title \\% \cline{2-2}
 			\end{tabularx}
-			
+
 			\setstretch{1}
-			\begin{textblock}{13.2}(3.3, 17)
+			% \begin{textblock}{13.2}(3.3, 17)
+			\begin{textblock}{13.2}(3.3, 18.5)
 				\zihao{5} 
-				\heiti \zihao{-3}
+				\zihao{-3}
 				\renewcommand\arraystretch{1.5}
 				\begin{tabular}{>{\raggedleft\arraybackslash}p{3.8cm}>{\centering\arraybackslash}p{7.5cm}}
-					申请人姓名：  & \limitjustify{\nuist@name} \\ \clineB{2-2}{2}
+					\textbf{申请人姓名：}  & \limitjustify{\nuist@name} \\ \clineB{2-2}{2}
 					
-					指\hspace{0.34em}导\hspace{0.33em}教\hspace{0.34em}师：   & \limitjustify{\nuist@mentor} \\ \clineB{2-2}{2} 
+					\textbf{指\hspace{0.34em}导\hspace{0.33em}教\hspace{0.34em}师：}   & \limitjustify{\nuist@mentor} \\ \clineB{2-2}{2}
 					
-					学\hspace{0.34em}科\hspace{0.33em}名\hspace{0.34em}称：   & \nuist@major \\ \clineB{2-2}{2}
+					\textbf{学\hspace{0.34em}科\hspace{0.33em}名\hspace{0.34em}称：}   & \nuist@major \\ \clineB{2-2}{2}
 					
-					研\hspace{0.34em}究\hspace{0.33em}方\hspace{0.34em}向：   & \nuist@research \\ \clineB{2-2}{2}
+					\textbf{研\hspace{0.34em}究\hspace{0.33em}方\hspace{0.34em}向：}   & \nuist@research \\ \clineB{2-2}{2}
 					
-					培\hspace{0.34em}养\hspace{0.33em}学\hspace{0.34em}院：   & \nuist@institute \\ \clineB{2-2}{2}
+					\textbf{培\hspace{0.34em}养\hspace{0.33em}学\hspace{0.34em}院：}   & \nuist@institute \\ \clineB{2-2}{2}
 					
-					提\hspace{0.34em}交\hspace{0.33em}时\hspace{0.34em}间：   & \nuist@year ~年 \nuist@month ~月 \nuist@day ~日 \\ \clineB{2-2}{2} 
+					\textbf{提\hspace{0.34em}交\hspace{0.33em}时\hspace{0.34em}间：}   & \nuist@year ~年 \nuist@month ~月 \nuist@day ~日 \\ \clineB{2-2}{2}
 				\end{tabular}
 			\end{textblock}
 			
