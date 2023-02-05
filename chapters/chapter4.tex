@@ -212,7 +212,7 @@
     \centering
     \includegraphics[width=12cm]{./figures/china_s5p_amf_diff.png}
     \caption{
-    通过替换三层的NO$_2$先验廓线，得到的空气质量因子（AMF）百分比差异：三层具体为：对流层中层（左）、对流层上层（中）和整个对流层（右）。
+    通过替换三层的NO$_2$先验廓线，得到的大气质量因子（AMF）百分比差异：三层具体为：对流层中层（左）、对流层上层（中）和整个对流层（右）。
      $\Delta$AMF$_\textrm{trop}$ 是 500 mol NO/闪电得到的AMF$_\textrm{trop}$ 与0 mol NO/闪电得到的AMF$_\textrm{trop}$之差。
      $\Delta$AMF$_\textrm{LNO$_x$}$ 是 500 mol NO/闪电得到的AMF$_\textrm{LNO$_x$}$ 与0 mol NO/闪电得到的AMF$_\textrm{LNO$_x$}$之差。
      标注了三个区域：新生闪电区（蓝色），闪电下风向（红色），和闪电老化区（黑色）。\\
@@ -301,15 +301,19 @@ LNO$_x$对$\Delta$AMF$_{\ch{trop}}$的贡献分为两部分：S$^{\ch{LNO_x}}_{\
 云切片得到的NO$_2$廓线可用于评估全球化学模式，并为对流输送、平流扩散和LNO$_x$排放的开发提供参考。
 我们将TROPOMI的云切片结果与MERRA2-GMI和TM5模式的对流层 NO$_2$ 廓线进行了比较，主要结论如下：
 
-（1）LNO$_2$ 在上对流层占主导，而污染 NO$_2$ 在下对流层占主导；
+\begin{enumerate}[label=(\arabic*), labelindent=\parindent, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
 
-（2）在对流层上层（180$\sim$330 hPa和330$\sim$450 hPa），
+\item LNO$_2$ 在上对流层占主导，而污染 NO$_2$ 在下对流层占主导；
+
+\item 在对流层上层（180$\sim$330 hPa和330$\sim$450 hPa），
 MERRA2-GMI 和 TM5 在中国南部、印度中部、和美国东南部的NO$_2$ 浓度大小一致，但均低于 TROPOMI 的观测结果，
 表明模式中 LNO$_2$ 或参数化对流垂直传输污染物存在低估，
 此外由于MERRA2-GMI的闪电参数化高估了美国中部和非洲中部的闪电总量，
 故这些区域的模拟NO$_2$浓度高于TROPOMI 的观测结果；
 
-（3）在对流层中层和低层，MERRA2-GMI在污染地区的NO$_2$偏高，尤其是中国东部和印度北部，鉴于全球模式偏低的对流垂直输送强度，我们将此归因于排放清单未及时更新；
+\item 在对流层中层和低层，MERRA2-GMI在污染地区的NO$_2$偏高，尤其是中国东部和印度北部，鉴于全球模式偏低的对流垂直输送强度，我们将此归因于排放清单未及时更新；
 
-（4）将不同LNO$_2$产率的WRF-Chem高分辨率结果代入TROPOMI NO$_2$柱浓度的计算，
-敏感性试验结果表明如果先验廓线忽略LNO$_2$，NO$_2$柱浓度在新生闪电的区域会被低估，而在出流区和老化LNO$_2$的区域则相反。
+\item 将不同LNO$_2$产率的WRF-Chem高分辨率结果代入TROPOMI NO$_2$柱浓度的计算，
+敏感性试验结果表明如果先验廓线忽略LNO$_2$，NO$_2$柱浓度在新生闪电的区域会被低估，而在出流区和老化区相反。
+
+\end{enumerate}

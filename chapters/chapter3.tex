@@ -177,7 +177,7 @@ The TROPOMI-detected NO$_2$ tropospheric columns are overlaid with (a) observed 
 \subsection*{计算闪电氮氧化物柱浓度}
 
 正如\citet{Zhang.2022a}中所讨论的，官方 TROPOMI 算法在 NO$_2$反演中不包括 LNO$_2$。
-因此，我们从官方 $S_{\ch{NO2}}$产品中减去背景 NO$_2$，并将差值通过空气质量因子 (AMF) 转换为对流层LNO$_2$垂直柱浓度。
+因此，我们从官方 $S_{\ch{NO2}}$产品中减去背景 NO$_2$，并将差值通过大气质量因子 (AMF) 转换为对流层LNO$_2$垂直柱浓度。
 该算法具体为下式
 
 
@@ -188,7 +188,7 @@ V_{\ch{LNO_2}} = \frac{S_{\ch{NO_2}} - S_{\ch{BG}}}{AMF_{\ch{LNO_2}}}
 
 其中 $V_{\ch{LNO2}}$ 是对流层 LNO$_2$ 垂直柱浓度，
 $S_{\ch{NO2}}$ 是 TROPOMI 测得的对流层 NO$_2$ 斜柱浓度，
-$AMF_{\ch{LNO2Clean}}$ 是新定义的闪电空气质量因子。
+$AMF_{\ch{LNO2Clean}}$ 是新定义的闪电大气质量因子。
 根据\citet{Allen.2021a}的研究，我们将背景 $S_{\ch{NO2}}$（$S_{\ch{BG}}$）定义为对流层 AMF 和在闪电掩膜内NO$_2$低值区的第 30 个百分位数$V_{\ch{NO2}}$的乘积。
 NO$_2$低值区（图 \ref{fig:workflow}（d）中的灰色像素）是由分水岭技术得到的$V_{\ch{NO2}}$高值区之外的所有掩膜像素。
 $AMF_{\ch{LNO2Clean}}$ 是“可见”LNO$_2$ 斜柱浓度与对流层 LNO$_2$ 垂直柱浓度之比，即式\ref{eq:AMF_LNO2clean}。
@@ -320,7 +320,7 @@ $\Delta$Area is the percentage change of the LNO$_2$ area at $T_2$ relative to $
 
 （1）背景NO$_2$加上LNO$_2$（LNO$_2$$^*$）与闪电之间的线性回归 \citep{Pickering.2016,Allen.2019,Lapierre.2020}；
 
-（2）使用定义的空气质量因子直接得到NO$_2$ \citep{Beirle.2009,Zhang.2020b,Zhang.2022a}；
+（2）使用定义的大气质量因子直接得到NO$_2$ \citep{Beirle.2009,Zhang.2020b,Zhang.2022a}；
 
 （3）算出LNO$_2$$^*$并减去背景 NO$_2$，其中背景 NO$_2$取自飞机观测 \cite{Pickering.2016,Perez-Invernon.2022} 或未发生闪电的对流像素处的平均NO$_2$ \citep{Bucsela.2019,Bucsela.2010,Allen.2021a}。
 
@@ -868,7 +868,7 @@ AMF_{\textrm{LNO$_2$Clean}} = \frac{\int_{p_{\textrm cloud}}^{p_{\textrm tp}} w_
 此外，污染地区的上对流层背景NO$_2$占比稳定且高于清洁地区。
 
 \begin{figure}[!htbp]
-\includegraphics[width=15cm]{./figures/us_bkgd_comp.pdf}
+\includegraphics[width=16cm]{./figures/us_bkgd_comp.pdf}
 \caption{在CRF $\geq$ 100\%条件下，六个网格中WRF-Chem 平均NO$_\textrm{2}$ 和背景 NO$_\textrm{2}$ 廓线。
 顶行数据选自污染区域（图 \ref{fig:us_delta}（a）中的星号），而底行数据来自清洁区域（图 \ref{fig:us_delta}（a）中的三角形）。
 绿色虚线是背景 NO$_\textrm{2}$ 与总 NO$_\textrm{2}$ 的平均比例廓线。
@@ -933,7 +933,7 @@ $\int_{p_{\textrm cloud}}^{p_{\textrm tp}} w_{\textrm cloudy}(p) LNO_2(p) \: dp 
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[width=15cm]{./figures/us_cp_ratio_lno2.pdf}
+\includegraphics[width=16cm]{./figures/us_cp_ratio_lno2.pdf}
 \caption{（a） LNO$_\textrm{2}$Vis 与 LNO$_\textrm{2}$之比的核密度估计（b）LNO$_\textrm{2}$产率与OMI测得的云压的核密度估计（2014年5--8月，CRF $\geq$ 90\%）。\\
 Figure \ref{fig:us_cp_ratio_lno2}. Kernel density estimation of the (a) daily ratio of LNO$_\textrm{2}$Vis to LNO$_\textrm{2}$ and (b) daily LNO$_\textrm{2}$ production efficiency versus the daily cloud pressure measured by OMI with CRF $\geq$ 90\% for MJJA 2014.}
 \label{fig:us_cp_ratio_lno2}
@@ -1276,25 +1276,29 @@ LNO 廓线                     & \makecell[cc]{26 \%} \\
 本章建立了基于卫星遥感NO$_2$柱浓度定量分析不同污染背景下LNO$_2$的
 计算方法，得到了不同污染程度地区的闪电NO$_x$产率，并与其他NO$_x$排放源进行了对比。主要结论如下：
 
-（1）针对清洁地区（北极）的深对流，我们利用极轨卫星在北极地区连续过境的特性，
+\begin{enumerate}[label=(\arabic*), labelindent=\parindent, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
+
+\item 针对清洁地区（北极）的深对流，我们利用极轨卫星在北极地区连续过境的特性，
 开发了TROPOMI LNO$_2$柱浓度高值区的自主识别系统，提出了通过相邻过境数据来定量 LNO$_2$ 的寿命和产率的方法。
 
-（2）2019--2021年6--8月的分析结果表明，北极地区对流附近的LNO$_2$寿命为3 h，与污染地区的LNO$_2$寿命相似，例如美国地区的3 h \citep{Nault.2017}。
+\item 2019--2021年6--8月的分析结果表明，北极地区对流附近的LNO$_2$寿命为3 h，与污染地区的LNO$_2$寿命相似，例如美国地区的3 h \citep{Nault.2017}。
 ）］
-北极陆地地区的LNO$_2$ 产率 [2.0（1.3--3.1）mol stroke$^{-1}$] 与美国的结果 (1.6 $\pm$ 0.1 mol stroke$^{-1}$) 也相似\citep{Lapierre.2020}。
+北极陆地地区的LNO$_2$ 产率 [2.0（1.3--3.1）mol每闪击] 与美国的结果 (1.6 $\pm$ 0.1 mol每闪击) 也相似\citep{Lapierre.2020}。
 此外，结果表明北极海洋性闪电产生的 NO$_2$ 是陆地性闪电的 6 倍。
 因此，当闪电在北极海洋和陆地上增加相同数量时，海洋性闪电将产生更多的 LNO$_2$。
 基于得到的LNO$_2$产率，我们进一步得出北极地区夏季（6--8 月）LNO$_x$ 的平均排放量为219 Mg (N)，约等于人为 NO$_x$ 排放量的 5\%。
 
-（3）针对污染地区的深对流，我们利用WRF-Chem的高分辨率模拟结果，定义了LNO$_2$和LNO$_x$的空气质量因子（AMF），
+\item 针对污染地区的深对流，我们利用WRF-Chem的高分辨率模拟结果，定义了LNO$_2$和LNO$_x$的大气质量因子（AMF），
 从而得到包含了云下LNO$_2$和LNO$_x$的柱浓度。
 % 我们利用云辐射分数、地基探测的闪电阈值、模拟的闪电数$\geq$1000 和云上LNO$_2$占比$\geq$50 \%来确保WRF-Chem 成功模拟出对流并且LNO$_2$能够被OMI检测。
 由于新定义的AMF考虑了对流层的背景污染，因此该方法同时适用于清洁和污染区域。
 
-（4）2014年5--8月的分析结果表明，美国大陆的夏季 LNO$_2$ 和 LNO$_x$平均产率为32$\pm$15 mol LNO$_2$每闪电、90$\pm$50 mol LNO$_x$每闪电、6$\pm$3 mol LNO$_2$每闪击，以及17$\pm$10 mol LNO$_x$每闪击。
+\item 2014年5--8月的分析结果表明，美国大陆的夏季 LNO$_2$ 和 LNO$_x$平均产率为32$\pm$15 mol LNO$_2$每闪电、90$\pm$50 mol LNO$_x$每闪电、6$\pm$3 mol LNO$_2$每闪击，以及17$\pm$10 mol LNO$_x$每闪击。
 由于现阶段其他地区（如中国和印度）NO$_2$ 污染比美国大陆严重，因此LNO$_x$的估算有必要详细考虑NO$_2$背景污染。
 此外，区域和全球模式还需开发更为完善的闪电参数化来提高局地和全球范围内LNO$_x$排放估算的准确性。
 
-（5）2019年和2020年中国东南部的两个对流个例分析表明，TROPOMI 的像素饱和效应导致无法获得旺盛对流处的LNO$_x$，
+\item 2019年和2020年中国东南部的两个对流个例分析表明，TROPOMI 的像素饱和效应导致无法获得旺盛对流处的LNO$_x$，
 因此我们提出计算消散阶段的LNO$_x$，结果表明中国东南部的LNO$_x$产率为 60 $\pm$ 33 mol NO$_x$每闪电。
 未来的研究可同时利用旺盛和消散对流期间 OMI或TROPOMI 的有效数据，从而量化和改进 LNO$_x$ 的产量估计。
+
+\end{enumerate}

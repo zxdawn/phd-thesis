@@ -101,20 +101,24 @@ OMI的观测数据可以与其他大气环境监测仪器数据相结合，共�
 
 对流层NO$_2$垂直柱浓度($V_{\ch{LNO2}}$)的计算主要包括以下步骤。
 
-（1）NO$_2$总斜柱浓度由 OMI 优化的差分光学吸收光谱（DOAS）拟合确定。
+\begin{enumerate}[label=(\arabic*), labelindent=\parindent, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
 
-（2）通过从测量的总斜柱浓度中减去由仪器引起的跨道偏差，得到校正（“去条纹”）的总斜柱浓度。
+\item NO$_2$总斜柱浓度由 OMI 优化的差分光学吸收光谱（DOAS）拟合确定。
 
-（3）平流层或对流层的空气质量因子（$AMF_{\ch{strat}}$，$AMF_{\ch{trop}}$）是由考虑加权散射权重的NO$_2$先验廓线的垂直积分计算得到。
+\item 通过从测量的总斜柱浓度中减去由仪器引起的跨道偏差，得到校正（“去条纹”）的总斜柱浓度。
+
+\item 平流层或对流层的大气质量因子（$AMF_{\ch{strat}}$，$AMF_{\ch{trop}}$）是由考虑加权散射权重的NO$_2$先验廓线的垂直积分计算得到。
 这些先验廓线是GMI模式模拟的月平均先验廓线（2004--2007 年）。
 
-（4）平流层NO$_2$垂直柱浓度（$V_{\ch{strat}}$）是通过减去对流层NO$_2$的先验贡献和三步（插值、过滤和平滑）算法计算得出\citep{Bucsela.2013}。
+\item 平流层NO$_2$垂直柱浓度（$V_{\ch{strat}}$）是通过减去对流层NO$_2$的先验贡献和三步（插值、过滤和平滑）算法计算得出\citep{Bucsela.2013}。
 
-（5）$V_{\ch{strat}}$ 使用 $AMF_{\ch{strat}}$ 转换为斜柱浓度，并从测量的总斜柱浓度中减去，从而得到对流层NO$_2$斜柱浓度（$S_{\ch{NO2}}$），进而 $V_{\ch{NO2}}$ = $S_{\ch{NO2}}$/$AMF_{\ch{trop}}$。
+\item $V_{\ch{strat}}$ 使用 $AMF_{\ch{strat}}$ 转换为斜柱浓度，并从测量的总斜柱浓度中减去，从而得到对流层NO$_2$斜柱浓度（$S_{\ch{NO2}}$），进而 $V_{\ch{NO2}}$ = $S_{\ch{NO2}}$/$AMF_{\ch{trop}}$。
 
-（6）基于这种方法，我们开发了一种新的 $AMF_{\ch{LNO_x}}$，通过替换原来的步骤来获得所需的 $V_{\ch{LNO_x}}$（$V_{\ch{LNO_x}}$ = $S_{\ch{NO2}}$/$AMF_{\ch{LNO_x}}$）。
+\item 基于这种方法，我们开发了一种新的 $AMF_{\ch{LNO_x}}$，通过替换原来的步骤来获得所需的 $V_{\ch{LNO_x}}$（$V_{\ch{LNO_x}}$ = $S_{\ch{NO2}}$/$AMF_{\ch{LNO_x}}$）。
 
-（7）该算法的具体细节将在第\ref{sec:amf_definition}节中讨论.
+\item 该算法的具体细节将在第\ref{sec:amf_definition}节中讨论.
+
+\end{enumerate}
 
 \subsection{对流层观测仪（TROPOMI）}
 
