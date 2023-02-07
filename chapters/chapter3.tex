@@ -10,9 +10,9 @@
 本章旨在通过使用卫星观测和云分辨化学模型来改进对LNO$_x$的估算。
 
 本章余下部分按照以下方式组织：
-\ref{sec:arctic}节将TROPOMI NO$_2$观测和GLD 360闪电探测数据相结合；
+\ref{sec:arctic}节将TROPOMI NO$_2$观测和GLD 360闪电探测数据相结合，
 利用相邻过境数据计算旺盛对流的LNO$_x$产率和产量，并与其他NO$_x$排放源对比；
-\ref{sec:us}节利用WRF-Chem的高分辨率结果，定义筛选条件和新的OMI AMF用于计算旺盛对流的LNO$_x$柱浓度和产率；
+\ref{sec:us}节利用WRF-Chem的高分辨率模拟结果，定义筛选条件和新的OMI AMF用于计算旺盛对流的LNO$_x$柱浓度和产率；
 \ref{sec:china}节在\ref{sec:us}节的基础上计算中国东南部消散对流的LNO$_x$柱浓度和产率，
 最后是本章小结。
 
@@ -21,20 +21,22 @@
 
 \subsection{闪电的分布} \label{subsect:lightning_distribution}
 
-气候变暖正在引发全球闪电的变化\citep{Reeve.1999,Williams.2005a,Price.2009a}。
+全球气候变暖正在引起闪电分布的变化\citep{Reeve.1999,Williams.2005a,Price.2009a}。
 在过去的 30 年中，研究学者针对闪电预测提出了多种模拟方案\citep{Price.1992,Price.1997b,Allen.2002,Futyan.2007,Finney.2014,Romps.2014}。
 气候模式结果显示，中纬度地区的闪电有所增加\citep{Michalon.1999,Romps.2014,Luhar.2021}，
 而在热带地区不同方案的预测结果目前仍存在分歧\citep{Finney.2018,Romps.2019}。
-此外，虽然北极地区的变暖速度是全球平均水平的四倍\citep{Rantanen.2022}，但针对北极闪电的研究还很少。
-最近，\citet{Chen.2021a}针对北极地区开发了一个闪电参数化方案，结果表明，到本世纪末若全球平均气温上升3.7$^{\circ}$C，永冻区的闪电将增加74\%--150\%。
-地基闪电观测结果显示，从 2010 年到 2020 年北极闪电占全球闪电的比例增加了三倍\citep{Holzworth.2021}。
+此外，虽然北极地区变暖速度是全球平均水平的4倍\citep{Rantanen.2022}，但针对北极闪电的研究还很少。
+最近，\citet{Chen.2021a}针对北极地区开发了一个闪电参数化方案，
+结果表明：到本世纪末若全球平均气温上升3.7$^{\circ}$C，永冻区的闪电频率将增加74\%--150\%。
+地基闪电观测结果显示，北极闪电相对于全球闪电的比例在2010至2020年期间增加了两倍\citep{Holzworth.2021}。
 此外，北极地区夏季更多的水汽辐合将加强对流系统，从而导致更多闪电\citep{Bintanja.2020}。
 
-为了研究北极地区的闪电变化，我们将光学瞬态探测器（OTD, 1996--1999）\citep{Christian.2003} 的卫星闪电数据与维萨拉全球地基雷电数据集（GLD360，2019--2021）进行比较。
+为了研究北极地区的闪电变化，我们将光学瞬态探测器（OTD，1996--1999）的卫星闪电数据
+与维萨拉全球地基雷电数据集（GLD360，2019--2021）进行比较。
 其中OTD仪器的观测范围为75$^{\circ}$ N以南，且其数据产品只包含闪电次数，一次闪电可包含一个或多个闪击。
 虽然GLD360官方产品只包含闪击，但是我们的目的是研究闪电分布的变化，故未将闪击聚类成闪电。
 GLD360数据覆盖了整个高纬度地区（$>$60$^{\circ}$ N），而OTD仪器只观测到75$^{\circ}$ N以南的闪电。
-在2019--2021年夏季（6月至8月）， GLD360探测到75$^{\circ}$ N 以北发生的闪击所占比例为3\%（图\ref{fig:gld360_tseries}）。
+在2019--2021年夏季（6月至8月）GLD360探测到75$^{\circ}$ N 以北发生的闪击所占比例为3\%（图\ref{fig:gld360_tseries}）。
 
 \begin{figure}[!htbp]
 \centering
@@ -47,38 +49,39 @@ Figure \ref{fig:gld360_tseries}. Time series of GLD360 lightning strokes per 10 
 \end{figure}
 
 
-在图\ref{fig:arctic_lightning_distribution} 中，我们使用卫星和地面闪电观测比较了高纬度地区夏季（6--8 月）闪电的空间分布。
-两个数据集都显示西伯利亚和阿拉斯加永冻区具有较高的闪电频率（60$^{\circ}$--65$^{\circ}$ N，图\ref{fig:arctic_lightning_distribution}（a） 和 \ref{fig:arctic_lightning_distribution} （b）），这是北极火灾的主要来源\citep{McCarty.2021}。
+在图\ref{fig:arctic_lightning_distribution} 中，我们使用卫星和地面闪电观测比较了高纬度地区夏季闪电的空间分布。
+两个数据集均显示北极野火的主要发生地[西伯利亚和阿拉斯加永冻区，
+\citep{McCarty.2021}]具有较高的闪电频率（图\ref{fig:arctic_lightning_distribution}a和 \ref{fig:arctic_lightning_distribution}b）。
 OTD 平均闪电频率和 GLD360 平均闪击频率分别为 0.22 km$^{-2}$ 每月 和 0.61 km$^{-2}$ 每月。
 然而，OTD 在楚科奇海（Chukchi Sea）附近记录的闪电较少，但在伊明格海（Irminger Sea）上空较多。
 这种现象归因于北极降水的年际变化，与向极地输送的水汽有关\citep{Bintanja.2020}。
 
-为了判断 TROPOMI 是否可以探测到 LNO$_2$，我们首先计算了每次TROPOMI过境前3 h内发生在条带里的GLD360闪电数。
-虽然TROPOMI不会连续对北极进行探测，但在夏季该地区每天有14个重叠轨道，从而覆盖了北极的大部分地区。
-TROPOMI条带内的闪击数约占总计数的 9\%（图\ref{fig:arctic_lightning_distribution}c），并且它们具有相同的地理分布（图\ref{fig:arctic_lightning_distribution}b）。
-由于在高纬度地区有更多的重叠条带，条带内闪击的比例随着纬度增大而增大（图\ref{fig:arctic_lightning_distribution}d），从$<$ 10\% （60$^{\circ}$--70$^{\circ}$ N） 增加到 10\%--25\% （70 $^{\circ}$--80$^{\circ}$ N） 和 40\%--100\%（80$^{\circ}$--90$^{\circ}$ N）。
-而地基观测\citep{Schmale.2018} 和飞机观测\citep{Jacob.2010}的NO$_2$数据有限，因此TROPOMI的NO$_2$卫星观测数据在分析北极的 LNO$_2$ 方面非常有利。
-鉴于 70$^{\circ}$ N 以北具有更高的 TROPOMI 覆盖率和更少的其他NO$_2$排放源（例如野火或天然气），我们选择该区域来计算LNO$_2$ 产率（PE）。
-GLD360在70$^{\circ}$ N 以北探测到的夏季（6--8 月）闪击数分别为 1.2$\cdot$10$^6$ （2019）、1.6$\cdot$10$^6$ （2020） 和 9.8$\cdot$10$^5$ （ 2021）（表\ref{table:arctic_emission}）。
-其中在TROPOMI 覆盖率最高的地区（80$^{\circ}$--90$^{\circ}$ N），2021 年的闪击数约为 2.9$\cdot$10$^4$，是前九年总数的近两倍\citep{networktotal.2021}。
-最北端可达89.5$^{\circ}$ N，世界闪电定位网络 （WWLLN）也探测到了该闪击（89.6 $^{\circ}$ N，\citet{Holzworth.2021}）。
+为了判断 TROPOMI 是否可以探测到 LNO$_2$，我们首先计算了每次TROPOMI过境前3 h内条带里发生的GLD360闪电数。
+由于TROPOMI在北极地区每天有14条重叠条带，条带内的闪击数约占总计的 9\%（图\ref{fig:arctic_lightning_distribution}c），并且具有相同的地理分布（图\ref{fig:arctic_lightning_distribution}b）。
+纬度越高，条带内闪击的占比越大（图\ref{fig:arctic_lightning_distribution}d），
+从$<$ 10\% （60--70$^{\circ}$ N） 增加到 10--25\% （70--80$^{\circ}$ N） 和 40--100\%（80--90$^{\circ}$ N）。
+而地基观测\citep{Schmale.2018} 和飞机观测\citep{Jacob.2010}的NO$_2$数据有限，
+因此TROPOMI的NO$_2$观测数据在分析北极的 LNO$_2$ 方面非常有利。
+鉴于 70$^{\circ}$ N 以北具有更高的 TROPOMI 覆盖率和更少的其他NO$_2$排放源（例如野火或天然气），我们选择该区域来计算LNO$_2$ 产率。
+GLD360在70$^{\circ}$ N 以北探测到的夏季闪击数分别为 1.2$\times$10$^6$ （2019）、1.6$\times$10$^6$ （2020） 和 9.8$\times$10$^5$ （ 2021）（表\ref{table:arctic_emission}）。
+其中在TROPOMI 覆盖率最高的地区（80--90$^{\circ}$ N），2021 年的闪击数约为 2.9$\times$10$^4$，是前九年总数的近两倍\citep{networktotal.2021}。
+GLD360测得的闪击最北可达89.5$^{\circ}$ N，世界闪电定位网络 （WWLLN）也探测到了该闪击（89.6 $^{\circ}$ N，\citet{Holzworth.2021}）。
 
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=13cm]{./figures/arctic_lightning_distribution.pdf}
 \caption{
-(a) 1996--1999年6--8月OTD平均闪电频率；
-(b) 2019--2021年6--8月GLD360平均闪击率；
-(c) 与 (b) 相同，但只计算 TROPOMI 过境前 6 h内 TROPOMI 条带内的闪电。
-没有闪电的网格在 (a)--(c) 子图中设置为淡蓝色。
-(d) (c) 与 (b) 的月比例。\\
+（a）1996至1999年6-8月OTD观测的平均闪电频率；
+（b）2019至2021年6-8月GLD360观测的平均闪击频率；
+（c）与（b）相同，但只计算TROPOMI过境前3 h内TROPOMI条带内的闪电；
+（d）为（c）与（b）的月比例。\\
 Figure \ref{fig:arctic_lightning_distribution}.
-(a) Mean OTD lightning flash rate over June--August of 1996--1999;
-(b) Mean GLD360 lightning stroke rate over June--August of 2019--2021;
-(c) Same as (b) but only counting the lightning inside the TROPOMI swaths during the 3-hour period before the TROPOMI overpass time.
-Grids with no lightning appear as the light-blue backgrounds in (a)--(c) panels.
-(d) The monthly ratio of (c) to (b).
+(a) Mean OTD lightning flash rate of June--August 1996--1999;
+(b) Mean GLD360 lightning stroke rate of June--August 2019--2021;
+(c) Same as panel b but only counting the lightning inside the TROPOMI swaths during the 3 h period before the TROPOMI overpass time.
+Grids with no lightning appear as the light-blue backgrounds in panels a--c.
+(d) Monthly ratio of panel c to panel b.
 }
 \label{fig:arctic_lightning_distribution}
 \end{figure}
@@ -86,14 +89,15 @@ Grids with no lightning appear as the light-blue backgrounds in (a)--(c) panels.
 
 \begin{table*}
 \centering
-\caption{2019--2021期间高纬度地区GLD360探测到的闪击数、闪电NO$_2$排放（Mg[N]）和平均对流有效位能（CAPE, J kg$^{-1}$）\\
-Table \ref{table:arctic_emission}. GLD360 stroke counts, lightning NO$_2$ (LNO$_2$) emissions (Mg[N]), and mean Convective available potential energy (CAPE, J kg$^{-1}$) in the Arctic region for the June--August periods of 2019--2021.
+\caption{2019--2021期间高纬度地区GLD360探测到的闪击数、闪电NO$_2$排放（吨氮）和平均对流有效位能（CAPE, J kg$^{-1}$）\\
+Table \ref{table:arctic_emission}. GLD360 stroke counts, lightning NO$_2$ (LNO$_2$) emissions (Mg of N), and mean
+convective available potential energy (CAPE, J kg$^{-1}$) in the Arctic region during June--August 2019--2021.
 }
 \label{table:arctic_emission}
 \begin{tabular}{rrrrrr}
 \hline
-{} & 70$^{\circ}$--75$^{\circ}$ N & 75$^{\circ}$--80$^{\circ}$ N &
-80$^{\circ}$--85$^{\circ}$ N &  85$^{\circ}$--90$^{\circ}$ N &  \\
+{} & 70--75$^{\circ}$ N & 75--80$^{\circ}$ N &
+80--85$^{\circ}$ N &  85--90$^{\circ}$ N &  \\
 \hline
 Strokes & & & & & Total \\
 \hline
@@ -291,12 +295,13 @@ Figure \ref{fig:consecutive_orbits}. Selections (bright colored pixels) of NO$_2
 
 \begin{table}[!htbp]
 \centering
-\caption{2019--2021期间得到的闪电 NO$_2$ (LNO$_2$) 的寿命\\
+\caption{2019--2021期间得到的闪电 NO$_2$（LNO$_2$）寿命\\
 Table \ref{table:lifetime}. Lightning NO$_2$ (LNO$_2$) lifetimes derived from cases (2019--2021).}
 \label{table:lifetime}
+{\centering
 \begin{tabular}{llllll}
 \hline
-时间             &         轨道 &    经度 &   纬度 &  $\Delta$面积 (\%) &  寿命 (h) \\
+时间             &         轨道 &    经度 &   纬度 &  $\Delta$面积（\%） &  寿命（h）\\
 \hline
 2019-06-28 00:38 &       08833 &  127.4 &  81.0 &     -14.5 &       3.0 \\
 2019-08-14 22:58 &       09513 &  126.0 &  70.4 &       2.0 &       1.7 \\
@@ -306,26 +311,30 @@ Table \ref{table:lifetime}. Lightning NO$_2$ (LNO$_2$) lifetimes derived from ca
 2021-07-11 11:40 &       19395 &  -84.5 &  70.9 &      28.0 &       5.2 \\
 \hline
 \end{tabular}
-\footnotesize
-\shortstack[l]{
-$\Delta$面积 是 LNO$_2$ 面积在 $T_2$ 相对于 $T_1$ 的百分比变化 \\
-（$T_1$ 和 $T_2$ 是连续条带的平均过境时间，$T_2$ > $T_1$）。\\
-$\Delta$Area is the percentage change of the LNO$_2$ area at $T_2$ relative to $T_1$ \\
+\par }
+\begin{tablenotes}
+\small
+\item $\Delta$面积 是 LNO$_2$ 面积在 $T_2$ 相对于 $T_1$ 的百分比变化
+（$T_1$ 和 $T_2$ 是连续条带的平均过境时间，$T_2$ > $T_1$）。
+\item $\Delta$Area is the percentage change of the LNO$_2$ area at $T_2$ relative to $T_1$
 ($T_1$ and $T_2$ are the mean overpass time of consecutive swaths, $T_2$ > $T_1$).
-}
+\end{tablenotes}
 \end{table}
 
 
 在前人的研究中共有三种方法来估算热带和中纬度地区的 LNO$_2$ 产量：
 
-（1）背景NO$_2$加上LNO$_2$（LNO$_2$$^*$）与闪电之间的线性回归 \citep{Pickering.2016,Allen.2019,Lapierre.2020}；
+\begin{enumerate}[label=(\arabic*), labelindent=\parindent, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
 
-（2）使用定义的大气质量因子直接得到NO$_2$ \citep{Beirle.2009,Zhang.2020b,Zhang.2022a}；
+\item 背景NO$_2$加上LNO$_2$（LNO$_2$$^*$）与闪电之间的线性回归 \citep{Pickering.2016,Allen.2019,Lapierre.2020}；
 
-（3）算出LNO$_2$$^*$并减去背景 NO$_2$，其中背景 NO$_2$取自飞机观测 \cite{Pickering.2016,Perez-Invernon.2022} 或未发生闪电的对流像素处的平均NO$_2$ \citep{Bucsela.2019,Bucsela.2010,Allen.2021a}。
+\item 使用定义的大气质量因子直接得到NO$_2$ \citep{Beirle.2009,Zhang.2020b,Zhang.2022a}；
+
+\item 算出LNO$_2$$^*$并减去背景 NO$_2$，其中背景 NO$_2$取自飞机观测 \citep{Pickering.2016,Perez-Invernon.2022} 或未发生闪电的对流像素处的平均NO$_2$ \citep{Bucsela.2019,Bucsela.2010,Allen.2021a}。
+
+\end{enumerate}
 
 由于背景 NO$_2$ 随太阳天顶角而变化，线性回归不适用于我们的情况。
-
 第二种方法需要使用闪电参数化进行详细的 LNO$_2$ 模拟，而目前闪电参数化的不确定性仍非常大 \cite{Finney.2018,Romps.2019,Chen.2021a}，尤其是在闪电数据集很少的北极地区 \citep{Holzworth.2021}。
 最后一种方法需要的平均背景 NO$_2$数据集不适用于北极地区的网格（即 1 $^{\circ}$ $\times$ 1 $^{\circ}$），因为 TROPOMI 检测到70$^{\circ}$ N 以北的非闪电对流个例有限。
 
@@ -354,6 +363,22 @@ LNO$_2$ 排放是闪击数和 LNO$_2$ PE（每次闪击产生的LNO$_2$）的乘
 由于个例数量有限，我们无法确定海洋和陆地之间的 LNO$_2$ PE 是否存在统计学上的显著差异。
 然而，在热带和中纬度地区 \citet{Marais.2018,Allen.2019,Bucsela.2019} 也发现了海洋上的 LNO$_2$ PE 是陆地上的两倍，前人研究表明这是由于海洋上的闪电能量更高\citep{Beirle.2014,Hutchins.2013}。
 
+最近的研究表明，LNO$_2$产率与闪电尺寸有关，尺寸越大，产生的LNO$_2$越多\citep{Huntrieser.2008,Marais.2018}。
+此外，更强的上升气流与更小的闪电和更高的闪电频率相关\citep{Bruning.2013,Bruning.2015,Mecikalski.2015}。
+因此，我们计算了闪击率，即单位时间单位LNO$_2$面积内的闪击次数，
+它的范围从 2.3$\times$10$^{-10} $m$^{-2}$ h$^{-1}$ 到 4.1$\times$10$^{-6} $m$^{-2 }$ h$^{-1}$，
+陆地地区闪击率（6.2$\times$10$^{-7}$ m$^{-2}$ h$^{-1}$）比海洋地区高$\sim$ 11 倍 (5.2$\times$10$^{-8}$ m$^{-2}$ h$^{-1}$)。
+我们发现闪击率和 LNO$_2$产率之间存在近似的幂律关系（图 \ref{atctic_fig:pe_rate}b）。
+当闪击率下降2个数量级时，LNO$_2$产率增加10倍，这与中纬度开展的研究一致\citep{Bucsela.2019,Zhang.2020b}。
+
+Recent studies suggest that LNO$_2$ PE is related to flash size, with larger flashes producing more LNO$_2$ \cite{Huntrieser.2008,Marais.2018}.
+Furthermore, stronger updrafts are associated with smaller flashes and higher lightning rates \cite{Bruning.2013,Bruning.2015,Mecikalski.2015}.
+Therefore, we calculate the stroke rate, which is the number of lightning strokes per unit LNO$_2$ area per unit time.
+It ranges from 2.3$\times$10$^{-10}$ m$^{-2}$ h$^{-1}$ to 4.1$\times$10$^{-6}$ m$^{-2}$ h$^{-1}$, with the continental stroke rate (6.2$\times$10$^{-7}$ m$^{-2}$ h$^{-1}$) being $\sim$11 times higher than over the ocean (5.2$\times$10$^{-8}$ m$^{-2}$ h$^{-1}$).
+We find an approximate power law relationship between the stroke rate and LNO$_2$ PE (Figure \ref{fig:pe_rate}b).
+When the stroke rate decreases by 2 orders of magnitude, LNO$_2$ PE increases by a factor of 10, which is consistent with mid-latitude studies \cite{Bucsela.2019,Zhang.2020b}.
+
+
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=15cm]{./figures/arctic_lno2_production.pdf}
@@ -375,8 +400,8 @@ Top 10 lightning NO$_2$ (LNO$_2$) production efficiencies (PE) from 2019 to 2021
 \begin{tabular}{llllllll}
 \hline
 时间 &       条带 &   经度 &   纬度 &
-区域\textsuperscript{\emph{a}} &
-闪击数\textsuperscript{\emph{b}}  & \shortstack{LNO$_2$ 产率 \\ (mol每闪击)} \\
+区域$^a$ &
+闪击数$^b$  & \shortstack{LNO$_2$ 产率 \\ (mol每闪击)} \\
 \hline
 2020-06-15 20:38 &  13853 &      152.7 &      78.1 &       海洋 &         124 &    611.9 \\
 2019-08-11 01:54 &  09458 &      123.5 &      84.5 &       海洋 &         404 &    180.6 \\
@@ -390,11 +415,13 @@ Top 10 lightning NO$_2$ (LNO$_2$) production efficiencies (PE) from 2019 to 2021
 2020-06-16 05:02 &  13858 &      121.3 &      75.8 &       海洋 &         536 &     26.9 \\
 \hline
 \end{tabular}
-\footnotesize\\
-\textsuperscript{\emph{a}} 陆地和海洋由50 m Natural Earth数据分类，其中沿岸地区定义为海岸线周围500 m半径。 \\
-\textsuperscript{\emph{b}} 连续轨道间隔期间的总闪击数。\\
-\textsuperscript{\emph{a}} The land and ocean are classified by the 50 m Natural Earth data, where the coastal region is defined as a 500 m radius around the coastline. \\
-\textsuperscript{\emph{b}} The total number of strokes during the interval between consecutive orbits.
+\begin{tablenotes}
+\small
+\item $^a$ 陆地和海洋由50 m Natural Earth数据分类，其中沿岸地区定义为海岸线周围500 m半径。
+\item $^b$ 连续轨道间隔期间的总闪击数。
+\item $^a$ The land and ocean are classified by the 50 m Natural Earth data, where the coastal region is defined as a 500 m radius around the coastline.
+\item $^b$ The total number of strokes during the interval between consecutive orbits.
+\end{tablenotes}
 \end{table}
 
 
@@ -417,30 +444,31 @@ The box plots indicate the median values, the lower and upper boundaries represe
 
 \begin{table}[!htbp]
 \centering
-\caption{Uncertainties\textsuperscript{\emph{a}} for the estimation of LNO$_2$ PE.}
+\caption{Uncertainties$^a$ for the estimation of LNO$_2$ PE.}
 \label{table:arctic_uncertainty}
 \begin{tabular}{llll}
 \hline
 类型                           &  默认值        & 扰动                 &   不确定度 (\%)  \\
 \hline
-LNO$_2$ 寿命                   & 3 小时                 & 2 小时 and 4 小时\textsuperscript{\emph{b}}      &   36                      \\
-IC:CG                         & 1:1                    & 2:1 and 1:2                  &   33 \\
-LNO$_2$ 廓线宽度                & 180 hPa               & 160 hPa and 200 hPa          &   7   \\
-对流层 NO$_2$ 对流层背景浓度      & 第 30 个百分位数        & 第 10 个百分位数\textsuperscript{\emph{c}}     & 2                \\
+LNO$_2$ 寿命                   & 3 小时                 & 2 小时和4 小时$^b$      &   36                      \\
+IC:CG                         & 1:1                    & 2:1和1:2                  &   33 \\
+LNO$_2$ 廓线宽度                & 180 hPa               & 160 hPa 和 200 hPa          &   7   \\
+对流层 NO$_2$ 对流层背景浓度      & 第 30 个百分位数        & 第 10 个百分位数$^c$     & 2                \\
 LNO$_2$ 选区              & 80\% 置信区间          &  70\% 置信区间   & 13                \\
-云压                 & 二级产品               &  $\pm$ 50 hPa\textsuperscript{\emph{d}}                & 7                \\
-Others\textsuperscript{\emph{e}}       & --                  & --                           &   10                      \\
+云压                 & 二级产品               &  $\pm$ 50 hPa$^d$                & 7                \\
+Others$^e$       & --                  & --                           &   10                      \\
 Net                            &                     &                              &   53                      \\
 \hline
 \end{tabular}
-\footnotesize
-\shortstack[l]{
-\textsuperscript{\emph{a}} Uncertainty = (Error$_{rising\ perturbed\ value}$ - Error$_{lowering\ perturbed\ value}$)/2 \\
-where Error$_{\* perturbed\ value}$ = (PE$_{\* perturbed\ value}$ - PE$_{default\ value}$)/PE$_{default\ value}$.}\\
-\textsuperscript{\emph{b}} Based on the lifetime values calculated in the Methods section. \\
-\textsuperscript{\emph{c}} \citet{Allen.2021a} and \citet{Perez-Invernon.2022}  \\
-\textsuperscript{\emph{d}} \citet{VanGeffen.2022} \\
-\textsuperscript{\emph{e}} \citet{Allen.2021a}
+\begin{tablenotes}
+\small
+\item $^a$ Uncertainty = (Error$_{rising\ perturbed\ value}$ - Error$_{lowering\ perturbed\ value}$)/2
+where Error$_{\* perturbed\ value}$ = (PE$_{\* perturbed\ value}$ - PE$_{default\ value}$)/PE$_{default\ value}$.
+\item $^b$ Based on the lifetime values calculated in the Methods section.
+\item $^c$ \citet{Allen.2021a} and \citet{Perez-Invernon.2022}.
+\item $^d$  \citet{VanGeffen.2022}.
+\item $^e$  \citet{Allen.2021a}.
+\end{tablenotes}
 \end{table}
 
 
@@ -645,8 +673,7 @@ NO_2(0) = NO_2(OMI) \times e^{0.5t/\tau}
 根据以上条件，我们定义了六种不同的筛选条件组合（表），并使用线性回归方法（表）应用于原始数据。
 
 \begin{table*}[htbp]
-\scriptsize
-\caption{本研究中使用的标准的缩写定义\\Table \ref{table:Abbreviations}Definitions of the abbreviations for the criteria used in this study.}
+\caption{本研究中使用的标准的缩写定义\\Table \ref{table:Abbreviations} Definitions of the abbreviations for the criteria used in this study.}
 \begin{tabular}{ll}
 \hline
 \textbf{缩写} & \textbf{全称 [来源]} \\
@@ -664,19 +691,21 @@ CRF$\alpha$\_ENTLN\_TL1000\_ratio50   & CRF $\geq$ $\alpha$ + ENTLN flashes(stro
 CRF$\alpha$\_CF40\_ENTLN\_TL1000\_ratio50 & CRF $\geq$ $\alpha$ + ENTLN flashes(strokes) $\geq$ 2400(8160) + CF $\geq$ 40\% + TL $\geq$ 1000 + ratio $\geq$ 50\% \\
 CRF$\alpha$\_ENTLN1(3.4)\_TL1\_ratio50    & CRF $\geq$ $\alpha$ + ENTLN flashes(strokes) $\geq$ 1(3.4) + TL $\geq$ 1 + ratio $\geq$ 50\% \\
 \hline
-\multicolumn{2}{l}{$^{*}$$\alpha$有三种选择：70\%、90\%以及100\%} \\
-\multicolumn{2}{l}{$^{*}$$\alpha$ has three options: 70\%, 90\% and 100\%}
 \end{tabular}
+\begin{tablenotes}
+\small
+\item $\alpha$有三种选择：70\%、90\%以及100\%。
+\item $\alpha$ has three options: 70\%, 90\% and 100\%.
+\end{tablenotes}
 \label{table:Abbreviations}
 \end{table*}
 
 
 \begin{table*}[htbp]
-\scriptsize
 \caption{根据表\ref{table:Abbreviations}中的定义得到的LNO$_\textrm{x}$产率\\Table \ref{table:conditions} LNO$_\textrm{x}$ production efficiencies for different combinations of criteria defined in Table \ref{table:Abbreviations}.}
 \begin{tabular}{lccccc}
 \hline
-\textbf{条件$^1$} & \textbf{ENTLN类型$^2$} & \textbf{LNO$_\textrm{x}$/flash or LNO$_\textrm{x}$/stroke} & \textbf{R值} & \textbf{截距 (10$^{6}$mol)} & \textbf{天数$^3$} \\
+\textbf{条件$^a$} & \textbf{ENTLN类型$^b$} & \textbf{LNO$_\textrm{x}$/flash or LNO$_\textrm{x}$/stroke} & \textbf{R值} & \textbf{截距 (10$^{6}$mol)} & \textbf{天数$^c$} \\
 \hline
 CRF90\_ENTLN                        & Flash  & 52.1 $\pm$ 51.1 & 0.20 & 0.21  & 99 \\
 CRF90\_CF40\_ENTLN                  & Flash  & 84.2 $\pm$ 31.5 & 0.54 & -0.04 & 70 \\
@@ -691,14 +720,17 @@ CRF90\_CF40\_ENTLN\_TL1000          & Stroke & 8.6 $\pm$ 6.2 & 0.39 & 0.27  & 46
 CRF90\_ENTLN\_TL1000\_ratio50       & Stroke & 7.0 $\pm$ 4.8 & 0.29 & 0.42  & 93 \\
 CRF90\_CF40\_ENTLN\_TL1000\_ratio50 & Stroke & 8.9 $\pm$ 7.0 & 0.39 & 0.31  & 40 \\
 \hline
-\multicolumn{6}{l}{$^1$定义见表\ref{table:Abbreviations}。}\\
-\multicolumn{6}{l}{$^2$ENTLN阈值为OMI过境前2.4小时内，1$^{\circ}$ $\times$ 1$^{\circ}$网格中闪电至少2400次和闪击至少8160次。}\\
-\multicolumn{6}{l}{$^3$2014年5--8月中有效的天数。} \\
-\multicolumn{6}{l}{$^1$These conditions are defined in Table \ref{table:Abbreviations}.} \\
-\multicolumn{6}{l}{$^2$The thresholds of ENTLN data are 2400 flashes box$^{-1}$ and 8160 strokes box$^{-1}$ during the period of 2.4 h before OMI overpass time.} \\
-\multicolumn{6}{l}{$^3$The number of valid days with specific criteria in MJJA 2014.}
 \label{table:conditions}
 \end{tabular}
+\begin{tablenotes}
+\small
+\item $^a$ 定义见表\ref{table:Abbreviations}。
+\item $^b$ ENTLN阈值为OMI过境前2.4小时内，1$^{\circ}$ $\times$ 1$^{\circ}$网格中闪电至少2400次和闪击至少8160次。
+\item $^c$ 2014年5--8月中有效的天数。
+\item $^a$ These conditions are defined in Table \ref{table:Abbreviations}.
+\item $^b$ The thresholds of ENTLN data are 2400 flashes box$^{-1}$ and 8160 strokes box$^{-1}$ during the period of 2.4 h before OMI overpass time.
+\item $^c$ The number of valid days with specific criteria in MJJA 2014.
+\end{tablenotes}
 \end{table*}
 
 
@@ -715,11 +747,10 @@ CRF 从 70\% 增加到 90\% 引起的 LNO$_x$ PE 增加与\citet{Pickering.2016}
 虽然在 CRF > 70\% 的地区经常观察到 NO$_x$ 增强\citet{Pickering.2016}，但考虑到中低浓度 NO$_2$ 的污染并与\citet{Pickering.2016}和\citet{Lapierre.2020}的结果进行比较，以下分析将基于 CRF $\geq$ 90\% 标准进行讨论分析。
 
 \begin{table*}[htbp]
-\scriptsize
 \caption{在相同ENTLN阈值，TL $\geq$ 1000 和云上LNO$_2$占比 $\geq$ 50\%的条件下，不同云辐射分数阈值对应的LNO$_\textrm{x}$产率 \\ LNO$_\textrm{x}$ production efficiencies for different thresholds of CRF with coincident ENTLN data, TL $\geq$ 1000 and ratio $\geq$ 50\%.}
 \begin{tabular}{cccccc}
 \hline
-\textbf{云辐射分数 (\%)} & \textbf{ENTLN类型$^1$} & \textbf{LNO$_\textrm{x}$每闪电 or LNO$_\textrm{x}$每闪击} & \textbf{R值} & \textbf{截距 (10$^{5}$mol)} & \textbf{天数$^2$} \\
+\textbf{云辐射分数 (\%)} & \textbf{ENTLN类型$^a$} & \textbf{LNO$_\textrm{x}$每闪电或LNO$_\textrm{x}$每闪击} & \textbf{R值} & \textbf{截距 (10$^{5}$mol)} & \textbf{天数$^b$} \\
 \hline
 70  & 闪电  & 35.7  $\pm$ 36.8 & 0.21 & 4.91 & 85 \\
 90  & 闪电  & 54.5  $\pm$ 48.1 & 0.25 & 3.90 & 81 \\
@@ -728,11 +759,14 @@ CRF 从 70\% 增加到 90\% 引起的 LNO$_x$ PE 增加与\citet{Pickering.2016}
 90  & 闪击 & 7.0   $\pm$ 4.8  & 0.29 & 4.16 & 93 \\
 100 & 闪击 & 2.6   $\pm$ 4.0  & 0.14 & 5.41 & 82 \\
 \hline
-\multicolumn{6}{l}{$^1$ENTLN阈值为 OMI f过境前 2.4 小时内每个网格闪电至少 2400 次 或 闪击至少8160 次。}\\
-\multicolumn{6}{l}{$^2$2014年5--8月对应筛选条件下有效天数。} \\
-\multicolumn{6}{l}{$^1$The thresholds of ENTLN data are 2400 flashes box$^{-1}$ and 8160 strokes box$^{-1}$ during the period of 2.4 h before OMI overpass time.}\\
-\multicolumn{6}{l}{$^2$The number of valid days with specific criteria in MJJA 2014.}
 \end{tabular}
+\begin{tablenotes}
+\small
+\item $^a$ENTLN阈值为 OMI f过境前 2.4 小时内每个网格闪电至少 2400 次 或 闪击至少8160 次。
+\item $^b$2014年5--8月对应筛选条件下有效天数。
+\item $^a$The thresholds of ENTLN data are 2400 flashes box$^{-1}$ and 8160 strokes box$^{-1}$ during the period of 2.4 h before OMI overpass time.
+\item $^b$The number of valid days with specific criteria in MJJA 2014.
+\end{tablenotes}
 \label{table:CRFs}
 \end{table*}
 
@@ -911,7 +945,6 @@ $\int_{p_{\textrm cloud}}^{p_{\textrm tp}} w_{\textrm cloudy}(p) LNO_2(p) \: dp 
 
 
 \begin{table*}[htbp]
-\scriptsize
 \caption{基于相同先验廓线但不同估算方法时，产量的百分比变化\\Table \ref{table:production_comp}. The percent changes in the estimated production when using different methods based on the same a priori profiles.}
 \begin{tabular}{clccc}
 \hline
@@ -925,9 +958,12 @@ $\int_{p_{\textrm cloud}}^{p_{\textrm tp}} w_{\textrm cloudy}(p) LNO_2(p) \: dp 
                                    & Charles Town     & 12.0\%  & 82.2\%   & 104.1\%  \\
                                    & Tarboro          & 5.0\%   & 86.0\%   & 95.3\%   \\
 \hline
-\multicolumn{5}{l}{$^1$城市地址见图\ref{fig:us_delta}（a）。}\\
-\multicolumn{5}{l}{$^1$Locations are denoted in Fig. \ref{fig:us_delta}(a).}
 \end{tabular}
+\begin{tablenotes}
+\small
+\item $^a$城市地址见图\ref{fig:us_delta}a。
+\item $^a$Locations are denoted in Fig. \ref{fig:us_delta}a.
+\end{tablenotes}
 \label{table:production_comp}
 \end{table*}
 
@@ -1023,36 +1059,38 @@ Solid (dashed) green lines are the mean ratio of LNO$_\textrm{2}$ to NO$_\textrm
 
 \begin{table*}[!htbp]
 \centering
-\scriptsize
 \caption{估算LNO$_\textrm{2}$每闪电, LNO$_\textrm{x}$每闪电, LNO$_\textrm{2}$每闪击 and LNO$_\textrm{x}$每闪击的不确定性\\ Table \ref{table:us_uncertainty}. Uncertainties for the estimation of LNO$_\textrm{2}$/flash, LNO$_\textrm{x}$/flash, LNO$_\textrm{2}$/stroke and LNO$_\textrm{x}$/stroke.}
 \begin{tabular}{llllll}
 \hline
-\textbf{来源} & \textbf{扰动} & \textbf{LNO$_\textrm{2}$每闪电$^5$} & \textbf{LNO$_\textrm{x}$每闪电$^5$} & \textbf{LNO$_\textrm{2}$每闪击$^5$} & \textbf{LNO$_\textrm{x}$每闪击$^5$} \\
+\textbf{来源} & \textbf{扰动} & \textbf{LNO$_\textrm{2}$每闪电$^e$} & \textbf{LNO$_\textrm{x}$每闪电$^e$} & \textbf{LNO$_\textrm{2}$每闪击$^e$} & \textbf{LNO$_\textrm{x}$每闪击$^e$} \\
 \hline
-BEHR对流层顶高度$^1$                    & NASA产品                              & 6   & 4   & 6   & 4 \\
-云辐射分数$^1$                          & $\pm$ 5\%                            & 2   & 2   & 2   & 2 \\
-云压$^2$                               & 变化的                                & 32  & 34  & 32  & 34 \\
-地表气压$^1$                            & $\pm$ 1.5\%                          & 0   & 0   & 0   & 0 \\
-地表反照率$^1$                          & $\pm$ 17\%                           & 0   & 0   & 0   & 0 \\
-LNO$_\textrm{2}$廓线$^1$               & 2$\times$500 mol NO每闪电             & 13  & 25  & 13  & 25 \\
-廓线位置$^1$                            & 拟蒙特卡罗法                           & 0   & 1   & 0   & 1 \\
-闪电探测效率$^3$                        & 云闪： $\pm$ 16\%, 地闪： $\pm$ 5\%        & 15  & 15  & 15  & 15 \\
+BEHR对流层顶高度$^a$                    & NASA产品                              & 6   & 4   & 6   & 4 \\
+云辐射分数$^a$                          & $\pm$ 5\%                            & 2   & 2   & 2   & 2 \\
+云压$^b$                               & 变化的                                & 32  & 34  & 32  & 34 \\
+地表气压$^a$                            & $\pm$ 1.5\%                          & 0   & 0   & 0   & 0 \\
+地表反照率$^a$                          & $\pm$ 17\%                           & 0   & 0   & 0   & 0 \\
+LNO$_\textrm{2}$廓线$^a$               & 2$\times$500 mol NO每闪电             & 13  & 25  & 13  & 25 \\
+廓线位置$^a$                            & 拟蒙特卡罗法                           & 0   & 1   & 0   & 1 \\
+闪电探测效率$^c$                        & 云闪： $\pm$ 16\%, 地闪： $\pm$ 5\%        & 15  & 15  & 15  & 15 \\
 时间窗口%
-$^3$                                  & 2 -- 4 hours                         & 10  & 10  & 8   & 8 \\
+$^c$                                  & 2 -- 4 hours                         & 10  & 10  & 8   & 8 \\
 LNO$_\textrm{x}$寿命%
-$^3$                                  & 2 -- 12 hours                        & 24  & 24  & 24  & 24 \\
+$^c$                                  & 2 -- 12 hours                        & 24  & 24  & 24  & 24 \\
 V$_\textrm{strat}$%
-$^4$                                  & -                                    & 10  & 10  & 10  & 10 \\
-斜柱浓度的系统误差$^4$                   & -                                    & 5   & 5   & 5   & 5 \\
-对流层背景浓度$^4$           & -                                    & 10  & 10  & 10  & 10  \\
+$^d$                                  & -                                    & 10  & 10  & 10  & 10 \\
+斜柱浓度的系统误差$^d$                   & -                                    & 5   & 5   & 5   & 5 \\
+对流层背景浓度$^d$           & -                                    & 10  & 10  & 10  & 10  \\
 NO/NO$_\textrm{2}$%
-$^4$                                  & 20\% $\pm$ 15\%                      & 0   & 15  & 0   & 15 \\
+$^d$                                  & 20\% $\pm$ 15\%                      & 0   & 15  & 0   & 15 \\
 净                                   & -                                    & 49  & 56  & 48  & 56 \\
 \hline
-\multicolumn{6}{l}{PE$_\textrm{不确定性}$ = (误差$_\textrm{高扰动值}$ - 误差$_\textrm{低扰动值}$)/2，其中 误差$_\textrm{\* 扰动值}$ = (PE$_\textrm{\* 扰动值}$ - PE$_\textrm{原始值}$)/PE$_\textrm{原始值}$.} \\
-\multicolumn{6}{l}{PE$_\textrm{uncertainty}$ = (Error$_\textrm{rising perturbed value}$ - Error$_\textrm{lowering perturbed value}$)/2 where Error$_\textrm{\* perturbed value}$ = (PE$_\textrm{\* perturbed value}$ - PE$_\textrm{original value}$)/PE$_\textrm{original value}$.} \\
-\multicolumn{6}{l}{$^1$\citet{Laughner.2019a}ß $^2$\citet{Acarreta.2004} $^3$\citet{Lapierre.2020} $^4$\citet{Allen.2019} and \citet{Bucsela.2019} $^5$Uncertainty (\%)}
 \end{tabular}
+\begin{tablenotes}
+\small
+\item PE$_\textrm{不确定性}$ = (误差$_\textrm{高扰动值}$ - 误差$_\textrm{低扰动值}$)/2，其中 误差$_\textrm{\* 扰动值}$ = (PE$_\textrm{\* 扰动值}$ - PE$_\textrm{原始值}$)/PE$_\textrm{原始值}$。
+\item PE$_\textrm{uncertainty}$ = (Error$_\textrm{rising perturbed value}$ - Error$_\textrm{lowering perturbed value}$)/2 where Error$_\textrm{\* perturbed value}$ = (PE$_\textrm{\* perturbed value}$ - PE$_\textrm{original value}$)/PE$_\textrm{original value}$.
+\item $^a$\citet{Laughner.2019a}ß $^b$\citet{Acarreta.2004} $^c$\citet{Lapierre.2020} $^d$\citet{Allen.2019} and \citet{Bucsela.2019} $^e$Uncertainty (\%)
+\end{tablenotes}
 \label{table:us_uncertainty}
 \end{table*}
 
@@ -1284,7 +1322,7 @@ LNO 廓线                     & \makecell[cc]{26 \%} \\
 \item 2019--2021年6--8月的分析结果表明，北极地区对流附近的LNO$_2$寿命为3 h，与污染地区的LNO$_2$寿命相似，例如美国地区的3 h \citep{Nault.2017}。
 ）］
 北极陆地地区的LNO$_2$ 产率 [2.0（1.3--3.1）mol每闪击] 与美国的结果 (1.6 $\pm$ 0.1 mol每闪击) 也相似\citep{Lapierre.2020}。
-此外，结果表明北极海洋性闪电产生的 NO$_2$ 是陆地性闪电的 6 倍。
+此外，结果表明北极海洋性闪电产生的 NO$_2$ 比陆地性闪电高6 倍。
 因此，当闪电在北极海洋和陆地上增加相同数量时，海洋性闪电将产生更多的 LNO$_2$。
 基于得到的LNO$_2$产率，我们进一步得出北极地区夏季（6--8 月）LNO$_x$ 的平均排放量为219 Mg (N)，约等于人为 NO$_x$ 排放量的 5\%。
 
