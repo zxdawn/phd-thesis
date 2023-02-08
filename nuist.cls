@@ -2,6 +2,7 @@
 \ProvidesClass{nuist}[2021/06/06 南京信息工程大学硕博大论文模板]% 对外提供的接口
 % 更新记录
 % 2022-02-04 (Xin): 修正封面字体
+% 2022-02-08 (Xin): 修正图表字体
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 载入预定义模板，在此基础上更改                                 
@@ -10,7 +11,7 @@
 %% twoside：    双面，指定当页码为奇数时出现在右边，为偶数时出现在左边
 %% openright：  指定新的一章 \chapter 在奇数页（右侧）开始
 %% fntef:       引入  CJKfntef 宏包，方便文字装饰
-%% 字号：       只有 10pt 11pt 12pt 可选
+%% 字号：       只有 10pt 11pt 12pt 可选，默认12pt（小四）
 %% scheme:      chinese 调整默认字号为五号字，并调整行距为1.3；汉化文档中
 %%              的标题名字（如“图”、“表”、“目录”和“参考文献”）；在heading = true 
 %%              的情况下，还会将章节标题的风格修改为中文样式
@@ -199,9 +200,12 @@
 
 % 修改浮动体标题的格式
 \RequirePackage{caption}
-\captionsetup{font=small,labelsep=quad,belowskip = 0bp, aboveskip = 0bp, justification=centering}
-\captionsetup[figure]{position = bottom, ,aboveskip = 10pt, font={stretch=1.625}}
+\RequirePackage{etoolbox}
+\captionsetup{font=footnotesize,labelsep=quad,belowskip = 0bp, aboveskip = 0bp, justification=centering}
+\captionsetup[figure]{position = bottom, ,aboveskip = 10pt, font={footnotesize,stretch=1.625}}
 \captionsetup[table]{position = top, aboveskip = 4pt}
+\BeforeBeginEnvironment{tabular}{\begin{center}\footnotesize}
+\AfterEndEnvironment{tabular}{\end{center}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
