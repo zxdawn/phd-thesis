@@ -41,6 +41,10 @@
 % 每个自然段之间增加 10% 的距离
 \setlength{\parskip}{0.1\baselineskip}  
 
+% 公式序号使用中文括号
+\RequirePackage{mathtools}
+\newtagform{brackets}{（}{）}
+\usetagform{brackets}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                     
@@ -204,8 +208,6 @@
 \captionsetup{font=footnotesize,labelsep=quad,belowskip = 0bp, aboveskip = 0bp, justification=centering}
 \captionsetup[figure]{position = bottom, ,aboveskip = 10pt, font={footnotesize,stretch=1.625}}
 \captionsetup[table]{position = top, aboveskip = 4pt}
-\BeforeBeginEnvironment{tabular}{\begin{center}\footnotesize}
-\AfterEndEnvironment{tabular}{\end{center}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
