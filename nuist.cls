@@ -3,6 +3,7 @@
 % 更新记录
 % 2022-02-04 (Xin): 修正封面字体
 % 2022-02-08 (Xin): 修正图表字体
+% 2022-02-09 (Xin): 文献引用括号改为中文括号
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 载入预定义模板，在此基础上更改                                 
@@ -215,13 +216,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \RequirePackage[numbers, sort, compress,comma,square,super]{natbib}
 \RequirePackage[authoryear, round]{natbib}
-% \setlength{\bibsep}{0.5em}
+\setlength{\bibsep}{0.5em}
 % 使用中文括号
 % https://tex.stackexchange.com/a/385543
 % https://tex.stackexchange.com/a/369691
 \newcommand{\bianca}{%
   \ifx\@captype\@undefined % only apply changes if not within a floating environment
-    \renewcommand\NAT@open{（}
+    \renewcommand\NAT@open{\hspace{-0.5em}（}
     \renewcommand\NAT@close{）}
   \fi
 }
