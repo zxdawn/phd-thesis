@@ -204,7 +204,6 @@
 
 % 修改浮动体标题的格式
 \RequirePackage{caption}
-\RequirePackage{etoolbox}
 \captionsetup{font=footnotesize,labelsep=quad,belowskip = 0bp, aboveskip = 0bp, justification=centering}
 \captionsetup[figure]{position = bottom, ,aboveskip = 10pt, font={footnotesize,stretch=1.625}}
 \captionsetup[table]{position = top, aboveskip = 4pt}
