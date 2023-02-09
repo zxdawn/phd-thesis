@@ -121,7 +121,7 @@ convective available potential energy (CAPE, J kg$^{-1}$) in the Arctic region d
 \end{table*}
 
 
-\subsection{闪电氮氧化物的计算}
+\subsection{闪电氮氧化物的计算} \label{sec:arctic_lnox_calc}
 
 LNO$_2$的估算包括以下三个主要步骤：
 
@@ -185,7 +185,7 @@ The TROPOMI-detected NO$_2$ tropospheric columns are overlaid with (a) observed 
 \subsection*{计算闪电氮氧化物柱浓度}
 
 \citet{Zhang.2022a}指出官方 TROPOMI 算法在 NO$_2$反演中不包括 LNO$_2$，
-因此我们从官方 $S_{\ch{NO2}}$产品中减去背景 NO$_2$，并将差值通过大气质量因子 (AMF) 转换为对流层LNO$_2$垂直柱浓度。
+因此我们从官方 $S_{\ch{NO2}}$产品中减去背景 NO$_2$，并将差值通过大气质量因子（AMF）转换为对流层LNO$_2$垂直柱浓度。
 该算法具体为下式
 
 
@@ -365,7 +365,7 @@ LNO$_2$ 排放是闪击数和 LNO$_2$ 产率（每次闪击产生的LNO$_2$）�
 因此，我们计算了闪击率，即单位时间单位LNO$_2$面积内的闪击次数，
 它的范围从 2.3$\times$10$^{-10} $m$^{-2}$ h$^{-1}$ 到 4.1$\times$10$^{-6} $m$^{-2 }$ h$^{-1}$，
 陆地地区闪击率（6.2$\times$10$^{-7}$ m$^{-2}$ h$^{-1}$）比海洋地区高$\sim$ 11 倍 (5.2$\times$10$^{-8}$ m$^{-2}$ h$^{-1}$)。
-我们发现闪击率和 LNO$_2$产率之间存在近似的幂律关系（图 \ref{atctic_fig:pe_rate}b）。
+我们发现闪击率和 LNO$_2$产率之间存在近似的幂律关系（图\ref{fig:arctic_pe_rate}b）。
 当闪击率下降2个数量级时，LNO$_2$产率增加10倍，这与中纬度开展的研究一致\citep{Bucsela.2019,Zhang.2020b}。
 
 
@@ -595,7 +595,7 @@ The lightning NO$_x$ emissions are the mean values from 2019 to 2021, while the 
 
 \subsection{模式设置} \label{sec:model_settings_us}
 
-美国大陆的模拟中使用的WRF-Chem版本为3.5.1，水平网格大小为12 km $\times$ 12 km （图\ref{fig:us_domain}a），垂直层数为29层，时间步长为72 s。
+在美国大陆的模拟研究中使用的WRF-Chem版本为3.5.1，水平网格大小为12 km $\times$ 12 km （图\ref{fig:us_domain}a），垂直层数为29层，时间步长为72 s。
 气象条件的初始场和边界场为时间分辨率3小时的北美区域再分析（NARR）数据集，
 每3小时应用一次边界条件和四维数据分析（FDDA）逼近，
 其中温度、水汽和水平风以0.0003 s$^{-1}$ 的系数逼近\citep{Laughner.2017}。
@@ -604,13 +604,13 @@ The lightning NO$_x$ emissions are the mean values from 2019 to 2021, while the 
 陆面过程使用Noah陆面模式\citep{Koren.1999}，边界层采用YSU方案\citep{Hong.2006}。
 闪电参数化采用基于对流参数化的中性浮力水平\citep{Pickering.1992}，云闪与地闪的比例基于\citet{Boccippio.2001}.
 
-采用臭氧和相关化学示踪剂模型第4版[MOZART-4，\citet{Emmons.2010}]的输出场作为化学的初始场和边界场。
+化学的初始场和边界场采用臭氧和相关化学示踪剂模型第4版[MOZART-4，\citet{Emmons.2010}]的输出场。
 人为排放由2011年美国国家排放清单（NEI）驱动，并根据环境保护署年度总排放量，按模拟的年份进行调整\citep{EPA.2015}。
 生物排放使用MEGAN源，化学机制是区域大气化学机制第2版[RACM2，\citet{Goliff.2013}]，
 并由\citet{Browne.2014}和\citet{Schwantes.2015}进行了更新。
-此外，LNO$_x$参数化采用每次闪电产生200 mol NO，调整因子为1，以下简称“1$\times$200 mol NO每闪电”）。
+此外，LNO$_x$参数化采用每次闪电产生200 mol NO，调整因子为1，以下简称“1$\times$200 mol NO每闪电”。
 WRF-Chem中LNO的垂直分布采用基于\citet{Ott.2010}的双峰型闪电NO（LNO）廓线\citep{Laughner.2017}，
-LNO和LNO$_2$廓线是指有和没有LNO的模拟之间各自垂直廓线的差异。
+LNO和LNO$_2$廓线是指开启和关闭LNO排放的模拟之间各自垂直廓线的差异。
 
 
 \begin{figure}[!htbp]
@@ -687,7 +687,7 @@ NO_2(0) = NO_2(\mathrm{OMI})\ e^{0.5t/\tau}
 \scriptsize
 \begin{tabular}{ll}
 \hline
-\textbf{缩写}$^a$ & \textbf{全称 [来源]} \\
+缩写$^a$ & 全称 [来源] \\
 \hline
 CRF                             & 云辐射分数 Cloud radiance fraction [OMI] \\
 CP                              & 云压Cloud pressure [OMI] \\
@@ -717,7 +717,7 @@ CRF$\alpha$\_ENTLN1(3.4)\_TL1\_ratio50    & CRF $\geq$ $\alpha$ + ENTLN 闪电(�
 \scriptsize
 \begin{tabular}{lccccc}
 \hline
-\textbf{条件$^a$} & \textbf{ENTLN类型$^b$} & \textbf{LNO$_x$/flash or LNO$_x$/stroke} & \textbf{R值} & \textbf{截距 (10$^{6}$mol)} & \textbf{天数$^c$} \\
+条件$^a$ & ENTLN类型$^b$ & LNO$_x$每闪电 or LNO$_x$每闪击 & R值 & 截距 (10$^{6}$mol) & 天数$^c$ \\
 \hline
 CRF90\_ENTLN                        & 闪电  & 52.1 $\pm$ 51.1 & 0.20 & 0.21  & 99 \\
 CRF90\_CF40\_ENTLN                  & 闪电  & 84.2 $\pm$ 31.5 & 0.54 & -0.04 & 70 \\
@@ -977,13 +977,13 @@ $\int_{p_{\textrm cloud}}^{p_{\textrm tp}} w_{\textrm cloudy}(p) LNO_2(p) \: dp 
 \hline
  & 城市$^1$ & LNO$_2$Clean - LNO$_2$)/LNO$_2$ & LNO$_2$ - TropVis)/TropVis & LNO$_2$Clean-TropVis)/TropVis \\
 \hline
-\multirow{3}{*}{\textbf{污染地区}} & Lansing          & 24.2\%  & 49.5\%   & 85.6\%   \\
-                                   & New Orleans      & 13.3\%  & 121.2\%  & 153.8\%  \\
-                                   & Orlando          & 46.3\%  & 37.5\%   & 101.3\%  \\
+\multirow{3}{*}{污染地区} & Lansing          & 24.2\%  & 49.5\%   & 85.6\%   \\
+                         & New Orleans      & 13.3\%  & 121.2\%  & 153.8\%  \\
+                         & Orlando          & 46.3\%  & 37.5\%   & 101.3\%  \\
 \hline
-\multirow{3}{*}{\textbf{清洁地区}}    & Huron            & 12.0\%  & 56.4\%   & 75.2\%   \\
-                                   & Charles Town     & 12.0\%  & 82.2\%   & 104.1\%  \\
-                                   & Tarboro          & 5.0\%   & 86.0\%   & 95.3\%   \\
+\multirow{3}{*}{清洁地区}    & Huron            & 12.0\%  & 56.4\%   & 75.2\%   \\
+                            & Charles Town     & 12.0\%  & 82.2\%   & 104.1\%  \\
+                            & Tarboro          & 5.0\%   & 86.0\%   & 95.3\%   \\
 \hline
 \end{tabular}
 \begin{tablenotes}
@@ -1137,26 +1137,26 @@ LNO$_x$产率不确定性为 34 \%，这是估算中最大的不确定性来源�
 
 净不确定性为表\ref{table:us_uncertainty}中所有单个不确定性的平方和的平方根。
 LNO$_2$ 类型和 LNO$_x$ 类型的净不确定性分别为 48 \% 和 56 \%。
-基于线性回归和求和法的平均结果为32 mol LNO$_2$每闪电、90 mol LNO$_x$每闪电、6 mol LNO$_2$每闪击 和 17 mol LNO$_x$每闪击。
-将相应的不确定性应用于这些平均值，我们得出32 $\pm$ 15 mol LNO$_2$每闪电、90 $\pm$ 50 mol LNO$_x$每闪电、
-6 $\pm$ 3 mol LNO$_2$每闪击 和17 $\pm$ 10 mol LNO$_x$每闪击。
-这在当前文献估计（33--500 mol LNO$_x$每闪电）的范围内\citep{Schumann.2007,Beirle.2010,Bucsela.2010}。
-最近\citet{Bucsela.2010}研究中估算的LNO$_x$产率为 100--250 mol每闪电，高于但与我们的估计结果相重叠。
-\citet{Pickering.2016}估算的墨西哥湾LNO$_x$产率为 80$\pm$45 mol 每闪电，比本研究中美国大陆的结果低50\%。
+基于线性回归和求和法的平均结果为32 mol NO$_2$每闪电、90 mol NO$_x$每闪电、6 mol NO$_2$每闪击 和 17 mol LO$_x$每闪击。
+将相应的不确定性应用于这些平均值，我们得出32 $\pm$ 15 mol NO$_2$每闪电、90 $\pm$ 50 mol NO$_x$每闪电、
+6 $\pm$ 3 mol NO$_2$每闪击 和17 $\pm$ 10 mol NO$_x$每闪击。
+这在当前文献估计（33--500 mol NO$_x$每闪电）的范围内\citep{Schumann.2007,Beirle.2010,Bucsela.2010}。
+最近\citet{Bucsela.2010}研究中估算的LNO$_x$产率为 100--250 mol NO$_x$每闪电，高于但与我们的估计结果相重叠。
+\citet{Pickering.2016}估算的墨西哥湾LNO$_x$产率为 80$\pm$45 mol NO$_x$每闪电，比本研究中美国大陆的结果低50\%。
 因为墨西哥湾上空有很多许多缺失数据，因此两个研究实际上是不同地区之间的比较。
 如果\citet{Pickering.2016}的方法未对背景NO$_2$进行校正，得出的 LNO$_x$产率在清洁区域或云上LNO$_2$浓度高的区域与我们的相似，但在污染区域可能高估18\%以上。
-对于基于闪击的结果，\citet{Lapierre.2020}得到的LNO$_2$产率较低，为1.6 $\pm$ 0.1 mol每闪击。
+对于基于闪击的结果，\citet{Lapierre.2020}得到的LNO$_2$产率较低，为1.6 $\pm$ 0.1 mol NO$_2$每闪击。
 该差异是由不同版本的 BEHR 算法和其他设置引起的，由于我们的方法将云下LNO$_2$考虑进总的LNO$_2$，所以得到的LNO$_2$产量可能会更大，尤其是对于高的云层。
 
 
 
 \begin{table*}[!htbp]
 \centering
-\caption{估算LNO$_2$每闪电, LNO$_x$每闪电, LNO$_2$每闪击和LNO$_x$每闪击的不确定性\\ Table \ref{table:us_uncertainty}. Uncertainties for the estimation of LNO$_2$/flash, LNO$_x$/flash, LNO$_2$/stroke and LNO$_x$/stroke.}
+\caption{估算NO$_2$每闪电, NO$_x$每闪电, NO$_2$每闪击和NO$_x$每闪击的不确定性\\ Table \ref{table:us_uncertainty}. Uncertainties for the estimation of LNO$_2$/flash, LNO$_x$/flash, LNO$_2$/stroke and LNO$_x$/stroke.}
 \scriptsize
 \begin{tabular}{llllll}
 \hline
-\textbf{来源} & \textbf{扰动} & \textbf{LNO$_2$每闪电$^e$} & \textbf{LNO$_x$每闪电$^e$} & \textbf{LNO$_2$每闪击$^e$} & \textbf{LNO$_x$每闪击$^e$} \\
+来源 & 扰动 & NO$_2$每闪电$^e$ & NO$_x$每闪电$^e$ & NO$_2$每闪击$^e$ & NO$_x$每闪击$^e$ \\
 \hline
 BEHR对流层顶高度$^a$                    & NASA产品                              & 6   & 4   & 6   & 4 \\
 云辐射分数$^a$                          & $\pm$ 5\%                            & 2   & 2   & 2   & 2 \\
@@ -1194,23 +1194,24 @@ where Error$_{\ch{\* perturbed value}}$ = (PE$_{\ch{\* perturbed value}}$ - PE$_
 
 \subsection{模式设置} \label{sec:model_settings_china}
 
-该研究使用的WRF-Chem版本号为4.1.4，气象条件的初始场和边界场来自1小时分辨率的欧洲中心大气再分析数据（ERA5，\citet{Hersbach.2020}）。
+中国东南部的研究使用的WRF-Chem版本号为4.1.4，气象条件的初始场和边界场来自1小时分辨率的欧洲中心大气再分析数据[ERA5，\citet{Hersbach.2020}]。
 模式的垂直分层为75层，对流层顶设置为50 hPa，嵌套区域如图\ref{fig:domains_china}所示。
 微物理过程使用WSM6方案\citep{Hong.2006a}，而短波和长波辐射使用RRTMG方案\citep{Iacono.2008}，陆面过程由Noah方案模拟\citep{Koren.1999}。
 但是，我们使用不同的边界层参数化来模拟两次对流个例，2019年的个例使用YSU方案\citep{Hong.2006}，而2020年的个例使用QNSE方案\citep{Sukoriansky.2005}。
 
-化学初始场和边界场采用整个大气社区气候模型（WACCM，\url{https://www.acom.ucar.edu/waccm/}）的输出数据。
+化学初始场和边界场采用整个大气社区气候模型[WACCM，\url{https://www.acom.ucar.edu/waccm/}]的输出数据。
 其中2020年个例的初始O$_3$廓线使用臭氧探空仪观测所得的O$_3$廓线。
-人为排放使用2016年中国多分辨率排放清单 (MEIC，\url{http://www.meicmodel.org/})1.3版驱动，生物排放采用来自自然界的气体和气溶胶排放模型（MEGAN；\citet{Guenther.2006}）。
+人为排放使用2016年中国多分辨率排放清单[MEIC，\url{http://www.meicmodel.org/}]1.3版驱动，
+生物排放采用来自自然界的气体和气溶胶排放模型[MEGAN，\citet{Guenther.2006}]。
 化学机理使用气相化学的臭氧和相关化学示踪剂模式（MOZART）和气溶胶的Goddard化学气溶胶辐射和传输（GOCART）模式\citep{Pfister.2011}。
-其中光解方案采用基于云光学厚度（cloud\_fraction$^{1.5}$）的新 TUV（对流层紫外线和可见光）方案，即光解速率依赖于气溶胶和云。
-此外，LNO的垂直廓线使用\citet{Ott.2010}的双峰型闪电NO（LNO）廓线\citep{Laughner.2017}，而LNO和LNO$_2$廓线是指开启和关闭闪电选项的模拟之间垂直廓线的差异。
+其中光解方案采用基于云光学厚度（cloud\_fraction$^{1.5}$）的新对流层紫外线和可见光（TUV）方案，即光解速率依赖于气溶胶和云。
+此外，LNO的垂直廓线使用\citet{Ott.2010}的双峰型LNO廓线\citep{Laughner.2017}，而LNO和LNO$_2$廓线是指开启和关闭LNO排放的模拟垂直廓线的差异，
 其中LNO$_x$参数化调整为每次闪电产生500 mol NO\citep{Zhu.2019}。
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.9\textwidth]{./figures/domains_china.png}
-\caption{2019年和2020年个例的WRF-Chem模拟区域和地形高度(m)图。
+\caption{2019年和2020年个例的WRF-Chem模拟区域和地形高度（m）图。
 2019年个例的水平网格分辨率为15 km（D01）、3 km（D02）和 0.6 km（D03）。
 对于2020年个例，分别为27 km（D01）、9 km（D02）、3 km（D03）和 1 km（D04）。\\
 Figure \ref{fig:domains_china}. Domain and terrain height (m) of the WRF-Chem simulations for the 2019 and 2020 cases. The horizontal grid resolution of
@@ -1222,18 +1223,19 @@ and 1 km (D04).}
 % \subsection{闪电氮氧化物的反演} \label{subsec:retrieval_china}
 \subsection{闪电氮氧化物的产率}
 
-图\ref{fig:china_flash_scd} a--d将对流层NO$_2$斜柱浓度（$S_{\ch{NO2}}$）的分布与观测的闪电分布进行了比较。
-尽管由于探测器饱和和光晕效应，闪电最活跃像素上的$S_{\ch{NO2}}$无效，但附近或对流出流区仍有有效数据。
-在2019年的个例中，闪电发生在TROPOMI过境前不到30分钟，但2020年的个例中既有新生的也有老化的LNO$_2$（图\ref{fig:china_flash_scd} d）。
+图\ref{fig:china_flash_scd}a--d将对流层NO$_2$斜柱浓度（$S_{\ch{NO2}}$）的分布与观测的闪电分布进行了比较。
+尽管由于探测器饱和和光晕效应，闪电最活跃像素上的$S_{\ch{NO2}}$无效，但对流附近或出流区仍有有效数据。
+在2019年的个例中，闪电发生在TROPOMI过境前不到30分钟，
+但2020年的个例中既有新生的也有老化的LNO$_2$（图\ref{fig:china_flash_scd}d）。
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=12cm]{./figures/china_flash_scd.png}
     \caption{
     2019 年 7 月 25 日（左）和 2020 年 9 月 7 日（右）的个例。
-    (a, b) 对流层 NO$_2$ 斜柱浓度（SCD$_\textrm{tropNO$_2$}$，填充色）和云压（线条颜色）。
+    （a，b）对流层 NO$_2$ 斜柱浓度（$S_{\ch{NO2}}$，填充色）和云压（线条颜色）。
     这些白色网格单元代表缺失的 TROPOMI 数据，黑色实线为江苏省。
-     (c, d) NO$_2$ 窗区中的云辐射分数和闪电。闪电的颜色取决于相对于TROPOMI过境的发生时间。\\
+    （c，d）NO$_2$ 窗区中的云辐射分数和闪电。闪电的颜色取决于相对于TROPOMI过境的发生时间。\\
     Figure \ref{fig:china_flash_scd}. Events on 25 July 2019 (left) and 07 September 2020 (right).
     (a, b) The tropospheric NO$_2$ slant column density ($S_{\ch{NO2}}$, filled color) and cloud optical pressure (line color).
     These white grid cells stand for missing TROPOMI data.
@@ -1244,31 +1246,32 @@ and 1 km (D04).}
 \end{figure}
 
 具体而言，对流旺盛处（f$_r$ $\geq$ 0.7）的$S_{\ch{NO2}}$小于其他区域。
-这与之前针对具有高闪电密度的大规模对流系统的研究结果相反\citep{Beirle.2009}。
+这与之前针对具有高闪电密度的大规模对流系统研究结果相反\citep{Beirle.2009}。
 导致这一差距的因素有四点：云顶高度、闪电次数、闪电发生时间和背景NO$_2$浓度。
-由于TROPOMI只能探测到处于云层上方的LNO$_2$，因此当fr $\approx$ 1时，闪电次数不足或对流较弱都可能导致对流旺盛区的$S_{\ch{NO2}}$更小。
-即如果f$_r$<1，则破碎或稀薄云层下方的污染NO$_2$则会部分被TROPOMI探测到。
-而WRF-Chem的先验$S_{\ch{NO2}}$敏感性试验可以清楚地解释这种现象（图\ref{fig:s5p_apriori_scd}）。
-具有低f$_r$和高$S_{\ch{NO2}}$像素源自于背景 NO$_2$ 污染（图\ref{fig:s5p_apriori_scd} a, e），
-但与没有LNO$_2$贡献的低$S_{\ch{NO2}}$相比，对流层上层LNO$_2$增加的$S_{\ch{NO2}}$仍然可见（图\ref{fig:s5p_apriori_scd} b--d 和 f--h）。
+由于TROPOMI只能探测到处于云层上方的LNO$_2$，因此当f$_r$ $\sim$ 1时，
+闪电次数不足或对流较弱都可能导致对流旺盛区的$S_{\ch{NO2}}$更小。
+即如果f$_r$<1，破碎或稀薄云层下方的污染NO$_2$会部分被TROPOMI探测到，
+WRF-Chem的先验$S_{\ch{NO2}}$敏感性试验可以清楚地解释这种现象（图\ref{fig:s5p_apriori_scd}）。
+具有低f$_r$和高$S_{\ch{NO2}}$像素源自于背景 NO$_2$ 污染（图\ref{fig:s5p_apriori_scd} a，e），
+但与没有LNO$_2$贡献的低$S_{\ch{NO2}}$相比，对流层上层LNO$_2$增加的$S_{\ch{NO2}}$仍然可见（图\ref{fig:s5p_apriori_scd}b--d，f--h）。
 
 \begin{figure}[!htbp]
     \includegraphics[width=17cm]{./figures/s5p_apriori_scd.png}
-    \caption{使用不同闪电NO排放的WRF-Chem结果，重新计算得到的对流层NO$_2$斜柱浓度 ($S_{\ch{NO2}}$)：
-    Figure \ref{fig:s5p_apriori_scd}. (a, e) 0 mol每闪电, (b, f ) 330 mol每闪电, (c, g) 500 mol每闪电 和 (d, h) 700 mol每闪电。\\
-    The tropospheric NO$_2$ slant column density ($S_{\ch{NO2}}$) recalculated using the WRF-Chem results with different lightning NO settings: (a, e) 0 mol/flash, (b, f) 330 mol/flash, (c, g) 500 mol/flash and (d, h) 700 mol/flash.
+    \caption{使用不同闪电NO排放条件下WRF-Chem的NO$_2$结果重新计算得到的对流层NO$_2$斜柱浓度（$S_{\ch{NO2}}$）。
+    （a，e）0 mol每闪电；（b，f）330 mol每闪电，（c，g）500 mol每闪电；（d，h）700 mol每闪电。\\
+    Figure \ref{fig:s5p_apriori_scd}. The tropospheric NO$_2$ slant column density ($S_{\ch{NO2}}$) recalculated using the WRF-Chem results with different lightning NO settings: (a, e) 0 mol/flash, (b, f) 330 mol/flash, (c, g) 500 mol/flash and (d, h) 700 mol/flash.
     }
     \label{fig:s5p_apriori_scd}
 \end{figure}
 
-在第\ref{sec:us}节和\ref{sec:us}节中，我们利用对流旺盛时的卫星观测来估算 LNO$_x$ PE。
-然而，由于 TROPOMI 的像素饱和和对流区域的有限覆盖（图\ref{fig:china_flash_scd} c），
+在\ref{sec:us}节和\ref{sec:china}节中，我们利用对流旺盛时的卫星观测来估算 LNO$_x$产率。
+然而，由于 TROPOMI 的像素饱和和对流区域的有限覆盖（图\ref{fig:china_flash_scd}c），
 该方法难以应用于范围较小发展强的对流（2019年个例）。
-因此，我们尝试不对云量加以限制，将该方法应用于消散期的对流（2020年个例，图\ref{fig:china_flash_scd} d）。
-如图 \ref{fig:china_vcd_lnox} b--c 所示，闪电与 TROPOMI 过境的时间差大于 30 分钟但小于 3 小时。
-由于 NO$_2$ 的寿命在对流内或附近为 $\sim$ 3（2--12）小时 \citep{Nault.2016}，
+因此，我们尝试不对云量加以限制，将该方法应用于消散期的对流（2020年个例，图\ref{fig:china_flash_scd}d）。
+如图 \ref{fig:china_vcd_lnox}b--c 所示，闪电与TROPOMI的过境时间差大于 30 分钟但小于 3 小时。
+由于 NO$_2$ 的寿命在对流附近为 $\sim$ 3（2--12）小时 \citep{Nault.2016}，
 2020年个例的TROPOMI观测数据仍可以用于估算LNO$_x$。
-平均 LNO$_x$ PE（mol/flash）的定义如下：
+平均 LNO$_x$产率（mol/flash）的定义如下：
 
 
 \begin{equation} \label{eq:lnox}
@@ -1279,17 +1282,18 @@ PE_{LNO_x} = \sum_{p} V_i A_i / \sum_{N} F_j e^{-(t_0 - t_j) / \tau}
 $V_i$ （mol/m$^2$）是像素 $i$ 上LNO$_x$ 垂直柱浓度 ($V_{\ch{LNO_x}}$ = $S_{\ch{NO2}}$ / $AMF_{\ch{LNO_x}}$），
 面积称为 A$_i$ （m$^2$），
 $N$ 是 对 $V_{\ch{LNO_x}}$ 做出贡献的闪电总数，
-指数部分考虑了每个LNO$_x$ 的寿命（F$_j$）。
-具体地，AMF$_{\ch{LNO_x}}$源于式\ref{eq:AMF_LNO2}，
+指数部分考虑了每个闪电（F$_j$）排放的NO$_x$ 的寿命。
+具体而言，AMF$_{\ch{LNO_x}}$源于式\ref{eq:AMF_LNO2}，
 t$_0$是TROPOMI的过境时间，
 t$_j$是闪电的发生时间，
 $\tau$为近对流的NO$_x$寿命（3 小时）。
 
-由于消散的对流产生了足够的闪电，并且对流处对流层上层的风从西北偏西吹向东南偏东（图\ref{fig:china_vcd_lnox} a），
-$V_{\ch{LNO_x}}$的范围仍然可以清楚地识别（图 \ref{fig:china_vcd_lnox} 中的虚线矩形）。
+由于消散的对流已产生了足够多的闪电，并且对流处对流层上层的风从西北偏西吹向东南偏东（图\ref{fig:china_vcd_lnox}a），
+$V_{\ch{LNO_x}}$的范围仍然可以清楚地识别（图\ref{fig:china_vcd_lnox} 中的虚线矩形）。
 幸运的是，有一条$V_{\ch{LNO_x}}$低值带将南北对流分开。
-经过仔细选择，LNO$_x$ PE 为60 mol NO$_x$每闪电。
-虽然有些与 $V_{\ch{LNO_x}}$ 相关的闪电在选择的区域之外，它对LNO$_x$ PE的影响仅 $\approx$ 2 mol，在下节的不确定性评估范围内。
+经过仔细选择，计算得到的LNO$_x$产率为60 mol NO$_x$每闪电。
+虽然有些与 $V_{\ch{LNO_x}}$ 相关的闪电在选择的区域之外，
+它对LNO$_x$产率的影响仅 $\sim$ 2 mol，在下节的不确定性评估范围内。
 
 
 \begin{figure}[!htbp]
@@ -1297,9 +1301,9 @@ $V_{\ch{LNO_x}}$的范围仍然可以清楚地识别（图 \ref{fig:china_vcd_ln
     \includegraphics[width=16cm]{./figures/china_vcd_lnox.png}
     \caption{
     背景为LNO$_x$垂直柱浓度（$V_{\ch{LNO_x}}$）的分布。
-     白色矩形是为手动选择的用于 LNO$_x$ PE估算的区域。
-     (a) 中叠加的箭头是 WRF-Chem 模拟的 500 hPa 水平风。
-     (b) 和 (c) 中的点是闪电，其颜色取决于相对于 TROPOMI 过境的发生时间。\\
+     白色矩形是为手动选择的用于 LNO$_x$产率估算的区域。
+     （a）中叠加的箭头是 WRF-Chem 模拟的 500 hPa 水平风。
+     （b）和（c）中的点是闪电，其颜色取决于相对于 TROPOMI 过境的发生时间。\\
     Figure \ref{fig:china_vcd_lnox}. The background is the distribution of LNO$_x$ vertical column densities ($V_{\ch{LNO_x}}$).
     The white rectangles are manually selected regions for the LNO$_x$ PE estimation.
     The overlayed wind arrows in (a) are the 500 hPa horizontal wind simulated by WRF-Chem.
@@ -1312,15 +1316,17 @@ $V_{\ch{LNO_x}}$的范围仍然可以清楚地识别（图 \ref{fig:china_vcd_ln
 
 \subsection{估算的影响因素及不确定性分析} \label{sec:uncertainty_china}
 
-根据 \citet{Allen.2019} 和 \citet{Zhang.2020b}，LNO$_x$ 的不确定性由 LNO$_x$ 寿命、闪电探测效率、NO/NO$_2$ 比例、LNO 曲线和其他来源决定（见表\ref{table:uncertainty_china}）。
-我们将NO$_2$的寿命（$\tau$）被替换为2小时和6小时，得到的不确定性为27\%，而将IC与CG的比值改为2 :1 和 4:1，得到的不确定性也为27\%。
+根据 \citet{Allen.2019} 和 \citet{Zhang.2020b}，LNO$_x$ 的不确定性由 LNO$_x$ 寿命、闪电探测效率、
+NO/NO$_2$ 比例、LNO 廓线和其他来源决定（见表\ref{table:uncertainty_china}）。
+我们将NO$_2$的寿命（$\tau$）替换为2和6 h，得到的不确定性为27\%，而将IC与CG的比值改为2 :1 和 4:1，得到的不确定性也为27\%。
 根据 \citet{Allen.2019} 我们假设由模拟引起的 NO/NO$_2$ 比例的不确定性为 30\%。
-此外我们根据利用设置330 和 700 mol NO每闪电的敏感性试验结果，得到与LNO廓线有关的不确定性为 26\%。
-此外，与平流层垂直柱浓度（$\pm$ 10$^{14}$ molec. cm$^2$， \citet{VanGeffen.2022}）相关的不确定性为 7 \%。
-而由其他可能误差源引起的不确定性难以量化，比如倾斜柱浓度中的系统误差、云压和由对流重新分布的 NO$_2$，根据 \citet{Allen.2021a}，我们假设其为10\%。
-假设误差之间没有相关性，总不确定性 (56 \%)即为所有单个不确定性的平方和的平方根。
-因此，LNO$_x$产率为60 $\pm$ 33 mol NO$_x$每闪电。
-该数值低于美国大陆（90 $\pm$ 50 mol NO$_x$每闪电）和\citet{Allen.2021a}的研究结果（120 $\pm$ 65 mol NO$_x$每闪电），
+此外我们利用330 和 700 mol NO每闪电的WRF-Chem敏感性试验结果，得到与LNO廓线有关的不确定性为 26\%。
+此外，与平流层垂直柱浓度[$\pm$ 10$^{14}$ molec. cm$^2$， \citet{VanGeffen.2022}]相关的不确定性为 7 \%。
+而由其他可能误差源引起的不确定性难以量化，比如斜柱浓度中的系统误差、云压和由对流重新分布的 NO$_2$，
+根据 \citet{Allen.2021a}我们设其为10\%。
+假设误差之间没有相关性，总不确定性（56 \%）即为所有单个不确定性的平方和的平方根。
+因此，LNO$_x$产率为60 $\pm$ 33 mol NO$_x$每闪电，
+该数值低于我们（90 $\pm$ 50 mol NO$_x$每闪电）以及\citet{Allen.2021a}（120 $\pm$ 65 mol NO$_x$每闪电）在美国大陆的研究结果，
 因此，在未来的研究中还需对中国地区进行范围更广的探讨，从而估算区域性的LNO$_x$产率。
 
 
@@ -1331,7 +1337,7 @@ $V_{\ch{LNO_x}}$的范围仍然可以清楚地识别（图 \ref{fig:china_vcd_ln
 Table \ref{table:uncertainty_china}. Uncertainties for the estimation of LNO$_\textrm{x}$ production efficiency.}
 \begin{tabularx}{.8\textwidth}{c X}
 \hline
-\textbf{来源} & \makecell[cc]{\textbf{不确定性 (\%)}} \\
+来源 & \makecell[cc]{不确定性 (\%)} \\
 \hline
 LNO$_x$ 寿命                & \makecell[cc]{27 \%} \\
 闪电探测效率                  & \makecell[cc]{27 \%} \\
@@ -1350,26 +1356,27 @@ LNO 廓线                     & \makecell[cc]{26 \%} \\
 \section{本章小结}
 
 本章建立了基于卫星遥感NO$_2$柱浓度定量分析不同污染背景下LNO$_2$的
-计算方法，得到了不同污染程度地区的闪电NO$_x$产率，并与其他NO$_x$排放源进行了对比。主要结论如下：
+计算方法，得到了不同污染程度地区的LNO$_x$产率，并与其他NO$_x$排放源进行了对比。主要结论如下：
 
-\begin{enumerate}[label=(\arabic*), labelindent=\parindent, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
+\begin{enumerate}[label=（\arabic*）, labelindent=\parindent, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
 
 \item 针对清洁地区（北极）的深对流，我们利用极轨卫星在北极地区连续过境的特性，
-开发了TROPOMI LNO$_2$柱浓度高值区的自主识别系统，提出了通过相邻过境数据来定量 LNO$_2$ 的寿命和产率的方法。
+开发了TROPOMI LNO$_2$柱浓度高值区的自主识别系统，提出了通过相邻过境数据来定量 LNO$_2$ 寿命和产率的方法。
 
-\item 2019--2021年6--8月的分析结果表明，北极地区对流附近的LNO$_2$寿命为3 h，与污染地区的LNO$_2$寿命相似，例如美国地区的3 h \citep{Nault.2017}。
-）］
-北极陆地地区的LNO$_2$ 产率 [2.0（1.3--3.1）mol每闪击] 与美国的结果 (1.6 $\pm$ 0.1 mol每闪击) 也相似\citep{Lapierre.2020}。
-此外，结果表明北极海洋性闪电产生的 NO$_2$ 比陆地性闪电高6 倍。
+\item 2019--2021年6--8月的分析结果表明，北极地区对流附近的LNO$_2$寿命为3 h，
+与污染地区的LNO$_2$寿命相似，例如美国地区的3 h \citep{Nault.2017}。
+北极陆地地区的LNO$_2$ 产率 [2.0（1.3--3.1）mol每闪击] 与美国的结果 (1.6 $\pm$ 0.1 mol每闪击) 也相近\citep{Lapierre.2020}。
+此外，北极海洋性闪电产生的 NO$_2$是陆地性闪电的6倍。
 因此，当闪电在北极海洋和陆地上增加相同数量时，海洋性闪电将产生更多的 LNO$_2$。
-基于得到的LNO$_2$产率，我们进一步得出北极地区夏季（6--8 月）LNO$_x$ 的平均排放量为219 Mg (N)，约等于人为 NO$_x$ 排放量的 5\%。
+基于得到的LNO$_2$产率，我们进一步得出北极地区夏季（6--8 月）LNO$_x$ 的平均排放量为219吨氮，
+约等于该地区人为 NO$_x$ 排放量的 5\%。
 
-\item 针对污染地区的深对流，我们利用WRF-Chem的高分辨率模拟结果，定义了LNO$_2$和LNO$_x$的大气质量因子（AMF），
+\item 针对污染地区的深对流，我们利用WRF-Chem的高分辨率模拟结果定义了LNO$_2$和LNO$_x$的大气质量因子（AMF），
 从而得到包含了云下LNO$_2$和LNO$_x$的柱浓度。
 % 我们利用云辐射分数、地基探测的闪电阈值、模拟的闪电数$\geq$1000 和云上LNO$_2$占比$\geq$50 \%来确保WRF-Chem 成功模拟出对流并且LNO$_2$能够被OMI检测。
 由于新定义的AMF考虑了对流层的背景污染，因此该方法同时适用于清洁和污染区域。
 
-\item 2014年5--8月的分析结果表明，美国大陆的夏季 LNO$_2$ 和 LNO$_x$平均产率为32$\pm$15 mol LNO$_2$每闪电、90$\pm$50 mol LNO$_x$每闪电、6$\pm$3 mol LNO$_2$每闪击，以及17$\pm$10 mol LNO$_x$每闪击。
+\item 2014年5--8月的分析结果表明，美国大陆的夏季 LNO$_2$ 和 LNO$_x$平均产率为32$\pm$15 mol NO$_2$每闪电、90$\pm$50 mol NO$_x$每闪电、6$\pm$3 mol NO$_2$每闪击，以及17$\pm$10 mol NO$_x$每闪击。
 由于现阶段其他地区（如中国和印度）NO$_2$ 污染比美国大陆严重，因此LNO$_x$的估算有必要详细考虑NO$_2$背景污染。
 此外，区域和全球模式还需开发更为完善的闪电参数化来提高局地和全球范围内LNO$_x$排放估算的准确性。
 
