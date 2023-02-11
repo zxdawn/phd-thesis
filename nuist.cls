@@ -231,7 +231,7 @@
 \let\oldcitep=\citep
 \newcommand*\sqcitet[1]{{\bianca\oldcitet{#1}}}
 \newcommand*\sqcitep[1]{{\bianca\oldcitep{#1}}}
-\renewcommand*{\citet}[1]{{\hspace{-0.5em}\sqcitet{#1}}}
+\renewcommand*{\citet}[1]{{\hspace{-0.25em}\sqcitet{#1}}}
 \renewcommand*{\citep}[1]{{\sqcitep{#1}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
