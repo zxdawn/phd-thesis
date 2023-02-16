@@ -338,6 +338,7 @@
 	title,           % 中文标题
 	name,            % 申请人姓名
 	mentor,          % 指导老师
+	comentor,        % 合作指导老师
 	mentorrank,      % 指导老师职称
 	major,           % 学科名称
 	research,        % 研究方向
@@ -369,6 +370,8 @@
 	name=姓名,   
 	% 指导老师         
 	mentor=指导老师,  
+	% 合作指导老师
+	comentor=合作指导老师,
 	% 指导老师职称        
 	mentorrank=职称,  
 	% 学科名称    
@@ -532,7 +535,7 @@
 			\; \\
 			\; \\
 			
-			% \zihao{5}{~}
+			\zihao{5}{~}
 			
 			% 中文标题
 			\setstretch{1.5}
@@ -542,8 +545,7 @@
 			\end{tabularx}
 
 			\setstretch{1}
-			% \begin{textblock}{13.2}(3.3, 17)
-			\begin{textblock}{13.2}(3.3, 18.5)
+			\begin{textblock}{13.2}(3.3, 17.8)
 				\zihao{5} 
 				\zihao{-3}
 				\renewcommand\arraystretch{1.5}
@@ -552,6 +554,8 @@
 					
 					\textbf{指\hspace{0.34em}导\hspace{0.33em}教\hspace{0.34em}师：}   & \limitjustify{\nuist@mentor} \\ \clineB{2-2}{2}
 					
+					\textbf{合\hspace{0.34em}作\hspace{0.33em}导\hspace{0.34em}师：}   & \limitjustify{\nuist@comentor} \\ \clineB{2-2}{2}
+
 					\textbf{学\hspace{0.34em}科\hspace{0.33em}名\hspace{0.34em}称：}   & \nuist@major \\ \clineB{2-2}{2}
 					
 					\textbf{研\hspace{0.34em}究\hspace{0.33em}方\hspace{0.34em}向：}   & \nuist@research \\ \clineB{2-2}{2}
