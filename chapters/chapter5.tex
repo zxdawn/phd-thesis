@@ -38,22 +38,8 @@ Q_{v}=A Q_{\ch{sat}}+B Q_{\ch{sat}} \tanh (C X)\left[1-\tanh \left(D Q_{g}^{\alp
 如\citet{Fierro.2012}和\citet{Li.2017b}所述，这可以确保所有嵌套层中的闪电密度相同。
 此外，闪电数也被直接同化进WRF-Chem中，该方法已被应用于社区多尺度空气质量[CMAQ，\citet{Kang.2019a,Kang.2019,Kang.2020}]模式中。
 
-与雷达观测相比，2019年7月25日和2020年9月1日模拟的对流初生时间，较实际情况分别提前了60分钟和30分钟（图\ref{fig:comp_crf_2019}和图\ref{fig:comp_crf_2020}），闪电数据也以相同的时间间隔提前同化。
-对于下文的结果比较，我们选择匹配的阶段而不是相同的时间。
 
-2019年7月25日的热对流在初始时呈现为孤立的热泡，WRF-Chem再现了初始阶段孤立对流的位置和强度（图\ref{fig:comp_crf_2019}a和\ref{fig:comp_crf_2020}d）。
-在05:40 UTC时，对流系统呈现东北--西南向，最大组合雷达反射率达到60 dBZ（图\ref{fig:comp_crf_2019}b），强度大于模拟的对流（最大组合雷达反射率为55 dBZ，图\ref{fig:comp_crf_2019}e）。
-将模拟的对流核心区雷达反射率垂直剖面与观测结果进行比较（图\ref{fig:comp_dbzcross_2019}），
-虽然对流距雷达过远造成缺失数据较多，但是在未进行人工插值的条件下，孤立对流的水平和垂直结构仍大致显示：
-模拟的45 dBZ等值线达到12 km，但由于10 km 以上的数据质量低，观测到的等值线仅达到10 km。
-
-2020年9月1日观测到的飑线在北部初生，然后加强，并向观测点移动（图\ref{fig:comp_crf_2020}）。
-对流旺盛阶段（最大组合雷达反射率为60 dBZ）大致在05:50 UTC，与TROPOMI过境时间相符（图\ref{fig:comp_dbzcross_2020}b和e）。
-虽然该飙线抵达的最高高度低于2019年的热对流，但对流层低层（2--8 km）的反射率更大更广（图\ref{fig:comp_dbzcross_2020}）。
-由于模拟的对流消散区偏离了雷达观测的消散区，这导致与臭氧探空仪比较的区域设置在站点的西侧（图\ref{fig:comp_dbzcross_2020}c和f）。
-
-
-\begin{figure}[!htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{./figures/comp_crf_2019.png}
 \caption{在（a）04:20 UTC、（b）05:40 UTC 和（c）06:50 UTC 观测到的雷达组合反射率；
@@ -69,7 +55,23 @@ Q_{v}=A Q_{\ch{sat}}+B Q_{\ch{sat}} \tanh (C X)\left[1-\tanh \left(D Q_{g}^{\alp
 \label{fig:comp_crf_2019}
 \end{figure}
 
-\begin{figure}[!htbp]
+
+与雷达观测相比，2019年7月25日和2020年9月1日模拟的对流初生时间，较实际情况分别提前了60分钟和30分钟（图\ref{fig:comp_crf_2019}和图\ref{fig:comp_crf_2020}），闪电数据也以相同的时间间隔提前同化。
+对于下文的结果比较，我们选择匹配的阶段而不是相同的时间。
+
+2019年7月25日的热对流在初始时呈现为孤立的热泡，WRF-Chem再现了初始阶段孤立对流的位置和强度（图\ref{fig:comp_crf_2019}a和\ref{fig:comp_crf_2020}d）。
+在05:40 UTC时，对流系统呈现东北--西南向，最大组合雷达反射率达到60 dBZ（图\ref{fig:comp_crf_2019}b），强度大于模拟的对流（最大组合雷达反射率为55 dBZ，图\ref{fig:comp_crf_2019}e）。
+将模拟的对流核心区雷达反射率垂直剖面与观测结果进行比较（图\ref{fig:comp_dbzcross_2019}），
+虽然对流距雷达过远造成缺失数据较多，但是在未进行人工插值的条件下，孤立对流的水平和垂直结构仍大致显示：
+模拟的45 dBZ等值线达到12 km，但由于10 km 以上的数据质量低，观测到的等值线仅达到10 km。
+
+2020年9月1日观测到的飑线在北部初生，然后加强，并向观测点移动（图\ref{fig:comp_crf_2020}）。
+对流旺盛阶段（最大组合雷达反射率为60 dBZ）大致在05:50 UTC，与TROPOMI过境时间相符（图\ref{fig:comp_dbzcross_2020}b和e）。
+虽然该飙线抵达的最高高度低于2019年的热对流，但对流层低层（2--8 km）的反射率更大更广（图\ref{fig:comp_dbzcross_2020}）。
+由于模拟的对流消散区偏离了雷达观测的消散区，这导致与臭氧探空仪比较的区域设置在站点的西侧（图\ref{fig:comp_dbzcross_2020}c和f）。
+
+
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{./figures/comp_crf_2020.png}
 \caption{与图\ref{fig:comp_crf_2019} 相同，但针对2020年9月1日的对流个例，模拟时间比雷达观测提前30分钟。\\
@@ -77,24 +79,6 @@ Figure \ref{fig:comp_crf_2020}. Same as Fig. \ref{fig:comp_crf_2019} but for the
 The simulation time is 30 minutes ahead of each radar observation.}
 \label{fig:comp_crf_2020}
 \end{figure}
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.8\textwidth]{./figures/comp_dbzcross_2019.png}
-\caption{沿着图\ref{fig:comp_crf_2019}中AB线剖得的2019年7月25日（a）WRF-Chem模拟的和（b）雷达观测的雷达反射率。\\
-Figure \ref{fig:comp_dbzcross_2019}. Vertical cross sections of (a) WRF-Chem simulated and (b) observed radar reflectivity fields along the transect lines (AB) in Fig. \ref{fig:comp_crf_2019} for 25 July, 2019.}
-\label{fig:comp_dbzcross_2019}
-\end{figure}
-
-\begin{figure}[!htbp]
-\centering
-\includegraphics[width=0.8\textwidth]{./figures/comp_dbzcross_2019.png}
-\caption{与图\ref{fig:comp_dbzcross_2019}相同，但针对2020年9月1日的对流个例。\\
-Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019} but for the case on 01 September 2020.}
-\label{fig:comp_dbzcross_2020}
-\end{figure}
-
-
 
 \section{结果与讨论}
 
@@ -106,27 +90,43 @@ Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019}
 这是由于TROPOMI的O$_3$二级产品中云分数为光学云识别算法（OCRA）云分数，而NO$_2$二级产品中使用从氧气A波段版本S（FRESCO-S）中快速检索云的方案。
 
 总体来看，由于布鲁尔-多普森环流，纬度越高，同一气压层的O$_3$浓度越高。
+高云处的O$_3$浓度（图\ref{fig:uto3_tropomi}a--b）高于中云（图\ref{fig:uto3_tropomi}c--d），
+其中180--330 hPa间的O$_3$为330--450 hPa间的$\sim$1.5倍，为450--570 hPa间的$\sim$2倍。
 对于热带地区，非洲中部（20$^{\circ}$ W--50$^{\circ}$ E，0--20$^{\circ}$ N）的O$_3$浓度比同纬度地区的O$_3$浓度高，尤其是在中云和高云条件下可高出40--48\%，该现象与\citet{Cooper.2013}研究中215 hPa高度MLS的O$_3$观测结果相符。
 他们的研究指出，低O$_3$事件经常发生在热带西太平洋，很少发生在热带其他地区，
 而热带海洋区域在低O$_3$事件和高云的频率之间存在一致的空间特征，表明这些事件来自于对流。
 虽然非洲中部也是强对流频发地区，但陆地边界层O$_3$浓度往往高于海洋，因此深对流产生较少的低O$_3$事件。
-此外，高云处的O$_3$浓度（图\ref{fig:uto3_tropomi}a--b）高于中云（图\ref{fig:uto3_tropomi}c--d），
-其中180--330 hPa间的O$_3$为330--450 hPa间的$\sim$1.5倍，为450--570 hPa间的$\sim$2倍。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/comp_dbzcross_2019.png}
+\caption{沿着图\ref{fig:comp_crf_2019}中AB线剖得的2019年7月25日（a）WRF-Chem模拟的和（b）雷达观测的雷达反射率。\\
+Figure \ref{fig:comp_dbzcross_2019}. Vertical cross sections of (a) WRF-Chem simulated and (b) observed radar reflectivity fields along the transect lines (AB) in Fig. \ref{fig:comp_crf_2019} for 25 July, 2019.}
+\label{fig:comp_dbzcross_2019}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/comp_dbzcross_2019.png}
+\caption{与图\ref{fig:comp_dbzcross_2019}相同，但针对2020年9月1日的对流个例。\\
+Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019} but for the case on 01 September 2020.}
+\label{fig:comp_dbzcross_2020}
+\end{figure}
 
 为了进一步利用MERRA2-GMI的模式结果分析动力输送和化学反应在其中的作用，我们首先将各个高度的MERRA2-GMI模式结果与TROPOMI观测数据相比较。
 图\ref{fig:uto3_merra2}为2019年6--8月与TROPOMI对应的MERRA2-GMI O$_3$模拟结果，
 图\ref{fig:uto3_delta}为TROPOMI与MERRA2-GMI在各层的结果之差（$\Delta$ O$_3$）。
-总体上，非洲中部的$\Delta$ O$_3$在中云和高云条件下为负（可小于-20 pptv，图\ref{fig:uto3_delta}a--d），中纬度地区的$\Delta$ O$_3$在高云条件下为正（可大于 40 pptv，图\ref{fig:uto3_tropomi}b），
-该两处之外的$\Delta$ O$_3$绝对值均小于10。
+总体上，非洲中部的$\Delta$ O$_3$在中云和高云条件下为负（-23 $\pm$ 11 pptv，图\ref{fig:uto3_delta}a--d），
+中纬度陆地地区的$\Delta$ O$_3$在高云条件下为正（20 $\pm$ 15 pptv，图\ref{fig:uto3_tropomi}b）。
 此外，通过对比$\Delta$ NO$_2$（图\ref{fig:utno2_tropomi}）和$\Delta$ O$_3$（图\ref{fig:uto3_delta}），
 我们发现由于清洁的对流层上层属于NO$_x$控制区\citep{Brown.2022}，因此MERRA2-GMI的NO$_2$较TROPOMI高估，导致MERRA2-GMI的O$_3$亦高估。
 只有在$\Delta$ NO$_2$ $>$ 60 pptv的条件下，$\Delta$ O$_3$ $>$ 10 pptv（图\ref{fig:uto3_delta}a--b），
 在$\Delta$ NO$_2$ $<$ -10 pptv的条件下，$\Delta$ O$_3$ $<$ -40 pptv，该现象与NO$_x$控制区内EKMA曲线在低NO$_x$值区更密集的结论相符。
 低云条件下的云切片O$_3$的低估，也反映了AMF$_{\ch{geo}}$在低云和污染条件下的高估\citep{BelmonteRivas.2015}。
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=15cm]{./figures/uto3_tropomi.png}
+    \includegraphics[width=16cm]{./figures/uto3_tropomi.png}
     \caption{
     TROPOMI云切片算法所得的2019年6--8月北半球中低纬度O$_3$浓度分布图。 \\
     Figure \ref{fig:uto3_tropomi}. The O$_3$ vertical mixing ratios derived from the cloud-slicing results of TROPOMI O$_3$ observations at the northern middle-low latitudes for June--August in 2019.
@@ -135,9 +135,9 @@ Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019}
 \end{figure}
 
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=15cm]{./figures/uto3_merra2-gmi.png}
+    \includegraphics[width=16cm]{./figures/uto3_merra2-gmi.png}
     \caption{
     同图\ref{fig:uto3_tropomi}但数据为MERRA2-GMI。 \\
     Figure \ref{fig:uto3_merra2}. Same as Fig. \ref{fig:uto3_tropomi} but for MERRA2-GMI.
@@ -146,9 +146,9 @@ Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019}
 \end{figure}
 
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=15cm]{./figures/uto3_delta.png}
+    \includegraphics[width=16cm]{./figures/uto3_delta.png}
     \caption{
     图\ref{fig:uto3_tropomi}与图\ref{fig:uto3_merra2}之差。 \\
     Figure \ref{fig:uto3_delta}. Differences between Fig. \ref{fig:uto3_tropomi} and Fig. \ref{fig:uto3_merra2}.
@@ -161,14 +161,15 @@ Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019}
 我们将MLS于261 hPa高度观测的O$_3$浓度与MERRA2-GMI的O$_3$模拟结果在晴空和有云条件下分别进行对比。
 如图\ref{fig:mls_o3_261hpa}所示，在低纬度地区两者均显示有云条件下海洋上O$_3$浓度较晴空降低5\%--60\%，而非洲中部和印度北部的O$_3$浓度较晴空增大1\%--46\%。
 虽然晴空条件下两者在中纬度地区的O$_3$浓度一致，但有云时两者的变化相反。
-具体而言，MLS观测显示有云条件下261 hPa高度的O$_3$浓度比晴空时的浓度高，而MERRA2-GMI模拟显示O$_3$浓度比晴空时的浓度低。
+具体而言，MLS观测显示有云条件下中纬度地区261 hPa高度的O$_3$平均浓度比晴空时的浓度高24\%，
+而MERRA2-GMI模拟显示O$_3$平均浓度比晴空时的浓度低26\%。
 在40--60$^{\circ}$ N区域内有高云的条件下，MERRA2-GMI模拟的O$_3$平均浓度为108 ppbv，与TROPOMI云切片得到的O$_3$平均浓度（86 ppbv）相接近，而MLS的平均观测结果（230 ppbv）为MERRA2-GMI和TROPOMI的2--3倍。
-MLS的O$_3$廓线在对流层上层的分辨率为3--6 km，而261 hPa所在高度接近于中纬度地区的对流层顶高度，故过度的外推可能导致MLS测得的O$_3$浓度过高\citep{Schoeberl.2007}。
+由于MLS的O$_3$廓线在对流层上层的分辨率为3--6 km，而261 hPa所在高度接近于中纬度地区的对流层顶高度，故过度的外推可能导致MLS测得的O$_3$浓度过高\citep{Schoeberl.2007}。
 
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=15cm]{./figures/mls_o3_261hpa.png}
+    \includegraphics[width=16cm]{./figures/mls_o3_261hpa.png}
     \caption{
     2019年6--8月北半球中低纬度晴空（a--b）和有云（c--d）条件下261 hPa高度O$_3$的平均浓度，以及相对百分比变化（e--f）。
     第一列为MLS观测数据，第二列为MERRA2-GMI模拟结果。 \\
@@ -192,9 +193,9 @@ MLS的O$_3$廓线在对流层上层的分辨率为3--6 km，而261 hPa所在高�
 
 
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=13cm]{./figures/uto3_profile.png}
+    \includegraphics[width=14cm]{./figures/uto3_profile.png}
     \caption{
     MERRA2-GMI（蓝色）和TROPOMI云切片算法（橙色）所得到的区域平均O$_3$廓线
     （a）中国南部（b）印度中部（c）美国东南部（d）太平洋（区域示意图见图\ref{fig:no2_ltngcount}a）。
@@ -207,9 +208,9 @@ MLS的O$_3$廓线在对流层上层的分辨率为3--6 km，而261 hPa所在高�
     \label{fig:uto3_profile}
 \end{figure}
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{./figures/ozonesonde_profile.png}
+\includegraphics[width=0.9\textwidth]{./figures/ozonesonde_profile.png}
 \caption{对流前（虚线）和对流后/对流期间（实线）探空观测到的O$_3$（红色）和Q$_v$（黑色）廓线。
 模式初始（虚线）和对流后或对流期间（实线）的O$_3$廓线为蓝色。
 深灰色阴影是50\%的置信区间，浅色是90\%的置信区间，灰线是第一对流层顶。
@@ -226,12 +227,12 @@ The gray lines are the lapse rate tropopauses.
 除了云切片算法得到的全球O$_3$分布外，
 中国东南部的臭氧探空试验在对流不同阶段所测得的O$_3$和Q$_v$分布如图\ref{fig:ozonesonde_profile}所示。
 总体来说，对流导致对流层上层O$_3$和Q$_v$浓度增大，且增强的最大值所在区域居于10--16 km 之间。
-然而，2020年的个例观测显示：对流层低层（2--8 km）的O$_3$有较大的增加。
-此外，两个个例都存在双谷形状的O$_3$廓线，但高度不同：2019年的热对流个例为2 和8 km，2020年的飑线为4 和10 km。
+% 其中2020年个例的对流层低层（2--8 km）O$_3$浓度有较大的增加。
+两个个例都存在双谷形状的O$_3$廓线，但高度不同：2019年的热对流个例为2 和8 km，2020年的飑线为4 和10 km。
 尽管WRF-Chem模式倾向于低估2019年个例对流层下层和2020年个例对流层上层中的O$_3$浓度，
 但仍再现了详细的O$_3$垂直分布，故能用以分析对流影响O$_3$的机制。
 共有三个来源可以解释对流层上层O$_3$的增加：对流输送、化学反应和闪电直接产生的O$_3$。
-本研究（\ref{sec:convec_impacts}节）仅详细讨论前两个因素，因为闪电直接产生的O$_3$
+\ref{sec:convec_impacts}节仅详细讨论前两个因素，因为闪电直接产生的O$_3$
 产量仍不确定\citep{Morris.2010,Ripoll.2014}.
 
 
@@ -243,17 +244,7 @@ The gray lines are the lapse rate tropopauses.
 在2019年的个例中，低O$_3$浓度的空气块通过上升气流达到16 km，然后对流后方的高O$_3$浓度空气被夹卷进该区域。
 而2020年个例中观测到增加的O$_3$，主要来自垂直传输的背景O$_3$浓度。
 
-为了确定两种影响之间的差异，我们分析了对流期间10--14 km的平均累积物理变化速率（IPR，图\ref{fig:tendency_o3}c,f）。
-一般来说，水平平流（advh）和垂直平流（advz）的相反趋势支配着2019年对流层上层O$_3$产率的下降。
-其中强上升气流使得低O$_3$浓度的空气块得以抬升，故垂直平流（advz）的贡献在10--11.5 km之间为负，而在11.5到13.8km 之间为正，即存在向下输送的高浓度O$_3$。
-由于2020年对流个例发生后的Q$_v$较高（图\ref{fig:ozonesonde_profile}a）且对流层顶高于云区（图\ref{fig:tendency_o3}b），
-所以其上升气流不足以像中尺度对流系统一样将平流层高浓度的O$_3$挟至对流层\citep{Phoenix.2020}。
-虽然动力输送在O$_3$的变化中起着重要作用，但不能忽视正的化学贡献，尤其是2020年对流期间对流层上层O$_3$的净增加。
-具体来说，在两次个例整个生命期中化学反应对O$_3$起到了正贡献，
-其影响程度是动力输送的5--10倍，这表明化学贡献在对流的整个生命期中占主导地位。
-
-
-\begin{figure}[!htbp]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\textwidth]{./figures/tendency_o3.png}
 \caption{
@@ -273,6 +264,14 @@ The cloud boundaries [the sum of cloud liquid water mixing ratio (q$_{cloud}$) a
 \label{fig:tendency_o3}
 \end{figure}
 
+为了确定两种影响之间的差异，我们分析了对流期间10--14 km的平均累积物理变化速率（IPR，图\ref{fig:tendency_o3}c,f）。
+一般来说，水平平流（advh）和垂直平流（advz）的相反趋势支配着2019年对流层上层O$_3$产率的下降。
+其中强上升气流使得低O$_3$浓度的空气块得以抬升，故垂直平流（advz）的贡献在10--11.5 km之间为负，而在11.5到13.8km 之间为正，即存在向下输送的高浓度O$_3$。
+由于2020年对流个例发生后的Q$_v$较高（图\ref{fig:ozonesonde_profile}a）且对流层顶高于云区（图\ref{fig:tendency_o3}b），
+所以其上升气流不足以像中尺度对流系统一样将平流层高浓度的O$_3$挟至对流层\citep{Phoenix.2020}。
+虽然动力输送在O$_3$的变化中起着重要作用，但不能忽视正的化学贡献，尤其是2020年对流期间对流层上层O$_3$的净增加。
+具体来说，在两次个例整个生命期中化学反应对O$_3$起到了正贡献，
+其影响程度是动力输送的5--10倍，这表明化学贡献在对流的整个生命期中占主导地位。
 
 由以上的中国东南部O$_3$浓度变化分析可知化学贡献的重要性，
 因此我们进一步利用MERRA2-GMI的3小时平均模式结果，分析了动力（大尺度输送）、物理（湍流和对流）和化学对中低纬度O$_3$的贡献。
@@ -282,9 +281,10 @@ The cloud boundaries [the sum of cloud liquid water mixing ratio (q$_{cloud}$) a
 由于对流和闪电产生的较高浓度LNO$_2$，这些区域的正化学贡献在阴天比晴天高50--160\%（图\ref{fig:uto3_chem_tendency}）。
 该结果与中国东南部O$_3$在整个对流生命期的变化及来源相符，突出了LNO$_2$对于夏季对流层上层O$_3$浓度的长期影响。
 
-\begin{figure}[!htbp]
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=15cm]{./figures/uto3_tendency.png}
+    \includegraphics[width=\textwidth]{./figures/uto3_tendency.png}
     \caption{
     2019年6--8月北半球中低纬度MERRA2-GMI模拟的261 hPa高度O$_3$的平均趋势：
     （a）动力；（b）物理；（c）化学；（d）净趋势。\\
@@ -294,9 +294,9 @@ The cloud boundaries [the sum of cloud liquid water mixing ratio (q$_{cloud}$) a
 \end{figure}
 
 
-\begin{figure}[!htbp]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=15cm]{./figures/uto3_chem_tendency.png}
+    \includegraphics[width=\textwidth]{./figures/uto3_chem_tendency.png}
     \caption{
     2019年6--8月北半球中低纬度MERRA2-GMI模拟的261 hPa高度O$_3$的平均化学趋势：
     （a）晴空条件；（b）有云条件；（c）两者的相对差。\\
@@ -305,21 +305,21 @@ The cloud boundaries [the sum of cloud liquid water mixing ratio (q$_{cloud}$) a
     }
     \label{fig:uto3_chem_tendency}
 \end{figure}
-\FloatBarrier
-
 
 \subsection{闪电氮氧化物的影响} \label{sec:lnox_effects}
 
-我们将开启和关闭LNO排放所得到的中国东南部O$_3$累计物理变化速率进行对比，从而得到LNO$_x$对O$_3$的影响（表\ref{table:ipr}）。
+我们将开启和关闭LNO排放所得到的中国东南部O$_3$累计物理变化速率（IPR）进行对比，
+从而得到LNO$_x$对O$_3$的影响（表\ref{table:ipr}）。
 在2019年个例的对流旺盛期和整个生命周期中，LNO$_x$使得O$_3$的净产量降低了25\%。
 对于2020年个例，由于站点附近闪电密度较小，化学贡献导致的O$_3$浓度下降不显著（$\leq$1 \%）。
 而前人研究表明，LNO$_x$在日尺度范围内可提高下风向的O$_3$产量\citep{Pickering.1996,DeCaria.2005}。
 % 因此，有必要准确估计LNO$_x$的产率（见第\ref{chapter:PE}章）。
 
+
 \begin{table*}[h]
 \centering
 \caption{平均O$_3$累积趋势的过程分析（10--14 km）\\ Table \ref{table:ipr} Process analysis table for the mean O$_3$ integrated tendencies (10--14 km)}
-\scriptsize
+\footnotesize
 {\centering
 \begin{tabular}{@{\extracolsep{\fill}} cccccc}
 \hline
@@ -350,10 +350,10 @@ Convective Period   & 2019-07-25      & 0              & -19.6 (140.0 \%)       
 
 此外，我们利用TROPOMI数据将对流分为三个区域：新生闪电区、闪电下风向和闪电老化区（详见第\ref{sec:lnox_affects_tropomi}节和图\ref{fig:china_s5p_amf_diff}）。
 首先使用基于不同LNO产率的模拟结果，获得O$_3$差异（$\Delta$O$_3$）的廓线（图\ref{fig:irr_timeseries}a--c）。
-$\Delta$O$_3$在2--5 km之间大部分为正（$<$1 ppbv），在5--12 km 之间为负，
-这与\citet{Ott.2007}研究中所有高度上O$_3$都产生净损失（$<$4 ppbv）的结论不一致。
-此外，较高的LNO产率（700 mol 每闪电）与默认产率（500 mol 每闪电）所得的结果相比，所有高度的O$_3$浓度降低了不到 1 ppbv，
-甚至导致闪电下风向2--5 km之间的$\Delta$O$_3$为负（图\ref{fig:irr_timeseries}b）。
+$\Delta$O$_3$在2--5 km之间大部分为正（$<$1 ppbv），在5--12 km 之间为负（$>$-3 ppbv），
+这与\citet{Ott.2007}研究中所有高度上O$_3$都产生净损失（$>$-4 ppbv）的结论不一致。
+此外，较高的LNO产率（700 mol 每闪电）与默认产率（500 mol 每闪电）所得的结果相比，所有高度的O$_3$浓度均降低，
+甚至导致闪电下风向2--5 km之间的$\Delta$O$_3$由正转负（图\ref{fig:irr_timeseries}b）。
 由于LNO$_x$在8--10 km 之间达到峰值，O$_3$浓度也在此层降低（2.6 ppbv）最多。
 
 接着，我们应用积分反应速率（IRR）来评估O$_3$变化的化学机制以及LNO$_x$对$\Delta$O$_3$的影响。
@@ -372,8 +372,9 @@ $\Delta$O$_3$在2--5 km之间大部分为正（$<$1 ppbv），在5--12 km 之间
 具体而言，NO和HO$_2$之间的反应始终占主导地位，而RO$_2$对NO的氧化约占该产量的40--60\%。
 O$_3$的主要损耗是光解反应（O(1D)和H$_2$O的反应），而O$_3$和OH之间的反应在对流期间与之相当。
 O$_3$损耗的最低贡献，O$_3$ + HO$_2$ $\,\to\,$ OH + 2O$_2$，在对流旺盛期减少，因为LNO的产生捕获了本应与O$_3$反应的HO$_2$。
-虽然LNO$_x$引起的总积分反应速率增加，在低层和高层分别为1.36$\times$10$^7$和2.60$\times$10$^6$ molec cm$^{-3}$ s$^{-1}$，
-但是由于动力传输和LNO$_x$化学贡献的综合作用，高层的O$_3$净产量实际上减少了（图\ref{fig:irr_timeseries}a--c）。
+虽然LNO$_x$引起对流层低层和高层的总积分反应速率分别最大增加245\%和30\%，
+即增大1.36$\times$10$^7$和2.60$\times$10$^6$ molec cm$^{-3}$ s$^{-1}$，
+但是由于动力输送和LNO$_x$化学贡献的综合作用，高层的O$_3$净产量实际上减少了（图\ref{fig:irr_timeseries}a--c）。
 
 
 \begin{figure}[h]
@@ -403,22 +404,21 @@ O$_3$损耗的最低贡献，O$_3$ + HO$_2$ $\,\to\,$ OH + 2O$_2$，在对流旺
 \begin{enumerate}[label=（\arabic*）, labelindent=\parindent, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
 
 \item 在低纬地区，TROPOMI、MLS和MERRA2-GMI均显示对流层上层的低O$_3$事件常发生于热带西太平洋，
-而非洲中部由于对流输送的边界层高O$_3$浓度气团，对流层上层O$_3$在有云条件下浓度更高；
+而非洲中部由于对流输送的边界层高O$_3$浓度气团，对流层上层O$_3$在有云条件下浓度更高。
 
 \item 在中纬地区，TROPOMI的云切片结果较少，MLS和MERRA2-GMI的对流层上层O$_3$趋势相反：
-MERRA2-GMI模拟显示对流层上层O$_3$浓度在有云时比晴空时浓度更低，MLS观测表明有云时对流层上层O$_3$浓度增大，
+MERRA2-GMI模拟显示对流层上层O$_3$浓度在有云时比晴空时浓度低26\%，MLS观测表明有云时对流层上层O$_3$浓度增大24\%，
 鉴于MERRA2-GMI与TROPOMI的相近，我们将MLS在261 hPa高度层高估的O$_3$浓度归因于平流层过度的外推；
 
-\item MERRA2-GMI在闪电频发的美国东南部的模拟结果显示，330--450 hPa高度不存在TROPOMI观测到的O$_3$峰值，
-故MERRA2-GMI模拟中对流层上层LNO$_2$的差异导致了O$_3$浓度的低估；
+% \item MERRA2-GMI在闪电频发的美国东南部的模拟结果显示，330--450 hPa高度不存在TROPOMI观测到的O$_3$峰值，
+% 故MERRA2-GMI模拟中对流层上层LNO$_2$的差异导致了O$_3$浓度的低估；
 
-\item 闪电同化后的WRF-Chem对流模拟结果与观测相符，虽然WRF-Chem模式结果倾向于低估O$_3$浓度，
-但其再现了臭氧探空观测到的垂直分布结构及变化，即对流发生后对流层上层的O$_3$和Q$_v$均增大；
+% \item 闪电同化后的WRF-Chem对流模拟结果与观测相符，虽然WRF-Chem模式结果倾向于低估O$_3$浓度，
+% 但其再现了臭氧探空观测到的垂直分布结构及变化，即对流发生后对流层上层的O$_3$和Q$_v$均增大；
 
 \item MERRA2-GMI和WRF-Chem的O$_3$趋势分析结果表明，虽然动力输送项在对流旺盛期间占主导，
-但在污染地区化学反应的正贡献在整个生命期更为重要；
-
-\item 中国东南部的对流个例模拟显示，虽然LNO$_x$使得累积净化学反应速率增大，
-但动力输送和化学反应的综合作用降低了对流层上层O$_3$浓度。
+但在污染地区化学反应的正贡献在整个生命期更为重要，可达动力输送的5--10倍；
+中国东南部的对流个例模拟显示，虽然LNO$_x$使得对流层上层O$_3$的累积净化学反应速率增大30\%，
+但对流层上层O$_3$的浓度降低了25\%。
 
 \end{enumerate}
