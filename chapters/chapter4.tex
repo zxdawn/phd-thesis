@@ -4,16 +4,16 @@
 
 由第\ref{chapter:PE}章分析可知，将卫星观测所得的NO$_2$柱浓度与闪电数据相结合，
 可以得出LNO$_2$的柱浓度和产率，然而无法直接获得NO$_2$的垂直分布。
-虽然飞机观测实验可以得到对流周围尤其是出流区的NO$_2$垂直分布\citep{Barth.2019}，
+虽然飞机观测试验可以得到对流周围尤其是出流区的NO$_2$垂直分布\citep{Barth.2019}，
 但是无法获得对流云内的NO$_2$。
-目前为止，有两种方法可获得对流云内的NO$_2$：1）山顶测量 2）NO$_2$探空。
+目前为止，有两种方法可获得对流云内的NO$_2$：1）山顶测量，2）NO$_2$探空。
 其中山顶测量只能针对局地的NO$_2$浓度进行探测，无法获得区域的NO$_2$垂直分布\citep{Reiter.1970}，
-而NO$_2$探空目前仍处于发展阶段且主要集中于边界层内\citep{Sluis.2010}，尚未开展针对对流层上层的测试和观测实验。
+而NO$_2$探空目前仍处于发展阶段，且主要集中于边界层内\citep{Sluis.2010}，尚未开展针对对流层上层的测试和观测试验。
 因此本章将采用云切片的方法（\ref{sec:cloud-slicing}节），利用TROPOMI针对不同高度深厚对流云的观测，得到云间的NO$_2$平均浓度。
 
 本章余下部分按照以下方式组织：
 \ref{sec:model_settings_gmi}节介绍MERRA2-GMI模式使用的数据及方案；
-\ref{sec:no2_vcd_cld}节分析TROPOMI测得的中低纬度云上NO$_2$柱浓度；
+\ref{sec:no2_vcd_cld}节分析TROPOMI测得的中低纬度云上NO$_2$柱浓度分布；
 \ref{sec:no2_profile}节在\ref{sec:no2_vcd_cld}节的基础上，利用云切片方法计算1$^{\circ}$ $\times$ 1$^{\circ}$ 网格内不同高度的NO$_2$平均浓度，并与模拟的LNO$_2$排放廓线进行对比分析；
 \ref{sec:lnox_affects_tropomi}节选取中国东南部的对流个例，利用WRF-Chem的高分辨率模拟探讨新生、下风向和老化的LNO$_2$对TROPOMI NO$_2$柱浓度的影响，
 最后是本章小结。
@@ -24,8 +24,8 @@
 
 \ref{sec:no2_vcd_cld}节中MERRA2-GMI的模拟包括来自化石燃料、生物燃料、生物质燃烧和生物排放的NO、CO 和其他NMVOC。
 除此之外，NO的排放还源自于闪电和土壤。
-化石燃料和生物燃料的排放是取自测量大气成分和气候特大城市-放大环境（MACCity）清单\citep{Granier.2011}，
-利用十年大气化学和气候模型比较项目（ACCMIP）插值到每年的排放量并应用季节性比例因子\citep{Lamarque.2010}。
+化石燃料和生物燃料的排放是取自测量大气成分和气候特大城市--放大环境（MACCity）清单\citep{Granier.2011}，
+利用十年大气化学和气候模式比较项目（ACCMIP）插值到每年的排放量并应用季节性比例因子\citep{Lamarque.2010}。
 生物质燃烧排放来自全球火灾排放数据集（GFED）第4版\citep{Giglio.2013}。
 生物来源使用自然界气体和气溶胶排放模型 [MEGAN，\citet{Guenther.1999}]
 在线计算异戊二烯和其他生物化合物的排放量，并响应于MERRA2-GMI 气象场。
@@ -33,7 +33,7 @@
 闪电NO的排放使用 MERRA-2 中对流层中层的去趋势累积质量通量\citep{Allen.2010}，
 并受 OTD LIS闪电气候学的季节性约束\citep{Cecil.2014}，
 将全球平均比例因子应用于去趋势的累积质量通量，以便模拟每年的全球平均闪电 NO$_x$产量为 6.5 Tg N。
-第\ref{sec:lnox_affects_tropomi}节中的WRF-Chem模拟设置见第\ref{sec:model_settings_china}节。
+\ref{sec:lnox_affects_tropomi}节中的WRF-Chem模拟设置见\ref{sec:model_settings_china}节。
 
 % \subsection{气象及化学设置}
 % \subsection{闪电参数化}
@@ -104,7 +104,8 @@
 高云处的NO$_2$浓度（图\ref{fig:utno2_tropomi}a,b）高于中云（图\ref{fig:utno2_tropomi}c,d）。
 其中陆地上180--330 hPa间的NO$_2$为330--450 hPa间的$\sim$1.2倍，为450--570 hPa间的$\sim$2倍，
 而570 hPa以下（图\ref{fig:utno2_tropomi}d--f）陆地上的NO$_2$浓度逐渐上升。
-该现象与前人的模式模拟和飞机观测结果相符：LNO$_2$在对流层上层占主导，而污染NO$_2$在对流层下层占主导\citep{Pickering.1996,Ott.2010,Laughner.2017}。
+该现象与前人的模式模拟和飞机观测结果相符：LNO$_2$在对流层上层占主导，
+而人为污染NO$_2$在对流层下层占主导\citep{Pickering.1996,Ott.2010,Laughner.2017}。
 
 
 \begin{figure}[H]
@@ -133,6 +134,14 @@
 由LIS/OTD闪电观测数据（图\ref{fig:no2_ltngcount}c）可知，
 青藏高原西南部闪电强度较弱，故模式的高估主要应来自于亚洲夏季风的污染物输送。
 
+中云的云切片结果有效范围最广，总体上来看TROPOMI和MERRA2-GMI之间误差较低（18 $\pm$ 17 pptv），
+且两者具有相似的高值区分布：北美、东欧、印度以及中国华北地区，这些地区与污染NO$_2$柱浓度高值区对应。
+中云高度的NO$_2$可能来源有对流输送的地表污染和污染的出流区，如中国华北地区的NO$_2$高值传输至东部的黄海（其中一部分也来自于船舶排放）。
+其中$>$ 40 pptv的正误差集中于南美洲北部、缅甸和泰国北部，由于这些地区地基NO$_2$观测资料稀缺，
+所以该误差应归因于卫星反演误差还是模式NO$_x$排放源的不确定性，还有待进一步研究。
+此外，中云的负误差结果在570--670 hPa更为明显（-10 $\pm$ 15 pptv），尤其是中国的华北地区，
+考虑到MERRA2-GMI对流垂直输送强度较低，故使用的排放清单中NO$_x$排放量可能过高\citep{Ziemke.2019}。
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=13cm]{./figures/utno2_merra2-gmi.png}
@@ -143,18 +152,11 @@
     \label{fig:utno2_merra2}
 \end{figure}
 
-中云的云切片结果有效范围最广，总体上来看TROPOMI和MERRA2-GMI之间误差较低（18 $\pm$ 17 pptv），
-且两者具有相似的高值区分布：北美、东欧、印度以及中国华北地区，这些地区与污染NO$_2$柱浓度高值区对应。
-中云高度的NO$_2$可能来源有对流输送的地表污染和污染的出流区，如中国华北地区的NO$_2$高值传输至东部的黄海（其中一部分也来自于船舶排放）。
-其中$>$ 40 pptv的正误差集中于南美洲北部、缅甸和泰国北部，由于这些地区地基NO$_2$观测资料稀缺，
-所以该误差应归因于卫星反演误差还是模式NO$_x$排放源，有待进一步研究。
-此外，中云的负误差结果在570--670 hPa更为明显（-10 $\pm$ 15 pptv），尤其是中国的华北地区，
-考虑到MERRA2-GMI对流垂直输送强度较低，故使用的排放清单中NO$_x$排放量可能过高\citep{Ziemke.2019}。
-
-低云的云切片结果NO$_2$高值区与中云结果类似，总体上来看TROPOMI和MERRA2-GMI之间误差较大（15 $\pm$ 50 pptv），
+低云的云切片NO$_2$高值区与中云结果类似，
+总体上来看TROPOMI和MERRA2-GMI之间误差较大（15 $\pm$ 50 pptv），
 在中国东部和印度北部的负误差最为明显（$<$-100 pptv）。
 前人研究表明，本研究中所用的几何AMF（AMF$_{geo}$）在低云和污染条件下可达可见AMF（AMF$_{Vis}$，式\ref{eq:AMF_NO2Vis}）的两倍\citep{BelmonteRivas.2015}，然而这不足以解释中国东部地区的模拟值为观测值的3--5倍。
-因此，该差异反映了MERRA2-GMI使用的ACCMIP排放清单在中国东部未能及时更新。
+因此，该差异反映了MERRA2-GMI使用的MACCity排放清单在中国东部未能及时更新。
 
 
 \begin{figure}[H]
@@ -176,7 +178,7 @@
 由于TROPOMI在太平洋清洁地区的高估，我们将云切片结果进行校正，即除以其与MERRA2-GMI和TROPOMI比例的平均值。
 如图\ref{fig:utno2_profile}所示，太平洋清洁地区NO$_2$在对流层各层浓度分布均一（2.5--12.5 pptv），
 中国南部和印度中部低层NO$_2$污染浓度高（200--300 pptv），而美国东南部低层NO$_2$浓度为50--100 pptv。
-在污染地区对流层低层TROPOMI存在与图\ref{fig:utno2_delta}中类似的NO$_2$浓度低估，故只比较三者在对流层中上层的NO$_2$浓度。
+由于污染地区对流层低层TROPOMI NO$_2$浓度存在与图\ref{fig:utno2_delta}中类似的低估，故只比较三者在对流层中上层的NO$_2$浓度大小。
 
 对于中国南部、印度中部和美国东南部，NO$_2$廓线呈“C”形：NO$_2$首先随高度而下降，
 在500--600 hPa存在转折点，进而浓度上升，在180--300 hPa达到峰值（$\sim$80 pptv）。
@@ -186,8 +188,8 @@
 其在180--330 hPa （330--450 hPa）区间的NO$_2$浓度比TROPOMI的观测结果低10\%（50\%），
 而MERRA2-GMI结果较TROPMI的结果低30\%.
 此外，虽然MERRA2-GMI在美国东南部的LNO$_2$排放速率为中国南部或印度中部的两倍，但是最上层的峰值浓度与TM5一致，
-不同之处为浓度拐点降为700 hPa，该高度低于TM5和TROPOMI的500 hPa，
-可能原因是MERRA2-GMI的LNO$_2$排放廓线在美国东南部的中低层权重过高。
+不同之处是浓度拐点降为700 hPa，该高度低于TM5和TROPOMI的500 hPa，
+可能原因是MERRA2-GMI的美国东南部LNO$_2$排放廓线在对流层中低层权重过高。
 总之，TROPOMI的观测结果和MERRA2-GMI/TM5的模拟结果在对流层中上层存在显著的一致性，
 局部的差异表明云切片方法可以用来检验模式的对流垂直输送和水平输送能力、使用的排放源清单以及LNO$_x$的产量和分布。
 
@@ -220,19 +222,23 @@
 所以我们接着利用WRF-Chem的模式结果研究了LNO$_x$对官方NO$_2$柱浓度产品的影响。
 为了探讨LNO$_x$对AMF$_{\ch{trop}}$和AMF$_{\ch{LNO_x}}$计算的重要性，
 我们将LNO产率的上限700 mol NO 每闪电\citep{Ott.2010}应用于WRF-Chem ，并与500 mol NO 每闪电的结果进行对比。
-接着我们通过独立替换三个对流层层中的NO$_2$廓线：对流层中层（MT，800--400 hPa）、
+接着我们通过独立替换对流层内三个不同高度区间的NO$_2$廓线：
+对流层中层（MT，800--400 hPa）、
 对流层上层（UT，400--150 hPa）和整个对流层（地表到对流层顶）。
 除非另有说明，否则后文AMF的变化是通过增加LNO$_x$获得的。
-如图\ref{fig:china_s5p_amf_diff}显示，AMF变化主要由TROPOMI探测灵敏度高的对流层上层LNO$_x$所控制\citep{Beirle.2009,Laughner.2017}，且LNO$_x$产量在该高度达到峰值（图\ref{fig:china_nox_profile}）。
-虽然在三种廓线替换条件下AMF$_{\ch{LNO_x}}$均降低了5\%--40\%，但AMF$_{\ch{trop}}$的变化（$\Delta$AMF$_{\ch{trop}}$）具有区域特异性。
+如图\ref{fig:china_s5p_amf_diff}所示，
+AMF变化主要由TROPOMI探测灵敏度高的对流层上层LNO$_x$所控制\citep{Beirle.2009,Laughner.2017}，
+且LNO$_x$产量在该高度达到峰值（图\ref{fig:china_nox_profile}）。
+虽然在三种廓线替换条件下AMF$_{\ch{LNO_x}}$均降低了5--40\%，
+但AMF$_{\ch{trop}}$的变化（$\Delta$AMF$_{\ch{trop}}$）具有区域特异性，
 可根据闪电活动对其进行分类：新生闪电区（MT $\Delta$AMF $<$ -20\%）、闪电下风向（MT $\Delta$AMF$_{\ch{trop}}$ $>$ 20\%）和闪电老化区（UT $\Delta$AMF$_\textrm{trop}$ $>$ 20\%）。
-其中新生闪电区的AMF$_{\ch{trop}}$降低了？？\%，闪电下风向和闪电老化区的AMF$_{\ch{trop}}$分别增大了？？\%。
+结果表明，先验廓线中若考虑LNO$_2$，可导致新生闪电区的AMF$_{\ch{trop}}$降低23\%，而闪电下风向和闪电老化区的AMF$_{\ch{trop}}$增大了60\%。
 
 如图\ref{fig:china_amf_contribution}a所示，云层高于400 hPa时（云压 $<$ 400 hPa），
 新生闪电区的像素上f$_r$ $>$ 0.8，但闪电老化区和闪电下风向均有低于400 hPa的云层。
 这与图\ref{fig:china_nox_profile}中的平均云压一致，并解释了为什么UT $\Delta$AMF$_{\ch{trop}}$ > 20\% 在图\ref{fig:china_s5p_amf_diff}b$_i$和b$_{iii}$ 中存在，这也正表明了在闪电老化区估算LNO$_x$的可能性。
 具体而言，LNO$_x$对$\Delta$AMF$_{\ch{trop}}$的贡献分为两部分：S$^{\ch{LNO_x}}_{\ch{tropNO2}}$/S$^{\ch{noLNO_x}}_{\ch{tropNO2}}$ 和 V$^{\ch{LNO_x}}_{\ch{tropNO2}}$/V$^{\ch{noLNO_x}}_{\ch{tropNO2}}$,
-其中 LNO$_x$ 上标表示先验变量是开启 LNO$_x$（500 mol NO每闪电）的结果，而 noLNO$_x$ 上标代表关闭LNO$_x$排放。
+其中 LNO$_x$ 上标表示先验变量是开启 LNO$_x$（500 mol NO每闪电），而 noLNO$_x$ 上标代表关闭LNO$_x$排放。
 这两个贡献是通过对式（\ref{eq:AMF1}）和式（\ref{eq:AMF0}）取对数，然后相减得到式（\ref{eq:delta_AMF}），其中下标$1$是开启LNO$_x$排放，下标$0$是关闭LNO$_x$排放。
 这两部分可用于确定哪个参数控制$\Delta$AMF$_{\ch{trop}}$：增大的先验S$_{\ch{tropNO2}}$ 或先验 V$_{\ch{tropNO2}}$（图\ref{fig:china_amf_contribution}b--d）。
 简而言之，图\ref{fig:china_amf_contribution}b--d中哪个比例的数值大，哪个占主导地位。
@@ -274,9 +280,9 @@
 
 
 首先，如果LNO$_2$包含在先验NO$_2$廓线中（图\ref{fig:china_s5p_amf_diff}c$_i$），
-新生闪电的像素中处由于增大的先验V$_{\ch{NO2}}$（图 \ref{fig:china_amf_contribution}b），AMF$_{\ch{trop}}$将减少。
+新生闪电区的像素中由于增大的先验V$_{\ch{NO2}}$（图 \ref{fig:china_amf_contribution}b），AMF$_{\ch{trop}}$将减少。
 而新生闪电的下风向区域情况相反，无论选择哪一层替换NO$_2$廓线，
-AMF$_{\ch{trop}}$都增大（图\ref{fig:china_s5p_amf_diff}a$_{i}$--c$_{i}$），
+AMF$_{\ch{trop}}$均增大（图\ref{fig:china_s5p_amf_diff}a$_{i}$--c$_{i}$），
 因为 LNO $_2$ 被对流输送至云顶上方，并导致更大的先验 S$_{\ch{NO2}}$（图 \ref{fig:china_amf_contribution}c）。
 对于2020年个例的老化闪电像素处，针对对流层上层的AMF$_{\ch{trop}}$结果增加$>$50 \%（图\ref{fig:china_s5p_amf_diff}b$_{iii}$）。
 该现象证明了平流输送的对流层上层LNO$_2$和云作为屏障的重要作用，即导致先验S$_{\ch{NO$_2$}}$和先验V$_{\ch{NO2}}$之间的差异（图 \ref{fig:china_amf_contribution}d）。
@@ -306,7 +312,7 @@ AMF$_{\ch{trop}}$都增大（图\ref{fig:china_s5p_amf_diff}a$_{i}$--c$_{i}$）�
     \caption{
     （a）图 \ref{fig:china_s5p_amf_diff} 中定义的三个区域（新生闪电区，闪电下风向，和闪电老化区）的云压和云辐射分数之间的关系。
      （b--d）这三个区域的先验SCD$^{\textrm{LNO$_x$}}_{\textrm{tropNO$_2$}}$/SCD$^{\textrm{noLNO$_x$}}_{ \textrm{tropNO$_2$}}$和先验VCD$^{\textrm{LNO$_x$}}_{\textrm{tropNO$_2$}}$/VCD$^{\textrm{noLNO$_x$ }}_{\textrm{tropNO$_2$}}$。
-     LNO$_x$的上标表示先验变量是通过开启LNO$_x$排放（每次闪电 500 mol NO）计算得到的，而上标为noLNO$_x$则代表关闭LNO$_x$排放。\\
+     LNO$_x$的上标表示先验变量是通过开启LNO$_x$排放（每次闪电 500 mol NO），而上标为noLNO$_x$代表关闭LNO$_x$排放。\\
      Figure \ref{fig:china_amf_contribution}. (a) The relationship between cloud pressure and cloud radiance fraction for three regions defined in Fig. \ref{fig:china_s5p_amf_diff}: fresh lightning region, downwind of fresh lightning, and aged lightning area.
     (b--d) The a priori SCD$^{\textrm{LNO$_x$}}_{\textrm{tropNO$_2$}}$/SCD$^{\textrm{noLNO$_x$}}_{\textrm{tropNO$_2$}}$ and a priori VCD$^{\textrm{LNO$_x$}}_{\textrm{tropNO$_2$}}$/VCD$^{\textrm{noLNO$_x$}}_{\textrm{tropNO$_2$}}$ of pixels in these three regions. The LNO$_x$ superscript indicates that the a priori variable is calculated with LNO$_x$ (500 mol NO per flash) and the noLNO$_x$ superscript is without LNO$_x$.
     }
@@ -330,9 +336,9 @@ AMF$_{\ch{trop}}$都增大（图\ref{fig:china_s5p_amf_diff}a$_{i}$--c$_{i}$）�
 结果表明，模式中LNO$_2$排放或参数化对流垂直传输污染物的强度可能偏低，
 导致其在污染地区的对流层上层（180--330 hPa和330--450 hPa）的模拟结果比TROPOMI观测值低10--50\%。
 而在对流层中层和低层，由于MERRA2-GMI使用的排放清单未及时更新，
-导致污染地区（尤其是中国东部和印度北部）的NO$_2$模拟平均浓度为TROPOMI观测值的3--5倍。
+导致污染地区（尤其是中国东部和印度北部）的NO$_2$模拟平均浓度为TROPOMI观测值的$\sim$2倍。
 
 \item 将设置不同LNO$_2$产率的WRF-Chem高分辨率结果代入TROPOMI NO$_2$柱浓度的计算，
-敏感性试验结果表明：如果先验廓线忽略LNO$_2$，AMF$_{\ch{trop}}$在新生闪电区会被高估？？\%，而在出流区和老化区相反分别被低估？？\%。
+敏感性试验结果显示，若考虑LNO$_2$的贡献则AMF$_{\ch{trop}}$在新生闪电区会降低23\%，而在出流区和老化区会增加60\%。
 
 \end{enumerate}

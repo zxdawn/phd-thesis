@@ -4,7 +4,8 @@
 
 由第\ref{sec:effects_on_nox_profile}章分析可知，云切片算法得到的不同高度对流云内NO$_2$平均浓度，
 可用于分析LNO$_2$和污染NO$_2$的地理分布并校验MERRA2-GMI的模拟结果。
-由于LNO$_x$和对流输送可共同对O$_3$的垂直分布产生影响，因此本章利用同样的云切片方法来计算云间的O$_3$平均浓度，
+由于LNO$_x$和对流输送可对O$_3$的垂直分布产生影响，
+因此本章利用同样的云切片方法来计算云间的O$_3$平均浓度，
 并分析输送和化学过程对其的贡献。
 
 本章余下部分按照以下方式组织：
@@ -19,7 +20,7 @@
 
 \section{模式设置} \label{sec:model_settings_assimilation}
 
-本章\ref{sec:o3_profile}节和\ref{sec:convec_impacts}节中的全球模拟设置与\ref{sec:model_settings_gmi}节相同。
+本章\ref{sec:o3_profile}节和\ref{sec:convec_impacts}节中的全球模拟设置与\ref{sec:model_settings_gmi}节相同，
 本章\ref{sec:lnox_effects}节中的中国东南部模拟设置与\ref{sec:model_settings_china}节相同。
 由于中国东南部的对流生命期短，我们采用了闪电同化并利用晴空条件下的臭氧探空资料修正了O$_3$的初始场，然后将模拟结果与探空和雷达对比。
 闪电数据同化方法详见\citet{Fierro.2012}和\citet{Li.2017b}，主要步骤为在闪电所在网格的垂直恒温层间，增加水汽质量混合比：
@@ -61,14 +62,14 @@ Q_{v}=A Q_{\ch{sat}}+B Q_{\ch{sat}} \tanh (C X)\left[1-\tanh \left(D Q_{g}^{\alp
 
 2019年7月25日的热对流在初始时呈现为孤立的热泡，WRF-Chem再现了初始阶段孤立对流的位置和强度（图\ref{fig:comp_crf_2019}a和\ref{fig:comp_crf_2020}d）。
 在05:40 UTC时，对流系统呈现东北--西南向，最大组合雷达反射率达到60 dBZ（图\ref{fig:comp_crf_2019}b），强度大于模拟的对流（最大组合雷达反射率为55 dBZ，图\ref{fig:comp_crf_2019}e）。
-将模拟的对流核心区雷达反射率垂直剖面与观测结果进行比较（图\ref{fig:comp_dbzcross_2019}），
+将模拟的对流核心区雷达反射率垂直剖面与观测结果进行对比（图\ref{fig:comp_dbzcross_2019}），
 虽然对流距雷达过远造成缺失数据较多，但是在未进行人工插值的条件下，孤立对流的水平和垂直结构仍大致显示：
 模拟的45 dBZ等值线达到12 km，但由于10 km 以上的数据质量低，观测到的等值线仅达到10 km。
 
 2020年9月1日观测到的飑线在北部初生，然后加强，并向观测点移动（图\ref{fig:comp_crf_2020}）。
-对流旺盛阶段（最大组合雷达反射率为60 dBZ）大致在05:50 UTC，与TROPOMI过境时间相符（图\ref{fig:comp_dbzcross_2020}b和e）。
+对流旺盛阶段（最大组合雷达反射率为60 dBZ）大致在05:50 UTC，与TROPOMI过境时间相符（图\ref{fig:comp_dbzcross_2020}b，e）。
 虽然该飙线抵达的最高高度低于2019年的热对流，但对流层低层（2--8 km）的反射率更大更广（图\ref{fig:comp_dbzcross_2020}）。
-由于模拟的对流消散区偏离了雷达观测的消散区，这导致与臭氧探空仪比较的区域设置在站点的西侧（图\ref{fig:comp_dbzcross_2020}c和f）。
+由于模拟的对流消散区偏离了雷达观测的消散区，这导致与臭氧探空仪比较的区域设置在站点的西侧（图\ref{fig:comp_dbzcross_2020}c，f）。
 
 
 \begin{figure}[H]
@@ -419,6 +420,6 @@ MERRA2-GMI模拟显示对流层上层O$_3$浓度在有云时比晴空时浓度�
 \item MERRA2-GMI和WRF-Chem的O$_3$趋势分析结果表明，虽然动力输送项在对流旺盛期间占主导，
 但在污染地区化学反应的正贡献在整个生命期更为重要，可达动力输送的5--10倍；
 中国东南部的对流个例模拟显示，虽然LNO$_x$使得对流层上层O$_3$的累积净化学反应速率增大30\%，
-但对流层上层O$_3$的浓度降低了25\%。
+但对流层上层O$_3$的平均浓度降低了25\%。
 
 \end{enumerate}
