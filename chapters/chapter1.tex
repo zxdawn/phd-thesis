@@ -94,7 +94,7 @@ $\sim$1960s & 德国南部万克山观测站              & KI     & NO$_2$ & - 
 2004年一月至三月，2005年二月 & TROCCINOX 巴西，圣保罗州 & CL & NO  & 0.5--1.5 & 25--40  & 45  & 1 s & 8 &  \citet{Huntrieser.2007} \\ \hline
 \end{longtable}
 \begin{tablenotes}
-\footnotesize
+\linespread{1}\footnotesize
 \item $^a$ CL：来自NO + O$_3$反应的化学发光分析； KI：基于NO$_2$气体与稀释的KI溶液之间的化学反应； TP-LIF：双光子激光诱导的荧光。
 \item $^b$ 平均NO或NO$_x$增强的水平平均尺度； -： 无资料。
 \item 来源：\citet{Schumann.2007}
@@ -114,6 +114,17 @@ $\sim$1960s & 德国南部万克山观测站              & KI     & NO$_2$ & - 
 NO生成量与闪电峰值电流和环境气压之间的相关性，为估算LNO$_x$提供了一种新的方法，
 即通过识别闪电和峰值电流的雷电探测系统来估算每次闪电的LNO$_x$产量。
 然而可惜的是，像OTD这样的卫星系统虽然可以在全球范围内识别与闪电能量相关的辐射\citep{Baker.1999}，但不能识别闪电的峰值电流。
+
+
+一些飞机试验通过测量雷暴附近闪电烟羽中NO$_x$的浓度，得出单位闪电长度的LNO$_x$产量（表\ref{table:LNOx/length}）。
+为了将这些值外推至每次闪电的LNO$_x$产量，我们需要知道闪电的长度。
+一些研究者使用一些典型的长度范围，如中纬度地闪（CG）长度为5--7 km，云闪（IC）长度范围为1--6 km \citep{Price.1997b}，
+但是详细的研究表明，闪电的长度可能更长\citep{Defer.2001,Thery.2001,Peterson.2020b}。
+对于STERAO个例，从甚高频（VHF）雷电观测和模拟研究得出的闪电长度约为20--30 km\citep{Defer.2001}。
+对于EULINOX超级单体，从VHF闪电和雷达观测得出的IC和CG闪电的典型长度为，IC：43 km，CG-：26.5 km，CG+：29.5 km \citep{Dotzek.2000}。
+而最近的地球静止闪电测绘仪（GLM）探测到709 km长度的闪电，为WMO新的闪电长度记录\citep{Peterson.2020b}。
+
+
 
 {
 \centering
@@ -138,15 +149,6 @@ LNO$_x$产量（10$^{16}$分子J$^{-1}$）   & 方法                          &
 }
 
 
-一些飞机试验通过测量雷暴附近闪电烟羽中NO$_x$的浓度，得出单位闪电长度的LNO$_x$产量（表\ref{table:LNOx/length}）。
-为了将这些值外推至每次闪电的LNO$_x$产量，我们需要知道闪电的长度。
-一些研究者使用一些典型的长度范围，如中纬度地闪（CG）长度为5--7 km，云闪（IC）长度范围为1--6 km \citep{Price.1997b}，
-但是详细的研究表明，闪电的长度可能更长\citep{Defer.2001,Thery.2001,Peterson.2020b}。
-对于STERAO个例，从甚高频（VHF）雷电观测和模拟研究得出的闪电长度约为20--30 km\citep{Defer.2001}。
-对于EULINOX超级单体，从VHF闪电和雷达观测得出的IC和CG闪电的典型长度为，IC：43 km，CG-：26.5 km，CG+：29.5 km \citep{Dotzek.2000}。
-而最近的地球静止闪电测绘仪（GLM）探测到709 km长度的闪电，为WMO新的闪电长度记录\citep{Peterson.2020b}。
-
-\clearpage % new page for table
 {
 \centering
 \footnotesize
@@ -189,6 +191,18 @@ LNO$_x$产量（10$^{16}$分子J$^{-1}$）   & 方法                          &
 由此可知，每次闪电低于3$\times$10$^{25}$分子的数值主要来自1980年代的理论研究和一些实验室研究。
 当用如今的闪电频率和闪电能量的知识重新计算，这些早期结果中的许多数值将会产生变化，目前的产率估算与近年来越来越多的观测相一致。
 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{./figures/lnox_production_Schumann.png}
+\caption{不同年份的理论、实验室和外场观测以及综述中LNO$_x$的产率(10$^{25}$个分子)\\
+Figure \ref{figure:lnox_production_Schumann}.
+Flash-specific LNO$_x$ emissions in 10$^{25}$ molecules (NO$_x$ or NO) per flash from various theoretical, laboratory, and field studies and from reviews versus year of publication.
+}
+\label{figure:lnox_production_Schumann}
+\end{figure}
+
+
 假设全球的雷暴数已知，则可以将单个雷暴估计得到的LNO$_x$产量外推至全球\citep{Chameides.1987,Huntrieser.1998,Huntrieser.2002}。
 该方法需要测量出流区相对于入流区增加的NO$_x$浓度，以及雷暴的云砧出流区的质量通量，并估计全球任何时间活跃的雷暴数。
 另一种方法是，根据每天发生的雷暴数量，估算闪电产生的NO$_x$量并将其推算到全球范围内\citep{Ridley.2004}。 这些方法的优点是，不需要任何闪电活动和云地闪产率比值的信息，但需提供准确的活跃雷暴数。
@@ -197,15 +211,6 @@ LNO$_x$产量（10$^{16}$分子J$^{-1}$）   & 方法                          &
 最佳估计值可能是5 Tg每年，其中不确定性因子约5，即估算值范围为1--25 Tg每年 \citep{Chameides.1987}。
 虽然该方法对各种雷暴的性质提供了重要的支撑，但并没有降低全球LNO$_x$来源数值的不确定性。
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{./figures/lnox_production_Schumann.png}
-\caption{不同年份的理论、实验室和外场观测以及综述中LNO$_x$的产率(10$^{25}$个分子)\\
-Figure \ref{figure:lnox_production_Schumann}.
-Flash-specific LNO$_x$ emissions in 10$^{25}$ molecules (NO$_x$ or NO) per flash from various theoretical, laboratory, and field studies and from reviews versus year of publication.
-}
-\label{figure:lnox_production_Schumann}
-\end{figure}
 
 鉴于NO$_x$在不同的对流区域寿命不一，而且LNO$_x$难以直接观测，因此夏季热带和中纬度地区的LNO$_x$仍需进一步研究。
 由于NO$_2$在近紫外和可见光范围内具有独特的光谱吸收线，因此可以利用遥感对NO$_2$进行探测\citep{Platt.1983}，
@@ -237,7 +242,7 @@ Flash-specific LNO$_x$ emissions in 10$^{25}$ molecules (NO$_x$ or NO) per flash
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{./figures/lnox_production_xin.png}
+\includegraphics[width=0.9\textwidth]{./figures/lnox_production_xin.png}
 \caption{近十年不同方法所估算的LNO$_x$产率\\
 Figure \ref{figure:lnox_production_xin}. Estimates of LNO$_x$ production efficiency in the recent 20 years.}
 \label{figure:lnox_production_xin}

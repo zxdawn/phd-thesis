@@ -138,11 +138,9 @@ TROPOMI提供在四个通道（紫外、可见光、近红外和短波红外）�
 其中具有较大反演误差（processing\_quality\_flags > 0）的像素被过滤掉。
 
 与OMI一样，$AMF_{\ch{trop}}$取决于多个参数（太阳天顶角、视角天顶角、相对方位角、表面反照率、地表气压、云分数、云高度和先验廓线）：
-
 \begin{equation} \label{eq:AMF_NO2}
 AMF_{\ch{trop}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) NO_2(p) \: dp + f_r \int_{p_{cloud}}^{p_{tp}} w_{cloudy}(p) NO_2(p) \: dp}{\int_{p_{surf}}^{p_{tp}} NO_2(p) \: dp}
 \end{equation}
-
 简而言之，分子是模拟的$S_{\ch{NO2}}$，分母是模拟的$V_{\ch{NO2}}$。
 其中$p_{surf}$是表面气压，$p_{tp}$是对流层顶气压，$p_{cloud}$是云压，$f_{r}$是NO$_2$窗区中的云辐射率分数，
 $w_{clear}$和$w_{cloudy}$分别是查找表中的气压相关散射权重\citep{Lorente.2017}，
@@ -180,27 +178,22 @@ IWC加权函数的分析表明，215 hPa高度IWC的垂直分辨率约为4 km\ci
 \subsection{闪电氮氧化物的计算} \label{sec:amf_definition}
 
 基于$AMF_{\ch{trop}}$，为了得到对流层LNO$_2$或LNO$_x$的垂直柱浓度，我们只需将分母改成LNO$_2$或LNO$_x$的垂直积分即可。
-
 \begin{equation} \label{eq:AMF_LNO2}
 AMF_{\ch{LNO_2}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) NO_2(p) \: dp + f_r \int_{p_{cloud}}^{p_{tp}} w_{cloudy}(p) NO_2(p) \: dp}{\int_{p_{surf}}^{p_{tp}} LNO_2(p) \: dp}
 \end{equation}
 
 当研究区域为清洁区域，式（\ref{eq:AMF_LNO2}）的分子可用LNO$_2$代替NO$_2$，即
-
 \begin{equation} \label{eq:AMF_LNO2clean}
 AMF_{\ch{LNO_2Clean}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) LNO_2(p) \: dp + f_r \int_{p_{cloud}}^{p_{tp}} w_{cloudy}(p) LNO_2(p) \: dp}{\int_{p_{surf}}^{p_{tp}} LNO_2(p) \: dp}
 \end{equation}
 
 为了与前人对比，我们定义了其他两种云上的AMF，
-
 \begin{equation} \label{eq:AMF_NO2Vis}
 AMF_{\ch{NO_2Vis}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) NO_2(p) \: dp + f_r \int_{p_{cloud}}^{p_{tp}} w_{cloudy}(p) NO_2(p) \: dp}{(1-f_g) \int_{p_{surf}}^{p_{tp}} NO_2(p) \: dp + f_g \int_{p_{cloud}}^{p_{tp}} NO_2(p) \: dp}
 \end{equation}
-
 \begin{equation} \label{eq:AMF_LNO2Vis}
 AMF_{\ch{LNO_2Vis}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) NO_2(p) \: dp + f_r \int_{p_{cloud}}^{p_{tp}} w_{cloudy}(p) NO_2(p) \: dp}{(1-f_g) \int_{p_{surf}}^{p_{tp}} LNO_2(p) \: dp + f_g \int_{p_{cloud}}^{p_{tp}} LNO_2(p) \: dp}
 \end{equation}
-
 其中$f_g$为云几何分数。以上各式中的NO$_2$和LNO$_2$廓线均来自于WRF-Chem的模拟结果。
 由于北极地区排放源及对流模拟结果不确定性较大，本文利用基于云压假设的高斯分布来代替廓线。
 高斯分布的峰宽设置为180 hPa（详见\ref{sec:arctic_lnox_calc}节），峰位为最高（数值最低）的$p_{cloud}$。
@@ -210,7 +203,7 @@ AMF_{\ch{LNO_2Vis}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) NO_2(p
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{./figures/pcld_ptropo.png}
+\includegraphics[width=0.6\textwidth]{./figures/pcld_ptropo.png}
 \caption{云辐射分数大于0.7的像素上TROPOMI测得的云压和对流层顶高度直方图。\\
 Figure \ref{fig:pcld_ptropo}. The histogram of TROPOMI cloud pressure and tropopause pressure over lightning
 pixels with the cloud radiance fraction larger than 0.7.
@@ -227,15 +220,11 @@ pixels with the cloud radiance fraction larger than 0.7.
 以TROPOMI的NO$_2$产品为例，对于不同的$p_{cloud}$我们需要至少两个邻近的云上$V_{\ch{NO2}}$（$V_{\ch{NO2Vis}}$，图\ref{fig:cloud-slicing_schematic}a），这两个测量的结果显示在图\ref{fig:cloud-slicing_schematic}b 中的$p_{cloud}$-VCD 坐标平面中。
 两个气压层$p_1$ 和 $p_2$（$p_1$ $<$ $p_2$）之间的$V_{\ch{NO2}}$
 可以通过对$p_1$--$p_2$间的NO$_2$体积混合比（$VMR_{\ch{NO2}}$）进行积分得出：
-
-
 \begin{equation} \label{eq:vmr_integ}
 {VCD_{\ch{NO2}}}_{p_1}^{p_2}=\frac{R_{\ch{air}}}{k_Bg} \cdot \int_{p_1}^{p_2} VMR_{\ch{NO2}}(p) \mathrm{d} p
 \end{equation}
-
 其中 $R_{\ch{air}}$ 是气体常数，$k_B$ 是玻尔兹曼常数，$g$ 是重力加速度。
 假设式（\ref{eq:vmr_integ}）中 $p_1$ 到 $p_2$ 范围内的混合比恒定，此气压层内的平均$VMR_{\ch{NO2}}$由下式给出：
-
 \begin{equation}
 VMR_{\ch{NO2}} = \frac{\Delta V_{\ch{NO2Vis}}}{\Delta p} \frac{k_B g}{R_{air}}
 \end{equation}
@@ -267,14 +256,12 @@ Figure \ref{fig:cloud-slicing_schematic}. Schematic view of the cloud-slicing te
 由于对流层上层中NO$_2$垂直分布的不确定性\citep{Travis.2016}，我们使用$AMF_{\ch{geo}}$来计算云切片方法需要的$V_{\ch{NO2Vis}}$。
 \citet{Choi.2014}的研究表明，该计算方法得到的$V_{\ch{NO2Vis}}$在对流层中层（650 hPa）最多比近朗伯多云AMF方法计算的结果高14\%。
 因此，云切片算法中的$V_{\ch{NO2Vis}}$表达式如下：
-
 \begin{equation}
 \begin{split}
 V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
              & = \frac{S_{\ch{total}}-(V_{\ch{strat}} \cdot AMF_{\ch{strat}})}{\sec (\mathrm{SZA})+\sec (\mathrm{VZA})}
 \end{split}
 \end{equation}
-
 其中$S_{\ch{total}}$是总NO$_2$斜柱浓度，$V_{\ch{strat}}$为平流层NO$_2$垂直柱浓度，$AMF_{\ch{strat}}$为平流层空气质量分子。
 
 
