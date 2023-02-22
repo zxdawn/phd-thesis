@@ -78,7 +78,7 @@ FUNCTION {load.config}
   #1 'title.in.journal :=
   #0 'show.patent.country :=
   #1 'show.mark :=
-  #0 'space.before.mark :=
+  #1 'space.before.mark :=
   #0 'show.medium.type :=
   "slash" 'component.part.label :=
   #0 'short.journal :=
