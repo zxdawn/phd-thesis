@@ -216,7 +216,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \RequirePackage[numbers, sort, compress,comma,square,super]{natbib}
 \RequirePackage[authoryear, round]{natbib}
-\setlength{\bibsep}{0.5em}
+% Decrease the font of references
+\renewcommand*{\bibfont}{\footnotesize}
+\setlength{\bibsep}{0.2em}
+
 % 使用中文括号
 % https://tex.stackexchange.com/a/385543
 % https://tex.stackexchange.com/a/369691
@@ -813,47 +816,47 @@
 
 %% 下面内容实际使用前可以删除
 
-\DeclareRobustCommand*\cmd[1]{\texttt{\char`\\#1}}
-\DeclareRobustCommand\cs[1]{\texttt{\char`\\#1}}
-\def\crcmd{\cmd{\char`\\}}
-\DeclareRobustCommand*\env[1]{\texttt{#1}}
-\DeclareRobustCommand*\pkg[1]{\textsf{#1}}
-\DeclareRobustCommand*\cls[1]{\textsf{#1}}
-\DeclareRobustCommand*\marg{\@ifstar\@marg\@margmeta}
-\DeclareRobustCommand*\oarg{\@ifstar\@oarg\@oargmeta}
-\DeclareRobustCommand*\Arg[1]{\@meta{#1}}
-\def\@oarg#1{\textcolor{gray}{\texttt{[#1]}}}
-\def\@oargmeta#1{\@oarg{\@meta{#1}}}
-\def\@marg#1{\texttt{\{#1\}}}
-\def\@margmeta#1{\@marg{\@meta{#1}}}
-\def\@meta#1{$\m@th\langle$\textnormal{\textit{#1}}$\m@th\rangle$}
+% \DeclareRobustCommand*\cmd[1]{\texttt{\char`\\#1}}
+% \DeclareRobustCommand\cs[1]{\texttt{\char`\\#1}}
+% \def\crcmd{\cmd{\char`\\}}
+% \DeclareRobustCommand*\env[1]{\texttt{#1}}
+% \DeclareRobustCommand*\pkg[1]{\textsf{#1}}
+% \DeclareRobustCommand*\cls[1]{\textsf{#1}}
+% \DeclareRobustCommand*\marg{\@ifstar\@marg\@margmeta}
+% \DeclareRobustCommand*\oarg{\@ifstar\@oarg\@oargmeta}
+% \DeclareRobustCommand*\Arg[1]{\@meta{#1}}
+% \def\@oarg#1{\textcolor{gray}{\texttt{[#1]}}}
+% \def\@oargmeta#1{\@oarg{\@meta{#1}}}
+% \def\@marg#1{\texttt{\{#1\}}}
+% \def\@margmeta#1{\@marg{\@meta{#1}}}
+% \def\@meta#1{$\m@th\langle$\textnormal{\textit{#1}}$\m@th\rangle$}
 
-% Definitions
-\def\lsym{$\mathsurround=0pt {}^\ell$}
-\def\LSYM    #1{$#1$     & \texttt{\string#1}\lsym}
+% % Definitions
+% \def\lsym{$\mathsurround=0pt {}^\ell$}
+% \def\LSYM    #1{$#1$     & \texttt{\string#1}\lsym}
 
-\def\SYM     #1{$#1$     & \texttt{\string#1}}
-\def\BIGSYM  #1{$#1$     & $\displaystyle #1$ & \texttt{\string#1}}
-\def\ACC   #1#2{$#1{#2}$ & \texttt{\string#1}\marg*{#2}}
-\def\DEL     #1{$\big#1 \bigg#1$ & \texttt{\string#1}}
+% \def\SYM     #1{$#1$     & \texttt{\string#1}}
+% \def\BIGSYM  #1{$#1$     & $\displaystyle #1$ & \texttt{\string#1}}
+% \def\ACC   #1#2{$#1{#2}$ & \texttt{\string#1}\marg*{#2}}
+% \def\DEL     #1{$\big#1 \bigg#1$ & \texttt{\string#1}}
 
-\def\AMSSYM  #1{$#1$     & \texttt{\string#1}}
-% These symbols rely on `amsmath' package
-\def\AMSM    #1{$#1$     & \textcolor{blue}{\texttt{\string#1}}}
-\def\AMSACC#1#2{$#1{#2}$ & \textcolor{blue}{\texttt{\string#1}}\marg*{#2}}
-\def\AMSBIG  #1{$#1$     & $\displaystyle #1$ & \textcolor{blue}{\texttt{\string#1}}}
+% \def\AMSSYM  #1{$#1$     & \texttt{\string#1}}
+% % These symbols rely on `amsmath' package
+% \def\AMSM    #1{$#1$     & \textcolor{blue}{\texttt{\string#1}}}
+% \def\AMSACC#1#2{$#1{#2}$ & \textcolor{blue}{\texttt{\string#1}}\marg*{#2}}
+% \def\AMSBIG  #1{$#1$     & $\displaystyle #1$ & \textcolor{blue}{\texttt{\string#1}}}
 
-\def\SC      #1{#1       & \texttt{\string#1}}
+% \def\SC      #1{#1       & \texttt{\string#1}}
 
-\def\demowidth#1{\rule{0.4pt}{1ex}\rule{#1}{1.2pt}\rule{0.4pt}{1ex}}
+% \def\demowidth#1{\rule{0.4pt}{1ex}\rule{#1}{1.2pt}\rule{0.4pt}{1ex}}
 
-\newenvironment{symbols}[1]%
-{\small\def\arraystretch{1.1}
-	\begin{tabular}{@{}#1@{}}}%
-	{\end{tabular}}
+% \newenvironment{symbols}[1]%
+% {\small\def\arraystretch{1.1}
+% 	\begin{tabular}{@{}#1@{}}}%
+% 	{\end{tabular}}
 
 
-\DeclareMathOperator{\argh}{argh}
-\DeclareMathOperator*{\nut}{Nut}
+% \DeclareMathOperator{\argh}{argh}
+% \DeclareMathOperator*{\nut}{Nut}
 
                      
