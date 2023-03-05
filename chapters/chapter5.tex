@@ -309,8 +309,9 @@ The cloud boundaries [the sum of cloud liquid water mixing ratio (q$_{cloud}$) a
 
 我们将开启和关闭LNO排放所得到的中国东南部O$_3$累计物理变化速率（IPR）进行对比，
 从而得到LNO$_x$对O$_3$的影响（表\ref{table:ipr}）。
-在2019年个例的对流旺盛期和整个生命周期中，LNO$_x$使得O$_3$的净产量降低了25\%。
-对于2020年个例，由于站点附近闪电密度较小，化学贡献导致的O$_3$浓度下降不显著（$\leq$1 \%）。
+如上节所述，化学的正贡献主导了整个对流生命期间O$_3$浓度的变化，是对流输送贡献的5--10倍。
+在2019年个例的对流旺盛期和整个生命周期中，LNO$_x$使得O$_3$的净产量分别降低了25\%和40\%。
+而对于2020年个例，由于站点附近闪电密度较小，化学贡献导致的O$_3$浓度变化不显著（$\leq$1 \%）。
 % 而前人研究表明，LNO$_x$在日尺度范围内可提高下风向的O$_3$产量\citep{Pickering.1996,DeCaria.2005}。
 % 因此，有必要准确估计LNO$_x$的产率（见第\ref{chapter:PE}章）。
 
@@ -348,54 +349,59 @@ Convective Period   & 2019-07-25      & 0              & -19.6 (140.0 \%)       
 \end{table*}
 
 
-此外，我们利用TROPOMI数据将对流分为三个区域：新生闪电区、闪电下风向和闪电老化区（详见\ref{sec:lnox_affects_tropomi}节和图\ref{fig:china_s5p_amf_diff}）。
-首先基于不同LNO产率的模拟结果，获得O$_3$差异（$\Delta$O$_3$）的廓线（图\ref{fig:irr_timeseries}a--c）。
-$\Delta$O$_3$在2--5 km之间大部分为正（$<$1 ppbv），在5--12 km 之间为负（$>$-3 ppbv），
-这与\citet{Ott.2007}研究中所有高度上O$_3$都产生净损失（$>$-4 ppbv）的结论不一致。
-此外，较高的LNO产率（700 mol 每闪电）与默认500 mol 每闪电的结果相比，所有高度的O$_3$浓度均降低，
-甚至导致闪电下风向2--5 km高度的$\Delta$O$_3$由正转负（图\ref{fig:irr_timeseries}b）。
-由于LNO$_x$在8--10 km高度达到峰值，O$_3$浓度也在此层降低最多。%（2.6 ppbv）。
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{./figures/irr_timeseries.png}
-\caption{
-（a--c）在图\ref{fig:china_s5p_amf_diff}定义的三个区域（新生闪电区、闪电下风向和闪电老化区）中，TROPOMI过境时由LNO$_x$所引起的O$_3$剖面变化；
-（d--f）800 hPa 和 500 hPa 之间平均累积反应速率（IRR）的时间序列，其中图例显示了详细的物种和反应，总IRR是从生成O$_3$的IRR（红线和紫线）中减去O$_3$损失的IRR，
- 实线为模拟中开启LNO（500 mol 每闪电）排放的IRR，而虚线表示关闭LNO排放；
-（g--i）与（d--f）相同，但在 500 hPa 和 200 hPa 之间。\\
-Figure \ref{fig:irr_timeseries}. (a--c) Changes in O$_3$ profiles due to LNO$_x$ at TROPOMI overpass time in three regions (fresh lightning region, downwind of fresh lightning, and aged lightning area) as defined in Fig. \ref{fig:china_s5p_amf_diff}.
-(d--f) Time series of the mean integrated reaction rate (IRR) between 800 hPa and 500 hPa.
-The legend shows detailed species and reactions.
-The Total IRR is the O$_3$ loss IRR subtracted from the O$_3$ production IRR (red and purple lines).
-The solid line shows the IRR with LNO (500 mol/flash) while the dashed line is without LNO.
-(g--i) Same as (d--f) but between 500 hPa and 200 hPa.
-}
-\label{fig:irr_timeseries}
-\end{figure}
+% 此外，我们利用TROPOMI数据将对流分为三个区域：新生闪电区、闪电下风向和闪电老化区（详见\ref{sec:lnox_affects_tropomi}节和图\ref{fig:china_s5p_amf_diff}）。
+% 首先基于不同LNO产率的模拟结果，获得O$_3$差异（$\Delta$O$_3$）的廓线（图\ref{fig:irr_timeseries}a--c）。
+% $\Delta$O$_3$在2--5 km之间大部分为正（$<$1 ppbv），在5--12 km 之间为负（$>$-3 ppbv），
+% 这与\citet{Ott.2007}研究中所有高度上O$_3$都产生净损失（$>$-4 ppbv）的结论不一致。
+% 此外，较高的LNO产率（700 mol 每闪电）与默认500 mol 每闪电的结果相比，所有高度的O$_3$浓度均降低，
+% 甚至导致闪电下风向2--5 km高度的$\Delta$O$_3$由正转负（图\ref{fig:irr_timeseries}b）。
+% 由于LNO$_x$在8--10 km高度达到峰值，O$_3$浓度也在此层降低最多。%（2.6 ppbv）。
 
 % \setlength{\abovedisplayskip}{3pt} % decrease space before equation
 % \setlength{\belowdisplayskip}{3pt} % decrease space after equation
-接着，我们应用积分反应速率（IRR）来评估O$_3$变化的化学机制以及LNO$_x$对$\Delta$O$_3$的影响。
-我们分两层来看该影响，因为800--500 hPa上$\Delta$O$_3$为正，500--200 hPa上$\Delta$O$_3$为负。
-对流层O$_3$主要由五个反应速率项控制\citep{Pickering.1990}：
-{\abovedisplayskip=3pt%
+接着，我们以受LNO$_2$影响更大的2019年为例，利用积分反应速率（IRR）来评估LNO$_x$对$\Delta$O$_3$的影响，以及O$_3$变化的化学机制。
+% 我们分两层来看该影响，因为800--500 hPa上$\Delta$O$_3$为正，500--200 hPa上$\Delta$O$_3$为负。
+对流层O$_3$主要由以下反应速率项控制\citep{Mazzuca.2016}：
+{
+\abovedisplayskip=3pt%
 \belowdisplayskip=3pt%
+\begingroup
+\allowdisplaybreaks
 \begin{align}
-  \frac{d}{dt}[\mathrm{O_3}] &= k_1[\mathrm{NO}][\mathrm{HO_2}] + \sum_{i}  k_i[\mathrm{NO}][\mathrm{R_iO_2}] \nonumber \\
-                             & - k_3[\mathrm{H_2O}][\mathrm{O(^1D)}] - k_4[\mathrm{HO_2}][\mathrm{O_3}] - k_5[\mathrm{OH}][\mathrm{O_3}]
+  \frac{d}{dt}[\mathrm{O_3}] &= k_1[\mathrm{NO}][\mathrm{HO_2}] + \sum_{i}  k_i[\mathrm{NO}][\mathrm{R_iO_2}] - k_3[\mathrm{OH}][\mathrm{NO_2}][\mathrm{M}] - P(\mathrm{RONO_2}) \nonumber \\
+                             & - k_4[\mathrm{HO_2}][\mathrm{O_3}] - k_5[\mathrm{OH}][\mathrm{O_3}] - k_6[\mathrm{H_2O}][\mathrm{O(^1D)}] - L(\mathrm{O_3+alkenes})
 \end{align}
+\endgroup
 }
 其中k$_i$是过氧自由基（R$_i$O$_2$）与NO之间的反应速率系数，
-每个反应对O$_3$贡献的时间序列如图\ref{fig:irr_timeseries}d--i所示。
-总体而言，由于2019年对流个例的垂直运动更强（见\ref{sec:convec_impacts}节），
-故积分反应速率的时间序列变化更大，且所选两层的O$_3$净化学产量保持正值。
-具体而言，NO和HO$_2$之间的反应始终占主导地位，而RO$_2$对NO的氧化约为该产量的40--60\%。
-O$_3$的主要损耗是通过光解反应（O(1D)和H$_2$O），而O$_3$和OH之间的反应在对流期间与之相当。
-O$_3$损耗的最低贡献，O$_3$ + HO$_2$ $\,\to\,$ OH + 2O$_2$，在对流旺盛期减少，因为LNO的产生捕获了本应与O$_3$反应的HO$_2$。
-虽然LNO$_x$引起对流层低层和高层的总积分反应速率分别最大增加245\%和30\%，
-即增大1.36$\times$10$^7$和2.60$\times$10$^6$ molec. cm$^{-3}$ s$^{-1}$，
-但是由于动力输送和LNO$_x$化学贡献的综合作用，高层的O$_3$净产量实际上减少了（图\ref{fig:irr_timeseries}a--c）。
+$P(\ch{RONO2})$为硝酸盐生成反应，
+$L(\mathrm{O_3+alkenes})$为烯烃消耗O$_3$的反应。
+由于OH+NO$_2$、O$_3$+HO$_2$和O(1D)+H$_2$O共占O$_3$化学消耗的85--95\%，
+故除O$_3$生成反应外，IRR时间序列图（图\ref{fig:irr_timeseries}）仅包含了此三种消耗反应。
+由于2019年对流个例的垂直运动剧烈（见\ref{sec:convec_impacts}节），
+故净积分反应速率的时间序列变化可达1.8$\times$10$^7$ molec. cm$^{-3}$ s$^{-1}$，且O$_3$净化学产量保持正值。
+总体而言，整个生命期间LNO$_2$的排放导致对流层上层O$_3$化学总生成量降低4\%，
+总损耗量增加23\%。
+具体而言，NO+HO$_2$之间的正贡献始终占主导地位（75--80\%），
+而另一正贡献即RO$_2$对NO的氧化占20--25\%，该两种反应的IRR在LNO的作用下，均在对流旺盛期增大$\sim$10\%而后降低$\sim$35\%。
+对于O$_3$的消耗反应而言，对流旺盛期前是O$_3$+OH和OH+NO$_2$占主导，且两者速率相当（1--2$\times$10$^6$ molec. cm$^{-3}$ s$^{-1}$），
+而由于对流系统中LNO的排放，使得OH 和 HO$_2$ 之间的平衡向OH方向移动，其中OH+NO$_2$的IRR是O$_3$和OH的1.2--2.8倍。
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./figures/irr_timeseries.png}
+\caption{
+2019年个例中臭氧探空仪所经区域内10--14 km高度处，与O$_3$有关的主要平均累积反应速率（IRR）的时间序列。
+其中图例显示了详细的物种和反应，总IRR是从生成O$_3$的IRR（红线和橙线）中减去O$_3$损失的IRR。
+实线为模拟中开启LNO（500 mol 每闪电）排放的IRR，而虚线表示关闭LNO排放。\\
+Figure \ref{fig:irr_timeseries}. Time series of the mean integrated reaction rate (IRR) of reactions related to O$_3$ between 10 and 14 km in the region passed by ozonesondes in the 2019 case.
+The legend shows detailed species and reactions.
+The total IRR is the O$_3$ loss IRR subtracted from the O$_3$ production IRR (red and orange lines).
+The solid line shows the IRR with LNO (500 mol/flash) while the dashed line is without LNO.
+}
+\label{fig:irr_timeseries}
+\end{figure}
 
 
 \section{本章小结}
@@ -404,27 +410,14 @@ O$_3$损耗的最低贡献，O$_3$ + HO$_2$ $\,\to\,$ OH + 2O$_2$，在对流旺
 而且将中国东南部对流个例的探空试验与WRF-Chem模式结果相结合，对O$_3$垂直分布变化的贡献项进行了详细讨论，
 主要结论如下：
 
-（1）在低纬地区，TROPOMI、MLS和MERRA2-GMI均显示对流层上层低O$_3$事件常发生于热带西太平洋，
+\begin{enumerate}[label=（\arabic*）, labelindent=\parindent, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
+
+\item 在低纬地区，TROPOMI、MLS和MERRA2-GMI均显示对流层上层低O$_3$事件常发生于热带西太平洋，
 而非洲中部由于对流输送的边界层高O$_3$浓度气团，对流层上层O$_3$在有云条件下浓度更高。
 
-（2）在中纬地区，TROPOMI的云切片结果较少，MLS和MERRA2-GMI的对流层上层O$_3$趋势相反：
+\item 在中纬地区，TROPOMI的云切片结果较少，MLS和MERRA2-GMI的对流层上层O$_3$趋势相反：
 MERRA2-GMI模拟显示对流层上层O$_3$浓度在有云时比晴空时浓度低26\%，而MLS观测表明有云时O$_3$浓度增大24\%，
 鉴于MERRA2-GMI与TROPOMI的相近，我们将MLS在261 hPa高度层高估的O$_3$浓度归因于平流层过度的外推；
-
-
-（3）MERRA2-GMI和WRF-Chem的O$_3$趋势分析结果表明，虽然动力输送项在对流旺盛期间占主导，
-但在污染地区化学反应的正贡献在整个生命期更为重要，可达动力输送的5--10倍；
-中国东南部的对流个例模拟显示，虽然LNO$_x$可使得对流层上层O$_3$的累积净化学反应速率在对流旺盛期间增大30\%，
-但最终该层O$_3$的平均浓度降低了25\%。
-
-% \begin{enumerate}[label=（\arabic*）, labelindent=\parindent, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
-
-% \item 在低纬地区，TROPOMI、MLS和MERRA2-GMI均显示对流层上层的低O$_3$事件常发生于热带西太平洋，
-% 而非洲中部由于对流输送的边界层高O$_3$浓度气团，对流层上层O$_3$在有云条件下浓度更高。
-
-% \item 在中纬地区，TROPOMI的云切片结果较少，MLS和MERRA2-GMI的对流层上层O$_3$趋势相反：
-% MERRA2-GMI模拟显示对流层上层O$_3$浓度在有云时比晴空时浓度低26\%，MLS观测表明有云时对流层上层O$_3$浓度增大24\%，
-% 鉴于MERRA2-GMI与TROPOMI的相近，我们将MLS在261 hPa高度层高估的O$_3$浓度归因于平流层过度的外推；
 
 % % \item MERRA2-GMI在闪电频发的美国东南部的模拟结果显示，330--450 hPa高度不存在TROPOMI观测到的O$_3$峰值，
 % % 故MERRA2-GMI模拟中对流层上层LNO$_2$的差异导致了O$_3$浓度的低估；
@@ -432,9 +425,10 @@ MERRA2-GMI模拟显示对流层上层O$_3$浓度在有云时比晴空时浓度�
 % % \item 闪电同化后的WRF-Chem对流模拟结果与观测相符，虽然WRF-Chem模式结果倾向于低估O$_3$浓度，
 % % 但其再现了臭氧探空观测到的垂直分布结构及变化，即对流发生后对流层上层的O$_3$和Q$_v$均增大；
 
-% \item MERRA2-GMI和WRF-Chem的O$_3$趋势分析结果表明，虽然动力输送项在对流旺盛期间占主导，
-% 但在污染地区化学反应的正贡献在整个生命期更为重要，可达动力输送的5--10倍；
-% 中国东南部的对流个例模拟显示，虽然LNO$_x$使得对流层上层O$_3$的累积净化学反应速率增大30\%，
-% 但对流层上层O$_3$的平均浓度降低了25\%。
+\item MERRA2-GMI和WRF-Chem的O$_3$趋势分析结果表明，虽然动力输送项在对流旺盛期间占主导，
+但在污染地区化学反应的正贡献在整个生命期更为重要，可达动力输送的5--10倍；
+中国东南部的对流个例模拟显示，对流生命期内LNO$_x$可使得对流层上层O$_3$
+的化学累积生成速率降低4\%，累积消耗速率增加23\%。
+最终该层O$_3$的平均浓度降低了25\%。
 
-% \end{enumerate}
+\end{enumerate}

@@ -256,7 +256,7 @@ Figure \ref{fig:cloud-slicing_schematic}. Schematic view of the cloud-slicing te
 由于对流层上层中NO$_2$垂直分布的不确定性\citep{Travis.2016}，我们使用$AMF_{\ch{geo}}$来计算云切片方法需要的$V_{\ch{NO2Vis}}$。
 \citet{Choi.2014}的研究表明，该计算方法得到的$V_{\ch{NO2Vis}}$在对流层中层（650 hPa）最多比近朗伯多云AMF方法计算的结果高14\%。
 因此，云切片算法中的$V_{\ch{NO2Vis}}$表达式如下：
-\begin{equation}
+\begin{equation} \label{eq:AMF_geo}
 \begin{split}
 V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
              & = \frac{S_{\ch{total}}-(V_{\ch{strat}} \cdot AMF_{\ch{strat}})}{\sec (\mathrm{SZA})+\sec (\mathrm{VZA})}
