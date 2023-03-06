@@ -590,7 +590,7 @@
 	\ifisprint
 		\cleardoublepage
 	\else
-		\clearpage
+		\let\cleardoublepage=\clearpage
 	\fi
 	
 	% 独创性声明与授权说明
@@ -632,7 +632,7 @@
 	\ifisprint
 		\cleardoublepage
 	\else
-		\clearpage
+		\let\cleardoublepage=\clearpage
 	\fi
 	
 	\restoregeometry  % 恢复导言区指定的页面布局
@@ -643,7 +643,7 @@
 	\ifisprint
 		\cleardoublepage
 	\else
-		\clearpage
+		\let\cleardoublepage=\clearpage
 	\fi
 	
 	\@mainmattertrue
@@ -682,7 +682,7 @@
 		\ifisprint
 			\cleardoublepage
 		\else
-			\clearpage
+			\let\cleardoublepage=\clearpage
 		\fi
 		
 		\restoregeometry  % 恢复导言区指定的页面布局
@@ -733,7 +733,7 @@
 		\ifisprint
 			\cleardoublepage
 		\else
-			\clearpage
+			\let\cleardoublepage=\clearpage
 		\fi
 		
 		\restoregeometry  % 恢复导言区指定的页面布局
