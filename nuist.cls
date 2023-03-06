@@ -209,6 +209,10 @@
 \captionsetup[figure]{position = bottom, ,aboveskip = 10pt, font={footnotesize,stretch=1.625}}
 \captionsetup[table]{position = top, aboveskip = 4pt}
 
+% 表格横线加粗
+\RequirePackage{makecell, boldline} % For threeparttable
+\newcommand{\thickline}{\hlineB{2}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
 %%          设置参考文献格式
