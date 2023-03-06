@@ -32,7 +32,7 @@
 土壤的NO排放基于\citet{Yienger.1995}，也响应于MERRA-2气象场。
 闪电NO的排放使用 MERRA-2 中对流层中层的去趋势累积质量通量\citep{Allen.2010}，
 并受 OTD LIS闪电气候学的季节性约束\citep{Cecil.2014}，
-将全球平均比例因子应用于去趋势的累积质量通量，使得模拟每年的全球平均闪电 NO$_x$产量为 6.5 Tg N。
+将全球平均比例因子应用于去趋势的累积质量通量，使得模拟每年的全球平均闪电 NO$_x$产量为 6.5 吨氮。
 \ref{sec:lnox_affects_tropomi}节中的WRF-Chem模拟设置见\ref{sec:model_settings_china}节。
 
 % \subsection{气象及化学设置}
@@ -98,7 +98,7 @@
 
 
 上节得到的云上NO$_2$为对流层NO$_2$柱浓度，柱底为云的中心气压，
-通过\ref{sec:cloud-slicing}章的云切片算法可进一步得到每层的NO$_2$浓度，即NO$_2$廓线。
+通过\ref{sec:cloud-slicing}节的云切片算法可进一步得到每层的NO$_2$浓度，即NO$_2$廓线。
 图\ref{fig:utno2_tropomi}为2019年6--8月不同高度的NO$_2$平均浓度。
 与图\ref{fig:no2geo_tropomi}的云上NO$_2$柱浓度不同，
 高云处的NO$_2$浓度（图\ref{fig:utno2_tropomi}a,b）高于中云（图\ref{fig:utno2_tropomi}c,d）。
@@ -216,7 +216,7 @@
 \subsection{闪电氮氧化物对TROPOMI产品的影响}  \label{sec:lnox_affects_tropomi}
 
 鉴于LNO$_2$在对流层中上层的主导地位和更长寿命，TROPOMI的NO$_2$产品可以用来研究不同区域LNO$_2$的分布。
-然而官方的TROPOMI NO$_2$柱浓度产品所依赖的NO$_2$先验廓线并未详细考虑LNO$_2$的垂直分布，
+然而如上节所述，官方的TROPOMI NO$_2$柱浓度产品所依赖的NO$_2$先验廓线并未详细考虑LNO$_2$的垂直分布，
 所以我们接着针对中国东南部地区的对流系统（图\ref{fig:china_flash_scd}），
 利用WRF-Chem的敏感性试验结果而非MERRA2-GMI资料，详细研究了LNO$_x$对官方NO$_2$柱浓度产品的影响。
 
@@ -281,8 +281,8 @@ AMF$_{\ch{trop}}$均增大（图\ref{fig:china_s5p_amf_diff}a$_{i}$--c$_{i}$）�
     \caption{
     通过替换三层的NO$_2$先验廓线，得到的大气质量因子（AMF）百分比差异。
     三层具体为：对流层中层（左）、对流层上层（中）和整个对流层（右）。
-     $\Delta$AMF$_\textrm{trop}$ 是 500 mol NO/闪电得到的AMF$_\textrm{trop}$ 与 0 mol NO/闪电得到的AMF$_\textrm{trop}$之差。
-     $\Delta$AMF$_\textrm{LNO$_x$}$ 是 700 mol NO/闪电得到的AMF$_\textrm{LNO$_x$}$ 与 500 mol NO/闪电得到的AMF$_\textrm{LNO$_x$}$之差。
+     $\Delta$AMF$_\textrm{trop}$ 是 500 mol NO每闪电得到的AMF$_\textrm{trop}$ 与 0 mol NO每闪电得到的AMF$_\textrm{trop}$之差。
+     $\Delta$AMF$_\textrm{LNO$_x$}$ 是 700 mol NO每闪电得到的AMF$_\textrm{LNO$_x$}$ 与 500 mol NO每闪电得到的AMF$_\textrm{LNO$_x$}$之差。
      图中标注的三个椭圆区域为：新生闪电区（蓝色），闪电下风向（红色），和闪电老化区（黑色）。\\
     Figure \ref{fig:china_s5p_amf_diff}. The percent differences of AMFs by replacing the a priori NO$_2$ profiles at three layers:
     middle troposphere (left), upper troposphere (middle), and troposphere (right).
@@ -318,7 +318,7 @@ AMF$_{\ch{trop}}$均增大（图\ref{fig:china_s5p_amf_diff}a$_{i}$--c$_{i}$）�
     \caption{
     （a）图 \ref{fig:china_s5p_amf_diff} 中定义的三个区域（新生闪电区，闪电下风向，和闪电老化区）的云压和云辐射分数之间的关系。
      （b--d）这三个区域的先验SCD$^{\textrm{LNO$_x$}}_{\textrm{tropNO$_2$}}$/SCD$^{\textrm{noLNO$_x$}}_{ \textrm{tropNO$_2$}}$和先验VCD$^{\textrm{LNO$_x$}}_{\textrm{tropNO$_2$}}$/VCD$^{\textrm{noLNO$_x$ }}_{\textrm{tropNO$_2$}}$。
-     LNO$_x$的上标表示先验变量是通过开启LNO$_x$排放（每次闪电 500 mol NO），而上标为noLNO$_x$代表关闭LNO$_x$排放。\\
+     LNO$_x$的上标表示先验变量是通过开启LNO$_x$排放（500 mol NO每闪电），而上标为noLNO$_x$代表关闭LNO$_x$排放。\\
      Figure \ref{fig:china_amf_contribution}. (a) The relationship between cloud pressure and cloud radiance fraction for three regions defined in Fig. \ref{fig:china_s5p_amf_diff}: fresh lightning region, downwind of fresh lightning, and aged lightning area.
     (b--d) The a priori SCD$^{\textrm{LNO$_x$}}_{\textrm{tropNO$_2$}}$/SCD$^{\textrm{noLNO$_x$}}_{\textrm{tropNO$_2$}}$ and a priori VCD$^{\textrm{LNO$_x$}}_{\textrm{tropNO$_2$}}$/VCD$^{\textrm{noLNO$_x$}}_{\textrm{tropNO$_2$}}$ of pixels in these three regions. The LNO$_x$ superscript indicates that the a priori variable is calculated with LNO$_x$ (500 mol NO per flash) and the noLNO$_x$ superscript is without LNO$_x$.
     }
