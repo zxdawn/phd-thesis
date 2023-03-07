@@ -40,7 +40,7 @@ IAP 臭氧探空仪使用电化学浓差电池（ECC），其完整参数和性�
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{./figures/waccm_forcast_o3.png}
+\includegraphics[width=0.9\textwidth]{./figures/waccm_forcast_o3.png}
 \caption{（a）全大气层气候模型（WACCM）预报场的区域平均（118.5--119.5$^{\circ}$ E, 31.5--32.5$^{\circ}$N）O$_{\ch{3}}$廓线。
 蓝色为对流前，橙色为对流后。（b）为（a）中O$_{\ch{3}}$廓线的百分比差异。\\
 Figure \ref{fig:waccm_forcast_o3}. (a) Regional mean (118.5$^{\circ}$E – 119.5$^{\circ}$E, 31.5$^{\circ}$N – 32.5$^{\circ}$N)
@@ -150,7 +150,7 @@ $NO_2(p)$是示踪剂模式第五版（TM5）模式模拟的NO$_{\ch{2}}$垂直�
 故深对流云的云压位于几何云顶下方，
 其中几何云顶与云探测卫星（CloudSat）和中分辨率成像光谱仪（MODIS）等热红外传感器检测到的值更接近\citep{Vasilkov.2008,Joiner.2012}。
 因此，OMI或TROPOMI测量的对流层NO$_{\ch{2}}$大部分位于云内部，而不是云顶之上。
-下文中，“云上”或“云下”都是相对于OMI或TROPOMI测得的云压而言。
+下文中，“云上”或“云下”均相对于OMI或TROPOMI测得的云压而言。
 \citet{Beirle.2009}的敏感性研究比较了云底和云顶的化学成分，发现云中大部分LNO$_{\ch{2}}$可以被卫星探测到。
 云压的概念不仅应用于LNO$_{\ch{x}}$的研究，还应用于计算对流层上层O$_{\ch{3}}$和NO$_{\ch{x}}$的云切片方法\citep{Ziemke.2009,Choi.2014,Strode.2017,Ziemke.2017,Marais.2018}。
 
@@ -277,8 +277,6 @@ V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
 然后将每日的像素分配到1$^{\circ}$ $\times$ 1$^{\circ}$的网格中，保留满足云压具有足够大的变化范围[云压距离 $>$ 0.5*（最高云的气压 - 最低云的气压），且标准差$>$ 30 hPa]和充分混合的NO$_{\ch{2}}$（NO$_{\ch{2}}$ 垂直梯度 < 0.33 pptv hPa$^{-1}$）的像素。
 若网格中像素个数超过10，则将得到的$VMR_{\ch{NO2}}$赋值到该日的网格点，最后可得到各高度的季节平均$VMR_{\ch{NO2}}$。
 
-
-
 \section{大气化学模式}
 
 \subsection{WRF-Chem模式}
@@ -301,8 +299,6 @@ CBMZ（Carbon Bond Machanism）和RADM2（Regional Acid Deposition Model, 2nd ge
 MOZART机制包括非甲烷挥发性有机物（NMVOC）、乙烷、丙烷、乙烯、丙烯、甲醇、异戊二烯和$\alpha$-蒎烯，
 其他NMVOC物种则基于反应性官能团表示。
 由于本文为了更好的模拟出深对流系统，不同的个例使用了各自的方案，具体配置见\ref{sec:model_settings_us}节和\ref{sec:model_settings_china}节。
-
-
 
 \subsection{MERRA2-GMI模式}
 

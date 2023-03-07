@@ -62,8 +62,8 @@ STERAO试验\citep{Dye.2000}、EULINOX试验\citep{Holler.2000}、TROCCINOX试�
 {
 \centering
 \scriptsize
-\begin{longtable}
-{ p{3.2em} p{5.2em} p{3.1em} p{1.6em} p{3em} p{4em} p{3.5em} p{4em} p{4em} p{8em} }
+\begin{longtable}[l]
+{ p{3.7em} >{\baselineskip=15pt}p{5.2em} p{3em} p{1.6em} p{3em} p{4em} p{3.5em} p{4em} p{3.3em} >{\baselineskip=15pt}p{10.5em} }
 \caption{试验个例\\
 Table \ref{table:NO/NOx}. Experiments.}
 \label{table:NO/NOx} \\
@@ -82,7 +82,7 @@ $\sim$1960s & 德国南部万克山观测站              & KI     & NO$_{\ch{2}
 1992年九月27日  & GTE / TRACE A，巴西塞拉多，6$^{\circ}$--12$^{\circ}$S & TP-LIF & NO$_{\ch{x}}$ & 0.3--0.9 & - &  1.4 & 3 min  & 9.5 & \citet{Pickering.1996} \\ \hline
 1994年二月    & PEM-West，西太平洋，4$^{\circ}$--10$^{\circ}$S & CL  &  NO  & 0.05--0.2 &~100 & 0.2 & 30 s  &  9.5 & \citet{Kawakami.1997} \\ \hline
 1995年七月一日 &  POLINAT，爱尔兰               & CL      & NO  & 0.6  & 27--90 & - &  -  & 9.5 & \citet{Huntrieser.1996} \\ \hline
-1996年六-七月  & STERAO，科罗拉多州             & CL      & NO  & 0.2--0.8 & 20--40  & 4.2, 19 & 1-10 s，(100-960 m) & 7-12 s &  \citet{Dye.2000} \\ \hline
+1996年六--七月  & STERAO，科罗拉多州             & CL      & NO  & 0.2--0.8 & 20--40  & 4.2, 19 & 1-10 s，(100-960 m) & 7-12 s &  \citet{Dye.2000} \\ \hline
 1996年七月    & LINOX，德国南部                & CL       & NO NO$_{\ch{x}}$ & 0.4--1.3，0.8--2.2 & 10--45  & 3.8，20 & 2 s & 8.2， 9 & \citet{Huntrieser.1998} \\ \hline
 1997年八月和十一月 & NO$_{\ch{x}}$AR / POLINAT-2，北大西洋  & CL     & NO  & 0.8, 3  & 1000, 300 & -   & -  & - & \citet{Jeker.2000} \\ \hline
 1998年七月 & EULINOX，德国南部                  & CL      & NO$_{\ch{x}}$  & 0.5--3.0 & 15--60 &  25， >20 &  2--10 s & 8--10 &    \citet{Huntrieser.2002} \\ \hline
@@ -91,7 +91,7 @@ $\sim$1960s & 德国南部万克山观测站              & KI     & NO$_{\ch{2}
 2000年三月 & INCA，南美西海岸                    & CL     & NO  & 0.04--0.8  & 400 & 1.3 & 1 s & 11.5 & \citet{Baehr.2003} \\ \hline
 2000年十二月九日 & BIBLE-C，靠近澳大利亚达尔文     & CL     & NO$_{\ch{x}}$  & 0.4       & 140-620 & 1.6 & 10 s  &  11.5--14 & \citet{Koike.2007} \\ \hline
 2002年七月 & CRYSTAL FACE，佛罗里达             & CL      & NO  & 1--4      & 60--120 & 9.5, 325 & 0.3 s & 13.8 & \citet{Ridley.2005} \\ \hline
-2004年一月至三月，2005年二月 & TROCCINOX 巴西，圣保罗州 & CL & NO  & 0.5--1.5 & 25--40  & 45  & 1 s & 8 &  \citet{Huntrieser.2007} \\ \thickline
+2004年一--三月，2005年二月 & TROCCINOX 巴西，圣保罗州 & CL & NO  & 0.5--1.5 & 25--40  & 45  & 1 s & 8 &  \citet{Huntrieser.2007} \\ \thickline
 \end{longtable}
 \begin{tablenotes}
 \linespread{1}\footnotesize
@@ -130,7 +130,7 @@ NO生成量与闪电峰值电流和环境气压之间的相关性，为估算LNO
 \centering
 \footnotesize
 \begin{longtable}
-{ p{12em} p{18em} p{12em} }
+{ p{12em} >{\baselineskip=15pt}p{15em} >{\baselineskip=15pt}p{15em} }
 \caption{雷暴附近NO和NO$_{\ch{x}}$混合比\\
 Table \ref{table:LNOx/J}. The ratio of NO to NO$_{\ch{x}}$ near storms.}
 \label{table:LNOx/J} \\
@@ -154,11 +154,11 @@ LNO$_{\ch{x}}$产量（10$^{16}$分子J$^{-1}$）   & 方法                    
 \centering
 \footnotesize
 \begin{longtable}
-{ p{18em} p{13em} p{10em} }
+{ p{12em} >{\baselineskip=15pt}p{15em} p{15em} }
 \caption{单位闪电长度的LNO$_{\ch{x}}$产率}
 \label{table:LNOx/length} \\
 \thickline
-单位闪电长度LNO$_{\ch{x}}$产率（10$^{21}$分子m$^{-1}$）   & 方法                          & 参考文献 \\ \thickline
+单位闪电长度LNO$_{\ch{x}}$产率 \newline（10$^{21}$分子m$^{-1}$）   & 方法                          & 参考文献 \\ \thickline
 1.4--5.2                                     & 实验室NO测量和闪光化学模式，包括闪光长度的曲折系数3.6   & \citet{Wang.1998} \\
 13                                           & 机载NO测量，二维云模式，闪电定位和跟踪系统  & \citet{Holler.1999} \\
 2.5 （0.2--10）                                & 机载NO测量                     & \citet{Stith.1999} \\
@@ -168,6 +168,15 @@ LNO$_{\ch{x}}$产量（10$^{16}$分子J$^{-1}$）   & 方法                    
 \end{longtable}\par
 }
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{./figures/lnox_production_Schumann.png}
+\caption{不同年份的理论、实验室和外场观测以及综述中LNO$_{\ch{x}}$的产率(10$^{25}$个分子)\\
+Figure \ref{figure:lnox_production_Schumann}.
+Flash-specific LNO$_{\ch{x}}$ emissions in 10$^{25}$ molecules (NO$_{\ch{x}}$ or NO) per flash from various theoretical, laboratory, and field studies and from reviews versus year of publication.
+}
+\label{figure:lnox_production_Schumann}
+\end{figure}
 
 大气中每次闪电的LNO$_{\ch{x}}$产率可通过地面观测\citep{Noxon.1976}，
 飞机试验\citep{Chameides.1987}和卫星探测\citep{Beirle.2004}得出。
@@ -181,23 +190,12 @@ LNO$_{\ch{x}}$产量（10$^{16}$分子J$^{-1}$）   & 方法                    
 当用如今的闪电频率和闪电能量的知识重新计算，这些早期结果中的许多数值将会发生变化，目前的产率估算与近年来越来越多的观测相一致。
 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{./figures/lnox_production_Schumann.png}
-\caption{不同年份的理论、实验室和外场观测以及综述中LNO$_{\ch{x}}$的产率(10$^{25}$个分子)\\
-Figure \ref{figure:lnox_production_Schumann}.
-Flash-specific LNO$_{\ch{x}}$ emissions in 10$^{25}$ molecules (NO$_{\ch{x}}$ or NO) per flash from various theoretical, laboratory, and field studies and from reviews versus year of publication.
-}
-\label{figure:lnox_production_Schumann}
-\end{figure}
-
-
 假设全球的雷暴数已知，则可以将单个雷暴估计得到的LNO$_{\ch{x}}$产量外推至全球\citep{Chameides.1987,Huntrieser.1998,Huntrieser.2002}。
 该方法需要测量出流区相对于入流区增加的NO$_{\ch{x}}$浓度，以及雷暴的云砧出流区的质量通量，并估计全球任何时间活跃的雷暴数。
 另一种方法是，根据每天发生的雷暴数量，估算闪电产生的NO$_{\ch{x}}$量并将其推算到全球范围内\citep{Ridley.2004}。 这些方法的优点是，不需要任何闪电活动和云地闪产率比值的信息，但需提供准确的活跃雷暴数。
-研究表明，基于雷暴的外推结果范围为0.3--13 Tg每年。
+研究表明，基于雷暴的外推结果范围为0.3--13 Tg氮每年。
 鉴于浓度（不确定因子1.5），出流通量或体积（不确定因子1.5）以及雷暴数（不确定因子1.5--2）的不确定性，
-最佳估计值可能是5 Tg每年，其中不确定性因子约5，即估算值范围为1--25 Tg每年 \citep{Chameides.1987}。
+最佳估计值可能是5 Tg氮每年，其中不确定性因子约5，即估算值范围为1--25 Tg氮每年 \citep{Chameides.1987}。
 虽然该方法对各种雷暴的性质提供了重要的支撑，但并没有降低全球LNO$_{\ch{x}}$来源数值的不确定性。
 
 
@@ -212,13 +210,13 @@ Flash-specific LNO$_{\ch{x}}$ emissions in 10$^{25}$ molecules (NO$_{\ch{x}}$ or
 
 近年来，已有研究使用卫星观测确定并定计量了LNO$_{\ch{x}}$。
 \citet{Beirle.2004}通过结合澳大利亚地区的GOME NO$_{\ch{2}}$观测数据和闪电成像传感器（LIS）数据，
-将LNO$_{\ch{x}}$确定为0.8--14.0 吨氮每年。
-\citet{Boersma.2005}通过比较GOME NO$_{\ch{2}}$和第三代示踪剂模式（Tracer model 3, TM3）模拟的LNO$_{\ch{2}}$分布，估计全球LNO$_{\ch{x}}$产量为1.1--6.4 吨氮每年。
+将LNO$_{\ch{x}}$确定为0.8--14.0 Tg氮每年。
+\citet{Boersma.2005}通过比较GOME NO$_{\ch{2}}$和第三代示踪剂模式（Tracer model 3, TM3）模拟的LNO$_{\ch{2}}$分布，估计全球LNO$_{\ch{x}}$产量为1.1--6.4 Tg氮每年。
 \citet{Martin.2007a}用Goddard地球观测系统化学模式（GEOS-Chem）模拟分析了SCIAMACHY NO$_{\ch{2}}$柱浓度，
-将LNO$_{\ch{x}}$估算为4.0--8.0 吨氮每年。
+将LNO$_{\ch{x}}$估算为4.0--8.0 Tg氮每年。
 
 这些方法侧重于每月或每年的平均NO$_{\ch{2}}$柱浓度，而最近的研究采用特定方法直接探究活跃对流处的LNO$_{\ch{x}}$。
-\citet{Beirle.2006}基于墨西哥湾的对流系统，使用GOME NO$_{\ch{2}}$柱浓度和美国国家雷电检测网络（NLDN）观测资料，估算LNO$_{\ch{x}}$为1.7（0.6–4.7）吨氮每年。
+\citet{Beirle.2006}基于墨西哥湾的对流系统，使用GOME NO$_{\ch{2}}$柱浓度和美国国家雷电检测网络（NLDN）观测资料，估算LNO$_{\ch{x}}$为1.7（0.6–4.7）Tg氮每年。
 然而，前提假设是增加的NO$_{\ch{2}}$均来自闪电而无人为排放源的贡献。
 \citet{Pickering.2016} 利用OMI和全球闪电定位系统（WWLLN）算得LNO$_{\ch{x}}$，该算法利用OMI对流层NO$_{\ch{2}}$斜柱浓度作为LNO$_{\ch{2}}$斜柱浓度，
 并利用大于0.9的云辐射分数来最小化或剔除对流层低层背景值。
@@ -240,7 +238,7 @@ Figure \ref{figure:lnox_production_xin}. Estimates of LNO$_{\ch{x}}$ production 
 尽管模式模拟和卫星观测在对流研究中很普遍，但地面差分吸收光谱仪也很有价值，并已在一些研究工作中得到应用。
 由于雷暴云中云粒子的米散射和化学反应，探测到的斜柱浓度会大大增加\citep{Erle.1995,Pfeilsticker.1998,Winterrath.1999}。
 因此，光学路径可由差分光学吸收光谱（DOAS）和颜色指数得出\citep{Veitel.1998,Wagner.1998}，
-其中颜色指数是两种不同波长下光强的比值，已被广泛用于云探测和云分类\citep{Wagner.2014,Wang.2015,Wagner.2016}。
+其中颜色指数是两种不同波长下光强之比，已被广泛用于云探测和云分类\citep{Wagner.2014,Wang.2015,Wagner.2016}。
 另一方面，LNO$_{\ch{x}}$可以使用同一仪器得出，但需要仔细地分离不同的来源。
 \citet{Noxon.1976}根据以下几个假设，
 1）所有观测到的NO$_{\ch{2}}$都在云层和地面之间，
@@ -258,16 +256,16 @@ Figure \ref{figure:lnox_production_xin}. Estimates of LNO$_{\ch{x}}$ production 
 目前我国针对LNO$_{\ch{x}}$的研究较少，现有的工作主要是结合理论计算，
 估算局地LNO$_{\ch{x}}$产量\citep{DuJian.2002,ZhangYiJun.2002,ZhouYunJun.2002}，
 得到的中国地区LNO$_{\ch{x}}$年产量不确定范围达两个量级。
-\citet{ZhouYunJun.2004}基于地闪定位网的闪电资料，通过假设单次闪电的能量，外推得到全国内陆LNO$_{\ch{x}}$的产量为0.38 吨氮每年。
+\citet{ZhouYunJun.2004}基于地闪定位网资料，通过假设单次闪电的能量，外推得到全国内陆LNO$_{\ch{x}}$的产量为0.38 Tg氮每年。
 他们在估算中所用的地闪观测资料局限于广东、陇东、北京以及东北地区，存在一定的特殊性，
 且在外推中选取的单次地闪能量为6.7$\times$10$^9$ J \citep{Price.1997a,Price.1997b}，
 该值为单次闪电产生能量的上限值 \citep{Wang.1998}，因此该估算值可能偏大。
 \citet{SunAnPing.2004}基于OTD的总闪观测资料，
 假设单次闪电能量为4.5$\times$10$^7$ J，
 没有考虑光学厚度对光能的影响及从光能到总能量的反演，
-因此该值比闪电本身的能量要小，从而可能使其估算结果偏小，仅为0.016 吨氮每年。
+因此该值比闪电本身的能量要小，从而可能使其估算结果偏小，仅为0.016 Tg氮每年。
 近年来国内也有学者使用卫星观测来估算LNO$_{\ch{x}}$，但是基于月平均或季平均数据且聚焦于清洁地区。
-如通过分析青藏高原闪电活动和NO$_{\ch{2}}$垂直柱浓度,发现LNO$_{\ch{x}}$抑制了夏季青藏高原O$_{\ch{3}}$低谷，且中国内陆地区LNO$_{\ch{x}}$的年均产量为0.15（0.03--0.38）吨氮每年 \citep{JuXiaoYu.2015,Guo.2017,GuoFengXia.2019,Li.2022}。
+如通过分析青藏高原闪电活动和NO$_{\ch{2}}$垂直柱浓度,发现LNO$_{\ch{x}}$抑制了夏季青藏高原O$_{\ch{3}}$低谷，且中国内陆地区LNO$_{\ch{x}}$的年均产量为0.15（0.03--0.38）Tg氮每年 \citep{JuXiaoYu.2015,Guo.2017,GuoFengXia.2019,Li.2022}。
 
 
 % \subsection{深对流对痕量气体的垂直输送}
@@ -331,8 +329,10 @@ H$_2$O$_{\ch{2}}$是由HO$_{\ch{2}}$自由基与其自身反应形成的。 CH$_
 而HNO$_{\ch{3}}$很容易被云水和冰粒清除\citep{Neu.2012}。
 通过比较DC3项目中入流区和出流区内的痕量气体，可知CH$_3$OOH的清除效率（12--84\%）很大程度上取决于冰相保留系数，
 但H$_2$O$_{\ch{2}}$（80--90\%）和CH$_2$O（40--60\%）并非如此\citep{Barth.2016,Bela.2016,Fried.2016}。
-\citet{Cuchiara.2020}指出，与SEAC4RS观测中CH$_3$OOH清除率（4\%--27\%）相比，DC3观测中其清除率更高，该现象很大程度上可由冰相保留系数解释。
-有关DC3项目的研究总结（如垂直输送、湿清除、LNO$_{\ch{x}}$及平流层-对流层交换等）详见\citet{Barth.2019}。
+\citet{Cuchiara.2020}指出，与SEAC4RS观测中CH$_3$OOH清除率（4\%--27\%）相比，DC3观测中其清除率更高，该现象很大程度上可由冰相保留系数解释，
+有关DC3项目的研究总结
+% （如垂直输送、湿清除、LNO$_{\ch{x}}$及平流层-对流层交换等）
+详见\citet{Barth.2019}。
 
 我国的研究人员在深对流云对污染物的垂直输送方面也做了有意义的探索。
 \citet{GaoHuiWang.1998}利用欧拉型硫沉降模式，研究了积云对硫污染物垂直输送的作用。
@@ -372,15 +372,6 @@ H$_2$O$_{\ch{2}}$是由HO$_{\ch{2}}$自由基与其自身反应形成的。 CH$_
 
 \end{enumerate}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{./figures/schematic_diagram.png}
-\caption{技术路线图。\\
-Figure \ref{figure:schematic_diagram}. Schematic diagram.
-}
-\label{figure:schematic_diagram}
-\end{figure}
-
 针对以上问题，本文的研究目标为：
 
 \begin{enumerate}[label=（\arabic*）, labelindent=\parindent, nosep, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
@@ -398,6 +389,15 @@ Figure \ref{figure:schematic_diagram}. Schematic diagram.
 
 
 技术路线见图\ref{figure:schematic_diagram}。
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./figures/schematic_diagram.png}
+\caption{技术路线图。\\
+Figure \ref{figure:schematic_diagram}. Schematic diagram.
+}
+\label{figure:schematic_diagram}
+\end{figure}
 
 本文研究内容与章节安排如下：
 
