@@ -29,11 +29,17 @@
 % 设置默认中文字体 
 % 正文字体为宋体，粗体为黑体，斜体为楷体，粗斜体为隶书
 \RequirePackage{xeCJK}
-\setCJKmainfont[BoldFont=SimHei, ItalicFont=KaiTi, BoldItalicFont=LiSu]{SimSun} 
+% \setCJKmainfont[BoldFont=SimHei, ItalicFont=KaiTi, BoldItalicFont=LiSu]{SimSun} % Windows
+\setCJKmainfont[BoldFont=STHeiti,ItalicFont=STKaiti, AutoFakeBold=4]{SimSun} % Mac % https://github.com/mohuangrui/ucasthesis/issues/23
+\setCJKsansfont{STHeiti}
+\setCJKfamilyfont{zhsong}{SimSun}
+\setCJKfamilyfont{zhhei}{STHeiti}
+\setCJKfamilyfont{zhkai}{STKaiti}
+
 
 % 设置默认英文字体 Times New Roman
 \RequirePackage{times}
-\setmainfont{Times New Roman} 
+\setmainfont{Times New Roman}
 
 % 设置 1.5 倍行距
 % https://blog.csdn.net/weixinhum/article/details/104594454
