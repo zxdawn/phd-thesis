@@ -175,108 +175,6 @@ IWC加权函数的分析表明，215 hPa高度IWC的垂直分辨率约为4 km\ci
 此外我们使用MLS O$_{\ch{3}}$的数据质量标志来进一步提取有效数据：准确度 $>$ 0、状态为偶数、数据质量 $>$ 1.0以及收敛度 $<$ 1.03。
 
 
-\subsection{闪电氮氧化物的计算} \label{sec:amf_definition}
-
-基于$AMF_{\ch{trop}}$，为了得到对流层LNO$_{\ch{2}}$或LNO$_{\ch{x}}$的垂直柱浓度，我们只需将分母改成LNO$_{\ch{2}}$或LNO$_{\ch{x}}$的垂直积分即可。
-\begin{equation} \label{eq:AMF_LNO2}
-AMF_{\ch{LNO_2}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) NO_2(p) \: dp + f_r \int_{p_{cloud}}^{p_{tp}} w_{cloudy}(p) NO_2(p) \: dp}{\int_{p_{surf}}^{p_{tp}} LNO_2(p) \: dp}
-\end{equation}
-
-当研究区域为清洁区域，式（\ref{eq:AMF_LNO2}）的分子可用LNO$_{\ch{2}}$代替NO$_{\ch{2}}$，即
-\begin{equation} \label{eq:AMF_LNO2clean}
-AMF_{\ch{LNO_2Clean}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) LNO_2(p) \: dp + f_r \int_{p_{cloud}}^{p_{tp}} w_{cloudy}(p) LNO_2(p) \: dp}{\int_{p_{surf}}^{p_{tp}} LNO_2(p) \: dp}
-\end{equation}
-
-为了与前人对比，我们定义了其他两种云上的AMF，
-\begin{equation} \label{eq:AMF_NO2Vis}
-AMF_{\ch{NO_2Vis}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) NO_2(p) \: dp + f_r \int_{p_{cloud}}^{p_{tp}} w_{cloudy}(p) NO_2(p) \: dp}{(1-f_g) \int_{p_{surf}}^{p_{tp}} NO_2(p) \: dp + f_g \int_{p_{cloud}}^{p_{tp}} NO_2(p) \: dp}
-\end{equation}
-\begin{equation} \label{eq:AMF_LNO2Vis}
-AMF_{\ch{LNO_2Vis}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) NO_2(p) \: dp + f_r \int_{p_{cloud}}^{p_{tp}} w_{cloudy}(p) NO_2(p) \: dp}{(1-f_g) \int_{p_{surf}}^{p_{tp}} LNO_2(p) \: dp + f_g \int_{p_{cloud}}^{p_{tp}} LNO_2(p) \: dp}
-\end{equation}
-
-其中$f_g$为云几何分数。以上各式中的NO$_{\ch{2}}$和LNO$_{\ch{2}}$廓线均来自于WRF-Chem的模拟结果。
-由于北极地区排放源及对流模拟结果不确定性较大，本文利用基于云压假设的高斯分布来作为LNO$_{\ch{2}}$廓线。
-高斯分布的峰宽设置为180 hPa（详见\ref{sec:arctic_lnox_calc}节），峰位为最高（数值最小）的$p_{cloud}$。
-北极地区对流云的$p_{cloud}$范围为130--987 hPa，主要集中于250--300 hPa最常见的值（图\ref{fig:pcld_ptropo}）。
-由于云内部的NO$_{\ch{2}}$浓度高，而云层之上的NO$_{\ch{2}}$由于光解作用而浓度低，故假设的LNO$_{\ch{2}}$廓线较TM5模拟的NO$_{\ch{2}}$廓线更加真实\citep{Beirle.2009}。
-对于高而厚的云层，云层上方的散射权重相当均匀，LNO$_{\ch{2}}$的灵敏度在云层中部附近最高，所以受LNO$_{\ch{2}}$廓线假设的影响已降到最低\citep{Laughner.2017}。
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.6\textwidth]{./figures/pcld_ptropo.png}
-\caption{云辐射分数大于0.7的像素上TROPOMI测得的云压和对流层顶高度直方图。\\
-Figure \ref{fig:pcld_ptropo}. The histogram of TROPOMI cloud pressure and tropopause pressure over lightning
-pixels with the cloud radiance fraction larger than 0.7.
-}
-\label{fig:pcld_ptropo}
-\end{figure}
-
-\subsection{云切片算法} \label{sec:cloud-slicing}
-
-前人研究表明，云切片方法（cloud-slicing）可用于计算云内O$_{\ch{3}}$和NO$_{\ch{2}}$的浓度，
-该方法是计算O$_{\ch{3}}$总柱浓度的对流云微分法（CCD）的拓展\citep{Ziemke.1998,Ziemke.2001}。
-简要来说，是通过线性拟合OMI或TROPOMI测得的云上NO$_{\ch{2}}$或O$_{\ch{3}}$柱浓度和$p_{cloud}$的斜率，从而得到NO$_{\ch{2}}$或O$_{\ch{3}}$的浓度，计算方法的框架见图\ref{fig:cloud-slicing_schematic}。
-
-以TROPOMI的NO$_{\ch{2}}$产品为例，对于不同的$p_{cloud}$我们需要至少两个邻近的云上$V_{\ch{NO2}}$（$V_{\ch{NO2Vis}}$，图\ref{fig:cloud-slicing_schematic}a），这两个测量的结果显示在图\ref{fig:cloud-slicing_schematic}b 中的$p_{cloud}$-VCD 坐标平面中。
-两个气压层$p_1$ 和 $p_2$（$p_1$ $<$ $p_2$）之间的$V_{\ch{NO2}}$
-可以通过对$p_1$--$p_2$间的NO$_{\ch{2}}$体积混合比（$VMR_{\ch{NO2}}$）进行积分得出：
-\begin{equation} \label{eq:vmr_integ}
-{VCD_{\ch{NO2}}}_{p_1}^{p_2}=\frac{R_{\ch{air}}}{k_Bg} \cdot \int_{p_1}^{p_2} VMR_{\ch{NO2}}(p) \mathrm{d} p
-\end{equation}
-其中 $R_{\ch{air}}$ 是气体常数，$k_B$ 是玻尔兹曼常数，$g$ 是重力加速度。
-假设式（\ref{eq:vmr_integ}）中 $p_1$ 到 $p_2$ 范围内的混合比恒定，此气压层内的平均$VMR_{\ch{NO2}}$由下式给出：
-\begin{equation}
-VMR_{\ch{NO2}} = \frac{\Delta V_{\ch{NO2Vis}}}{\Delta p} \frac{k_B g}{R_{air}}
-\end{equation}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{./figures/cloud-slicing_schematic.png}
-\caption{云切片技术示意图（未按比例）：（a）在不同云压条件下的两次云上NO$_{\ch{2}}$ 柱浓度测量（蓝色：云压低的柱浓度；红色：云压高的柱浓度）；
-（b）在气压柱坐标平面上显示的测量值； （c）NO$_{\ch{2}}$体积混合比（VMR）源自云上NO$_{\ch{2}}$垂直柱浓度（VCD）与云压的斜率，置信区间为水平误差条和气压范围为垂直误差条。[图片来源：\citet{Choi.2014}]\\
-Figure \ref{fig:cloud-slicing_schematic}. Schematic view of the cloud-slicing technique (not to scale):
-(a) two above-cloud NO$_{\ch{2}}$ column measurements at different cloud scene pressures (blue: column with lower scene pressure; and red: column with higher scene pressure);
-(b) the measurements shown on a pressure-column coordinate plane;
-(c) NO$_{\ch{2}}$ volume mixing ratios (VMR) derived from the slope of above-cloud NO$_{\ch{2}}$ vertical column densities (VCD) versus cloud scene pressure with confidence interval (horizontal error bar) and pressure range (vertical error bar). [Image source: \citet{Choi.2014}]
-}
-\label{fig:cloud-slicing_schematic}
-\end{figure}
-
-从这个关系式可以看出，TROPOMI云压范围内的$VMR_{\ch{NO2}}$与$V_{\ch{NO2Vis}}$和$p_{cloud}$的拟合斜率成正比（图\ref{fig:cloud-slicing_schematic}c）。
-如果有两个以上的观测值，则可以从线性拟合中推导出$VMR_{\ch{NO2}}$的置信区间，
-即图\ref{fig:cloud-slicing_schematic}c中$VMR_{\ch{NO2}}$的云压范围（垂直误差条）以及置信区间（水平误差条）。
-在本文中，我们利用TROPOMI、TM5和MERRA2-GMI数据生成了各自在2019年6--8月对流层各高度区间内的平均$VMR_{\ch{NO2}}$，其中$p_{cloud}$位于以 330、450、570、670、770 和 870 hPa 为底的云压区间内。
-由于TM5的NO$_{\ch{2}}$为TROPOMI NO$_{\ch{2}}$的附属产品，
-故利用与下文TROPOMI相同的筛选条件进行数据筛选。
-而MERRA2-GMI则选择当地时下午2点的模拟数据，计算每个云层区间内的最大云量，若某区间内的最大云量$>$ 0.4，则判断该区间为多云，并计算平均$VMR_{\ch{NO2}}$。
-
-具体而言，$V_{\ch{NO2Vis}}$有两种计算方法：
-1）基于近朗伯多云AMF假设，即具有较大总光学深度的散射云均匀分布在薄层上\citep{Choi.2014}；
-2）几何AMF，即$AMF_{\ch{geo}}$ = sec(SZA) + sec(VZA)，其中 SZA 和 VZA 分别是太阳和视角天顶角\citep{Marais.2018,Marais.2021}。
-由于对流层上层中NO$_{\ch{2}}$垂直分布的不确定性\citep{Travis.2016}，我们使用$AMF_{\ch{geo}}$来计算云切片方法需要的$V_{\ch{NO2Vis}}$。
-\citet{Choi.2014}的研究表明，该计算方法得到的$V_{\ch{NO2Vis}}$在对流层中层（650 hPa）最多比近朗伯多云AMF方法计算的结果高14\%。
-因此，云切片算法中的$V_{\ch{NO2Vis}}$表达式如下：
-\begin{equation} \label{eq:AMF_geo}
-\begin{split}
-V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
-             & = \frac{S_{\ch{total}}-(V_{\ch{strat}} \cdot AMF_{\ch{strat}})}{\sec (\mathrm{SZA})+\sec (\mathrm{VZA})}
-\end{split}
-\end{equation}
-其中$S_{\ch{total}}$是总NO$_{\ch{2}}$斜柱浓度，$V_{\ch{strat}}$为平流层NO$_{\ch{2}}$垂直柱浓度，$AMF_{\ch{strat}}$为平流层空气质量分子。
-
-
-虽然云切片方法无需知道具体的平流层NO$_{\ch{2}}$柱浓度即可推导出对流层的$VMR_{\ch{NO2}}$，但它依赖于以下假设和条件：
-1）有相对大量的多云像素处于邻近位置，且这些像素具有足够的云压变化；
-2）NO$_{\ch{2}}$在给定的云压和空间范围内，需在垂直和水平方向上充分混合；
-3）平流层柱浓度在像素区域内保持不变；
-4）计算得到的$VMR_{\ch{NO2}}$绝对量级仅与$V_{\ch{NO2Vis}}$具有一样的准确度，云压也可能会带来额外的不确定性。
-因此，我们参考\citet{Marais.2021}设置了以下条件来获得有效的云切片结果。
-首先将SZA $\geq$ 80$^{\circ}$ 和表面反照率 $\geq$  30\%的像素数据去除。
-接着提取多云的像素[云辐射分数（CRF）$>$ 0.7]，以最大限度地减少来自对流层下层的污染。
-然后将每日的像素分配到1$^{\circ}$ $\times$ 1$^{\circ}$的网格中，保留满足云压具有足够大的变化范围[云压距离 $>$ 0.5*（最高云的气压 - 最低云的气压），且标准差$>$ 30 hPa]和充分混合的NO$_{\ch{2}}$（NO$_{\ch{2}}$ 垂直梯度 < 0.33 pptv hPa$^{-1}$）的像素。
-若网格中像素个数超过10，则将得到的$VMR_{\ch{NO2}}$赋值到该日的网格点，最后可得到各高度的季节平均$VMR_{\ch{NO2}}$。
-
 \section{大气化学模式}
 
 \subsection{WRF-Chem模式}
@@ -300,15 +198,28 @@ MOZART机制包括非甲烷挥发性有机物（NMVOC）、乙烷、丙烷、乙
 其他NMVOC物种则基于反应性官能团表示。
 由于本文为了更好的模拟出深对流系统，不同的个例使用了各自的方案，具体配置见\ref{sec:model_settings_us}节和\ref{sec:model_settings_china}节。
 
-\subsection{MERRA2-GMI模式}
+\subsection{MERRA2-GMI模拟数据集}
 
-现代研究和应用回顾分析（MERRA-2）GMI 模式是基于Goddard地球观测系统（GEOS）框架\citep{Molod.2015}，
-使用的再分析资料为MERRA-2\citep{Gelaro.2017}，化学机制为GMI（Global Modeling Initiative）的平流层和对流层化学相结合的机制\citep{Duncan.2007,Oman.2013,Nielsen.2017}。
+% https://www.sciencedirect.com/science/article/pii/S0160412020320985
+现代研究和应用回顾分析（MERRA-2）GMI 模式是基于Goddard地球观测系统（GEOS）框架\citep{Molod.2015}，数据下载地址为\url{https://acd-ext.gsfc.nasa.gov/Projects/GEOSCCM/MERRA2GMI/}。
+其中模式使用的再分析资料为MERRA-2\citep{Gelaro.2017}，化学机制为GMI（Global Modeling Initiative）的平流层和对流层化学相结合的机制\citep{Duncan.2007,Oman.2013,Nielsen.2017}。
 GMI机制包括对O$_{\ch{3}}$--NO$_{\ch{x}}$--碳氢化合物化学的详细描述，有100多个物种和大约400个化学反应，
 并使用戈达德化学气溶胶辐射和传输（GOCART）气溶胶模块。
 模拟在立方球体上运行，其水平分辨率约为 50 km，并输出到原生 MERRA-2网格（0.625$^{\circ}$ $\times$ 0.5$^{\circ}$）。
-
 该模式以回放方式运行，\citet{Orbe.2017}对此进行了详细描述。
 简而言之，该模式最初以自由状态向前运行，并与 3 小时平均MERRA2 气象场（纬向和经向风、温度、气压）进行比较。
 评估两者之间的差异并对模式进行倒回，在每个时间步长上加上所需的增量，将模式气象场向MERRA-2再分析调整。
 MERRA2-GMI曾用于研究对流层和平流层O$_{\ch{3}}$，可以获得准确的O$_{\ch{3}}$昼夜循环、夏季O$_{\ch{3}}$与温度之间的关系以及OMI观测到的对流层NO$_{\ch{2}}$和O$_{\ch{3}}$趋势\citep{Strode.2017,Ziemke.2017,Ziemke.2019}。
+
+MERRA2-GMI所使用的排放源包括来自化石燃料、生物燃料、生物质燃烧和生物排放的NO、CO 和其他NMVOC。
+除此之外，NO的排放还源自于闪电和土壤。
+化石燃料和生物燃料的排放是取自测量大气成分和气候特大城市--放大环境（MACCity）清单\citep{Granier.2011}，
+利用十年大气化学和气候模式比较项目（ACCMIP）插值到每年的排放量并应用季节性比例因子\citep{Lamarque.2010}。
+生物质燃烧排放来自全球火灾排放数据集（GFED）第4版\citep{Giglio.2013}。
+生物来源使用自然界气体和气溶胶排放模型 [MEGAN，\citet{Guenther.1999}]
+在线计算异戊二烯和其他生物化合物的排放量，并响应于MERRA2-GMI 气象场。
+土壤的NO排放基于\citet{Yienger.1995}，也响应于MERRA-2气象场。
+闪电NO的排放使用 MERRA-2 中对流层中层的去趋势累积质量通量\citep{Allen.2010}，
+并受 OTD LIS闪电气候学的季节性约束\citep{Cecil.2014}，
+将全球平均比例因子应用于去趋势的累积质量通量，使得模拟每年的全球平均闪电 NO$_{\ch{x}}$产量为 6.5 Tg氮。
+\ref{sec:lnox_affects_tropomi}节中的WRF-Chem模拟设置见\ref{sec:model_settings_china}节。
