@@ -1,8 +1,21 @@
 %!TEX root = ../thesis.tex
 
-\chapter{闪电氮氧化物反演算法的应用}
+\chapter{闪电二氧化氮反演算法的应用} \label{chapter:PE}
 
-\section{污染地区（中国东南部）}
+由于LNO$_2$不仅存在于对流旺盛期，也可使得对流初生和消散阶段出现NO$_2$高值，
+因此本章在第\ref{sec:retrieval}章开发的LNO$_2$反演算法基础之上，
+计算污染地区（中国东南部）和清洁地区（北极）不同阶段对流的LNO$_2$产率。
+
+本章余下部分按照以下方式组织：
+\ref{sec:china}节在\ref{sec:retrieval}章的基础上计算中国东南部消散对流的LNO$_{\ch{x}}$柱浓度和产率，
+并分析LNO$_2$对于TROPOMI NO$_{\ch{2}}$柱浓度产品的影响。
+\ref{sec:arctic}节利用TROPOMI在北极地区的相邻过境数据，
+计算LNO$_{\ch{2}}$的产率和产量，分析其海陆性差异，
+并与其他NO$_{\ch{x}}$排放源进行对比；
+最后是本章小结。
+
+
+\section{污染地区（中国东南部）} \label{sec:china}
 
 \subsection{模式设置及闪电同化评估} \label{sec:model_settings_china}
 
@@ -20,9 +33,10 @@
 此外LNO的垂直廓线使用\citet{Ott.2010}的双峰型LNO廓线\citep{Laughner.2017}，而LNO和LNO$_{\ch{2}}$廓线是指开启和关闭LNO排放的模拟垂直廓线的差异，
 其中LNO$_{\ch{x}}$参数化调整为每次闪电产生500 mol NO \citep{Zhu.2019}。
 
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{./figures/domains_china.png}
+\includegraphics[width=\textwidth]{./figures/domains_china.png}
 \caption{2019年和2020年个例的WRF-Chem模拟区域和地形高度（m）图。
 2019年个例的水平网格分辨率为15 km（D01）、3 km（D02）和 0.6 km（D03）。
 对于2020年个例，分别为27 km（D01）、9 km（D02）、3 km（D03）和 1 km（D04）。\\
@@ -32,10 +46,6 @@ and 1 km (D04).}
 \label{fig:domains_china}
 \end{figure}
 
-\label{sec:model_settings_assimilation}
-
-% 本章\ref{sec:o3_profile}节和\ref{sec:convec_impacts}节中的全球模拟设置与\ref{sec:model_settings_gmi}节相同，
-% 本章\ref{sec:lnox_effects}节中的中国东南部模拟设置与\ref{sec:model_settings_china}节相同。
 由于中国东南部的对流生命期短，我们采用了闪电同化并利用晴空条件下的臭氧探空资料修正了O$_{\ch{3}}$初始场，然后将模拟结果与探空和雷达对比。
 闪电数据同化方法详见\citet{Fierro.2012}和\citet{Li.2017b}，主要步骤为在闪电所处网格的垂直恒温层间，增加水汽质量混合比：
 \begin{equation} \label{eq:lda}
@@ -94,24 +104,6 @@ The simulation time is 30 minutes ahead of each radar observation.}
 \label{fig:comp_crf_2020}
 \end{figure}
 
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{./figures/comp_dbzcross_2019.png}
-\caption{沿着图\ref{fig:comp_crf_2019}中AB线剖得的2019年7月25日（a）WRF-Chem模拟和（b）雷达观测的雷达反射率。\\
-Figure \ref{fig:comp_dbzcross_2019}. Vertical cross sections of (a) WRF-Chem simulated and (b) observed radar reflectivity fields along the transect lines (AB) in Fig. \ref{fig:comp_crf_2019} for 25 July, 2019.}
-\label{fig:comp_dbzcross_2019}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.9\textwidth]{./figures/comp_dbzcross_2020.png}
-\caption{与图\ref{fig:comp_dbzcross_2019}相同，但针对2020年9月1日的对流个例。\\
-Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019} but for the case on 01 September 2020.}
-\label{fig:comp_dbzcross_2020}
-\end{figure}
-
 \subsection{闪电氮氧化物的产率及不确定性分析}
 
 
@@ -129,6 +121,42 @@ Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019}
 WRF-Chem的先验$S_{\ch{NO2}}$敏感性试验可以清楚地解释这种现象：
 具有低f$_r$和高$S_{\ch{NO2}}$的像素源自于背景 NO$_{\ch{2}}$ 污染（图\ref{fig:s5p_apriori_scd} a，e），
 但与没有LNO$_{\ch{2}}$贡献的低$S_{\ch{NO2}}$相比，对流层上层LNO$_{\ch{2}}$增加的$S_{\ch{NO2}}$仍然可见（图\ref{fig:s5p_apriori_scd}b--d，f--h）。
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{./figures/comp_dbzcross_2019.png}
+\caption{沿着图\ref{fig:comp_crf_2019}中AB线剖得的2019年7月25日（a）WRF-Chem模拟和（b）雷达观测的雷达反射率。\\
+Figure \ref{fig:comp_dbzcross_2019}. Vertical cross sections of (a) WRF-Chem simulated and (b) observed radar reflectivity fields along the transect lines (AB) in Fig. \ref{fig:comp_crf_2019} for 25 July, 2019.}
+\label{fig:comp_dbzcross_2019}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{./figures/comp_dbzcross_2020.png}
+\caption{与图\ref{fig:comp_dbzcross_2019}相同，但针对2020年9月1日的对流个例。\\
+Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019} but for the case on 01 September 2020.}
+\label{fig:comp_dbzcross_2020}
+\end{figure}
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./figures/china_flash_scd.png}
+    \caption{
+    2019 年 7 月 25 日（左）和 2020 年 9 月 7 日（右）的个例。
+    （a，b）对流层 NO$_{\ch{2}}$ 斜柱浓度（$S_{\ch{NO2}}$，填充色）和云压（线条颜色）。
+    白色网格代表缺失的 TROPOMI 数据，黑色实线为江苏省；
+    （c，d）NO$_{\ch{2}}$ 窗区中的云辐射分数和闪电。闪电的颜色取决于相对于TROPOMI过境的发生时间。\\
+    Figure \ref{fig:china_flash_scd}. Events on 25 July 2019 (left) and 07 September 2020 (right).
+    (a, b) The tropospheric NO$_{\ch{2}}$ slant column density ($S_{\ch{NO2}}$, filled color) and cloud optical pressure (line color).
+    These white grid cells stand for missing TROPOMI data.
+    The solid black border is Jiangsu province.
+    (c, d) The cloud radiance fraction in the NO$_{\ch{2}}$ window and flashes whose color depends on the occurring time relative to the TROPOMI overpass time.
+    }
+    \label{fig:china_flash_scd}
+\end{figure}
 
 
 在\ref{sec:us}节和\ref{sec:china}节中，我们利用对流旺盛时的卫星观测来估算 LNO$_{\ch{x}}$产率。
@@ -152,36 +180,6 @@ t$_0$是TROPOMI的过境时间，
 t$_j$是闪电的发生时间，
 $\tau$为近对流的NO$_{\ch{x}}$寿命（3 小时）。
 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{./figures/china_flash_scd.png}
-    \caption{
-    2019 年 7 月 25 日（左）和 2020 年 9 月 7 日（右）的个例。
-    （a，b）对流层 NO$_{\ch{2}}$ 斜柱浓度（$S_{\ch{NO2}}$，填充色）和云压（线条颜色）。
-    白色网格代表缺失的 TROPOMI 数据，黑色实线为江苏省；
-    （c，d）NO$_{\ch{2}}$ 窗区中的云辐射分数和闪电。闪电的颜色取决于相对于TROPOMI过境的发生时间。\\
-    Figure \ref{fig:china_flash_scd}. Events on 25 July 2019 (left) and 07 September 2020 (right).
-    (a, b) The tropospheric NO$_{\ch{2}}$ slant column density ($S_{\ch{NO2}}$, filled color) and cloud optical pressure (line color).
-    These white grid cells stand for missing TROPOMI data.
-    The solid black border is Jiangsu province.
-    (c, d) The cloud radiance fraction in the NO$_{\ch{2}}$ window and flashes whose color depends on the occurring time relative to the TROPOMI overpass time.
-    }
-    \label{fig:china_flash_scd}
-\end{figure}
-
-
-\begin{sidewaysfigure}[!htbp]
-    \centering
-    \includegraphics[width=0.85\columnwidth]{./figures/s5p_apriori_scd.png}
-    \caption{使用不同闪电NO排放条件下WRF-Chem的NO$_{\ch{2}}$结果，重新计算得到的对流层NO$_{\ch{2}}$斜柱浓度（$S_{\ch{NO2}}$）。
-    （a，e）0 mol每闪电；（b，f）330 mol每闪电；（c，g）500 mol每闪电；（d，h）700 mol每闪电。\\
-    Figure \ref{fig:s5p_apriori_scd}. The tropospheric NO$_{\ch{2}}$ slant column density ($S_{\ch{NO2}}$) recalculated using the WRF-Chem results with different lightning NO settings: (a, e) 0 mol/flash, (b, f) 330 mol/flash, (c, g) 500 mol/flash and (d, h) 700 mol/flash.
-    }
-    \label{fig:s5p_apriori_scd}
-\end{sidewaysfigure}
-\FloatBarrier
-
 由于消散的对流在旺盛期间已产生了足够多的闪电，并且对流处对流层上层的风从西北偏西吹向东南偏东（图\ref{fig:china_vcd_lnox}a），
 $V_{\ch{LNO_x}}$的范围仍然可以清楚地识别（图\ref{fig:china_vcd_lnox} 中的虚线矩形），且有一条$V_{\ch{LNO_x}}$低值带将南北对流分开。
 经过仔细选择，计算得到的LNO$_{\ch{x}}$产率为60 mol NO$_{\ch{x}}$每闪电。
@@ -189,21 +187,21 @@ $V_{\ch{LNO_x}}$的范围仍然可以清楚地识别（图\ref{fig:china_vcd_lno
 它对LNO$_{\ch{x}}$产率的影响仅 $\sim$ 2 mol，在下节的不确定性评估范围内。
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{./figures/china_vcd_lnox.png}
-    \caption{
-    背景为LNO$_{\ch{x}}$垂直柱浓度（$V_{\ch{LNO_x}}$）的分布。
-     白色矩形是为手动选择用于 LNO$_{\ch{x}}$产率估算的区域。
-     （a）中叠加的箭头是 WRF-Chem 模拟的 500 hPa 水平风；
-     （b）和（c）中的点是闪电，其颜色取决于相对于 TROPOMI 过境的发生时间。\\
-    Figure \ref{fig:china_vcd_lnox}. The background is the distribution of LNO$_{\ch{x}}$ vertical column densities ($V_{\ch{LNO_x}}$).
-    The white rectangles are manually selected regions for the LNO$_{\ch{x}}$ production efficiency estimation.
-    The overlayed wind arrows in (a) are the 500 hPa horizontal wind simulated by WRF-Chem.
-    The dots in (b) and (c) are the flashes whose color depends on the occurring time relative to the TROPOMI overpass time.
-    }
-    \label{fig:china_vcd_lnox}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{./figures/china_vcd_lnox.png}
+%     \caption{
+%     背景为LNO$_{\ch{x}}$垂直柱浓度（$V_{\ch{LNO_x}}$）的分布。
+%      白色矩形是为手动选择用于 LNO$_{\ch{x}}$产率估算的区域。
+%      （a）中叠加的箭头是 WRF-Chem 模拟的 500 hPa 水平风；
+%      （b）和（c）中的点是闪电，其颜色取决于相对于 TROPOMI 过境的发生时间。\\
+%     Figure \ref{fig:china_vcd_lnox}. The background is the distribution of LNO$_{\ch{x}}$ vertical column densities ($V_{\ch{LNO_x}}$).
+%     The white rectangles are manually selected regions for the LNO$_{\ch{x}}$ production efficiency estimation.
+%     The overlayed wind arrows in (a) are the 500 hPa horizontal wind simulated by WRF-Chem.
+%     The dots in (b) and (c) are the flashes whose color depends on the occurring time relative to the TROPOMI overpass time.
+%     }
+%     \label{fig:china_vcd_lnox}
+% \end{figure}
 
 
 根据 \citet{Allen.2019} 和 \citet{Zhang.2020b}，LNO$_{\ch{x}}$ 的不确定性由 LNO$_{\ch{x}}$ 寿命、闪电探测效率、
@@ -219,6 +217,41 @@ NO/NO$_{\ch{2}}$ 比例、LNO 廓线和其他来源决定（表\ref{table:uncert
 该数值低于我们（90 $\pm$ 50 mol NO$_{\ch{x}}$每闪电）以及\citet{Allen.2021a}（120 $\pm$ 65 mol NO$_{\ch{x}}$每闪电）在美国大陆的研究结果，
 因此在未来的研究中还需对中国地区进行范围更广的探讨，从而估算区域性的LNO$_{\ch{x}}$产率。
 
+
+\begin{landscape}
+\vspace*{\fill}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{./figures/s5p_apriori_scd.png}
+    \caption{使用不同闪电NO排放条件下WRF-Chem的NO$_{\ch{2}}$结果，重新计算得到的对流层NO$_{\ch{2}}$斜柱浓度（$S_{\ch{NO2}}$）。
+    （a，e）0 mol每闪电；（b，f）330 mol每闪电；（c，g）500 mol每闪电；（d，h）700 mol每闪电。\\
+    Figure \ref{fig:s5p_apriori_scd}. The tropospheric NO$_{\ch{2}}$ slant column density ($S_{\ch{NO2}}$) recalculated using the WRF-Chem results with different lightning NO settings: (a, e) 0 mol/flash, (b, f) 330 mol/flash, (c, g) 500 mol/flash and (d, h) 700 mol/flash.
+    }
+    \label{fig:s5p_apriori_scd}
+\end{figure}
+\vspace*{\fill}
+\end{landscape}
+
+\begin{landscape}
+\vspace*{\fill}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{./figures/china_vcd_lnox.png}
+    \caption{
+    背景为LNO$_{\ch{x}}$垂直柱浓度（$V_{\ch{LNO_x}}$）的分布。
+     白色矩形是为手动选择用于 LNO$_{\ch{x}}$产率估算的区域。
+     （a）中叠加的箭头是 WRF-Chem 模拟的 500 hPa 水平风；
+     （b）和（c）中的点是闪电，其颜色取决于相对于 TROPOMI 过境的发生时间。\\
+    Figure \ref{fig:china_vcd_lnox}. The background is the distribution of LNO$_{\ch{x}}$ vertical column densities ($V_{\ch{LNO_x}}$).
+    The white rectangles are manually selected regions for the LNO$_{\ch{x}}$ production efficiency estimation.
+    The overlayed wind arrows in (a) are the 500 hPa horizontal wind simulated by WRF-Chem.
+    The dots in (b) and (c) are the flashes whose color depends on the occurring time relative to the TROPOMI overpass time.
+    }
+    \label{fig:china_vcd_lnox}
+\end{figure}
+\vspace*{\fill}
+\end{landscape}
+% \FloatBarrier
 
 \begin{table}[H]
 \footnotesize
@@ -243,7 +276,7 @@ LNO 廓线                     & \makecell[cc]{26\%} \\
 \end{table}
 
 
-\subsection{闪电氮氧化物对TROPOMI二氧化氮产品的影响} \label{sec:lnox_affects_tropomi}
+\subsection{闪电二氧化氮对TROPOMI二氧化氮产品的影响} \label{sec:lno2_affects_tropomi}
 
 鉴于LNO$_{\ch{2}}$在对流层中上层的主导地位和更长寿命，TROPOMI的NO$_{\ch{2}}$产品可以用来研究不同区域LNO$_{\ch{2}}$的分布。
 然而如上节所述，官方的TROPOMI NO$_{\ch{2}}$柱浓度产品所依赖的NO$_{\ch{2}}$先验廓线并未详细考虑LNO$_{\ch{2}}$的垂直分布，
@@ -304,7 +337,6 @@ AMF$_{\ch{trop}}$均增大（图\ref{fig:china_s5p_amf_diff}a$_{i}$--c$_{i}$）�
 而TM5-MP 和 WRF-Chem NO$_{\ch{2}}$ 廓线之间的比较（图 \ref{fig:china_nox_profile}）也说明了可分辨的对流输送和LNO$_{\ch{x}}$的重要性。
 
 
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{./figures/china_s5p_amf_diff.png}
@@ -326,9 +358,11 @@ AMF$_{\ch{trop}}$均增大（图\ref{fig:china_s5p_amf_diff}a$_{i}$--c$_{i}$）�
 \end{figure}
 
 
-\begin{sidewaysfigure}[!htbp]
+\begin{landscape}
+\vspace*{\fill}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\columnwidth]{./figures/china_nox_profile.png}
+    \makebox[0pt]{\includegraphics[width=0.76\columnwidth]{./figures/china_nox_profile.png}}
     \caption{
     TROPOMI过境时在不同闪电NO的排放条件下，三个区域（新生闪电区、闪电下风向和闪电老化区）的各物质垂直廓线。
     （a--c）NO$_{\ch{2}}$廓线与官方TM5先验NO$_{\ch{2}}$廓线之间的比较。
@@ -339,12 +373,14 @@ AMF$_{\ch{trop}}$均增大（图\ref{fig:china_s5p_amf_diff}a$_{i}$--c$_{i}$）�
     The gray dashed line is the cloud optical pressure detected by TROPOMI.
     }
     \label{fig:china_nox_profile}
-\end{sidewaysfigure}
+\end{figure}
+\vspace*{\fill}
+\end{landscape}
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{./figures/china_amf_contribution.png}
+    \includegraphics[width=\textwidth]{./figures/china_amf_contribution.png}
     \caption{
     （a）图 \ref{fig:china_s5p_amf_diff} 中定义的三个区域（新生闪电区，闪电下风向，和闪电老化区）的云压和云辐射分数之间的关系。
      （b--d）这三个区域的先验SCD$^{\textrm{LNO$_{\ch{x}}$}}_{\textrm{tropNO$_{\ch{2}}$}}$/SCD$^{\textrm{noLNO$_{\ch{x}}$}}_{ \textrm{tropNO$_{\ch{2}}$}}$和先验VCD$^{\textrm{LNO$_{\ch{x}}$}}_{\textrm{tropNO$_{\ch{2}}$}}$/VCD$^{\textrm{noLNO$_{\ch{x}}$ }}_{\textrm{tropNO$_{\ch{2}}$}}$。
@@ -357,7 +393,7 @@ AMF$_{\ch{trop}}$均增大（图\ref{fig:china_s5p_amf_diff}a$_{i}$--c$_{i}$）�
 
 
 
-\section{清洁地区（北极）}
+\section{清洁地区（北极）} \label{sec:arctic}
 
 \subsection{闪电的分布} \label{subsect:lightning_distribution}
 
@@ -407,26 +443,7 @@ OTD测得的平均闪电频率和GLD360测得的平均闪击频率分别为0.22 
 其中在TROPOMI 覆盖率最高的地区（80--90$^{\circ}$ N），2021 年的闪击数约为 2.9$\times$10$^4$，是前九年总数的近两倍\citep{networktotal.2021}。
 GLD360测得的闪击最北可达89.5$^{\circ}$ N，WWLLN也探测到了该次闪击[89.6 $^{\circ}$ N，\citet{Holzworth.2021}]。
 
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{./figures/arctic_lightning_distribution.png}
-\caption{
-（a）1996至1999年6-8月OTD观测的平均闪电频率；
-（b）2019至2021年6-8月GLD360观测的平均闪击频率；
-（c）与（b）相同，但只计算TROPOMI过境前3 h内TROPOMI条带内的闪电；
-（d）为（c）与（b）的月比例。\\
-Figure \ref{fig:arctic_lightning_distribution}.
-(a) Mean OTD lightning flash rate of June--August 1996--1999;
-(b) Mean GLD360 lightning stroke rate of June--August 2019--2021;
-(c) Same as panel b but only counting the lightning inside the TROPOMI swaths during the 3 h period before the TROPOMI overpass time.
-Grids with no lightning appear as the light-blue backgrounds in panels a--c.
-(d) Monthly ratio of panel c to panel b.
-}
-\label{fig:arctic_lightning_distribution}
-\end{figure}
-
-\subsection{闪电氮氧化物的计算} \label{sec:arctic_lnox_calc}
+\subsection{闪电二氧化氮的计算} \label{sec:arctic_lnox_calc}
 
 LNO$_{\ch{2}}$的估算包括以下三个主要步骤：
 
@@ -471,6 +488,27 @@ convective available potential energy (CAPE, J kg$^{-1}$) in the Arctic region d
 \end{tabular}
 \end{table}
 
+
+\clearpage\vspace*{\fill}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{./figures/arctic_lightning_distribution.png}
+\caption{
+（a）1996至1999年6-8月OTD观测的平均闪电频率；
+（b）2019至2021年6-8月GLD360观测的平均闪击频率；
+（c）与（b）相同，但只计算TROPOMI过境前3 h内TROPOMI条带内的闪电；
+（d）为（c）与（b）的月比例。\\
+Figure \ref{fig:arctic_lightning_distribution}.
+(a) Mean OTD lightning flash rate of June--August 1996--1999;
+(b) Mean GLD360 lightning stroke rate of June--August 2019--2021;
+(c) Same as panel b but only counting the lightning inside the TROPOMI swaths during the 3 h period before the TROPOMI overpass time.
+Grids with no lightning appear as the light-blue backgrounds in panels a--c.
+(d) Monthly ratio of panel c to panel b.
+}
+\label{fig:arctic_lightning_distribution}
+\end{figure}
+\vspace*{\fill}\clearpage
+
 \subsection*{闪电的聚类}
 
 我们使用密度聚类算法（DBSCAN）将TROPOMI过境前12 h内\citep{Allen.2021a}的闪击以40 km进行聚类\citep{backlund2011density,Schubert.2017}。
@@ -493,10 +531,18 @@ VIIRS 搭载在 Suomi 国家极地轨道合作伙伴 （Suomi-NPP）上，
 接着我们选择包含一个或多个高 $V_{\ch{NO2}}$ 区域的掩膜用于 LNO$_{\ch{2}}$ 的进一步分析，
 最终对闪电掩膜内的数据用分水岭方法进行重新识别，得到具有高 $V_{\ch{NO2}}$ 的LNO$_{\ch{2}}$ 区域（图 \ref{fig:workflow}d 中的亮色像素）。
 
+在重新使用分水岭方法之前，我们使用最小--最大归一化将掩膜内的 $V_{\ch{NO2}}$ 值归一化为 0--1 的范围，即从每个数据中减去最小值并除以最大值和最小值之间的差值。
+我们将对数正态分布模型拟合到置信度为 80\% 的归一化值，并将结果用作分水岭过程的最小阈值。
+由于 LNO$_{\ch{2}}$ 区域通常小于闪电掩模（图 \ref{fig:workflow}d），
+80\% 的置信水平应足以识别 LNO$_{\ch{2}}$ 像素，
+与置信度相关的不确定性见表 \ref{table:arctic_uncertainty}。
+最后，我们将分水岭算法应用于标准化的 $V_{\ch{NO2}}$ 值，使用的阈值范围从最小值到 1，步长为 10，
+这使我们能够识别和分析最终的LNO$_{\ch{2}}$数据。
+
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{./figures/arctic_workflow.png}
+\includegraphics[width=0.9\textwidth]{./figures/arctic_workflow.png}
 \caption{
 从 TROPOMI 轨道 09458（2019 年 8 月 1 日）数据筛选闪电 NO$_{\ch{2}}$ 像素的示意图，
 背景填色为TROPOMI 检测到的 NO$_{\ch{2}}$ 对流层柱浓度。
@@ -514,16 +560,8 @@ The TROPOMI-detected NO$_{\ch{2}}$ tropospheric columns are overlaid with (a) ob
 \label{fig:workflow}
 \end{figure}
 
-在重新使用分水岭方法之前，我们使用最小--最大归一化将掩膜内的 $V_{\ch{NO2}}$ 值归一化为 0--1 的范围，即从每个数据中减去最小值并除以最大值和最小值之间的差值。
-我们将对数正态分布模型拟合到置信度为 80\% 的归一化值，并将结果用作分水岭过程的最小阈值。
-由于 LNO$_{\ch{2}}$ 区域通常小于闪电掩模（图 \ref{fig:workflow}d），
-80\% 的置信水平应足以识别 LNO$_{\ch{2}}$ 像素，
-与置信度相关的不确定性见表 \ref{table:arctic_uncertainty}。
-最后，我们将分水岭算法应用于标准化的 $V_{\ch{NO2}}$ 值，使用的阈值范围从最小值到 1，步长为 10，
-这使我们能够识别和分析最终的LNO$_{\ch{2}}$数据。
 
-
-\subsection*{计算闪电氮氧化物柱浓度}
+\subsection*{计算闪电二氧化氮柱浓度}
 
 \citet{Zhang.2022a}指出官方 TROPOMI 算法在 NO$_{\ch{2}}$反演中不包括 LNO$_{\ch{2}}$，
 因此我们从官方 $S_{\ch{NO2}}$产品中减去背景 NO$_{\ch{2}}$，并将差值通过大气质量因子（AMF）转换为对流层LNO$_{\ch{2}}$垂直柱浓度。
@@ -581,113 +619,6 @@ pixels with the cloud radiance fraction larger than 0.7.
 \label{fig:pcld_ptropo}
 \end{figure}
 
-\subsection*{计算闪电氮氧化物产率} \label{sec:calc_lnox_pe}
-
-如\ref{subsect:lightning_distribution}节所述，TROPOMI 可多次扫过 70$^{\circ}$ N 以北的同一点，
-因此两个连续的轨道可以观测到相同的雷暴系统。
-为了更方便地分析北极 LNO$_{\ch{2}}$ 个例，我们开发了可视化网站（\url{https://arctic-lightning-no2.streamlit.app/}），
-允许用户筛选个例并交互式研究LNO$_{\ch{2}}$、云压和闪电之间的关系。
-$V_{\ch{LNO2}}$（mol m$^{-2}$）在相邻过境时间之间的关系可以定义为：
-\begin{equation} \label{eq:relationship}
-\sum_{p_{(T2)}} V_{\ch{LNO_2_i}} A_{i} = e^\frac{{-(T_2-T_1)}}{\tau} \sum_{p_{(T1)}} V_{\ch{LNO_2_j}} A_{j} + PE \sum_{N} e^\frac{{-(T_2-t_k)}}{\tau}
-\end{equation}
-其中 $p$ 是 LNO$_{\ch{2}}$ 区域中的像素数，
-$A$ 是每个像素的面积（m$^2$），
-$T$ 是 TROPOMI 过境时间，
-$t$ 是闪电发生的时间，
-$\tau$ 是对流附近 LNO$_{\ch{2}}$ 的寿命，
-$PE$ 是 LNO$_{\ch{2}}$ 的产率（mol NO$_{\ch{2}}$ 每闪击）,
-$N$ 是在相邻过境时间内发生的总闪击数，
-而指数成分考虑了 NO$_{\ch{2}}$ 的化学损失。
-除此之外，$i$ 和 $j$ 是 TROPOMI 的像素索引，
-$A_{i}$ 和 $A_{j}$ 是不同的 LNO$_{\ch{2}}$ 区域，并考虑了平流的影响（图\ref{fig:consecutive_orbits}），
-$T_1$ 和 $T_2$ 代表 TROPOMI 在 LNO$_{\ch{2}}$ 区域的两次平均过境时间，
-$t_k$ 代表两个轨道之间发生的第 k 次闪击（k 取值范围为 1 到 N）的时间。
-
-如果相邻过境时间内没有闪电发生，式（\ref{eq:relationship}）可以简化为：
-
-\begin{equation} \label{eq:LNO2_nolightning}
-\sum_{p_{(T2)}} V_{\ch{LNO_2}_i} A_{i} = e^\frac{{-(T_2-T_1)}}{\tau} \sum_{p_{(T1)}} V_{\ch{LNO_2}_j} A_{j}
-\end{equation}
-我们通过分析具有高 LNO$_{\ch{2}}$ 但两次过境时间之间没有闪电的特殊个例，得到 $\tau$ 值为 3 $\pm$ 1 h（表\ref{table:lifetime} 和图 \ref{fig:consecutive_orbits}）.
-并将其代入式（\ref{eq:relationship}）来计算剩余个例的LNO$_{\ch{2}}$产率。
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.85\textwidth]{./figures/arctic_consecutive_orbits.png}
-\caption{
-受闪电 NO$_{\ch{2}}$ 影响的 NO$_{\ch{2}}$ 对流层柱浓度选区（亮色像素）。
-（a，b）两次连续的过境数据，且它们之间有活跃的闪电；
-（c，d）两次连续的过境数据，但它们之间没有闪电。\\
-Figure \ref{fig:consecutive_orbits}.
-Selections (bright colored pixels) of NO$_{\ch{2}}$ tropospheric columns affected by lightning NO$_{\ch{2}}$.
-(a--b) Two consecutive orbits with active lightning between them.
-(c--d) Two consecutive orbits with no lightning between them.
-}
-\label{fig:consecutive_orbits}
-\end{figure}
-
-
-在前人的研究中共有三种方法来估算热带和中纬度地区的 LNO$_{\ch{2}}$ 产量：
-
-（1） 背景NO$_{\ch{2}}$与LNO$_{\ch{2}}$之和（LNO$_{\ch{2}}$$^*$）与闪电之间的线性回归 \citep{Pickering.2016,Allen.2019,Lapierre.2020}；
-
-（2） 使用自定义的大气质量因子直接得到LNO$_{\ch{2}}$ \citep{Beirle.2009,Zhang.2020b,Zhang.2022a}；
-
-（3） 从LNO$_{\ch{2}}$$^*$中减去背景 NO$_{\ch{2}}$，其中背景 NO$_{\ch{2}}$取自飞机观测 \citep{Pickering.2016,Perez-Invernon.2022} 或未发生闪电的对流像素处的平均NO$_{\ch{2}}$柱浓度 \citep{Bucsela.2019,Bucsela.2010,Allen.2021a}。
-
-由于背景 NO$_{\ch{2}}$ 随太阳天顶角而变化，线性回归法不适用于北极地区。
-第二种方法需要使用闪电参数化进行详细的 LNO$_{\ch{2}}$ 模拟，而目前闪电参数化的不确定性仍非常大\citep{Finney.2018,Romps.2019,Chen.2021a}，尤其是在闪电数据集很少的北极地区 \citep{Holzworth.2021}。
-因为 TROPOMI 检测到70$^{\circ}$ N 以北的非闪电对流个例有限，
-所以最后一种方法需要的平均背景 NO$_{\ch{2}}$数据集也不适用于北极地区的网格（即 1 $^{\circ}$ $\times$ 1 $^{\circ}$）。
-
-
-\begin{table}[H]
-\centering
-\caption{2019--2021期间得到的闪电 NO$_{\ch{2}}$（LNO$_{\ch{2}}$）寿命\\
-Table \ref{table:lifetime}. Lightning NO$_{\ch{2}}$ (LNO$_{\ch{2}}$) lifetimes derived from cases (2019--2021).}
-\label{table:lifetime}
-\footnotesize
-{\centering
-\begin{tabular}{llllll}
-\thickline
-时间             &         轨道 &    经度 &   纬度 &  $\Delta$面积（\%）$^a$ &  寿命（h）\\
-\thickline
-2019-06-28 00:38 &       08833 &  127.4 &  81.0 &     -14.5 &       3.0 \\
-2019-08-14 22:58 &       09513 &  126.0 &  70.4 &       2.0 &       1.7 \\
-2020-06-09 19:11 &       13767 &  162.8 &  73.0 &     -43.8 &       3.6 \\
-2020-06-15 22:18 &       13854 &  155.6 &  78.7 &      -4.4 &       3.4 \\
-2020-07-15 21:19 &       14279 &  109.3 &  75.4 &       4.5 &       2.7 \\
-2021-07-11 11:40 &       19395 &  -84.5 &  70.9 &      28.0 &       5.2 \\
-\thickline
-\end{tabular}
-\par }
-\begin{tablenotes}
-\linespread{1}\footnotesize
-\item $^a$$\Delta$面积 是 LNO$_{\ch{2}}$ 面积在 $T_2$ 时刻相对于 $T_1$ 时刻的百分比变化
-（$T_1$ 和 $T_2$ 是连续条带的平均过境时间，$T_2$ > $T_1$）。
-\item $^a$$\Delta$Area is the percentage change of the LNO$_{\ch{2}}$ area at $T_2$ relative to $T_1$
-($T_1$ and $T_2$ are the mean overpass time of consecutive swaths, $T_2$ > $T_1$).
-\end{tablenotes}
-\end{table}
-
-\subsection{闪电氮氧化物产率的海陆性差异}
-
-
-LNO$_{\ch{2}}$ 排放是闪击数和 LNO$_{\ch{2}}$ 产率（每次闪击产生的LNO$_{\ch{2}}$）的乘积。
-然而我们不可能根据来自单次过境的数据直接推导出 LNO$_{\ch{2}}$ 产率，
-因为 TROPOMI 检测到的 LNO$_{\ch{2}}$ 由产生和消耗组成，所以时间维度上需要第二次过境数据。
-我们提出可以利用连续轨道的 LNO$_{\ch{2}}$ 来估算 LNO$_{\ch{2}}$ 产率（见\ref{sec:calc_lnox_pe}节）。
-基于对 LNO$_{\ch{2}}$ 和闪击的筛选，我们共获得了43个个例，115 个 LNO$_{\ch{2}}$ 选区。
-其中60$^{\circ}$ W 和 180$^{\circ}$ W 之间的个例由于 LNO$_{\ch{2}}$ 不显著或没有足够的观测值而被剔除，
-大多数个例位于 60$^{\circ}$ E 和 180$^{\circ}$ E 之间（图 \ref{fig:arctic_lno2_production}a）。
-通过比较闪电分布（图 \ref{fig:arctic_lno2_production}a）与LNO$_{\ch{2}}$总和的分布（图 \ref{fig:arctic_lno2_production}b），
-我们发现 TROPOMI 观测到的 LNO$_{\ch{2}}$ 远离LNO$_{\ch{2}}$的排放源。
-例如，喀拉海（Kara Sea）上没有闪电发生 （77--80$^{\circ}$ N, 65--105$^{\circ}$ E）,
-但此处的LNO$_{\ch{2}}$ 总共约为 5.1 $\times$ 10$^6$ mol，
-这是由于对流层上层主导的东风对LNO$_{\ch{2}}$的输送作用，从而揭示了匹配闪电和 NO$_{\ch{2}}$的重要性。
-
 
 \begin{table}[H]
 \centering
@@ -725,6 +656,116 @@ where Error$_{\* perturbed\ value}$ = (PE$_{\* perturbed\ value}$ - PE$_{default
 \end{tablenotes}
 \end{table}
 
+
+\subsection*{计算闪电二氧化氮产率} \label{sec:calc_lnox_pe}
+
+如\ref{subsect:lightning_distribution}节所述，TROPOMI 可多次扫过 70$^{\circ}$ N 以北的同一点，
+因此两个连续的轨道可以观测到相同的雷暴系统。
+为了更方便地分析北极 LNO$_{\ch{2}}$ 个例，我们开发了可视化网站（\url{https://arctic-lightning-no2.streamlit.app/}），
+允许用户筛选个例并交互式研究LNO$_{\ch{2}}$、云压和闪电之间的关系。
+$V_{\ch{LNO2}}$（mol m$^{-2}$）在相邻过境时间之间的关系可以定义为：
+\begin{equation} \label{eq:relationship}
+\sum_{p_{(T2)}} V_{\ch{LNO_2_i}} A_{i} = e^\frac{{-(T_2-T_1)}}{\tau} \sum_{p_{(T1)}} V_{\ch{LNO_2_j}} A_{j} + PE \sum_{N} e^\frac{{-(T_2-t_k)}}{\tau}
+\end{equation}
+其中 $p$ 是 LNO$_{\ch{2}}$ 区域中的像素数，
+$A$ 是每个像素的面积（m$^2$），
+$T$ 是 TROPOMI 过境时间，
+$t$ 是闪电发生的时间，
+$\tau$ 是对流附近 LNO$_{\ch{2}}$ 的寿命，
+$PE$ 是 LNO$_{\ch{2}}$ 的产率（mol NO$_{\ch{2}}$ 每闪击）,
+$N$ 是在相邻过境时间内发生的总闪击数，
+而指数成分考虑了 NO$_{\ch{2}}$ 的化学损失。
+除此之外，$i$ 和 $j$ 是 TROPOMI 的像素索引，
+$A_{i}$ 和 $A_{j}$ 是不同的 LNO$_{\ch{2}}$ 区域，并考虑了平流的影响（图\ref{fig:consecutive_orbits}），
+$T_1$ 和 $T_2$ 代表 TROPOMI 在 LNO$_{\ch{2}}$ 区域的两次平均过境时间，
+$t_k$ 代表两个轨道之间发生的第 k 次闪击（k 取值范围为 1 到 N）的时间。
+
+如果相邻过境时间内没有闪电发生，式（\ref{eq:relationship}）可以简化为：
+
+\begin{equation} \label{eq:LNO2_nolightning}
+\sum_{p_{(T2)}} V_{\ch{LNO_2}_i} A_{i} = e^\frac{{-(T_2-T_1)}}{\tau} \sum_{p_{(T1)}} V_{\ch{LNO_2}_j} A_{j}
+\end{equation}
+我们通过分析具有高 LNO$_{\ch{2}}$ 但两次过境时间之间没有闪电的特殊个例，得到 $\tau$ 值为 3 $\pm$ 1 h（表\ref{table:lifetime} 和图 \ref{fig:consecutive_orbits}）.
+并将其代入式（\ref{eq:relationship}）来计算剩余个例的LNO$_{\ch{2}}$产率。
+
+
+在前人的研究中共有三种方法来估算热带和中纬度地区的 LNO$_{\ch{2}}$ 产量：
+
+（1） 背景NO$_{\ch{2}}$与LNO$_{\ch{2}}$之和（LNO$_{\ch{2}}$$^*$）与闪电之间的线性回归 \citep{Pickering.2016,Allen.2019,Lapierre.2020}；
+
+（2） 使用自定义的大气质量因子直接得到LNO$_{\ch{2}}$ \citep{Beirle.2009,Zhang.2020b,Zhang.2022a}；
+
+（3） 从LNO$_{\ch{2}}$$^*$中减去背景 NO$_{\ch{2}}$，其中背景 NO$_{\ch{2}}$取自飞机观测 \citep{Pickering.2016,Perez-Invernon.2022} 或未发生闪电的对流像素处的平均NO$_{\ch{2}}$柱浓度 \citep{Bucsela.2019,Bucsela.2010,Allen.2021a}。
+
+由于背景 NO$_{\ch{2}}$ 随太阳天顶角而变化，线性回归法不适用于北极地区。
+第二种方法需要使用闪电参数化进行详细的 LNO$_{\ch{2}}$ 模拟，而目前闪电参数化的不确定性仍非常大\citep{Finney.2018,Romps.2019,Chen.2021a}，尤其是在闪电数据集很少的北极地区 \citep{Holzworth.2021}。
+因为 TROPOMI 检测到70$^{\circ}$ N 以北的非闪电对流个例有限，
+所以最后一种方法需要的平均背景 NO$_{\ch{2}}$数据集也不适用于北极地区的网格（即 1 $^{\circ}$ $\times$ 1 $^{\circ}$）。
+
+\begin{table}[H]
+\centering
+\caption{2019--2021期间得到的闪电 NO$_{\ch{2}}$（LNO$_{\ch{2}}$）寿命\\
+Table \ref{table:lifetime}. Lightning NO$_{\ch{2}}$ (LNO$_{\ch{2}}$) lifetimes derived from cases (2019--2021).}
+\label{table:lifetime}
+\footnotesize
+{\centering
+\begin{tabular}{llllll}
+\thickline
+时间             &         轨道 &    经度 &   纬度 &  $\Delta$面积（\%）$^a$ &  寿命（h）\\
+\thickline
+2019-06-28 00:38 &       08833 &  127.4 &  81.0 &     -14.5 &       3.0 \\
+2019-08-14 22:58 &       09513 &  126.0 &  70.4 &       2.0 &       1.7 \\
+2020-06-09 19:11 &       13767 &  162.8 &  73.0 &     -43.8 &       3.6 \\
+2020-06-15 22:18 &       13854 &  155.6 &  78.7 &      -4.4 &       3.4 \\
+2020-07-15 21:19 &       14279 &  109.3 &  75.4 &       4.5 &       2.7 \\
+2021-07-11 11:40 &       19395 &  -84.5 &  70.9 &      28.0 &       5.2 \\
+\thickline
+\end{tabular}
+\par }
+\begin{tablenotes}
+\linespread{1}\footnotesize
+\item $^a$$\Delta$面积 是 LNO$_{\ch{2}}$ 面积在 $T_2$ 时刻相对于 $T_1$ 时刻的百分比变化
+（$T_1$ 和 $T_2$ 是连续条带的平均过境时间，$T_2$ > $T_1$）。
+\item $^a$$\Delta$Area is the percentage change of the LNO$_{\ch{2}}$ area at $T_2$ relative to $T_1$
+($T_1$ and $T_2$ are the mean overpass time of consecutive swaths, $T_2$ > $T_1$).
+\end{tablenotes}
+\end{table}
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{./figures/arctic_consecutive_orbits.png}
+\caption{
+受闪电 NO$_{\ch{2}}$ 影响的 NO$_{\ch{2}}$ 对流层柱浓度选区（亮色像素）。
+（a，b）两次连续的过境数据，且它们之间有活跃的闪电；
+（c，d）两次连续的过境数据，但它们之间没有闪电。\\
+Figure \ref{fig:consecutive_orbits}.
+Selections (bright colored pixels) of NO$_{\ch{2}}$ tropospheric columns affected by lightning NO$_{\ch{2}}$.
+(a--b) Two consecutive orbits with active lightning between them.
+(c--d) Two consecutive orbits with no lightning between them.
+}
+\label{fig:consecutive_orbits}
+\end{figure}
+
+
+\subsection{闪电二氧化氮产率的海陆性差异}
+
+
+LNO$_{\ch{2}}$ 排放是闪击数和 LNO$_{\ch{2}}$ 产率（每次闪击产生的LNO$_{\ch{2}}$）的乘积。
+然而我们不可能根据来自单次过境的数据直接推导出 LNO$_{\ch{2}}$ 产率，
+因为 TROPOMI 检测到的 LNO$_{\ch{2}}$ 由产生和消耗组成，所以时间维度上需要第二次过境数据。
+我们提出可以利用连续轨道的 LNO$_{\ch{2}}$ 来估算 LNO$_{\ch{2}}$ 产率（见\ref{sec:calc_lnox_pe}节）。
+基于对 LNO$_{\ch{2}}$ 和闪击的筛选，我们共获得了43个个例，115 个 LNO$_{\ch{2}}$ 选区。
+其中60$^{\circ}$ W 和 180$^{\circ}$ W 之间的个例由于 LNO$_{\ch{2}}$ 不显著或没有足够的观测值而被剔除，
+大多数个例位于 60$^{\circ}$ E 和 180$^{\circ}$ E 之间（图 \ref{fig:arctic_lno2_production}a）。
+通过比较闪电分布（图 \ref{fig:arctic_lno2_production}a）与LNO$_{\ch{2}}$总和的分布（图 \ref{fig:arctic_lno2_production}b），
+我们发现 TROPOMI 观测到的 LNO$_{\ch{2}}$ 远离LNO$_{\ch{2}}$的排放源。
+例如，喀拉海（Kara Sea）上没有闪电发生 （77--80$^{\circ}$ N, 65--105$^{\circ}$ E）,
+但此处的LNO$_{\ch{2}}$ 总共约为 5.1 $\times$ 10$^6$ mol，
+这是由于对流层上层主导的东风对LNO$_{\ch{2}}$的输送作用，从而揭示了匹配闪电和 NO$_{\ch{2}}$的重要性。
+
+
 尽管如此，LNO$_{\ch{2}}$ 与闪击之间仍有一致的空间相关性，因此我们针对每个个例计算其 LNO$_{\ch{2}}$ 产率。
 研究结果表明，LNO$_{\ch{2}}$ 产率在陆地、沿岸和海洋处为 2.0（第 25 至第 75 个百分位数：1.3--3.1）mol每闪击、
 3.5（第 25 至第 75 个百分位数：1.1--13.0）mol每闪击
@@ -743,10 +784,21 @@ where Error$_{\* perturbed\ value}$ = (PE$_{\* perturbed\ value}$ - PE$_{default
 我们发现闪击率和 LNO$_{\ch{2}}$产率之间存在近似的幂律关系（图\ref{fig:arctic_pe_rate}b）。
 当闪击率下降2个数量级时，LNO$_{\ch{2}}$产率增加10倍，这与中纬度地区的研究结果一致\citep{Bucsela.2019,Zhang.2020b}。
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.65\textwidth]{./figures/arctic_region_mask.png}
+\caption{
+蓝色背景代表海洋，白色和橙色分别代表陆地和海岸，定义来自50 m自然地球数据。 \\
+Figure \ref{fig:arctic_region_mask}. The blue background stands for the ocean, while the white and orange ones represent land
+and coast, respectively. Definitions are from 50 m Natural Earth data.
+}
+\label{fig:arctic_region_mask}
+\end{figure}
+
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{./figures/arctic_lno2_production.png}
+\includegraphics[width=0.9\textwidth]{./figures/arctic_lno2_production.png}
 \caption{
 （a）每 0.5$^{\circ}$ $\times$ 0.5$^{\circ}$ 网格中所选个例的 GLD360 闪击总和；
 （b）每 0.5$^{\circ}$ $\times$ 0.5$^{\circ}$ 网格中由TROPOMI观测数据所得的个例LNO$_{\ch{2}}$ 总和。\\
@@ -785,24 +837,26 @@ Top 10 lightning NO$_{\ch{2}}$ (LNO$_{\ch{2}}$) production efficiencies from 201
 \par }
 \begin{tablenotes}
 \linespread{1}\footnotesize
-\item $^a$ 陆地和海洋由50 m Natural Earth数据分类，其中沿岸地区定义为海岸线周围500 m半径。
+\item $^a$ 陆地和海洋由50 m Natural Earth数据分类，其中沿岸地区定义为海岸线周围500 m半径，详见图\ref{arctic_region_mask}。
 \item $^b$ 连续轨道间隔期间的总闪击数。
-\item $^a$ The land and ocean are classified by the 50 m Natural Earth data, where the coastal region is defined as a 500 m radius around the coastline.
+\item $^a$ The land and ocean are classified by the 50 m Natural Earth data, where the coastal region is defined as a 500 m radius around the coastline (Details see Fig. \ref{arctic_region_mask}).
 \item $^b$ The total number of strokes during the interval between consecutive orbits.
 \end{tablenotes}
 \end{table}
 
+
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.85\textwidth]{./figures/arctic_pe_rate.png}
+\includegraphics[width=0.9\textwidth]{./figures/arctic_pe_rate.png}
 \caption{
 （a）三个区域（沿岸、陆地和海洋）的LNO$_{\ch{2}}$产率（棕色）和闪击频率（蓝色），
-其中沿岸地区为海岸线周围 500 m 的半径。
-海岸区域定义为海岸线周围 500 m 半径范围内。
+其中沿岸地区为海岸线周围 500 m 的半径，
+海岸区域定义为海岸线周围 500 m 半径范围内，详见图\ref{arctic_region_mask}。
 箱线图表示中值，下边界和上边界分别代表第 25 个和第 75 个百分位数，上下误差线分别代表第 10 个和第 90 个百分位数；
 （b）LNO$_{\ch{2}}$ 产率与闪击频率的关系，叠加每个 5$\times$10$^{-9}$ m$^{-2}$ h$^{-1}$ 中个例占比的直方图。 \\
 Figure \ref{fig:arctic_pe_rate}. (a) Comparison of lightning NO$_{\ch{2}}$ (LNO$_{\ch{2}}$) production efficiency (brown) and stroke rate (blue) for three regions: coast, land, and ocean.
-The coast region is defined as a 500 m radius around the coastline.
+The coast region is defined as a 500 m radius around the coastline (Details see Fig. \ref{arctic_region_mask}).
 The box plots indicate the median values; the lower and upper boundaries represent the 25th and 75th percentiles, respectively, and the lower and upper error lines are the 10th and 90th percentiles, respectively.
 (b) LNO$_{\ch{2}}$ production efficiency vs stroke rate, with histograms of case fractions in each 5$\times$10$^{-9}$ m$^{-2}$ h$^{-1}$ stroke rate bin overlaid.
 }
@@ -849,9 +903,11 @@ The box plots indicate the median (black line) and mean (red line) values; the l
 \label{fig:arctic_no2_comp}
 \end{figure}
 
+\begin{landscape}
+\vspace*{\fill}
 \begin{figure}[H]
 \centering
-\includegraphics[width=15cm]{./figures/arctic_large_lno2.png}
+\includegraphics[width=0.9\columnwidth]{./figures/arctic_large_lno2.png}
 \caption{
 （a）在 500 hPa气压层水平传输的包含闪电 NO$_{\ch{2}}$ 的空气块；
 （b）TROPOMI 观测到的 NO$_{\ch{2}}$ 对流层柱浓度；
@@ -862,7 +918,28 @@ Figure \ref{fig:arctic_large_lno2}. (a) Transported air parcels containing light
 }
 \label{fig:arctic_large_lno2}
 \end{figure}
+\vspace*{\fill}
+\end{landscape}
 
+\begin{landscape}
+\vspace*{\fill}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\columnwidth]{./figures/arctic_emission_comp.png}
+\caption{
+北极地区6--8月的NO$_{\ch{x}}$月排放量
+（a）人为排放（包括船舶排放）；（b）土壤排放；
+（c）船舶排放。
+闪电 NO$_{\ch{x}}$ 排放是 2019 年至 2021 年的平均值，
+其他排放来自哥白尼大气监测服务（CAMS）2018 年全球排放清单。\\
+Figure \ref{fig:arctic_emission_comp}. Monthly NO$_{\ch{x}}$ emissions in the Arctic from June to August.
+(a) Anthropogenic emissions including ship emissions, (b) soil emissions, and (c) lightning emissions.
+The lightning NO$_{\ch{x}}$ emissions are the mean values from 2019 to 2021, while the other emissions are from the 2018 Copernicus Atmosphere Monitoring Service (CAMS) global emission inventories.
+}
+\label{fig:arctic_emission_comp}
+\end{figure}
+\vspace*{\fill}
+\end{landscape}
 
 由于闪击频率计算所用到的面积取决于TROPOMI中LNO$_{\ch{2}}$的选区，
 我们将闪击数乘以三个地区各自的 LNO$_{\ch{2}}$ 产率的中值，并将它们相加作为北极地区（$>$ 70$^{\circ}$ N）LNO$_{\ch{2}}$的总排放量（表\ref{table:arctic_emission}）。
@@ -888,19 +965,6 @@ Figure \ref{fig:arctic_large_lno2}. (a) Transported air parcels containing light
 未来的飞机观测，如深对流云和化学项目[DC3，\citet{Barth.2019}]，
 可以提供更详细的 LNO$_{\ch{2}}$ 廓线，并提高我们对北极地区空气污染和气候变化的理解\citep{Law.2007,Schmale.2018}。
 
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=16cm]{./figures/arctic_cape_aod.png}
-\caption{
-2019至2021年6--8月平均 GLD360 闪击频率、对流有效位能（CAPE，来自 ERA5）和气溶胶光学厚度（550 nm 处的 AOD，来自 MERRA-2）。\\
-Figure \ref{fig:arctic_cape_aod}.
-Mean GLD360 lightning stroke rate, convective available potential energy (CAPE, from ERA5), and aerosol optical depth (AOD at 550 nm, from MERRA-2) during June--August 2019–-2021.
-}
-\label{fig:arctic_cape_aod}
-\end{figure}
-
-
 由于预计北极闪电会随着全球变暖而增加，因此准确的闪电观测、模拟和验证对于 LNO$_{\ch{2}}$ 的分析非常重要。
 由于北极大部分地区被海洋或冰覆盖，地基闪电探测网的探测效率仍然很低\citep{Vagasky.2022}。
 此外北极目前可用的闪电参数化主要集中在陆地，尤其是永冻区\citep{Chen.2021a}，
@@ -915,16 +979,57 @@ Mean GLD360 lightning stroke rate, convective available potential energy (CAPE, 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{./figures/arctic_emission_comp.png}
+\includegraphics[width=\textwidth]{./figures/arctic_cape_aod.png}
 \caption{
-北极地区6--8月的NO$_{\ch{x}}$月排放量
-（a）人为排放（包括船舶排放）；（b）土壤排放；
-（c）船舶排放。
-闪电 NO$_{\ch{x}}$ 排放是 2019 年至 2021 年的平均值，
-其他排放来自哥白尼大气监测服务（CAMS）2018 年全球排放清单。\\
-Figure \ref{fig:arctic_emission_comp}. Monthly NO$_{\ch{x}}$ emissions in the Arctic from June to August.
-(a) Anthropogenic emissions including ship emissions, (b) soil emissions, and (c) lightning emissions.
-The lightning NO$_{\ch{x}}$ emissions are the mean values from 2019 to 2021, while the other emissions are from the 2018 Copernicus Atmosphere Monitoring Service (CAMS) global emission inventories.
+2019至2021年6--8月平均 GLD360 闪击频率、对流有效位能（CAPE，来自 ERA5）和气溶胶光学厚度（550 nm 处的 AOD，来自 MERRA-2）。\\
+Figure \ref{fig:arctic_cape_aod}.
+Mean GLD360 lightning stroke rate, convective available potential energy (CAPE, from ERA5), and aerosol optical depth (AOD at 550 nm, from MERRA-2) during June--August 2019–-2021.
 }
-\label{fig:arctic_emission_comp}
+\label{fig:arctic_cape_aod}
 \end{figure}
+
+
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=\textwidth]{./figures/arctic_emission_comp.png}
+% \caption{
+% 北极地区6--8月的NO$_{\ch{x}}$月排放量
+% （a）人为排放（包括船舶排放）；（b）土壤排放；
+% （c）船舶排放。
+% 闪电 NO$_{\ch{x}}$ 排放是 2019 年至 2021 年的平均值，
+% 其他排放来自哥白尼大气监测服务（CAMS）2018 年全球排放清单。\\
+% Figure \ref{fig:arctic_emission_comp}. Monthly NO$_{\ch{x}}$ emissions in the Arctic from June to August.
+% (a) Anthropogenic emissions including ship emissions, (b) soil emissions, and (c) lightning emissions.
+% The lightning NO$_{\ch{x}}$ emissions are the mean values from 2019 to 2021, while the other emissions are from the 2018 Copernicus Atmosphere Monitoring Service (CAMS) global emission inventories.
+% }
+% \label{fig:arctic_emission_comp}
+% \end{figure}
+
+\section{本章小结}
+
+本章建立了基于卫星遥感NO$_{\ch{2}}$柱浓度定量分析不同污染背景下LNO$_{\ch{2}}$的
+计算方法，得到了不同污染程度地区的LNO$_{\ch{x}}$产率，并与其他NO$_{\ch{x}}$排放源进行了对比。主要结论如下：
+
+\begin{enumerate}[label=（\arabic*）, labelindent=\parindent, nosep, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
+
+\item 2019年和2020年中国东南部的两个对流个例分析表明，TROPOMI 的像素饱和效应导致无法获得旺盛对流处的LNO$_{\ch{x}}$，
+因此我们提出计算消散阶段的LNO$_{\ch{x}}$，并得到中国东南部的LNO$_{\ch{x}}$产率为 60 $\pm$ 33 mol NO$_{\ch{x}}$每闪电。
+未来的研究可同时利用旺盛和消散对流期间 OMI或TROPOMI 的有效数据，从而量化和改进 LNO$_{\ch{x}}$ 的产量估计。
+
+\item 将设置不同LNO$_{\ch{2}}$产率的WRF-Chem高分辨率结果代入TROPOMI NO$_{\ch{2}}$柱浓度的计算，
+敏感性试验结果显示，若考虑LNO$_{\ch{2}}$的贡献则AMF$_{\ch{trop}}$在新生闪电区会降低23\%，而在出流区和老化区会增加60\%。
+
+\item 针对清洁地区（北极）的深对流，我们利用极轨卫星在北极地区连续过境的特性，
+开发了TROPOMI LNO$_{\ch{2}}$柱浓度高值区的自主识别系统，提出了通过相邻过境数据来定量计算 LNO$_{\ch{2}}$ 寿命和产率的方法。
+
+\item 2019至2021年6--8月的分析结果表明，北极地区对流附近的LNO$_{\ch{2}}$寿命为3 h，
+与污染地区的LNO$_{\ch{2}}$寿命相似，例如美国地区的3 h \citep{Nault.2017}。
+北极陆地地区的LNO$_{\ch{2}}$ 产率 [2.0（1.3--3.1）mol每闪击] 与\citet{Lapierre.2020}在美国的研究结果（1.6 $\pm$ 0.1 mol每闪击）相近，但相当于本研究在美国大陆结果（6 $\pm$ 3 mol每闪击）的最小值。
+此外北极海洋性闪电产生的 NO$_{\ch{2}}$是陆地性闪电的6倍，
+因此当闪电在北极海洋和陆地上增加相同数量时，海洋性闪电将产生更多的 LNO$_{\ch{2}}$。
+基于得到的LNO$_{\ch{2}}$产率，我们进一步得出北极地区夏季（6--8 月）LNO$_{\ch{x}}$ 的平均排放量为219吨氮，
+约等于该地区人为 NO$_{\ch{x}}$ 排放量的 5\%。
+
+\end{enumerate}
+
+

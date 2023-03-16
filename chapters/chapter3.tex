@@ -1,8 +1,21 @@
 %!TEX root = ../thesis.tex
 
-\chapter{闪电氮氧化物的反演算法}
+\chapter{闪电二氧化氮的反演算法} \label{sec:retrieval}
 
-\section{基于卫星遥感的闪电氮氧化物反演}
+由于地表人为排放的NO$_{\ch{x}}$需经过传输过程才能抵达自由对流层，进而影响该层O$_{\ch{3}}$浓度，
+而闪电直接在对流层中上层产生NO$_{\ch{x}}$，该层的低温导致LNO$_{\ch{x}}$寿命更长，
+所以LNO$_{\ch{x}}$可对该层的O$_{\ch{3}}$浓度产生更大的影响。
+然而，尽管前人针对LNO$_{\ch{x}}$开展了一系列研究（见\ref{sec:intro_lnox}节），
+由于难以原位观测或实验室重现，所以LNO$_{\ch{x}}$的产率仍有很高的不确定性。
+本章旨在通过使用卫星观测和云分辨化学模式来改进对LNO$_{\ch{x}}$的估算。
+
+本章余下部分按以下方式组织：
+\ref{sec:retrieval_method}节将OMI/TROPOMI观测与WRF-Chem模式相结合，
+开发LNO$_2$柱浓度的反演算法，并讨论其适用条件及范围。
+\ref{sec:retrieval_comp}节将该算法应用于北美大陆地区，并将所得的LNO$_2$产率与前人研究进行对比，分析其差异性和不确定性，
+最后是本章小结。
+
+\section{基于卫星遥感的闪电二氧化氮反演} \label{sec:retrieval_method}
 
 \subsection{算法基础} \label{sec:amf_definition}
 
@@ -218,10 +231,9 @@ Table \ref{table:CRFs}. LNO$_{\ch{x}}$ production efficiencies for different thr
 \label{table:CRFs}
 \end{table}
 
-\section{反演结果的对比验证分析}
+\section{反演结果的对比验证分析} \label{sec:retrieval_comp}
 
 \subsection{不同反演算法之间的差异性}
-
 
 % \citet{Lapierre.2020}基于 BEHR NO$_{\ch{2}}$ 产品得出 LNO$_{\ch{2}}$ 产量，
 为了使本研究的结果与\citet{Pickering.2016}和\citet{Lapierre.2020}的结果具有可比性，我们选择 NO$_{\ch{2}}$  而不是 NO$_{\ch{x}}$  来计算产率。
@@ -637,3 +649,23 @@ LNO$_{\ch{2}}$ 类型和 LNO$_{\ch{x}}$ 类型的净不确定性分别为 48\% �
 对于基于闪击的结果，\citet{Lapierre.2020}得到的LNO$_{\ch{2}}$产率较低，为1.6 $\pm$ 0.1 mol NO$_{\ch{2}}$每闪击。
 该差异是由不同版本的 BEHR 算法和其他设置引起的，由于我们的方法将云下LNO$_{\ch{2}}$考虑进总的LNO$_{\ch{2}}$，所以得到的LNO$_{\ch{2}}$产量可能会更大，尤其是对于高的云层。
 
+
+\section{本章小结}
+
+本章建立了基于卫星遥感NO$_{\ch{2}}$柱浓度定量分析不同污染背景下LNO$_{\ch{2}}$的
+计算方法，得到了不同污染程度地区的LNO$_{\ch{x}}$产率，并与其他NO$_{\ch{x}}$排放源进行了对比。主要结论如下：
+
+\begin{enumerate}[label=（\arabic*）, labelindent=\parindent, nosep, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
+
+\item 针对污染地区的深对流，我们利用WRF-Chem的高分辨率模拟结果，
+定义了LNO$_{\ch{2}}$和LNO$_{\ch{x}}$的大气质量因子（AMF），
+从而得到包含了云下LNO$_{\ch{2}}$和LNO$_{\ch{x}}$的柱浓度。
+我们利用云辐射分数、地基探测的闪电阈值、模拟的闪电数$\geq$1000 和云上LNO$_{\ch{2}}$占比$\geq$50\%来确保WRF-Chem 成功模拟出对流并且LNO$_{\ch{2}}$能够被OMI检测。
+由于新定义的AMF考虑了对流层的背景污染，因此该方法较前人方法的改进之处在于可以同时适用于清洁和污染区域。
+
+\item 2014年5--8月的分析结果表明，美国大陆夏季的 LNO$_{\ch{2}}$ 和 LNO$_{\ch{x}}$平均产率为
+32 $\pm$ 15 mol NO$_{\ch{2}}$每闪电、90 $\pm$ 50 mol NO$_{\ch{x}}$每闪电、6 $\pm$ 3 mol NO$_{\ch{2}}$每闪击，以及17 $\pm$ 10 mol NO$_{\ch{x}}$每闪击。
+由于现阶段其他地区（如中国和印度）NO$_{\ch{2}}$ 污染比美国大陆严重，因此LNO$_{\ch{x}}$的估算有必要详细考虑NO$_{\ch{2}}$背景污染。
+此外区域和全球模式还需开发更为完善的闪电参数化，进而提高局地和全球范围内LNO$_{\ch{x}}$排放估算的准确性。
+
+\end{enumerate}
