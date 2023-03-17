@@ -558,7 +558,7 @@
 			\end{tabularx}
 
 			\setstretch{1}
-			\begin{textblock}{13.2}(3.3, 17.8)
+			\begin{textblock}{13.2}(3.3, 18.4)
 				\zihao{5} 
 				\zihao{-3}
 				\renewcommand\arraystretch{1.5}
