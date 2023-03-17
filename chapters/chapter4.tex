@@ -4,10 +4,10 @@
 
 由于LNO$_2$不仅存在于对流旺盛期，也可使得对流初生和消散阶段出现NO$_2$高值，
 因此本章在第\ref{sec:retrieval}章开发的LNO$_2$反演算法基础之上，
-计算污染地区（中国东南部）和清洁地区（北极）不同阶段对流的LNO$_2$产率。
+计算并比较污染地区（中国东南部）和清洁地区（北极）不同阶段对流的LNO$_2$产率。
 
 本章余下部分按照以下方式组织：
-\ref{sec:china}节在\ref{sec:retrieval}章的基础上计算中国东南部消散对流的LNO$_{\ch{x}}$柱浓度和产率，
+\ref{sec:china}节在\ref{sec:retrieval}章的基础上计算中国东南部消散对流的LNO$_{\ch{2}}$柱浓度和产率，
 并分析LNO$_2$对于TROPOMI NO$_{\ch{2}}$柱浓度产品的影响。
 \ref{sec:arctic}节利用TROPOMI在北极地区的相邻过境数据，
 计算LNO$_{\ch{2}}$的产率和产量，分析其海陆性差异，
@@ -523,6 +523,7 @@ VIIRS 搭载在 Suomi 国家极地轨道合作伙伴 （Suomi-NPP）上，
 如图 \ref{fig:workflow}b 所示，我们使用 ECMWF 小时大气再分析资料（ERA5） 的风场数据\citep{Hersbach.2020}，
 对含LNO$_{\ch{2}}$ 的空气块进行水平平流输送，并得到TROPOMI 过境时空气块的位置。
 最终所有的空气块组成一个闪电掩膜（图 \ref{fig:workflow}c中的橙色圆圈），即三个等压面的前向轨迹构成了一个近似的 LNO$_{\ch{2}}$ 区域。
+由于北极地区SZA
 
 我们首先使用分水岭方法得到对流层NO$_{\ch{2}}$垂直柱浓度（$V_{\ch{NO2}}$）的高值区（图 \ref{fig:workflow}c中的像素）。
 具体而言，分水岭方法将输入数据视为地形表面，并将它们分成单独的区域，称为集水盆地\citep{Soille.1990,Heikenfeld.2019a}。
@@ -1007,17 +1008,17 @@ Mean GLD360 lightning stroke rate, convective available potential energy (CAPE, 
 
 \section{本章小结}
 
-本章建立了基于卫星遥感NO$_{\ch{2}}$柱浓度定量分析不同污染背景下LNO$_{\ch{2}}$的
-计算方法，得到了不同污染程度地区的LNO$_{\ch{x}}$产率，并与其他NO$_{\ch{x}}$排放源进行了对比。主要结论如下：
+本章建立了基于卫星遥感NO$_{\ch{2}}$柱浓度定量分析污染和清洁背景下LNO$_{\ch{2}}$的计算方法，
+得到了不同污染程度地区的LNO$_{\ch{2}}$产率，并与其他NO$_{\ch{x}}$排放源进行了对比。主要结论如下：
 
 \begin{enumerate}[label=（\arabic*）, labelindent=\parindent, nosep, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
 
-\item 2019年和2020年中国东南部的两个对流个例分析表明，TROPOMI 的像素饱和效应导致无法获得旺盛对流处的LNO$_{\ch{x}}$，
-因此我们提出计算消散阶段的LNO$_{\ch{x}}$，并得到中国东南部的LNO$_{\ch{x}}$产率为 60 $\pm$ 33 mol NO$_{\ch{x}}$每闪电。
+\item 2019年和2020年中国东南部的两个对流个例分析表明，TROPOMI 的像素饱和效应导致无法获得旺盛对流处的LNO$_{\ch{2}}$，
+因此我们提出计算消散阶段的LNO$_{\ch{2}}$，并得到中国东南部的LNO$_{\ch{x}}$产率为 60 $\pm$ 33 mol NO$_{\ch{x}}$每闪电。
 未来的研究可同时利用旺盛和消散对流期间 OMI或TROPOMI 的有效数据，从而量化和改进 LNO$_{\ch{x}}$ 的产量估计。
 
 \item 将设置不同LNO$_{\ch{2}}$产率的WRF-Chem高分辨率结果代入TROPOMI NO$_{\ch{2}}$柱浓度的计算，
-敏感性试验结果显示，若考虑LNO$_{\ch{2}}$的贡献则AMF$_{\ch{trop}}$在新生闪电区会降低23\%，而在出流区和老化区会增加60\%。
+敏感性试验结果显示若考虑LNO$_{\ch{2}}$的贡献则AMF$_{\ch{trop}}$在新生闪电区会降低23\%，而在出流区和老化区会增加60\%。
 
 \item 针对清洁地区（北极）的深对流，我们利用极轨卫星在北极地区连续过境的特性，
 开发了TROPOMI LNO$_{\ch{2}}$柱浓度高值区的自主识别系统，提出了通过相邻过境数据来定量计算 LNO$_{\ch{2}}$ 寿命和产率的方法。
