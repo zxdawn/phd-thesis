@@ -8,26 +8,26 @@
 但是无法获得对流云内的NO$_{\ch{2}}$。
 目前为止，有两种方法可获得对流云内的NO$_{\ch{2}}$：1）山顶测量，2）NO$_{\ch{2}}$探空。
 其中山顶测量只能针对局地的NO$_{\ch{2}}$浓度进行探测，无法获得区域的NO$_{\ch{2}}$垂直分布\citep{Reiter.1970,Wang.2021a}，
-而NO$_{\ch{2}}$探空目前仍处于发展阶段，且主要集中于边界层内\citep{Sluis.2010}，尚未开展针对对流层上层的测试和观测试验。
+而NO$_{\ch{2}}$探空目前仍处于发展阶段，且主要集中于边界层内\citep{Sluis.2010}，尚未开展对流层上层的测试和观测试验。
 因此本章将采用云切片的方法，利用TROPOMI针对不同高度深厚对流云的观测，得到云间的NO$_{\ch{2}}$和O$_{\ch{3}}$平均浓度，并利用臭氧探空和WRF-Chem针对云切片有效结果较少的中纬度地区O$_3$变化进行详细分析。
 
 本章余下部分按照以下方式组织：
 \ref{sec:cloud-slicing}节介绍云切片算法；
 \ref{sec:cld_profile}节利用云切片方法计算1$^{\circ}$ $\times$ 1$^{\circ}$ 网格内不同高度的NO$_{\ch{2}}$和O$_{\ch{3}}$平均浓度，
-并与MLS的O$_{\ch{3}}$观测、臭氧探空观测以及MERRA2-GMI模拟的O$_{\ch{3}}$和LNO$_{\ch{2}}$排放廓线进行对比分析；
+并与MLS O$_{\ch{3}}$观测、臭氧探空观测以及MERRA2-GMI模拟资料的O$_{\ch{3}}$和LNO$_{\ch{2}}$排放廓线进行对比分析；
 \ref{sec:convec_impacts}节选取中国东南部的对流个例，利用MERRA2-GMI和WRF-Chem的趋势诊断量，
 分析动力输送和化学过程在对流的不同阶段和不同部位对O$_{\ch{3}}$浓度变化的贡献，
 并通过WRF-Chem的敏感性试验探讨了LNO$_{\ch{x}}$对O$_{\ch{3}}$垂直分布的影响；
 最后是本章小结。
 
 
-\section{云切片算法} \label{sec:cloud-slicing}
+\section{云切片算法介绍} \label{sec:cloud-slicing}
 
 前人研究表明，云切片方法（cloud-slicing）可用于计算云内O$_{\ch{3}}$和NO$_{\ch{2}}$的浓度，
-该方法是计算O$_{\ch{3}}$总柱浓度的对流云微分法（CCD）的拓展\citep{Ziemke.1998,Ziemke.2001}。
+该方法是计算O$_{\ch{3}}$总柱浓度的对流云微分法（CCD）拓展\citep{Ziemke.1998,Ziemke.2001}。
 简要来说，是通过线性拟合OMI或TROPOMI测得的云上NO$_{\ch{2}}$或O$_{\ch{3}}$柱浓度和$p_{cloud}$的斜率，从而得到NO$_{\ch{2}}$或O$_{\ch{3}}$的浓度，计算方法的框架见图\ref{fig:cloud-slicing_schematic}。
 
-以TROPOMI的NO$_{\ch{2}}$产品为例，对于不同的$p_{cloud}$我们需要至少两个邻近的云上$V_{\ch{NO2}}$（$V_{\ch{NO2Vis}}$，图\ref{fig:cloud-slicing_schematic}a），这两个测量的结果显示在图\ref{fig:cloud-slicing_schematic}b 中的$p_{cloud}$-VCD 坐标平面中。
+以TROPOMI的NO$_{\ch{2}}$产品为例，对于不同的$p_{cloud}$至少需要两个邻近的云上$V_{\ch{NO2}}$（$V_{\ch{NO2Vis}}$，图\ref{fig:cloud-slicing_schematic}a），这两个测量的结果显示在图\ref{fig:cloud-slicing_schematic}b 中的$p_{cloud}$-VCD 坐标平面中。
 两个气压层$p_1$ 和 $p_2$（$p_1$ $<$ $p_2$）之间的$V_{\ch{NO2}}$
 可以通过对$p_1$--$p_2$间的NO$_{\ch{2}}$体积混合比（$VMR_{\ch{NO2}}$）进行积分得出：
 \begin{equation} \label{eq:vmr_integ}
@@ -42,7 +42,7 @@ VMR_{\ch{NO2}} = \frac{\Delta V_{\ch{NO2Vis}}}{\Delta p} \frac{k_B g}{R_{air}}
 从这个关系式可以看出，TROPOMI云压范围内的$VMR_{\ch{NO2}}$与$V_{\ch{NO2Vis}}$和$p_{cloud}$的拟合斜率成正比（图\ref{fig:cloud-slicing_schematic}c）。
 如果有两个以上的观测值，则可以从线性拟合中推导出$VMR_{\ch{NO2}}$的置信区间，
 即图\ref{fig:cloud-slicing_schematic}c中$VMR_{\ch{NO2}}$的云压范围（垂直误差条）以及置信区间（水平误差条）。
-在本文中，我们利用TROPOMI、TM5和MERRA2-GMI数据生成了各自在2019年6--8月对流层各高度区间内的平均$VMR_{\ch{NO2}}$，其中$p_{cloud}$位于以 330、450、570、670、770 和 870 hPa 为底的云压区间内。
+在本研究中，利用TROPOMI、TM5和MERRA2-GMI数据生成了各自在2019年6--8月对流层各高度区间内的平均$VMR_{\ch{NO2}}$，其中$p_{cloud}$位于以 330、450、570、670、770 和 870 hPa 为底的云压区间内。
 由于TM5的NO$_{\ch{2}}$为TROPOMI NO$_{\ch{2}}$的附属产品，
 故利用与下文TROPOMI相同的筛选条件进行数据筛选。
 而MERRA2-GMI则选择当地时下午2点的模拟数据，计算每个云层区间内的最大云量，若某区间内的最大云量$>$ 0.4，则判断该区间为多云，并计算平均$VMR_{\ch{NO2}}$。
@@ -64,7 +64,7 @@ VMR_{\ch{NO2}} = \frac{\Delta V_{\ch{NO2Vis}}}{\Delta p} \frac{k_B g}{R_{air}}
 具体而言，$V_{\ch{NO2Vis}}$有两种计算方法：
 1）基于近朗伯多云AMF假设，即具有较大总光学深度的散射云均匀分布在薄层上\citep{Choi.2014}；
 2）几何AMF，即$AMF_{\ch{geo}}$ = sec(SZA) + sec(VZA)，其中 SZA 和 VZA 分别是太阳和视角天顶角\citep{Marais.2018,Marais.2021}。
-由于对流层上层中NO$_{\ch{2}}$垂直分布的不确定性\citep{Travis.2016}，我们使用$AMF_{\ch{geo}}$来计算云切片方法需要的$V_{\ch{NO2Vis}}$。
+由于对流层上层中NO$_{\ch{2}}$垂直分布的不确定性\citep{Travis.2016}，本研究使用$AMF_{\ch{geo}}$来计算云切片方法需要的$V_{\ch{NO2Vis}}$。
 \citet{Choi.2014}的研究表明，该计算方法得到的$V_{\ch{NO2Vis}}$在对流层中层（650 hPa）最多比近朗伯多云AMF方法计算的结果高14\%。
 因此，云切片算法中的$V_{\ch{NO2Vis}}$表达式如下：
 \begin{equation} \label{eq:AMF_geo}
@@ -76,12 +76,13 @@ V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
 其中$S_{\ch{total}}$是总NO$_{\ch{2}}$斜柱浓度，$V_{\ch{strat}}$为平流层NO$_{\ch{2}}$垂直柱浓度，$AMF_{\ch{strat}}$为平流层空气质量分子。
 
 
-虽然云切片方法无需知道具体的平流层NO$_{\ch{2}}$柱浓度即可推导出对流层的$VMR_{\ch{NO2}}$，但它依赖于以下假设和条件：
+虽然云切片方法无需知道具体的平流层NO$_{\ch{2}}$柱浓度，
+即可推导出对流层的$VMR_{\ch{NO2}}$，但它依赖于以下假设和条件：
 1）有相对大量的多云像素处于邻近位置，且这些像素具有足够的云压变化；
 2）NO$_{\ch{2}}$在给定的云压和空间范围内，需在垂直和水平方向上充分混合；
 3）平流层柱浓度在像素区域内保持不变；
 4）计算得到的$VMR_{\ch{NO2}}$绝对量级仅与$V_{\ch{NO2Vis}}$具有一样的准确度，云压也可能会带来额外的不确定性。
-因此，我们参考\citet{Marais.2021}设置了以下条件来获得有效的云切片结果。
+因此，本研究参考\citet{Marais.2021}设置了以下条件来获得有效的云切片结果。
 首先将SZA $\geq$ 80$^{\circ}$ 和表面反照率 $\geq$  30\%的像素数据去除。
 接着提取多云的像素[云辐射分数（CRF）$>$ 0.7]，以最大限度地减少来自对流层下层的污染。
 然后将每日的像素分配到1$^{\circ}$ $\times$ 1$^{\circ}$的网格中，保留满足云压具有足够大的变化范围[云压距离 $>$ 0.5*（最高云的气压 - 最低云的气压），且标准差$>$ 30 hPa]和充分混合的NO$_{\ch{2}}$（NO$_{\ch{2}}$ 垂直梯度 < 0.33 pptv hPa$^{-1}$）的像素。
@@ -115,16 +116,16 @@ V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
 如中国东部、欧洲和北美东北部的工业源以及非洲中部的生物质燃烧。
 污染物排放在低云（670--870 hPa）的云上NO$_{\ch{2}}$柱浓度分布中最为明显，然而由于热带地区云顶较高，有效数据更少。
 
-利用\ref{sec:cloud-slicing}节的云切片算法，可进一步得到每层的NO$_{\ch{2}}$浓度，即NO$_{\ch{2}}$廓线。
+利用\ref{sec:cloud-slicing}节的云切片算法，可进一步得到每个高度层间的NO$_{\ch{2}}$浓度，即NO$_{\ch{2}}$廓线。
 图\ref{fig:utno2_tropomi}为2019年6--8月不同高度的NO$_{\ch{2}}$平均浓度。
 与图\ref{fig:no2geo_tropomi}的云上NO$_{\ch{2}}$柱浓度不同，
 高云处的NO$_{\ch{2}}$浓度（图\ref{fig:utno2_tropomi}a,b）高于中云（图\ref{fig:utno2_tropomi}c,d）。
 其中陆地上对流层顶--330 hPa间的NO$_{\ch{2}}$浓度为330--450 hPa间的$\sim$1.2倍，为450--570 hPa间的$\sim$2倍，
 而570 hPa以下（图\ref{fig:utno2_tropomi}d--f）陆地上的NO$_{\ch{2}}$浓度逐渐上升。
-该现象与前人的模式模拟和飞机观测结果相符：LNO$_{\ch{2}}$在对流层上层占主导，
-而人为污染NO$_{\ch{2}}$在对流层下层占主导\citep{Pickering.1996,Ott.2010,Laughner.2017}。
+该现象与前人的模式模拟和飞机观测结果相符：在对流层上层的NO$_{\ch{2}}$中LNO$_{\ch{2}}$占主导，
+而在对流层下层的NO$_{\ch{2}}$中人为污染排放占主导\citep{Pickering.1996,Ott.2010,Laughner.2017}。
 
-为了进一步分析LNO$_{\ch{2}}$在其中的作用，我们首先将各个高度层的TROPOMI观测结果与MERRA2-GMI的模式结果相比较，
+为了进一步分析LNO$_{\ch{2}}$在其中的作用，本研究首先将各个高度层的TROPOMI观测结果与MERRA2-GMI的模式结果相比较，
 接着选取TROPOMI云切片各层均有有效数据的区域，结合过境期间模拟的LNO$_{\ch{2}}$排放速率垂直分布进行廓线分析。
 图\ref{fig:utno2_merra2}为2019年6--8月与TROPOMI对应的MERRA2-GMI NO$_{\ch{2}}$模拟结果，
 % 由两者浓度之差（TROPOMI - MERRA2-GMI，图\ref{fig:utno2_delta}）可知，无论位于陆地还是海洋，MERRA2-GMI较TROPOMI存在20--80 pptv的低估，
@@ -182,7 +183,7 @@ V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
 主要位于北美、东欧以及亚洲东部沿海（图\ref{fig:utno2_delta}a,b），
 这意味着MERRA2-GMI全球模式中参数化对流垂直传输污染物的强度可能偏低。
 而高云间的NO$_{\ch{2}}$负误差（-12 $\pm$ 11 pptv）位于美国中部、非洲中部以及青藏高原西南部。
-美国中部和非洲中部的误差是由于MERRA2-GMI中的闪电参数化（对流层上层的向上云质量通量）高估了该区域的闪电总量，从而导致NO$_{\ch{2}}$浓度偏大\citep{Allen.2002,Allen.2010}。
+美国中部和非洲中部的误差是由于MERRA2-GMI中的闪电参数化（基于对流层上层的向上云质量通量）高估了该区域的闪电总量，从而导致NO$_{\ch{2}}$浓度偏大\citep{Allen.2002,Allen.2010}。
 由LIS/OTD闪电观测数据（图\ref{fig:no2_ltngcount}c）可知，
 青藏高原西南部闪电强度较弱，故模式的高估主要应来自于亚洲夏季风的污染物输送。
 
@@ -223,13 +224,14 @@ V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
 
 
 
-除了各层NO$_{\ch{2}}$浓度的地理分布之外，我们选取了区域内云切片有效层数为6层的格点
+除了各层NO$_{\ch{2}}$浓度的地理分布之外，本研究选取了区域内云切片有效层数为6层的格点
 （分别位于中国南部、印度中部、美国东南部以及太平洋，图\ref{fig:no2_ltngcount}a），
 进行TM5、MERRA2-GMI和TROPOMI的廓线对比分析，
 其中TM5的NO$_{\ch{2}}$廓线为TROPOMI官方产品使用的TM5全球模式先验廓线（包含TROPOMI同化）。
-由于TROPOMI在太平洋清洁地区的高估，我们将云切片结果进行校正，即除以其与MERRA2-GMI和TROPOMI比例的平均值。
+由于TROPOMI的NO$_{\ch{2}}$观测在太平洋清洁地区存在高估，
+本研究将云切片结果进行校正，即除以其与MERRA2-GMI和TROPOMI比例的平均值。
 如图\ref{fig:utno2_profile}所示，太平洋清洁地区NO$_{\ch{2}}$在对流层各层浓度分布均一（2.5--12.5 pptv），
-中国南部和印度中部低层NO$_{\ch{2}}$污染浓度高（200--300 pptv），而美国东南部低层NO$_{\ch{2}}$浓度为50--100 pptv。
+中国南部和印度中部的对流层低层NO$_{\ch{2}}$污染浓度高（200--300 pptv），而美国东南部的对流层低层NO$_{\ch{2}}$浓度为50--100 pptv。
 由于污染地区对流层低层TROPOMI NO$_{\ch{2}}$浓度存在与图\ref{fig:utno2_delta}中类似的低估，故只比较三者在对流层中上层的NO$_{\ch{2}}$浓度大小。
 
 
@@ -254,7 +256,7 @@ V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
 对于中国南部、印度中部和美国东南部，NO$_{\ch{2}}$廓线呈“C”形：NO$_{\ch{2}}$首先随高度而下降，
 在500--600 hPa存在转折点，进而浓度上升，在对流层顶--300 hPa达到峰值（$\sim$80 pptv）。
 总体来看，对流层中上层MERRA2-GMI和TM5的NO$_{\ch{2}}$浓度相近，但均比TROPOMI的结果低，
-表明模式中LNO$_{\ch{2}}$或对流输送的污染NO$_{\ch{2}}$存在低估，与前人的飞机探测和模式结果相符\citep{Laughner.2019a}。
+表明模式中LNO$_{\ch{2}}$排放或对流输送的人为NO$_{\ch{2}}$排放存在低估，与前人的飞机探测和模式结果相符\citep{Laughner.2019a}。
 具体而言，由于TM5的同化仅包含云上的信息，TM5的中上层拐点梯度更大，
 其在对流层顶--330 hPa和330--450 hPa区间的NO$_{\ch{2}}$浓度比TROPOMI的观测结果分别低10\%和50\%，
 而MERRA2-GMI结果较TROPMI的结果低30\%。
@@ -267,11 +269,11 @@ V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
 
 \subsection{臭氧} \label{sec:o3_profile}
 
-由于LNO$_{\ch{2}}$和对流输送可对O$_{\ch{3}}$的垂直分布产生影响，因此我们接着利用云切片方法计算
-2019年6--8月中低纬度对流云不同高度O$_{\ch{3}}$的平均浓度（图\ref{fig:uto3_tropomi}），
+由于LNO$_{\ch{2}}$和对流输送可对O$_{\ch{3}}$的垂直分布产生影响，因此本研究接着利用云切片方法计算
+2019年6--8月中低纬度对流云不同高度层间的O$_{\ch{3}}$平均浓度（图\ref{fig:uto3_tropomi}），
 其有效范围比NO$_{\ch{2}}$的云切片结果（图\ref{fig:utno2_tropomi}）更广，
 尤其是在中云和高云条件下的中纬度地区（图\ref{fig:uto3_tropomi}b--d）。
-这是由于TROPOMI的O$_{\ch{3}}$二级产品中云分数为光学云识别算法（OCRA）云分数，而NO$_{\ch{2}}$二级产品中使用从氧气A波段版本S（FRESCO-S）中快速检索云的方案。
+这是由于TROPOMI的O$_{\ch{3}}$二级产品中的云分数为光学云识别算法（OCRA）云分数，而NO$_{\ch{2}}$二级产品使用从氧气A波段版本S（FRESCO-S）中快速检索云的方案。
 
 总体来看，高云处的O$_{\ch{3}}$浓度（图\ref{fig:uto3_tropomi}a--b）高于中云（图\ref{fig:uto3_tropomi}c--d），
 其中对流层顶--330 hPa间的O$_{\ch{3}}$为330--450 hPa间的$\sim$1.5倍，为450--570 hPa间的$\sim$2倍。
@@ -290,7 +292,7 @@ V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
     \label{fig:uto3_tropomi}
 \end{figure}
 
-为了进一步利用MERRA2-GMI的模式结果分析动力输送和化学反应在其中的作用，我们首先将各个高度的MERRA2-GMI模式结果与TROPOMI观测数据相比较。
+为了进一步利用MERRA2-GMI的模式结果分析动力输送和化学反应在其中的作用，本研究首先将各个高度的MERRA2-GMI模式结果与TROPOMI观测数据相比较。
 图\ref{fig:uto3_merra2}为2019年6--8月与TROPOMI对应的MERRA2-GMI O$_{\ch{3}}$模拟结果，
 图\ref{fig:uto3_delta}为TROPOMI与MERRA2-GMI在各层的结果之差（$\Delta$ O$_{\ch{3}}$）。
 总体上，非洲中部的$\Delta$ O$_{\ch{3}}$在中云和高云条件下为负（-23 $\pm$ 11 pptv，图\ref{fig:uto3_delta}a--d），
@@ -325,7 +327,7 @@ V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
 \vspace*{\fill}\clearpage
 
 鉴于高云条件下的云切片结果在中纬度地区有效数较少（图\ref{fig:uto3_tropomi}a），
-我们将MLS于261 hPa高度观测的O$_{\ch{3}}$浓度与MERRA2-GMI的O$_{\ch{3}}$模拟结果，在晴空和有云条件下分别进行对比。
+本研究将MLS于261 hPa高度观测的O$_{\ch{3}}$浓度与MERRA2-GMI的O$_{\ch{3}}$模拟结果，在晴空和有云条件下分别进行对比。
 如图\ref{fig:mls_o3_261hpa}所示，在低纬度地区两者均显示有云条件下海洋上O$_{\ch{3}}$平均浓度较晴空降低17\%，非洲中部和印度北部的O$_{\ch{3}}$平均浓度较晴空增大20\%。
 虽然晴空条件下两者在中纬度地区的O$_{\ch{3}}$浓度一致，但有云时两者的变化相反。
 具体而言，MLS观测显示有云条件下中纬度地区261 hPa高度的O$_{\ch{3}}$平均浓度比晴空时的浓度高24\%，
@@ -347,12 +349,12 @@ V_{\ch{NO2Vis}} & = \frac{S_{\ch{NO2}}}{AMF_{\ch{geo}}} \\
 \end{figure}
 
 
-除了各层O$_{\ch{3}}$浓度的地理分布之外，我们选取了区域内云切片有效层数为6层的格点（位于中国南部、印度中部、美国东南部以及太平洋，图\ref{fig:no2_ltngcount}a），
+除了各层O$_{\ch{3}}$浓度的地理分布之外，本研究选取了区域内云切片有效层数为6层的格点（位于中国南部、印度中部、美国东南部以及太平洋，图\ref{fig:no2_ltngcount}a），
 进行MERRA2-GMI和TROPOMI的廓线对比分析。
 如图\ref{fig:uto3_profile}所示，O$_{\ch{3}}$浓度在中云和高云的条件下随着高度升高而降低，
 但是由于AMF$_{\ch{geo}}$的限制，低云条件下的O$_{\ch{3}}$浓度在中国南部、印度中部和美国东南部没有显示出O$_{\ch{3}}$的高值，故接下来只比较MERRA2-GMI和TROPOMI在对流层中上层的O$_{\ch{3}}$浓度。
-对于中国南部和印度中部，MERRA2-GMI的模拟值高于TROPOMI的观测值，两者之差从570--670 hPa的20 pptv逐渐下降至对流层顶--330 hPa的2 pptv。
-对于美国东南部，TROPOMI的观测值在330--450 hPa间有一峰值，与图\ref{fig:utno2_profile}c中LNO$_{\ch{2}}$峰值相对应，
+对于中国南部和印度中部，MERRA2-GMI的模拟值高于TROPOMI的观测值，两者之差从570--670 hPa高度间的20 pptv逐渐下降至对流层顶--330 hPa高度间的2 pptv。
+对于美国东南部，TROPOMI的观测值在330--450 hPa高度间有一峰值，与图\ref{fig:utno2_profile}c中LNO$_{\ch{2}}$峰值相对应，
 而MERRA2-GMI的模拟结果在该高度不存在O$_{\ch{3}}$峰值，即MERRA2-GMI对流层上层LNO$_{\ch{2}}$的差异导致O$_{\ch{3}}$的低估。
 对于清洁的太平洋地区，两者随高度而降低的趋势一致，且误差小于5 pptv。
 总之，TROPOMI的观测结果和MERRA2-GMI的模拟结果在对流层中上层存在显著的一致性，
@@ -392,11 +394,11 @@ The gray lines are the lapse rate tropopauses.
 
 由于MERRA2-GMI和MLS得到的对流条件下中纬度地区O$_{\ch{3}}$变化尚未达成一致，
 故接下来利用中国东南部的臭氧探空试验和WRF-Chem高分辨率模拟来进行详细研究。
-对流不同阶段所测得的O$_{\ch{3}}$和Q$_v$分布如图\ref{fig:ozonesonde_profile}所示，
+臭氧探空在对流不同阶段所观测的O$_{\ch{3}}$和Q$_v$分布如图\ref{fig:ozonesonde_profile}所示。
 总体来说，对流导致对流层上层O$_{\ch{3}}$和Q$_v$浓度增大，且增强的最大值所在区域居于10--16 km 之间。
 % 其中2020年个例的对流层低层（2--8 km）O$_{\ch{3}}$浓度有较大的增加。
 两个个例均存在双谷形的O$_{\ch{3}}$廓线，但高度不同：2019年的热对流个例为2 和8 km，2020年的飑线为4 和10 km。
-尽管WRF-Chem模式倾向于低估2019年个例对流层下层和2020年个例对流层上层中的O$_{\ch{3}}$浓度，
+尽管WRF-Chem模式倾向于低估2019年个例对流层下层和2020年个例对流层上层的O$_{\ch{3}}$浓度，
 但仍再现了详细的O$_{\ch{3}}$垂直分布，故能用以分析对流影响O$_{\ch{3}}$的机制。
 其中共有三个来源可以解释对流层上层O$_{\ch{3}}$的增加：对流输送、化学反应和闪电直接产生的O$_{\ch{3}}$。
 \ref{sec:convec_impacts}节仅详细讨论前两个因素，因为闪电直接产生的O$_{\ch{3}}$
@@ -406,21 +408,23 @@ The gray lines are the lapse rate tropopauses.
 
 \subsection{动力输送和化学反应的贡献}
 
-为了探究中国东南部对流后对流层上层O$_{\ch{3}}$浓度增大的原因，我们将对流分为三个阶段（初生、发展和消散）来分析臭氧探空仪所经区域中O$_{\ch{3}}$平均浓度的垂直分布廓线变化（图\ref{fig:tendency_o3}a，d）。
-其中，2020年个例的对流层上层O$_{\ch{3}}$在整个周期内一直在增加，而2019年个例由于发展阶段低浓度O$_{\ch{3}}$空气的抬升，O$_{\ch{3}}$浓度降低，接着又开始增大，这种现象可以用发展阶段的O$_{\ch{3}}$垂直剖面来解释（图\ref{fig:tendency_o3}b），
+为了探究中国东南部对流后对流层上层O$_{\ch{3}}$浓度增大的原因，本研究将对流分为三个阶段（初生、发展和消散）来分析臭氧探空仪所经区域中O$_{\ch{3}}$平均浓度的垂直分布变化（图\ref{fig:tendency_o3}a，d）。
+其中，2020年个例的对流层上层O$_{\ch{3}}$在整个周期内一直在增加，而2019年个例由于发展阶段低浓度O$_{\ch{3}}$空气的抬升，O$_{\ch{3}}$浓度降低，接着又开始增大。
+这种现象可以用发展阶段的O$_{\ch{3}}$垂直剖面来解释（图\ref{fig:tendency_o3}b），
 低O$_{\ch{3}}$浓度的空气块通过上升气流达到16 km，然后对流后方的高O$_{\ch{3}}$浓度空气被夹卷进该区域。
 而2020年个例中观测到增加的O$_{\ch{3}}$，主要来自垂直传输的背景O$_{\ch{3}}$浓度（图\ref{fig:tendency_o3}e）。
 
-为了确定两种影响之间的差异，我们进一步分析了对流期间臭氧探空仪所经区域10--14 km的平均累积物理变化速率（IPR，图\ref{fig:tendency_o3}c，f）。
+为了确定两种影响之间的差异，本研究进一步分析了对流期间臭氧探空仪所经区域10--14 km的平均累积物理变化速率（IPR，图\ref{fig:tendency_o3}c，f）。
 其中水平平流（advh）和垂直平流（advz）的相反趋势支配着2019年对流层上层O$_{\ch{3}}$产率的下降。
 由于强上升气流使得低O$_{\ch{3}}$浓度的空气块得以抬升，故垂直平流（advz）的贡献在10--11.5 km之间为负，而在11.5到13.8km 之间为正，即存在向下输送的高浓度O$_{\ch{3}}$空气块。
 由于2020年对流个例发生后的Q$_v$较高（图\ref{fig:ozonesonde_profile}a）且对流层顶高于云区（图\ref{fig:tendency_o3}b），
-所以其上升气流不足以像中尺度对流系统一样将平流层高浓度的O$_{\ch{3}}$挟至对流层\citep{Phoenix.2020}。
-虽然动力输送在O$_{\ch{3}}$的变化中起着重要作用，但不能忽视正的化学贡献，尤其是2020年对流期间化学贡献造成对流层上层O$_{\ch{3}}$的净增加。
+所以其上升气流不足以像中尺度对流系统那样，将平流层高浓度的O$_{\ch{3}}$挟至对流层\citep{Phoenix.2020}。
+虽然动力输送在O$_{\ch{3}}$的变化中起着重要作用，但不能忽视化学的正贡献，尤其是2020年对流期间化学贡献造成对流层上层O$_{\ch{3}}$的净增加。
 具体来说，在两次个例整个生命期中化学反应对O$_{\ch{3}}$起到了正贡献，
-其影响程度是动力输送的5--10倍，从而引起对流层上层O$_3$的增加，与臭氧探空观测结果相符，揭示了化学贡献在对流整个生命期中的主导地位。
+其影响程度是动力输送的5--10倍，从而引起对流层上层O$_3$的增加。
+该结果解释了臭氧探空观测的对流层上层O$_3$浓度增大的现象，揭示了化学贡献在对流整个生命期中的主导地位。
 
-除臭氧探空所经的固定区域之外，我们也将对流分为对流核心区（组合雷达反射率$\geq$40 dBZ）和层云区（10 dBZ$\leq$组合雷达反射率$<$40 dBZ）
+除臭氧探空所经的固定区域之外，本研究也将对流分为对流核心区（组合雷达反射率$\geq$40 dBZ）和层云区（10 dBZ$\leq$组合雷达反射率$<$40 dBZ）
 来探讨旺盛期间对流不同部位的O$_3$浓度变化及其原因，
 对流分区示意图见图\ref{fig:china_classification_2019}和\ref{fig:china_classification_2020}，各区域的IPR垂直分布见图\ref{fig:tendency_o3_classification}。
 由于臭氧探空仪所经区域为对流旺盛区，所以在对流核心区内O$_3$的变化与图\ref{fig:tendency_o3}e和f相符，
@@ -466,7 +470,7 @@ The cloud boundaries [the sum of cloud liquid water mixing ratio (q$_{cloud}$) a
 \includegraphics[width=\textwidth]{./figures/china_classification_2019.png}
 \caption{
 2019年个例对流旺盛期间
-（a--c）观测的组合雷达反射率，
+（a--c）观测的组合雷达反射率和
 （d--f）对流核心区和层云区的定义。\\
 Figure \ref{fig:china_classification_2019}.
 (a--c) Observed radar composite reflectivity,
@@ -498,10 +502,10 @@ Figure \ref{fig:tendency_o3_classification}. The vertical distributions of the O
 \end{figure}
 
 由以上的中国东南部O$_{\ch{3}}$浓度变化分析可知对流云内化学贡献的重要性，
-因此我们进一步利用MERRA2-GMI的3小时平均模式结果，分析了动力（大尺度输送）、物理（湍流和对流）和化学对中低纬度O$_{\ch{3}}$的贡献。
+因此本研究进一步利用MERRA2-GMI的3小时平均模式结果，分析了动力（大尺度输送）、物理（湍流和对流）和化学对中低纬度O$_{\ch{3}}$的贡献。
 如图\ref{fig:uto3_tendency}所示，中低纬度的O$_{\ch{3}}$趋势主要由动力项主导，且噪点较多，
 物理的贡献主要为负，代表低O$_{\ch{3}}$浓度的空气向对流层上层输送。
-然而在污染地区（如美国东南部、非洲中部、印度北部以及中国东南部）化学贡献的正贡献占主导，表明O$_{\ch{3}}$的净生成。
+然而在污染地区（如美国东南部、非洲中部、印度北部以及中国东南部）化学反应的正贡献占主导，表明O$_{\ch{3}}$的净生成。
 由于对流和闪电产生较高浓度的NO$_{\ch{2}}$，这些区域的正化学贡献在阴天比晴天高50--160\%（图\ref{fig:uto3_chem_tendency}）。
 该结果与中国东南部O$_{\ch{3}}$在整个对流生命期的变化及来源相符，突出了LNO$_{\ch{2}}$对于夏季对流层上层O$_{\ch{3}}$浓度的长期影响。
 
@@ -537,11 +541,11 @@ Figure \ref{fig:tendency_o3_classification}. The vertical distributions of the O
 
 \subsection{闪电氮氧化物的贡献}
 
-我们将开启和关闭LNO排放所得到的中国东南部O$_{\ch{3}}$累计物理变化速率（IPR）进行对比，
+本研究将开启和关闭LNO排放所得到的中国东南部O$_{\ch{3}}$累计物理变化速率（IPR）进行对比，
 从而得到LNO$_{\ch{x}}$对O$_{\ch{3}}$的影响（表\ref{table:ipr}）。
 如上节所述，化学的正贡献主导了整个对流生命期间O$_{\ch{3}}$浓度的变化，是对流输送贡献的5--10倍。
 在2019年个例的对流旺盛期和整个生命周期中，LNO$_{\ch{x}}$使得O$_{\ch{3}}$的净产量分别降低了25\%和40\%。
-此外LNO$_{\ch{x}}$虽然促使对流核心区的O$_3$化学产量增加125\%，但净产量下降21\%（表\ref{table:ipr_classification}），而LNO$_{\ch{x}}$在层云区域对O$_3$的影响小于4\%。
+此外LNO$_{\ch{x}}$虽然促使对流核心区的O$_3$化学产量增加125\%，但O$_3$净产量下降21\%（表\ref{table:ipr_classification}），而LNO$_{\ch{x}}$在层云区域对O$_3$的影响小于4\%。
 对于2020年个例，由于站点附近闪电密度较小，化学贡献导致的O$_{\ch{3}}$浓度变化不显著（$\leq$1\%）。
 % 而前人研究表明，LNO$_{\ch{x}}$在日尺度范围内可提高下风向的O$_{\ch{3}}$产量\citep{Pickering.1996,DeCaria.2005}。
 % 因此，有必要准确估计LNO$_{\ch{x}}$的产率（见第\ref{chapter:PE}章）。
@@ -550,7 +554,7 @@ Figure \ref{fig:tendency_o3_classification}. The vertical distributions of the O
 
 \begin{table*}[h]
 \centering
-\caption{探空所经区域的O$_{\ch{3}}$平均累积趋势（10--14 km）\\ Table \ref{table:ipr} Process analysis table for the mean O$_{\ch{3}}$ integrated tendencies (10--14 km)}
+\caption{探空所经区域的O$_{\ch{3}}$平均累积趋势（10--14 km）\\ Table \ref{table:ipr} Process analysis table for the mean O$_{\ch{3}}$ integrated tendencies (10--14 km) at regions passed by the ozonesondes}
 \footnotesize
 {\centering
 \renewcommand{\arraystretch}{1}
@@ -616,7 +620,7 @@ Figure \ref{fig:tendency_o3_classification}. The vertical distributions of the O
 
 % \setlength{\abovedisplayskip}{3pt} % decrease space before equation
 % \setlength{\belowdisplayskip}{3pt} % decrease space after equation
-接着，我们以受LNO$_{\ch{2}}$影响更大的2019年为例，利用积分反应速率（IRR）来评估LNO$_{\ch{x}}$对$\Delta$O$_{\ch{3}}$的影响，以及O$_{\ch{3}}$变化的化学机制。
+接着，本研究以受LNO$_{\ch{2}}$影响更大的2019年为例，利用积分反应速率（IRR）来评估LNO$_{\ch{x}}$对$\Delta$O$_{\ch{3}}$的影响，以及O$_{\ch{3}}$变化的化学机制。
 % 我们分两层来看该影响，因为800--500 hPa上$\Delta$O$_{\ch{3}}$为正，500--200 hPa上$\Delta$O$_{\ch{3}}$为负。
 对流层O$_{\ch{3}}$主要由以下反应速率项控制\citep{Mazzuca.2016}：
 {
@@ -676,11 +680,11 @@ $L(\mathrm{O_3+alkenes})$为烯烃消耗O$_{\ch{3}}$的反应。
 
 \begin{enumerate}[label=（\arabic*）, labelindent=\parindent, nosep, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
 
-\item TROPOMI的云切片结果表明，陆地上对流层顶--330 hPa间的NO$_{\ch{2}}$浓度为450--570 hPa间的$\sim$2倍，570 hPa以下的NO$_{\ch{2}}$浓度逐渐上升，
-即云内的NO$_{\ch{2}}$廓线呈“C”型，说明LNO$_{\ch{2}}$ 在对流层上层占主导，而污染 NO$_{\ch{2}}$ 在对流层下层占主导。
+\item TROPOMI的云切片结果表明，陆地上对流层顶--330 hPa高度间的NO$_{\ch{2}}$浓度为450--570 hPa高度间的$\sim$2倍，570 hPa高度以下的NO$_{\ch{2}}$浓度随高度而逐渐下降，
+即云内的NO$_{\ch{2}}$廓线呈“C”型，说明在对流层上层NO$_{\ch{2}}$中LNO$_{\ch{2}}$ 占主导，而在对流层下层人为排放的NO$_{\ch{2}}$ 占主导。
 
 \item 进一步分析了TROPOMI数据与MERRA2-GMI和TM5模式结果之间的误差分布情况，
-结果表明模式中LNO$_{\ch{2}}$排放或参数化对流垂直传输污染物的强度可能偏低，
+结果表明MERRA2-GMI和TM5的LNO$_{\ch{2}}$排放或参数化对流垂直传输污染物的强度可能偏低，
 导致其在污染地区的对流层上层[对流层顶--330 hPa和330--450 hPa]的模拟结果比TROPOMI观测值低10--50\%。
 而在对流层中层和低层，由于MERRA2-GMI使用的排放清单未及时更新，
 导致污染地区（尤其是中国东部和印度北部）的NO$_{\ch{2}}$模拟平均浓度为TROPOMI观测值的$\sim$2倍。
@@ -690,7 +694,7 @@ $L(\mathrm{O_3+alkenes})$为烯烃消耗O$_{\ch{3}}$的反应。
 
 \item 在中纬地区，TROPOMI的云切片结果较少，MLS和MERRA2-GMI的对流层上层O$_{\ch{3}}$趋势相反：
 MERRA2-GMI模拟显示对流层上层O$_{\ch{3}}$浓度在有云时比晴空时浓度低26\%，而MLS观测表明有云时O$_{\ch{3}}$浓度增大24\%，
-鉴于MERRA2-GMI与TROPOMI的相近，我们将MLS在261 hPa高度层高估的O$_{\ch{3}}$浓度归因于平流层过度的外推。
+鉴于MERRA2-GMI与TROPOMI的相近，本研究将MLS在261 hPa高度层高估的O$_{\ch{3}}$浓度归因于平流层过度的外推。
 
 \item MERRA2-GMI和WRF-Chem的O$_{\ch{3}}$趋势分析结果表明，虽然动力输送项在对流旺盛期间占主导，
 但在污染地区化学反应的正贡献在整个生命期更为重要，可达动力输送的5--10倍，
@@ -698,6 +702,6 @@ MERRA2-GMI模拟显示对流层上层O$_{\ch{3}}$浓度在有云时比晴空时�
 中国东南部的对流个例模拟结果显示，对流生命期内LNO$_{\ch{x}}$可使得对流层上层O$_{\ch{3}}$
 的化学累积生成速率降低4\%，累积消耗速率增加23\%，
 最终导致该层O$_{\ch{3}}$的平均浓度降低了25\%。
-此外我们将中国东南部的对流分为对流核心区和层云区，结果表明对流核心区的动力输送作用为层云区的$\sim$2倍，层云区的O$_3$变化受核心区的输送贡献所控制。
+此外本研究将中国东南部的对流分为对流核心区和层云区，结果表明对流核心区的动力输送作用为层云区的$\sim$2倍，层云区的O$_3$变化受核心区的输送贡献所控制。
 
 \end{enumerate}
