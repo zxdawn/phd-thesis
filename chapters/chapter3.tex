@@ -238,11 +238,11 @@ Table \ref{table:CRFs}. LNO$_{\ch{x}}$ production efficiencies for different thr
 
 % \citet{Lapierre.2020}基于 BEHR NO$_{\ch{2}}$ 产品得出 LNO$_{\ch{2}}$ 产量，
 为了使本研究的结果与\citet{Pickering.2016}和\citet{Lapierre.2020}的结果具有可比性，本研究选择 NO$_{\ch{2}}$  而不是 NO$_{\ch{x}}$  来计算产率。
-在图\ref{fig:us_pe_timeseries}中，根据 CRF $\geq$ 90\% 和2.4 h 内2400次闪电的阈值，绘制了2014年5--8月美国大陆每天 NO$_{\ch{2}}$Vis、LNO$_{\ch{2}}$Vis、LNO$_{\ch{2}}$ 和 LNO$_{\ch{2}}$Clean 产率的时间序列图。
+根据 CRF $\geq$ 90\% 和2.4 h 内2400次闪电的阈值，图\ref{fig:us_pe_timeseries}绘制了2014年5--8月美国大陆NO$_{\ch{2}}$Vis、LNO$_{\ch{2}}$Vis、LNO$_{\ch{2}}$ 和 LNO$_{\ch{2}}$Clean 产率的日变化。
 其中，LNO$_{\ch{2}}$ 产率大多在 20--80 mol每闪电的范围内，LNO$_{\ch{2}}$Vis 产率小于LNO$_{\ch{2}}$产率，因为后者包含了云下的LNO$_{\ch{2}}$。
 \citet{Pickering.2016}的GMI模拟结果表明，25--30\%的LNO$_{\ch{x}}$柱浓度位于云压以下，
 而本研究的WRF-Chem模拟结果显示该比例为 36--76\%。
-云属性对 LNO$_{\ch{x}}$ 产率的影响将在\ref{sec:uncertainty}节中进行更详细地讨论。
+% 云属性对 LNO$_{\ch{x}}$ 产率的影响将在\ref{sec:uncertainty}节中进行更详细地讨论。
 总体而言，估算得到的每日产率顺序为LNO$_{\ch{2}}$Clean > LNO$_{\ch{2}}$ > NO$_{\ch{2}}$Vis > LNO$_{\ch{2}}$Vis。
 NO$_{\ch{2}}$Vis 和 LNO$_{\ch{2}}$Vis 估算得到的产率之间的相对差异（$\Delta$PE）表明，有一定量的背景 NO$_{\ch{2}}$ 存在于云层之上。
 总体而言，该 $\Delta$PE 的趋势与 NO$_{\ch{2}}$Vis 和 LNO$_{\ch{2}}$Clean 之间的$\Delta$PE 趋势一致。
@@ -341,7 +341,7 @@ NO$_{\ch{2}}$Vis产率和 LNO$_{\ch{2}}$Vis产率之间的一些较大差异，�
 如果云压在300 hPa附近，由于云层的覆盖，该比值将更小。
 因此，LNO$_{\ch{x}}$的估算需要更好地了解LNO$_{\ch{2}}$和云下LNO$_{\ch{x}}$的垂直分布。
 
-\subsection{影响因素及不确定性分析} \label{sec:uncertainty}
+% \subsection{影响因素及不确定性分析} \label{sec:uncertainty}
 
 图\ref{fig:us_delta}表明，本研究的方法在污染和清洁地区对于LNO$_{\ch{2}}$产率估算的改进程度是不同的。
 为了简化量化，本研究选择了CRF = 100\%的条件，具有相似云上NO$_{\ch{2}}$廓线（$\sim$ 100 pptv）的六个网格，这样AMF之间的差异取决于较少的参数:
@@ -413,9 +413,10 @@ $\int_{p_{\textrm cloud}}^{p_{\textrm tp}} w_{\textrm cloudy}(p) LNO_2(p) \: dp 
 一般来说，正常闪电是上层带正电和中层带负电，而异常闪电则相反\citep{Williams.1989}。
 由于异常闪电中上升气流更强且闪电频率更高，因此异常闪电的对流层上层LNO$_{\ch{x}}$浓度高于正常闪电。
 
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{./figures/us_delta.png}
+\includegraphics[width=0.95\textwidth]{./figures/us_delta.png}
 \caption{（a）2014年5--8月平均对流层NO$_{\ch{2}}$柱浓度，
 污染城市用星号表示：兰辛、新奥尔良和奥兰多，而清洁城市用三角形表示：休伦、查尔斯镇和塔伯勒；
 （b）在CRF $\geq$ 90\%条件下，NO$_{\ch{2}}$Vis 和 LNO$_{\ch{2}}$Vis平均产率的差异；
@@ -661,8 +662,8 @@ where Error$_{\ch{\* perturbed value}}$ = (PE$_{\ch{\* perturbed\ value}}$ - PE$
 
 \section{本章小结}
 
-本章建立了基于卫星遥感NO$_{\ch{2}}$柱浓度定量分析不同污染背景下LNO$_{\ch{2}}$的
-计算方法，得到了不同污染程度地区的LNO$_{\ch{x}}$产率，并与其他NO$_{\ch{x}}$排放源进行了对比。主要结论如下：
+本章基于卫星遥感NO$_{\ch{2}}$柱浓度，开发了不同污染背景下LNO$_{\ch{2}}$的
+反演方法，得到了不同污染程度地区的LNO$_{\ch{x}}$产率，并与其他NO$_{\ch{x}}$排放源进行了对比。主要结论如下：
 
 \begin{enumerate}[label=（\arabic*）, labelindent=\parindent, nosep, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
 
@@ -671,16 +672,17 @@ where Error$_{\ch{\* perturbed value}}$ = (PE$_{\ch{\* perturbed\ value}}$ - PE$
 从而得到包含了云下LNO$_{\ch{2}}$和LNO$_{\ch{x}}$的柱浓度。
 本研究设置了云辐射分数阈值（$\geq$70\%或90\%）、
 地基探测的闪电阈值（OMI过境前2.4小时内 1$^{\circ}$ $\times$ 1$^{\circ}$网格中闪电至少2400次或闪击至少8160次）、
-模拟的闪电数$\geq$1000 和云上LNO$_{\ch{2}}$占比$\geq$50\%的条件来确保WRF-Chem 成功模拟出对流并且LNO$_{\ch{2}}$能够被OMI检测。
+模拟的闪电数$\geq$1000 和云上LNO$_{\ch{2}}$占比$\geq$50\%的条件，以确保WRF-Chem 成功模拟出对流并且LNO$_{\ch{2}}$能够被OMI检测。
 由于新定义的AMF考虑了对流层的背景污染，因此该方法较前人方法的改进之处在于可以同时适用于清洁和污染区域。
 
-\item 与\citet{Lapierre.2020}相比，由于本研究的方法考虑了云下LNO$_{\ch{2}}$，
-所以在高云的条件下得到的LNO$_{\ch{2}}$ 产量将更大。
-此外若\citet{Pickering.2016}所使用的方法没有对背景NO$_{\ch{2}}$进行校正，其得到的LNO$_{\ch{2}}$产率与本研究在清洁区域或云上方LNO$_{\ch{2}}$ 浓度高的区域相似，但在污染区域可能引起超过18\%的高估。
+\item 与\citet{Lapierre.2020}相比，本研究的方法考虑了云下LNO$_{\ch{2}}$，
+因此在高云的条件下得到的LNO$_{\ch{2}}$ 产量将更大。
+此外，若\citet{Pickering.2016}所使用的方法没有对背景NO$_{\ch{2}}$进行校正，其得到的LNO$_{\ch{2}}$产率与本研究在清洁区域或云上方LNO$_{\ch{2}}$ 浓度高的区域相似，但在污染区域可能引起超过18\%的高估。
 
 \item 2014年5--8月的分析结果表明，美国大陆夏季的 LNO$_{\ch{2}}$ 和 LNO$_{\ch{x}}$平均产率为
 32 $\pm$ 15 mol NO$_{\ch{2}}$每闪电、90 $\pm$ 50 mol NO$_{\ch{x}}$每闪电、6 $\pm$ 3 mol NO$_{\ch{2}}$每闪击，以及17 $\pm$ 10 mol NO$_{\ch{x}}$每闪击。
-由于现阶段其他地区（如中国和印度）NO$_{\ch{2}}$ 污染比美国大陆严重，因此LNO$_{\ch{x}}$的估算有必要详细考虑NO$_{\ch{2}}$背景污染。
-此外区域和全球模式还需开发更为完善的闪电参数化，进而提高局地和全球范围内LNO$_{\ch{x}}$排放估算的准确性。
+然而，由于现阶段其他地区（如中国和印度）NO$_{\ch{2}}$ 污染比美国大陆严重，
+在估算LNO$_{\ch{x}}$时需要详细考虑背景污染。
+此外区域和全球模式还需开发更为完善的闪电参数化，以提高局地和全球范围内LNO$_{\ch{x}}$排放估算的准确性。
 
 \end{enumerate}
