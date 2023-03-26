@@ -117,7 +117,7 @@ IFluxP存在的另一个问题是，固定等压线上的定义不适合研究�
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{./figures/lisotd_season.png}
+\includegraphics[width=0.95\textwidth]{./figures/lisotd_season.png}
 \caption{1995--2014年LIS/OTD的季节性闪电密度分布图。\\
 Figure \ref{fig:lisotd_season}. The seasonal LIS/OTD lightning flash rates distribution (1995--2014).
 }
@@ -352,7 +352,7 @@ Figure \ref{figure:lnox_production_xin}. Estimates of LNO$_{\ch{x}}$ production 
 \citet{SunAnPing.2004}基于OTD的总闪观测资料，
 假设单次闪电能量为4.5$\times$10$^7$ J，
 没有考虑光学厚度对光能的影响及从光能到总能量的反演，
-因此该值比闪电本身的能量要小，从而可能导致估算结果偏小，仅为0.016 Tg氮每年。
+因此该值比闪电本身的能量要小，从而导致估算结果偏小，仅为0.016 Tg氮每年。
 近年来国内也有学者使用卫星观测来估算LNO$_{\ch{x}}$，但是是基于月平均或季平均数据且聚焦于清洁地区。
 如通过分析青藏高原闪电活动和NO$_{\ch{2}}$垂直柱浓度数据，
 发现LNO$_{\ch{x}}$抑制了夏季青藏高原O$_{\ch{3}}$低谷，且中国内陆地区LNO$_{\ch{x}}$的年均产量为0.15（0.03--0.38）Tg氮每年 \citep{JuXiaoYu.2015,Guo.2017,GuoFengXia.2019,Li.2022}。
@@ -451,10 +451,10 @@ H$_2$O$_{\ch{2}}$是由HO$_{\ch{2}}$自由基与其自身反应形成的。 CH$_
 
 \begin{enumerate}[label=（\arabic*）, labelindent=\parindent, nosep, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
 
-\item 由于原位观测有限，如何利用卫星资料得到不同污染程度地区的LNO$_{\ch{2}}$柱浓度和产率？
-LNO$_{\ch{2}}$的产率与哪些因素有关？对LNO$_{\ch{x}}$的产量有何影响？
+\item 由于原位观测有限，如何利用卫星资料同时得到污染和清洁地区的LNO$_{\ch{2}}$柱浓度和产率？
+%其中LNO$_{\ch{2}}$的产率又与哪些因素有关？对LNO$_{\ch{2}}$的产量有何影响？
 
-\item 除了LNO$_{\ch{2}}$柱浓度，能否利用卫星资料得到对流云的NO$_{\ch{2}}$和O$_{\ch{3}}$廓线并进行来源分析？
+\item 除LNO$_{\ch{2}}$的柱浓度之外，能否利用卫星资料得到对流期间的NO$_{\ch{2}}$和O$_{\ch{3}}$廓线并进行来源分析？
 
 \item 针对不同的深对流系统，动力输送和化学反应如何影响O$_{\ch{3}}$的垂直再分布？其中LNO$_{\ch{x}}$又起到了什么作用？
 
@@ -464,13 +464,13 @@ LNO$_{\ch{2}}$的产率与哪些因素有关？对LNO$_{\ch{x}}$的产量有何�
 
 \begin{enumerate}[label=（\arabic*）, labelindent=\parindent, nosep, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
 
-\item 利用更准确的NO$_{\ch{2}}$先验廓线，开发适用于清洁和污染地区LNO$_{\ch{2}}$柱浓度的反演算法，进而估算LNO$_{\ch{2}}$的产率。
-将卫星得到的多种二级产品与闪电数据相结合，分析LNO$_{\ch{x}}$的产率与云属性和闪电属性的关系。
+\item 开发适用于清洁和污染地区LNO$_{\ch{2}}$柱浓度的反演算法，进而估算LNO$_{\ch{2}}$的产率。
+将卫星得到的多种二级产品与闪电数据相结合，分析LNO$_{\ch{2}}$的产率与云属性和闪电属性的关系。
 
-\item 将前人的云切片算法用于不同高度的对流云，探讨其适用条件和得到的NO$_{\ch{2}}$和O$_{\ch{3}}$廓线分布，并与模拟结果进行对比分析，从而确认差异来源。
+\item 将前人的云切片算法用于不同高度的对流云，探讨其适用条件和得到的NO$_{\ch{2}}$和O$_{\ch{3}}$廓线分布，并与模拟资料进行对比分析，从而确认差异来源。
 
 \item 针对中国东南部污染地区不同的深对流系统开展联合观测，为模式模拟提供可靠数据（雷达产品、闪电定位信息以及O$_{\ch{3}}$廓线），
-并利用评估后的模式结果来进一步研究动力输送、化学反应和LNO$_{\ch{x}}$的作用。
+并利用评估后的模式结果来进一步研究动力输送、化学反应和LNO$_{\ch{x}}$对O$_{\ch{3}}$浓度的影响。
 
 \end{enumerate}
 
@@ -502,8 +502,8 @@ Figure \ref{figure:schematic_diagram}. Schematic diagram.
 % 并与其他NO$_{\ch{x}}$排放源进行对比。
 
 第五章：将云切片算法得到的NO$_{\ch{2}}$和O$_{\ch{3}}$廓线与相同条件下MERRA2-GMI模式资料进行对比，分析两者的差异及其原因。
-此外对中国东南部污染地区的联合观测试验进行分析，
-并利用WRF-Chem模式具体探讨不同类型深对流系统对O$_{\ch{3}}$的影响，
+此外对中国东南部污染地区的联合观测试验结果进行分析，
+并利用WRF-Chem模式具体探讨不同类型深对流系统对O$_{\ch{3}}$垂直分布的影响，
 得到动力输送、化学反应及LNO$_{\ch{x}}$在其中所起的作用。
 
 第六章：对全文进行总结，提炼结论，并讨论论文的创新点、不足之处，以及对于未来工作的展望。
