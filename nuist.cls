@@ -29,7 +29,7 @@
 % 设置默认中文字体 
 % 正文字体为宋体，粗体为黑体，斜体为楷体，粗斜体为隶书
 \RequirePackage{xeCJK}
-% \setCJKmainfont[BoldFont=SimHei, ItalicFont=KaiTi, BoldItalicFont=LiSu]{SimSun} % Windows
+% \setCJKmainfont[BoldFont=SimHei, ItalicFont=KaiTi, BoldItalicFont=LiSu]{SimSun} % Windows or for converting to doc
 \setCJKmainfont[BoldFont=STHeiti,ItalicFont=STKaiti, AutoFakeBold=4]{SimSun} % Mac % https://github.com/mohuangrui/ucasthesis/issues/23
 \setCJKsansfont{STHeiti}
 \setCJKfamilyfont{zhsong}{SimSun}
@@ -439,11 +439,11 @@
 			% NUIST
 			\noindent\centering\includegraphics{logo/nuist}
 			
-			% 黑体35号“硕士学位论文”
+			% 黑体35号“博士学位论文”
 			\setstretch{1}
 			\zihao{-0}{
 				\justify{9em}{
-					\noindent\centering\heiti{\nuist@degree 学位论文}
+					\noindent\centering\textbf{\nuist@degree 学位论文}
 				}
 			}
 			
@@ -460,15 +460,15 @@
 			
 			% 中文标题
 			\setstretch{1.5}  
-			\heiti\zihao{-2}
-			\begin{tabularx}{1\linewidth}{r>{\centering\arraybackslash}X}
-				论文题目：& \nuist@title \\ \cline{2-2}
+			\zihao{-2}
+			\begin{tabularx}{1\linewidth}{r>{\bfseries\centering\arraybackslash}X}
+				& \nuist@title \\% \cline{2-2}
 			\end{tabularx}
 			
 			\setstretch{1}
 			\begin{textblock}{13.2}(3.3, 18.5)
 				\zihao{5} 
-				\heiti \zihao{-3}
+				\zihao{-3}
 				\renewcommand\arraystretch{1.5}
 				\begin{tabular}{>{\raggedleft\arraybackslash}p{3.8cm}>{\centering\arraybackslash}p{7.5cm}}
 					学\hspace{0.34em}科\hspace{0.33em}名\hspace{0.34em}称：   & \nuist@major \\ \clineB{2-2}{2}
