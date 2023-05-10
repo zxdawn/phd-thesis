@@ -3,11 +3,11 @@
 \chapter{闪电二氧化氮反演算法的应用} \label{chapter:PE}
 
 由于LNO$_2$不仅存在于对流旺盛期，也可在对流初生和消散阶段出现NO$_2$高值，
-因此本章在第\ref{sec:retrieval}章开发的LNO$_2$反演算法基础之上，
-计算并比较污染地区（中国东南部）和清洁地区（北极）不同阶段对流的LNO$_2$产率。
+因此本章在第\ref{chapter:retrieval}章开发的LNO$_2$反演算法基础之上，
+计算并比较污染地区（中国东部）和清洁地区（北极）不同阶段对流的LNO$_2$产率。
 
 本章余下部分按照以下方式组织：
-\ref{sec:china}节在第\ref{sec:retrieval}章的基础上计算中国东南部对流在消散阶段的LNO$_{\ch{2}}$柱浓度和产率，
+\ref{sec:china}节在第\ref{chapter:retrieval}章的基础上计算中国东部对流在消散阶段的LNO$_{\ch{2}}$柱浓度和产率，
 并分析LNO$_2$对于TROPOMI NO$_{\ch{2}}$柱浓度产品的影响；
 \ref{sec:arctic}节利用TROPOMI在北极地区的相邻过境数据，
 计算LNO$_{\ch{2}}$的产率和产量，分析其海陆性差异，
@@ -15,11 +15,11 @@
 最后是本章小结。
 
 
-\section{污染地区（中国东南部）} \label{sec:china}
+\section{污染地区（中国东部）} \label{sec:china}
 
 \subsection{模式设置及闪电同化结果评估} \label{sec:model_settings_china}
 
-中国东南部的研究使用的WRF-Chem版本号为4.1.4，气象条件的初始场和边界场来自1小时分辨率的ERA5再分析资料。
+中国东部的研究使用的WRF-Chem版本号为4.1.4，气象条件的初始场和边界场来自1小时分辨率的ERA5再分析资料。
 模式的垂直分层为75层，对流层顶设置为50 hPa，嵌套区域如图\ref{fig:domains_china}所示。
 微物理过程使用WSM6方案\citep{Hong.2006a}，而短波和长波辐射使用RRTMG方案\citep{Iacono.2008}，陆面过程由Noah方案模拟\citep{Koren.1999}。
 但是，本研究使用不同的边界层参数化来模拟两次对流个例，2019年的个例使用YSU方案\citep{Hong.2006}，2020年的个例使用QNSE方案\citep{Sukoriansky.2005}。
@@ -46,7 +46,7 @@ and 1 km (D04).}
 \label{fig:domains_china}
 \end{figure}
 
-由于中国东南部的对流生命期短，本研究采用了闪电同化并利用晴空条件下的臭氧探空资料修正了O$_{\ch{3}}$初始场，然后将模拟结果与探空和雷达对比。
+由于中国东部的对流生命期短，本研究采用了闪电同化并利用晴空条件下的臭氧探空资料修正了O$_{\ch{3}}$初始场，然后将模拟结果与探空和雷达对比。
 闪电数据同化方法详见\citet{Fierro.2012}和\citet{Li.2017b}，主要步骤为在闪电所处网格的垂直恒温层间，增加水汽质量混合比：
 \begin{equation} \label{eq:lda}
 Q_{v}=A Q_{\ch{sat}}+B Q_{\ch{sat}} \tanh (C X)\left[1-\tanh \left(D Q_{g}^{\alpha}\right)\right]
@@ -160,7 +160,7 @@ Figure \ref{fig:comp_dbzcross_2020}. Same as Figure \ref{fig:comp_dbzcross_2019}
 \end{figure}
 
 
-在第\ref{sec:retrieval}章和\ref{sec:china}节中，本研究利用对流旺盛时的卫星观测来估算 LNO$_{\ch{x}}$产率。
+在第\ref{chapter:retrieval}章和\ref{sec:china}节中，本研究利用对流旺盛时的卫星观测来估算 LNO$_{\ch{x}}$产率。
 然而由于 TROPOMI 的像素饱和和对流区域的有限覆盖（图\ref{fig:china_flash_scd}c），
 该方法难以用于范围小发展强的对流（如2019年的个例）。
 因此本节尝试不对云量加以限制，将该方法应用于消散期的对流（2020年个例，图\ref{fig:china_flash_scd}d）。
@@ -216,7 +216,7 @@ NO/NO$_{\ch{2}}$ 比例、LNO 廓线和其他来源决定（表\ref{table:uncert
 根据 \citet{Allen.2021a}本研究设其为10\%。
 假设误差之间没有相关性，总不确定性（56\%）即为所有单个不确定性平方和的平方根。
 因此LNO$_{\ch{x}}$产率为60 $\pm$ 33 mol NO$_{\ch{x}}$每闪电，
-该数值低于第\ref{sec:retrieval}章（90 $\pm$ 50 mol NO$_{\ch{x}}$每闪电）和\citet{Allen.2021a}（120 $\pm$ 65 mol NO$_{\ch{x}}$每闪电）在美国大陆的研究结果，
+该数值低于第\ref{chapter:retrieval}章（90 $\pm$ 50 mol NO$_{\ch{x}}$每闪电）和\citet{Allen.2021a}（120 $\pm$ 65 mol NO$_{\ch{x}}$每闪电）在美国大陆的研究结果，
 因此在未来的研究中还需对中国地区进行范围更广的探讨，
 从而估算区域性的LNO$_{\ch{x}}$产率。
 
@@ -283,7 +283,7 @@ LNO 廓线                     & \makecell[cc]{26\%} \\
 
 鉴于LNO$_{\ch{2}}$在对流层中上层的主导地位和更长寿命，TROPOMI的NO$_{\ch{2}}$产品可以用来研究不同区域LNO$_{\ch{2}}$的分布。
 然而如上节所述，官方的TROPOMI NO$_{\ch{2}}$柱浓度产品所依赖的NO$_{\ch{2}}$先验廓线并未详细考虑LNO$_{\ch{2}}$的垂直分布，
-所以本研究接着针对中国东南部地区的对流系统，
+所以本研究接着针对中国东部地区的对流系统，
 利用WRF-Chem的敏感性试验结果，详细分析了LNO$_{\ch{x}}$对官方NO$_{\ch{2}}$柱浓度产品的影响。
 
 为了探讨LNO$_{\ch{x}}$对AMF$_{\ch{trop}}$和AMF$_{\ch{LNO_x}}$计算的重要性，
@@ -1014,10 +1014,10 @@ Mean GLD360 lightning stroke rate, convective available potential energy (CAPE, 
 
 \begin{enumerate}[label=（\arabic*）, labelindent=\parindent, nosep, leftmargin=0pt, widest=0, itemindent=*, topsep=0pt, partopsep=0pt, parsep=0pt]
 
-\item 2019年和2020年中国东南部的两个对流个例分析表明，TROPOMI 的像素饱和效应
+\item 2019年和2020年中国东部的两个对流个例分析表明，TROPOMI 的像素饱和效应
 限制了对流旺盛区域的LNO$_{\ch{2}}$浓度估计，
 因此本研究提出了计算消散阶段LNO$_{\ch{2}}$的方法。
-通过该方法，我们得出了中国东南部的LNO$_{\ch{x}}$产率为 60 $\pm$ 33 mol NO$_{\ch{x}}$每闪电。
+通过该方法，我们得出了中国东部的LNO$_{\ch{x}}$产率为 60 $\pm$ 33 mol NO$_{\ch{x}}$每闪电。
 未来的研究可同时利用对流旺盛和消散期间 OMI或TROPOMI 的有效数据，进一步量化和改进 LNO$_{\ch{x}}$ 的产量估计。
 
 \item 本章还进行了敏感性试验，通过在WRF-Chem模式中设置不同的LNO$_{\ch{2}}$产率来代入TROPOMI NO$_{\ch{2}}$柱浓度的计算，

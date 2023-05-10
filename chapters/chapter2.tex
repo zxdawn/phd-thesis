@@ -6,9 +6,9 @@
 
 \subsection{臭氧探空}
 
-针对中国东南部的强对流天气，于2019年7月25日和2020年9月1日
+针对中国东部的强对流天气（\ref{sec:china}节和\ref{sec:convec_impacts}节），于2019年7月25日和2020年9月1日
 在南京国家基准气候站（31.93$^{\circ}$ N，118.90$^{\circ}$ E）共释放了五个臭氧探空仪。
-为了研究对流的影响，本研究分别在对流发生前和对流发生中/对流发生后各释放一次探空。
+为了研究对流对O$_{\ch{3}}$垂直分布的影响，本研究分别在对流发生前和对流发生中/对流发生后各释放一次探空。
 深对流概况及臭氧探空仪轨迹见图\ref{fig:ozonesonde}。
 
 \begin{figure}[H]
@@ -52,7 +52,9 @@ pre-convection (blue) and post-convection (orange) O$_{\ch{3}}$ profiles from th
 
 \subsection{闪电数据集}
 
-在第\ref{sec:retrieval}章美国大陆的研究中，本研究使用了整体闪电探测网（ENTLN）数据。
+本研究中LNO$_{\ch{x}}$产率计算所使用的闪电数据集有以下几种，并针对不同的地区进行了详细的探测效率修正。
+
+在第\ref{chapter:retrieval}章美国大陆的研究中，本研究使用了整体闪电探测网（ENTLN）数据。
 ENTLN运营着一个由全球1500多个地面站组成的系统，在美国大陆安装有900多个传感器\citep{Zhu.2017,Marchand.2019}。
 CG和IC均由传感器根据电场脉冲极性和波形进行定位，检测频率范围为1 Hz 至 12 MHz。
 如果脉冲组在700 ms和10 km范围内，它们则被归类为闪电。
@@ -63,7 +65,7 @@ CG和IC均由传感器根据电场脉冲极性和波形进行定位，检测频�
 由于本研究和\citet{Lapierre.2020}一样仅使用2014年的ENTLN数据，故采用同样的方法得到总闪的量：
 IC闪电数除以0.88，IC闪击数除以0.45，而CG由于探测效率高，故不进行矫正。
 
-在\ref{sec:china}节中国东南部的研究中，融合了三种闪电数据集：中国国家闪电探测网[CNLDN，\citet{Yang.2015}]、
+在\ref{sec:china}节中国东部的研究中，融合了三种闪电数据集：中国国家闪电探测网[CNLDN，\citet{Yang.2015}]、
 ENTLN和全球闪电定位网[WWLLN，\citet{Rodger.2006}]。
 江苏省CNLDN数据的地闪闪电探测效率约为90\% \citep{Li.2017a}，
 而ENTLN和WWLLN以特定的频率（ENTLN 为 1 Hz -- 12 MHz，WWLLN 为 3--30 kHz）同时探测IC和CG，
@@ -100,7 +102,7 @@ OMI采用DOAS拟合来确定NO$_{\ch{2}}$和O$_{\ch{3}}$的垂直柱浓度，
 OMI的观测数据可以与其他大气环境监测仪器数据相结合，共同为研究者提供更全面的大气环境数据。
 
 然而自2007年初以来，由于被称为“行异常”的异常辐射\citep{Dobber.2008}，一些测量数据变得无效。
-本研究使用NASA标准产品v3.0\citep{Krotkov.2017}作为LNO$_{\ch{2}}$反演算法的输入。
+本研究使用NASA标准产品v3.0\citep{Krotkov.2017}中的云产品（云高和云辐射分数）和NO$_{\ch{2}}$产品作为LNO$_{\ch{2}}$反演算法的输入。
 
 对流层NO$_{\ch{2}}$垂直柱浓度（$V_{\ch{NO2}}$）的计算主要包括以下步骤：
 
@@ -119,7 +121,8 @@ OMI的观测数据可以与其他大气环境监测仪器数据相结合，共�
 
 \end{enumerate}
 
-基于这种方法，本研究开发了$AMF_{\ch{LNO_2}}$，通过替换原来的步骤来获得所需的LNO$_{\ch{2}}$垂直柱浓度 $V_{\ch{LNO_2}}$（$V_{\ch{LNO_2}}$ = $S_{\ch{NO2}}$/$AMF_{\ch{LNO_2}}$），该算法的具体细节将在\ref{sec:amf_definition}节中讨论.
+基于这种方法，本研究开发了$AMF_{\ch{LNO_2}}$，通过替换原来的步骤来获得所需的LNO$_{\ch{2}}$垂直柱浓度 $V_{\ch{LNO_2}}$（$V_{\ch{LNO_2}}$ = $S_{\ch{NO2}}$/$AMF_{\ch{LNO_2}}$），该算法的具体细节将在\ref{sec:amf_definition}节中讨论。
+
 
 \subsection{对流层观测仪（TROPOMI）}
 
@@ -134,7 +137,7 @@ TROPOMI扫描幅宽约为2600 km，除了赤道处约0.5$^{\circ}$的轨道之�
 在非常明亮的辐射场景（例如高云）中，包含波段4（可见；例如用于NO$_{\ch{2}}$反演）和波段6（近红外；例如用于云数据反演）的电荷耦合器件（CCD） 探测器可能会出现饱和效应\citep{Ludewig.2020}，导致某些光谱（即波长）像素的辐射率低于预期。
 在饱和度大的情况下，可能会发生电荷溢出：过量电荷从饱和的行方向流入相邻的像素，导致某些光谱像素的辐射率高于预期。
 1.0.0版的1b级光谱包含饱和度标记，但不包含溢出标记；2.0.0 版开始有溢出标记\citep{Ludewig.2020}。
-本研究使用Sentinel-5P产品算法实验室（S5P-PAL）再处理产品（v2.3.1）。
+本研究使用Sentinel-5P产品算法实验室（S5P-PAL）再处理产品（v2.3.1）中的云产品（云高和云辐射分数）和NO$_{\ch{2}}$产品。
 与v1.2/v1.3版本相比，新版本的产品包含了尖峰去除功能，以更好地处理探测器的饱和效应，从而在明亮的对流云层上提供更多有效的数据\citep{Ludewig.2020,VanGeffen.2022}，
 其中具有较大反演误差（processing\_quality\_flags > 0）的像素被过滤掉。
 
@@ -180,7 +183,8 @@ IWC加权函数的分析表明，215 hPa高度IWC的垂直分辨率约为4 km\ci
 
 \subsection{WRF-Chem模式}
 
-WRF-Chem是将WRF模式与大气化学模块结合起来的大气化学模式，
+本研究除了使用卫星遥感数据之外，也利用WRF-Chem大气化学模式详细分析了NO$_{\ch{x}}$和O$_{\ch{3}}$的垂直分布变化，并提供反演NO$_{\ch{2}}$柱浓度所用的先验廓线。
+具体而言，WRF-Chem是将WRF模式与大气化学模块结合起来的大气化学模式，
 可用于模拟大气中微量气体和颗粒物，研究大气动力学和化学过程之间的相互作用。
 该模式包含了大量的化学反应、气溶胶过程、辐射以及各类排放源（如电力厂、交通和工业），可以准确模拟大气中各类气体和颗粒物的行为。
 WRF-Chem模式的一个关键优势是它能够在高时空分辨率下模拟大气化学过程，使研究人员可以详细研究地区和局部范围内化学物质和颗粒物。
@@ -198,13 +202,15 @@ CBMZ（Carbon Bond Machanism）和RADM2（Regional Acid Deposition Model, 2nd ge
 本研究所使用的MOZART化学方案中，对流层化学以81种化学物种为代表，参与38种光解和159种气相反应\citep{Emmons.2010}。
 MOZART机制包括非甲烷挥发性有机物（NMVOC）、乙烷、丙烷、乙烯、丙烯、甲醇、异戊二烯和$\alpha$-蒎烯，
 其他NMVOC物种则基于反应性官能团表示。
-由于本文为了更好的模拟出深对流系统，不同的个例使用了不同的微物理、化学及闪电参数化方案，其中闪电参数化可用闪电同化代替，详见\ref{sec:amf_definition}节和\ref{sec:model_settings_china}节。
+由于本研究为了更好的模拟出深对流系统，不同的个例使用了不同的微物理、化学及闪电参数化方案，其中闪电参数化可用闪电同化代替，详见\ref{sec:amf_definition}节和\ref{sec:model_settings_china}节。
 
 \subsection{MERRA2-GMI模拟数据集}
 
-% https://www.sciencedirect.com/science/article/pii/S0160412020320985
-现代研究和应用回顾分析（MERRA-2）GMI 模式是基于Goddard地球观测系统（GEOS）框架\citep{Molod.2015}，数据下载地址为\url{https://acd-ext.gsfc.nasa.gov/Projects/GEOSCCM/MERRA2GMI/}。
-其中模式使用的再分析资料为MERRA-2\citep{Gelaro.2017}，化学机制为GMI（Global Modeling Initiative）平流层和对流层化学相结合的机制\citep{Duncan.2007,Oman.2013,Nielsen.2017}。
+现代研究和应用回顾分析（MERRA-2）GMI 模式是基于Goddard地球观测系统（GEOS）框架\citep{Molod.2015}，
+数据下载地址为\url{https://acd-ext.gsfc.nasa.gov/Projects/GEOSCCM/MERRA2GMI/}。
+本研究不仅使用MERRA2-GMI模拟数据集中的O$_{\ch{3}}$浓度产品，也利用O$_{\ch{3}}$趋势分析量和云量信息来评估对流对O$_{\ch{3}}$的具体影响。
+具体而言，模式使用的再分析资料为MERRA-2\citep{Gelaro.2017}，
+化学机制为GMI（Global Modeling Initiative）平流层和对流层化学相结合的机制\citep{Duncan.2007,Oman.2013,Nielsen.2017}。
 GMI机制包括对O$_{\ch{3}}$--NO$_{\ch{x}}$--碳氢化合物化学的详细描述，有100多个物种和大约400个化学反应，
 并使用戈达德化学气溶胶辐射和传输（GOCART）气溶胶模块。
 模拟在立方球体上运行，其水平分辨率约为 50 km，并输出到原生 MERRA-2网格（0.625$^{\circ}$ $\times$ 0.5$^{\circ}$）。
