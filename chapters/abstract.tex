@@ -7,65 +7,64 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {
-深对流云是大气垂直输送的主要载体，能够在短时间内将污染气体从边界层输送至对流层上层甚至平流层下层，影响区域和全球的大气环境和气候。
+深对流云是大气垂直输送的主要载体，能够在短时间内将污染气体从边界层输送至对流层上层甚至平流层下层，从而影响区域和全球的大气环境和气候。
 此外，闪电氮氧化物（LNO$_{\ch{x}}$）是对流层上层氮氧化物（NO$_{\ch{x}}$）的主要来源，
-但目前关于LNO$_{\ch{x}}$产率及其对臭氧（O$_{\ch{3}}$）的影响仍存在较大的不确定性。
-传统的气球探空和飞机观测等试验的难度较大，而卫星遥感技术的发展为定量LNO$_{\ch{x}}$排放提供了新的方法。
+但目前对于LNO$_{\ch{x}}$产率及其对臭氧（O$_{\ch{3}}$）的影响仍存在较大的不确定性。
+传统的气球探空和飞机观测等试验具有较大的难度，而卫星遥感技术的发展为定量LNO$_{\ch{x}}$排放提供了新的方法。
 本研究基于上述背景，通过卫星数据反演、数值模拟和臭氧探空试验，
 确定了污染和清洁地区闪电二氧化氮（LNO$_{\ch{2}}$）和LNO$_{\ch{x}}$的产率，
 并对比分析了观测和模拟的二氧化氮（NO$_{\ch{2}}$）与O$_{\ch{3}}$的垂直分布，
-揭示了深对流的动力输送和化学反应对O$_{\ch{3}}$浓度变化的贡献。
+揭示了深对流中动力输送和化学反应对O$_{\ch{3}}$浓度变化的贡献。
 
-首先，本研究利用对流层观测仪（TROPOMI）和臭氧监测仪（OMI）遥感观测资料，
+首先，本研究利用对流层观测仪（TROPOMI）和臭氧监测仪（OMI）的遥感观测资料，
 开发了适用于污染和清洁地区LNO$_{\ch{2}}$和LNO$_{\ch{x}}$柱浓度的反演算法。
-为与前人的星载观测研究相比，本研究选择了广泛开展观测的北美地区进行反演算法开发和对比。
+为了与前人的星载观测研究相比，本研究选择了广泛开展观测的北美地区进行反演算法开发和对比。
 结果表明，本算法详细考虑了LNO$_{\ch{x}}$垂直分布和云属性，具有更好的普适性。
-结合该算法所得的柱浓度产品和地基闪电观测数据，得到了北美大陆地区对流旺盛时LNO$_{\ch{2}}$和LNO$_{\ch{x}}$的产率，
+结合该算法所得的柱浓度产品和地基闪电观测数据，得到了北美大陆地区在对流旺盛时LNO$_{\ch{2}}$和LNO$_{\ch{x}}$的产率，
 分别为32$\pm$15 mol NO$_{\ch{2}}$每闪电和90$\pm$50 mol NO$_{\ch{x}}$每闪电。
-除前人普遍研究的旺盛对流外，该反演算法还适用于对流的初始和消散阶段，
+除了前人普遍研究的旺盛对流外，该反演算法还适用于对流的初始和消散阶段，
 弥补了TROPOMI在对流旺盛处因饱和效应而缺失数据的不足。
-为证明该方法可行性，本研究进一步选择了与北美同纬度的中国东部污染地区和高纬度的北极清洁地区进行拓展研究。
-其中，TROPOMI在北极地区连续过境的属性也为将来静止化学监测卫星的应用提供了依据。
+为证明该方法的可行性，本研究进一步选择了与北美同纬度的中国东部污染地区和高纬度的北极清洁地区进行拓展研究。
+其中，TROPOMI在北极地区连续过境的特性也为将来静止化学监测卫星的应用提供了依据。
 结果表明，在中国东部污染地区对流消散期间LNO$_{\ch{x}}$的产率为60$\pm$33 mol NO$_{\ch{x}}$每闪电。
 在清洁北极陆地地区，LNO$_{\ch{2}}$产率为2.0 mol每闪击，与中纬度污染地区的LNO$_{\ch{2}}$产率相当。
-而北极海洋地区LNO$_{\ch{2}}$ 产率是北极陆地地区的6倍，总体而言，北极夏季的LNO$_{\ch{x}}$排放量相当于该地区人为NO$_{\ch{x}}$排放的5\%。
+而北极海洋地区LNO$_{\ch{2}}$的产率是北极陆地地区的6倍，
+总体而言，北极夏季的LNO$_{\ch{x}}$排放量相当于该地区人为NO$_{\ch{x}}$排放的5\%。
 
-其次，基于上述算法所得云上NO$_{\ch{2}}$产品，
-利用云切片算法研究了不同高度层对流云，
-为计算对流云内NO$_{\ch{2}}$垂直分布提供了新的视角。
-针对中低纬度的对流观测，得到了对流层顶至330 hPa、330至450 hPa、450至570 hPa、570至670 hPa、670至770 hPa和770至870 hPa各高度层NO$_{\ch{2}}$和O$_{\ch{3}}$的平均浓度，
+其次，本研究利用上述算法得到的云上NO$_{\ch{2}}$产品，
+结合云切片算法，探究了不同高度层对流云的NO$_{\ch{2}}$浓度特征，
+为计算对流云内NO$_{\ch{2}}$的垂直分布提供了新的视角。
+针对中低纬度的对流观测，本研究得到了对流层顶至330 hPa、330至450 hPa、450至570 hPa、570至670 hPa、670至770 hPa和770至870 hPa各高度层NO$_{\ch{2}}$和O$_{\ch{3}}$的平均浓度，
 并揭示了中低纬度对流云内的“C”型NO$_{\ch{2}}$垂直分布。
-具体而言，在陆地地区对流层顶至330 hPa高度间的NO$_{\ch{2}}$浓度约为450至570 hPa高度间的2倍，570 hPa高度以下NO$_{\ch{2}}$浓度随高度的增加而降低，
-表明在对流层上层NO$_{\ch{2}}$中LNO$_{\ch{2}}$占主导地位，
-而在对流层下层人为排放的NO$_{\ch{2}}$占主导地位。
-此外，全球模式与该观测结果对比表明，
-全球模式低估了LNO$_{\ch{2}}$排放和人为源NO$_{\ch{2}}$的垂直输送，
-导致模拟的对流层上层NO$_{\ch{2}}$浓度偏低10\%至50\%。
-因此TROPOMI观测获得的廓线信息可用于模式评估并指导参数化方案的开发。
-本研究进一步对比了有云和晴空条件下的TROPOMI O$_{\ch{3}}$观测数据和全球模式资料，
-发现有云时，中纬度地区对流层上层O$_{\ch{3}}$平均浓度下降了26\%，
+具体而言，在陆地地区，对流层顶至330 hPa高度间的NO$_{\ch{2}}$浓度约为450至570 hPa高度间的2倍，570 hPa高度以下NO$_{\ch{2}}$浓度随高度的降低而增加，
+这表明在对流层上层，NO$_{\ch{2}}$中LNO$_{\ch{2}}$占主导地位，
+而在对流层下层则是人为排放的NO$_{\ch{2}}$占主导地位。
+此外，通过将全球模式模拟结果与本研究的观测结果进行对比，
+发现全球模式低估了LNO$_{\ch{2}}$排放和人为源NO$_{\ch{2}}$的垂直输送，
+导致对流层上层NO$_{\ch{2}}$浓度在模拟中偏低10\%至50\%。
+因此，TROPOMI观测所获得的廓线信息可用于模式评估，并指导参数化方案的开发。
+本研究进一步对比了有云和晴空条件下的TROPOMI O$_{\ch{3}}$观测数据和全球模式资料。
+结果显示，有云时，中纬度地区对流层上层O$_{\ch{3}}$平均浓度下降了26\%，
 低纬度海洋地区下降了17\%，
 而非洲中部由于生物质燃烧的影响升高了20\%。
 
-最后，本研究综合利用TROPOMI观测数据、WRF-Chem模拟和O$_{\ch{3}}$探空试验数据，
-选择了对流研究资料匮乏但人口分布密集的中国东部污染地区，分析了该地区不同类型对流系统中动力输送、化学反应和化学反应速率对O$_{\ch{3}}$时空变化的影响。
-结果表明，尽管动力输送项在对流旺盛期间主导O$_{\ch{3}}$浓度变化，
-但化学反应在整个生命周期中对O$_{\ch{3}}$的贡献可达动力输送项的5--10倍。
+最后，本研究综合运用TROPOMI观测数据、WRF-Chem模拟和O$_{\ch{3}}$探空试验数据，
+在中国东部污染地区这个人口密集、对流研究资料匮乏的区域，选择了不同类型的对流系统，
+分析了动力输送、化学反应和化学反应速率对O$_{\ch{3}}$时空变化的影响。
+结果表明，虽然动力输送项在对流旺盛期间主导了O$_{\ch{3}}$浓度变化，
+但在整个生命周期中化学反应对O$_{\ch{3}}$的贡献可达动力输送项的5--10倍。
 这一结论解释了臭氧探空在对流发生后观测到对流层上层O$_{\ch{3}}$浓度增大的现象。
 此外，敏感性试验表明，LNO$_{\ch{x}}$导致对流层上层O$_{\ch{3}}$化学累积生成速率降低了4\%，累积消耗速率增加了23\%，
 从而导致O$_{\ch{3}}$平均浓度降低了25\%。
-若将对流分为核心区和层云区，则核心区动力输送对O$_{\ch{3}}$的贡献为层云区的2倍，
-层云区的O$_{\ch{3}}$变化受核心区输送的控制。
+将对流分为核心区和层云区后，研究发现核心区动力输送对O$_{\ch{3}}$的贡献为层云区的2倍，
+而层云区中的O$_{\ch{3}}$浓度变化则受到核心区输送的控制。
 虽然LNO$_{\ch{x}}$使核心区的O$_{\ch{3}}$化学产量增加了125\%，
-但O$_{\ch{3}}$净产量下降了21\%。
-% 若将LNO$_{\ch{2}}$考虑进TROPOMI NO$_{\ch{2}}$反演所使用的先验廓线，
-% 则对流层空气质量因子在新生闪电区降低23\%，
-% 而在出流区和老化区增大60\%。
+但导致O$_{\ch{3}}$的净产量下降了21\%。
 
 以上结果揭示了不同区域LNO$_{\ch{x}}$产率的差异性，
-同时分析了深对流活动影响对流层NO$_{\ch{2}}$和O$_{\ch{3}}$浓度变化的机制。
+同时分析了深对流活动对对流层NO$_{\ch{2}}$和O$_{\ch{3}}$浓度变化的影响机制。
 因此，在全球气候变暖的背景下，需建立更为完善的评估系统，
-结合多种卫星平台和模式，以增进我们对深对流活动及其影响的认识。
+结合多种卫星平台和模式，以更深入地了解深对流活动及其影响。
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -97,7 +96,7 @@ It is also observed that during summer, LNO$_{\ch{x}}$ emissions in the Arctic a
 Secondly, we utilize the obtained above-cloud NO$_{\ch{2}}$ product to apply the cloud slicing algorithm, offering a new perspective for calculating the vertical distribution of NO$_{\ch{2}}$ in convective clouds.
 Using TROPOMI observations of convective clouds at different heights in mid-low latitude regions, we determine the mean NO$_{\ch{2}}$ and O$_{\ch{3}}$ concentrations in six layers (tropopause--330 hPa, 330--450 hPa, 450--570 hPa, 570--670 hPa, 670--770 hPa, and 770--870 hPa) using TROPOMI observations of convective clouds at different heights in mid-low latitude regions.
 Our findings reveal a ``C''-shaped NO$_{\ch{2}}$ profile within clouds, where the NO$_{\ch{2}}$ concentration between the tropopause and 330 hPa over land is about twice that between 450 and 570 hPa.
-Furthermore, the NO$_{\ch{2}}$ concentration below 570 hPa gradually decreases with height, indicating the prevalence of LNO$_{\ch{2}}$ in the upper tropospheric NO$_{\ch{2}}$, while pollutant NO$_{\ch{2}}$ dominates the lower tropospheric NO$_{\ch{2}}$.
+Furthermore, the NO$_{\ch{2}}$ concentration below 570 hPa gradually increases as the altitude decreases, indicating the prevalence of LNO$_{\ch{2}}$ in the upper tropospheric NO$_{\ch{2}}$, while pollutant NO$_{\ch{2}}$ dominates the lower tropospheric NO$_{\ch{2}}$.
 Additionally, our research points out that global models underestimate the LNO$_{\ch{2}}$ emissions and the vertical transport of anthropogenic NO$_{\ch{2}}$, resulting in a 10--50\% underestimation of upper tropospheric NO$_{\ch{2}}$.
 Therefore, the profile information obtained from TROPOMI observations can be used to assess the accuracy of chemical transport models and facilitate the development of parameterization schemes.
 We also compare TROPOMI observations with a global chemistry model and find that the upper tropospheric O$_{\ch{3}}$ concentration under cloudy conditions is 26\% and 17\% lower in the mid-latitude and low-latitude regions, respectively, than under clear-sky conditions.
@@ -117,5 +116,4 @@ In addition, while LNO$_{\ch{x}}$ increases the chemical production of O$_{\ch{3
 
 The results above highlight the significant regional variability in LNO$_{\ch{x}}$ production efficiencies across regions and provide insights into the impact of deep convection on NO$_{\ch{2}}$ and O$_{\ch{3}}$ concentrations in the troposphere.
 As global warming continues to be a pressing issue, it is imperative to develop a comprehensive evaluation system that leverages multiple satellite platforms and models to advance our understanding of deep convection activity and its environmental effects.
-Such a system would enable us to better assess the efficacy of current mitigation strategies and inform the development of new ones to reduce the impact of deep convection on climate change.
 }
