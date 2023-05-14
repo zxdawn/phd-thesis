@@ -1,6 +1,7 @@
 % !TEX program = XeLaTeX
 % !TEX encoding = UTF-8
 \documentclass[fontset=fandol, AutoFakeBold]{nuist}
+% \documentclass[AutoFakeBold]{nuist}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
 %%      定义个人信息，标题可以通过 <\\> 实现手动换行
@@ -12,7 +13,7 @@
 %%		title					论文题目，\titlesep 命令分割两行
 %%      name				    申请人姓名
 %%		mentor				    指导老师 
-%%		mentorrank			    知道老师职称
+%%		mentorrank			    指导老师职称
 %%		major					学科名称
 %%      research				研究方向
 %%		institute				培养学院
@@ -27,9 +28,8 @@
 	classification=,
 	studentno=20191103012,
 	degree=博士,
-	title=闪电和对流输送对氮氧化物和臭氧垂直分布的影响
-		  \titlesep Impacts of Lightning and Convective Transport
-		  \titlesep on the Vertical Distribution of NO$_{\ch{x}}$ and O$_{\ch{3}}$,
+	title=基于卫星遥感的闪电和对流输送对二氧化氮和臭氧垂直分布的影响研究
+		  \titlesep Impacts of Lightning and Convective Transport on the Vertical Distributions of NO$_{\ch{2}}$ and O$_{\ch{3}}$,
 	name=张昕,
 	mentor=银燕,
 	mentorrank=教授,
@@ -38,10 +38,10 @@
 	research=空气污染监测和模拟,
 	institute=大气物理学院,
 	year=2023,
-	month=3,
-	day=10,
-	keywordscn=深对流\keysepcn 闪电\keysepcn 氮氧化物\keysepcn 臭氧\keysepcn 臭氧监测仪\keysepcn 对流层观测仪,
-	keywordsen=deep convection\keysepen lightning\keysepen nitrogen oxides\keysepen ozone\keysepen Ozone Monitoring Instrument\keysepen TROPOspheric Monitoring Instrument
+	month=5,
+	day=30,
+	keywordscn=深对流\keysepcn 闪电\keysepcn 二氧化氮\keysepcn 臭氧\keysepcn 对流层观测仪,
+	keywordsen=deep convection\keysepen lightning\keysepen nitrogen dioxide\keysepen ozone\keysepen TROPOspheric Monitoring Instrument
 }
 
 \usepackage{amsmath}
@@ -51,6 +51,7 @@
 \usepackage{url}
 \usepackage{float}
 \usepackage{chemformula} % Formula subscripts using \ch{}
+\usepackage{pdflscape}
 \usepackage[flushleft]{threeparttable}
 \usepackage[section]{placeins}
 
@@ -132,5 +133,6 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	
 	\include{chapters/resume}
+	% \include{chapters/resume_blind}
 
 \end{document}
