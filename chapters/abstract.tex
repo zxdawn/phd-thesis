@@ -7,63 +7,64 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 {
-深对流云是大气垂直输送的主要载体，能够在短时间内将污染气体从边界层输送至对流层上层甚至平流层下层，从而影响区域和全球的大气环境和气候。
-此外，闪电氮氧化物（LNO$_{\ch{x}}$）是对流层上层氮氧化物（NO$_{\ch{x}}$）的主要来源，
-但目前对于LNO$_{\ch{x}}$产率及其对臭氧（O$_{\ch{3}}$）的影响仍存在较大的不确定性。
-传统的气球探空和飞机观测等试验具有较大的难度，而卫星遥感技术的发展为定量LNO$_{\ch{x}}$排放提供了新的方法。
-本研究基于上述背景，通过卫星数据反演、数值模拟和臭氧探空试验，
-确定了污染和清洁地区闪电二氧化氮（LNO$_{\ch{2}}$）和LNO$_{\ch{x}}$的产率，
-并对比分析了观测和模拟的二氧化氮（NO$_{\ch{2}}$）与O$_{\ch{3}}$的垂直分布，
-揭示了深对流中动力输送和化学反应对O$_{\ch{3}}$浓度变化的贡献。
+深对流云是大气垂直输送的主要载体，能够在短时间内将污染气体从边界层输送至对流层上层甚至平流层下层，从而对区域和全球的大气环境和气候产生影响。
+此外，深对流中闪电产生的氮氧化物（LNO$_{\ch{x}}$）是对流层上层氮氧化物（NO$_{\ch{x}}$）的主要来源，
+然而，目前对于LNO$_{\ch{x}}$产率及其对臭氧（O$_{\ch{3}}$）的影响仍存在较大的不确定性。
+传统的气球探空和飞机观测等试验在定量LNO$_{\ch{x}}$排放方面面临较大的困难，
+然而，随着卫星遥感技术的发展，新的方法可以用于对LNO$_{\ch{x}}$排放的定量分析。
+本研究基于上述背景，综合运用卫星数据反演、数值模拟以及臭氧探空试验，
+确定了污染和清洁地区闪电产生的二氧化氮（LNO$_{\ch{2}}$）和LNO$_{\ch{x}}$的产率，
+并对比分析了观测和模拟数据中二氧化氮（NO$_{\ch{2}}$）与O$_{\ch{3}}$的垂直分布情况，
+以揭示深对流中动力输送和化学反应对O$_{\ch{3}}$浓度变化的贡献。
 
 首先，本研究利用对流层观测仪（TROPOMI）和臭氧监测仪（OMI）的遥感观测资料，
 开发了适用于污染和清洁地区LNO$_{\ch{2}}$和LNO$_{\ch{x}}$柱浓度的反演算法。
-为了与前人的星载观测研究相比，本研究选择了广泛开展观测的北美地区进行反演算法开发和对比。
-结果表明，本算法详细考虑了LNO$_{\ch{x}}$垂直分布和云属性，具有更好的普适性。
-结合该算法所得的柱浓度产品和地基闪电观测数据，得到了北美大陆地区在对流旺盛时LNO$_{\ch{2}}$和LNO$_{\ch{x}}$的产率，
-分别为32$\pm$15 mol NO$_{\ch{2}}$每闪电和90$\pm$50 mol NO$_{\ch{x}}$每闪电。
-除了前人普遍研究的旺盛对流外，该反演算法还适用于对流的初始和消散阶段，
-弥补了TROPOMI在对流旺盛处因饱和效应而缺失数据的不足。
-为证明该方法的可行性，本研究进一步选择了与北美同纬度的中国东部污染地区和高纬度的北极清洁地区进行拓展研究。
-其中，TROPOMI在北极地区连续过境的特性也为将来静止化学监测卫星的应用提供了依据。
-结果表明，在中国东部污染地区对流消散期间LNO$_{\ch{x}}$的产率为60$\pm$33 mol NO$_{\ch{x}}$每闪电。
-在清洁北极陆地地区，LNO$_{\ch{2}}$产率为2.0 mol每闪击，与中纬度污染地区的LNO$_{\ch{2}}$产率相当。
-而北极海洋地区LNO$_{\ch{2}}$的产率是北极陆地地区的6倍，
+为了与前人的星载观测研究进行比较，本研究选择了广泛开展观测的北美地区进行反演算法的开发和对比分析。
+结果表明，本算法在LNO$_{\ch{x}}$的垂直分布和云属性方面进行了详细的考虑，因此具备更好的普适性。
+通过结合该算法所得的柱浓度产品和地基闪电观测数据，本研究得出了在北美大陆地区对流旺盛时LNO$_{\ch{2}}$和LNO$_{\ch{x}}$的产率。
+具体来说，每次闪电产生的NO$_{\ch{2}}$为32$\pm$15 mol，而NO$_{\ch{x}}$为90$\pm$50 mol。
+该反演算法不仅适用于前人广泛研究的对流旺盛阶段，还适用于对流的初始和消散阶段，从而弥补了TROPOMI在对流旺盛处因饱和效应而缺失数据的不足。
+为了验证该方法的可行性，本研究进一步选择了与北美同纬度的中国东部污染地区以及高纬度的北极清洁地区进行扩展研究。
+其中，TROPOMI在北极地区连续过境的特性为未来静止化学监测卫星的应用提供了基础和依据。
+结果表明，在中国东部污染地区的对流消散期间，LNO$_{\ch{x}}$的产率为60$\pm$33 mol NO$_{\ch{x}}$每闪电。
+在北极清洁陆地地区，LNO$_{\ch{2}}$产率为2.0 mol每闪击，与中纬度污染地区的LNO$_{\ch{2}}$产率相当。
+然而，在北极海洋地区，LNO$_{\ch{2}}$的产率是北极陆地地区的6倍。
 总体而言，北极夏季的LNO$_{\ch{x}}$排放量相当于该地区人为NO$_{\ch{x}}$排放的5\%。
 
 其次，本研究利用上述算法得到的云上NO$_{\ch{2}}$产品，
-结合云切片算法，探究了不同高度层对流云的NO$_{\ch{2}}$浓度特征，
-为计算对流云内NO$_{\ch{2}}$的垂直分布提供了新的视角。
-针对中低纬度的对流观测，本研究得到了对流层顶至330 hPa、330至450 hPa、450至570 hPa、570至670 hPa、670至770 hPa和770至870 hPa各高度层NO$_{\ch{2}}$和O$_{\ch{3}}$的平均浓度，
-并揭示了中低纬度对流云内的“C”型NO$_{\ch{2}}$垂直分布。
-具体而言，在陆地地区，对流层顶至330 hPa高度间的NO$_{\ch{2}}$浓度约为450至570 hPa高度间的2倍，570 hPa高度以下NO$_{\ch{2}}$浓度随高度的降低而增加，
-这表明在对流层上层，NO$_{\ch{2}}$中LNO$_{\ch{2}}$占主导地位，
-而在对流层下层则是人为排放的NO$_{\ch{2}}$占主导地位。
-此外，通过将全球模式模拟结果与本研究的观测结果进行对比，
-发现全球模式低估了LNO$_{\ch{2}}$排放和人为源NO$_{\ch{2}}$的垂直输送，
+结合云切片算法，探究了不同高度层对流云中NO$_{\ch{2}}$浓度的特征，
+为计算对流云内NO$_{\ch{2}}$的垂直分布提供了新的视角和方法。
+针对中低纬度的对流观测，本研究得出了不同高度层（对流层顶至330 hPa、330至450 hPa、450至570 hPa、570至670 hPa、670至770 hPa和770至870 hPa）的
+平均NO$_{\ch{2}}$和O$_{\ch{3}}$浓度，并揭示了中低纬度对流云内呈现出的“C”型NO$_{\ch{2}}$垂直分布特征。
+具体而言，在陆地地区，对流层顶至330 hPa高度间的NO$_{\ch{2}}$浓度约为450至570 hPa高度间的两倍。
+在570 hPa高度以下，随高度的降低，NO$_{\ch{2}}$浓度增加，
+这表明在对流层上层，LNO$_{\ch{2}}$在NO$_{\ch{2}}$中占主导地位，
+而在对流层下层，人为排放的NO$_{\ch{2}}$占主导地位。
+此外，将全球模式模拟结果与本研究的观测结果进行对比后发现，
+全球模式低估了LNO$_{\ch{2}}$排放和人为源NO$_{\ch{2}}$的垂直输送，
 导致对流层上层NO$_{\ch{2}}$浓度在模拟中偏低10\%至50\%。
-因此，TROPOMI观测所获得的廓线信息可用于模式评估，并指导参数化方案的开发。
-本研究进一步对比了有云和晴空条件下的TROPOMI O$_{\ch{3}}$观测数据和全球模式资料。
-结果显示，有云时，中纬度地区对流层上层O$_{\ch{3}}$平均浓度下降了26\%，
+因此，TROPOMI观测所获取的廓线信息可以用于对模式进行评估，并指导参数化方案的开发。
+本研究进一步比较了有云和晴空条件下的TROPOMI O$_{\ch{3}}$观测数据和全球模式资料。
+结果显示，在有云的情况下，中纬度地区对流层上层O$_{\ch{3}}$平均浓度下降了26\%，
 低纬度海洋地区下降了17\%，
 而非洲中部由于生物质燃烧的影响升高了20\%。
 
 最后，本研究综合运用TROPOMI观测数据、WRF-Chem模拟和O$_{\ch{3}}$探空试验数据，
-在中国东部污染地区这个人口密集、对流研究资料匮乏的区域，选择了不同类型的对流系统，
-分析了动力输送、化学反应和化学反应速率对O$_{\ch{3}}$时空变化的影响。
-结果表明，虽然动力输送项在对流旺盛期间主导了O$_{\ch{3}}$浓度变化，
-但在整个生命周期中化学反应对O$_{\ch{3}}$的贡献可达动力输送项的5--10倍。
-这一结论解释了臭氧探空在对流发生后观测到对流层上层O$_{\ch{3}}$浓度增大的现象。
+在中国东部污染地区这一人口密集、对流研究资料匮乏的区域，选择了不同类型的对流系统，
+并分析了动力输送、化学反应以及化学反应速率对O$_{\ch{3}}$时空变化的影响。
+结果表明，尽管在对流旺盛期间，动力输送项对O$_{\ch{3}}$浓度变化起主导作用，
+但在整个生命周期中，化学反应对O$_{\ch{3}}$的贡献可达动力输送项的5--10倍。
+这一结论解释了为什么在对流发生后，臭氧探空观测到对流层上层O$_{\ch{3}}$浓度增大的现象。
 此外，敏感性试验表明，LNO$_{\ch{x}}$导致对流层上层O$_{\ch{3}}$化学累积生成速率降低了4\%，累积消耗速率增加了23\%，
 从而导致O$_{\ch{3}}$平均浓度降低了25\%。
 将对流分为核心区和层云区后，研究发现核心区动力输送对O$_{\ch{3}}$的贡献为层云区的2倍，
 而层云区中的O$_{\ch{3}}$浓度变化则受到核心区输送的控制。
-虽然LNO$_{\ch{x}}$使核心区的O$_{\ch{3}}$化学产量增加了125\%，
+尽管LNO$_{\ch{x}}$使核心区的O$_{\ch{3}}$化学产量增加了125\%，
 但导致O$_{\ch{3}}$的净产量下降了21\%。
 
 以上结果揭示了不同区域LNO$_{\ch{x}}$产率的差异性，
-同时分析了深对流活动对对流层NO$_{\ch{2}}$和O$_{\ch{3}}$浓度变化的影响机制。
-因此，在全球气候变暖的背景下，需建立更为完善的评估系统，
+并同时分析了深对流活动对对流层NO$_{\ch{2}}$和O$_{\ch{3}}$浓度变化的影响机制。
+因此，在全球气候变暖的背景下，需要建立更为完善的评估系统，
 结合多种卫星平台和模式，以更深入地了解深对流活动及其影响。
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -75,45 +76,47 @@
 Deep convection clouds play a crucial role in the atmospheric transport of mass and pollutants.
 They can rapidly carry air containing pollutants from the boundary layer to the upper troposphere or even the lower stratosphere,
 thus affecting the regional and global atmospheric environment and climate.
-Lightning nitrogen oxides (LNO$_{\ch{x}}$) are the primary source of upper tropospheric nitrogen oxides (NO$_{\ch{x}}$),
-but their production and impact on ozone (O$_{\ch{3}}$) are not well understood.
-Satellite remote sensing technology provides a new method for quantifying LNO$_{\ch{x}}$ emissions, overcoming the limitations of traditional methods like balloon sounding and aircraft observations.
-This study uses satellite data inversion, numerical simulation, and ozonesonde experiments to determine the production efficiencies of lightning NO$_{\ch{2}}$ (LNO$_{\ch{2}}$) and LNO$_{\ch{x}}$ in both clean and polluted regions.
-Furthermore, we compare the vertical distribution of nitrogen dioxide (NO$_{\ch{2}}$) and O$_{\ch{3}}$ between observations and simulations, revealing the contribution of deep convection's dynamic transport and chemical reactions to changes in O$_{\ch{3}}$ concentration.
+In addition, the nitrogen oxides generated by lightning (LNO$_{\ch{x}}$) in deep convection
+are the primary source of upper tropospheric nitrogen oxides (NO$_{\ch{x}}$).
+However, the production efficiency of LNO$_{\ch{x}}$ and its influence on ozone (O$_{\ch{3}}$) are not yet well understood.
+Satellite remote sensing technology offers a novel approach to quantify LNO$_{\ch{x}}$ emissions, overcoming the limitations of traditional methods like balloon sounding and aircraft observations.
+In this study, a combination of satellite data inversion, numerical simulation, and ozonesonde experiments is employed to determine the production efficiency of lightning NO$_{\ch{2}}$ (LNO$_{\ch{2}}$) and LNO$_{\ch{x}}$ in both clean and polluted regions.
+Additionally, a comprehensive comparison is made between the observed and simulated vertical distribution of nitrogen dioxide (NO$_{\ch{2}}$) and O$_{\ch{3}}$, providing insights into the role of deep convection's dynamic transport and chemical reactions in driving changes in O$_{\ch{3}}$ concentration.
 
 Firstly, we develop an inversion algorithm that can simultaneously derive LNO$_{\ch{2}}$ and LNO$_{\ch{x}}$ column densities from the Tropospheric Monitoring Instrument (TROPOMI) and Ozone Monitoring Instrument (OMI) observations, applicable to both polluted and clean regions.
-To facilitate comparison with previous satellite observation studies, we select the widely observed North American region for algorithm development and comparison.
-The results show that this algorithm, which considers the vertical distribution of LNO$_{\ch{x}}$ and cloud properties in detail, has better universality.
-By combining the column density products with ground-based lightning observations, we obtain the LNO$_{\ch{2}}$ and LNO$_{\ch{x}}$ production efficiencies during active stages of convection over North America, which are 32$\pm$15 mol NO$_{\ch{2}}$ per flash and 90$\pm$50 mol NO$_{\ch{x}}$ per flash, respectively.
-The algorithm is not only applicable to commonly studied active convection but also to the initial and dissipation stages of convection, filling the gap of missing data caused by saturation effects of TROPOMI during active convection.
-To demonstrate the feasibility of this method, this study further selected the polluted eastern region of China at the same latitude as North America and the clean Arctic region at high latitudes for extended research.
-Note that the continuous overpass of TROPOMI in the Arctic region also provides a basis for the future application of geostationary chemistry monitoring satellites.
+In order to facilitate comparisons with previous satellite observation studies, the extensively observed North American region is chosen for algorithm development and comparison.
+The results demonstrate the improved universality of this algorithm, which incorporates detailed considerations of the vertical distribution of LNO$_{\ch{x}}$ and cloud properties.
+Furthermore, by integrating the column density products with ground-based lightning observations, the study reveals the production efficiencies of LNO$_{\ch{2}}$ and LNO$_{\ch{x}}$ during active convection stages over North America, amounting to 32$\pm$15 mol NO$_{\ch{2}}$ per flash and 90$\pm$50 mol NO$_{\ch{x}}$ per flash, respectively.
+The applicability of the algorithm extends beyond the commonly studied active convection, encompassing the initial and dissipation stages as well.
+This capability fills the data gaps resulting from the saturation effects observed in TROPOMI during active convection.
+To demonstrate the feasibility of this method, this study further select the polluted eastern region of China, located at the same latitude as North America, and the pristine Arctic region at high latitudes for extended research.
+Importantly, the continuous overpass of TROPOMI in the Arctic region also establishes a foundation for the future utilization of geostationary chemistry monitoring satellites.
 Our findings show that the production efficiency of LNO$_{\ch{x}}$ from dissipated convection in eastern China is 60$\pm$33 mol NO$_{\ch{x}}$ per flash.
-Additionally, we find that the LNO$_{\ch{2}}$ production efficiency is comparable in both the polluted mid-latitude regions and the clean Arctic regions, with a value of 2.0 mol NO$_{\ch{2}}$ per stroke over the Arctic.
-Furthermore, over the Arctic ocean, the LNO$_{\ch{2}}$ production efficiency is approximately five times greater than over Arctic land.
-It is also observed that during summer, LNO$_{\ch{x}}$ emissions in the Arctic are equal to 5\% of anthropogenic NO$_{\ch{x}}$ emissions.
+Additionally, we find that the LNO$_{\ch{2}}$ production efficiency is comparable between the polluted mid-latitude regions and the clean Arctic regions, with a value of 2.0 mol NO$_{\ch{2}}$ per stroke over the Arctic.
+However, in the Arctic ocean region, the LNO$_{\ch{2}}$ production efficiency is approximately five times greater than over Arctic land.
+In general, the LNO$_{\ch{x}}$ emissions during the Arctic summer are equivalent to 5\% of the anthropogenic NO$_{\ch{x}}$ emissions in that region.
 
-Secondly, we utilize the obtained above-cloud NO$_{\ch{2}}$ product to apply the cloud slicing algorithm, offering a new perspective for calculating the vertical distribution of NO$_{\ch{2}}$ in convective clouds.
-Using TROPOMI observations of convective clouds at different heights in mid-low latitude regions, we determine the mean NO$_{\ch{2}}$ and O$_{\ch{3}}$ concentrations in six layers (tropopause--330 hPa, 330--450 hPa, 450--570 hPa, 570--670 hPa, 670--770 hPa, and 770--870 hPa) using TROPOMI observations of convective clouds at different heights in mid-low latitude regions.
-Our findings reveal a ``C''-shaped NO$_{\ch{2}}$ profile within clouds, where the NO$_{\ch{2}}$ concentration between the tropopause and 330 hPa over land is about twice that between 450 and 570 hPa.
-Furthermore, the NO$_{\ch{2}}$ concentration below 570 hPa gradually increases as the altitude decreases, indicating the prevalence of LNO$_{\ch{2}}$ in the upper tropospheric NO$_{\ch{2}}$, while pollutant NO$_{\ch{2}}$ dominates the lower tropospheric NO$_{\ch{2}}$.
-Additionally, our research points out that global models underestimate the LNO$_{\ch{2}}$ emissions and the vertical transport of anthropogenic NO$_{\ch{2}}$, resulting in a 10--50\% underestimation of upper tropospheric NO$_{\ch{2}}$.
-Therefore, the profile information obtained from TROPOMI observations can be used to assess the accuracy of chemical transport models and facilitate the development of parameterization schemes.
+Secondly, we utilize the obtained above-cloud NO$_{\ch{2}}$ product to apply the cloud slicing algorithm, offering a new perspective for assessing the vertical distribution of NO$_{\ch{2}}$ in convective clouds.
+Using TROPOMI observations of convective clouds at various altitudes in mid-low latitude regions, we determine the average NO$_{\ch{2}}$ and O$_{\ch{3}}$ concentrations in six layers: from the tropopause to 330 hPa, 330 to 450 hPa, 450 to 570 hPa, 570 to 670 hPa, 670 to 770 hPa, and 770 to 870 hPa.
+Our findings reveal a ``C''-shaped NO$_{\ch{2}}$ profile within clouds, where the NO$_{\ch{2}}$ concentration between the tropopause and 330 hPa over land is about twice as high as that between 450 and 570 hPa.
+Furthermore, below 570 hPa, the NO$_{\ch{2}}$ concentration gradually increases with decreasing altitude, indicating the prevalence of LNO$_{\ch{2}}$ in the upper tropospheric NO$_{\ch{2}}$, while anthropogenic NO$_{\ch{2}}$ dominates the lower tropospheric NO$_{\ch{2}}$.
+Additionally, our research highlights that global models underestimate LNO$_{\ch{2}}$ emissions and the vertical transport of anthropogenic NO$_{\ch{2}}$, resulting in a 10--50\% underestimation of upper tropospheric NO$_{\ch{2}}$.
+Therefore, the profile information derived from TROPOMI observations can serve as a valuable tool for assessing the accuracy of chemical transport models and facilitating the development of parameterization schemes.
 We also compare TROPOMI observations with a global chemistry model and find that the upper tropospheric O$_{\ch{3}}$ concentration under cloudy conditions is 26\% and 17\% lower in the mid-latitude and low-latitude regions, respectively, than under clear-sky conditions.
 However, the average upper tropospheric O$_{\ch{3}}$ concentration in central Africa increases by 20\% compared to clear-sky conditions, because of the biomass burning emissions.
 
-Finally, we investigate the O$_{\ch{3}}$ concentration changes in convective systems in the populated eastern China, where data on convection is limited.
-To analyze the effects of dynamic transport, chemical reactions, and reaction rates, we combine TROPOMI observations, WRF-Chem simulations, and ozonesonde experiments.
-Our findings suggest that dynamic transport plays a key role in the changes in O$_{\ch{3}}$ concentration during the active period,
-while chemical reactions contribute 5--10 times more than dynamic transport over the lifetime of the convective system.
+Finally, we investigate the O$_{\ch{3}}$ concentration changes within convective systems in the populated eastern China, where data on convection is limited.
+To comprehensively analyze the impacts of dynamic transport, chemical reactions, and reaction rates, we integrate TROPOMI observations, WRF-Chem simulations, and ozonesonde experiments.
+Our findings suggest that dynamic transport plays a key role in driving changes in O$_{\ch{3}}$ concentration during the active period of convection.
+However, over the lifetime of the convective system, chemical reactions contribute 5--10 times more to O$_{\ch{3}}$ changes compared to dynamic transport.
 This explains why ozonesondes observe higher O$_{\ch{3}}$ concentrations after convection.
-Furthermore, sensitivity experiments reveal that LNO$_{\ch{x}}$ reduces the integrated chemical production rate of upper tropospheric O$_{\ch{3}}$ by 4\% and increases the integrated loss rate by 23\%,
+Furthermore, sensitivity experiments reveal that LNO$_{\ch{x}}$ leads to a 4\% reduction in the integrated chemical production rate of upper tropospheric O$_{\ch{3}}$ and a 23\% increase in the integrated loss rate,
 resulting in a 25\% decrease in the average O$_{\ch{3}}$ concentration.
 When the convective system is divided into convective and stratiform regions,
 the dynamic transport of O$_{\ch{3}}$ in the convective area is approximately twice that in the stratiform area.
-The changes in O$_{\ch{3}}$ in the stratiform area are primarily controlled by the transport from the convective core.
-In addition, while LNO$_{\ch{x}}$ increases the chemical production of O$_{\ch{3}}$ in the convective area by 125\%, the net O$_{\ch{3}}$ production decreases by 21\%.
+The changes in O$_{\ch{3}}$ in the stratiform area are primarily governed by the transport from the convective core.
+In addition, while LNO$_{\ch{x}}$ increases the chemical production of O$_{\ch{3}}$ in the convective area by 125\%, the overall net production of O$_{\ch{3}}$ decreases by 21\%.
 
-The results above highlight the significant regional variability in LNO$_{\ch{x}}$ production efficiencies across regions and provide insights into the impact of deep convection on NO$_{\ch{2}}$ and O$_{\ch{3}}$ concentrations in the troposphere.
-As global warming continues to be a pressing issue, it is imperative to develop a comprehensive evaluation system that leverages multiple satellite platforms and models to advance our understanding of deep convection activity and its environmental effects.
+The results above highlight the substantial regional variations in LNO$_{\ch{x}}$ production efficiencies across regions and shed insights on the influence of deep convection on NO$_{\ch{2}}$ and O$_{\ch{3}}$ concentrations in the troposphere.
+Given the ongoing concerns regarding global warming, it becomes crucial to establish a comprehensive assessment system that combines diverse satellite platforms and models, enabling us to deepen our knowledge of deep convection activity and its environmental impacts.
 }

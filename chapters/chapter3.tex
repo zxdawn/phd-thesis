@@ -48,7 +48,7 @@ AMF_{\ch{LNO_2Vis}} = \frac{(1-f_r) \int_{p_{surf}}^{p_{tp}} w_{clear}(p) NO_2(p
 微物理过程采用Lin方案\citep{Lin.1983}，积云参数化为Grell 3D方案\citep{Grell.1993a,Grell.2002a}，
 长波辐射采用RRTM方案\citep{Iacono.2008}，短波辐射采用Goddard方案，
 陆面过程使用Noah陆面模式\citep{Koren.1999}，边界层采用YSU方案\citep{Hong.2006}。
-闪电参数化采用基于对流参数化的中性浮力水平\citep{Pickering.1992}，云闪与地闪的比例基于\citet{Boccippio.2001}.
+闪电参数化采用基于对流参数化的中性浮力水平\citep{Pickering.1992}，云闪与地闪的比例基于\citet{Boccippio.2001}。
 
 \begin{figure}[H]
 \centering
@@ -75,7 +75,7 @@ LNO和LNO$_{\ch{2}}$廓线是指开启和关闭LNO排放的模拟之间各自垂
 
 云辐射分数（CRF，CRF $\geq$ 70\%，CRF $\geq$ 90\%，CRF = 100\%）和 云压（CP，CP $\leq$ 650 hPa）
 通常是判断OMI像素是否包含深对流云的标准\citep{Ziemke.2009,Choi.2014,Pickering.2016}。
-此外本研究将另一个云分数（CF）标准应用于 WRF-Chem 的模拟结果，以确保成功模拟出对流。
+除CRF外，本研究将另一个云分数（CF）标准应用于 WRF-Chem 的模拟结果，以确保成功模拟出对流。
 具体而言，CF是由 Xu-Randall 方法计算的 350--400 hPa 之间的最大云分数\citep{Xu.1996,Strode.2017}。
 本研究根据\citet{Strode.2017}的建议，选择350--400 hPa的CF $\geq$ 40\%来判断模拟所处的网格是多云或晴空，
 可避免模拟高云中的偏差。
@@ -202,7 +202,7 @@ CRF90\_CF40\_ENTLN\_TL1000\_ratio50 & 闪击 & 8.9 $\pm$ 7.0 & 0.39 & 0.31  & 40
 当 CRF 从 90\% 增加到 100\% 时，LNO$_{\ch{x}}$ 产率降低，这是因为闪电密度较高而 LNO$_{\ch{x}}$ 较少。
 CRF 从 70\% 增加到 90\% 引起的 LNO$_{\ch{x}}$ 产率增大，该现象与\citet{Pickering.2016}的结果相反。
 这是由于本研究的方法中考虑了从边界层传输的 NO$_{\ch{2}}$ 污染的影响。
-虽然在 CRF $\geq$ 70\% 的地区经常观察到 LNO$_{\ch{2}}$ 的高值\citep{Pickering.2016}，但考虑到人为污染 NO$_{\ch{2}}$ 并与\citet{Pickering.2016}和\citet{Lapierre.2020}的结果进行比较，以下分析将基于 CRF $\geq$ 90\% 标准进行讨论分析。
+虽然在 CRF $\geq$ 70\% 的地区经常观察到 LNO$_{\ch{2}}$ 的高值\citep{Pickering.2016}，但考虑到人为污染 NO$_{\ch{2}}$ 并与\citet{Pickering.2016}和\citet{Lapierre.2020}的结果进行比较，以下分析将基于 CRF $\geq$ 90\% 标准进行讨论。
 
 
 \begin{table}[H]
@@ -552,7 +552,7 @@ Solid (dashed) green lines are the mean ratio of LNO$_{\ch{2}}$ to NO$_{\ch{2}}$
 \label{fig:us_lno2_profile}
 \end{figure}
 
-为了说明这一点，本研究使用了不同的LNO产率设置来对LNO$_{\ch{2}}$、LNO$_{\ch{2}}$Vis、LNO$_{\ch{2}}$Clean 和 NO$_{\ch{2}}$Vis进行敏感性试验（图\ref{fig:us_lno2_profile}）。
+为了说明这一点，本研究使用了不同的LNO产率设置来对LNO$_{\ch{2}}$、LNO$_{\ch{2}}$Vis、LNO$_{\ch{2}}$Clean 和 NO$_{\ch{2}}$Vis进行敏感性试验（图\ref{fig:us_lno2_profile}），
 其中CRF 的阈值设置为 100\% 以简化等式。
 总体上来说，LNO$_{\ch{2}}$Clean 和 NO$_{\ch{2}}$Vis 的差异小于 LNO$_{\ch{2}}$ 和 LNO$_{\ch{2}}$Vis 的差异。
 通过比较方程中的分子和分母，可得知为何不同的LNO排放设置产生的影响在图\ref{fig:us_lno2_profile}c和d中较小。
@@ -564,7 +564,7 @@ Solid (dashed) green lines are the mean ratio of LNO$_{\ch{2}}$ to NO$_{\ch{2}}$
 
 
 本研究使用与 NASA 标准产品一致的 GEOS-5 月平均对流层顶气压，而不是可变的 WRF 对流层顶高度来评估由 BEHR 对流层顶压造成的不确定性。
-\citet{Acarreta.2004}等人将云压偏差用云压和云分数的函数表示，依此岑研究得到计算的LNO$_{\ch{2}}$产率不确定性为 32\%，
+\citet{Acarreta.2004}等人将云压偏差用云压和云分数的函数表示，依此本研究得到计算的LNO$_{\ch{2}}$产率不确定性为 32\%，
 LNO$_{\ch{x}}$产率不确定性为 34\%，这是产率估算中不确定性的最大来源。
 接着，由于GLOBE地形高度数据的分辨率远高于OMI像素，在BEHR算法中采用假设的固定比例高度，
 因此\citet{Laughner.2019a}将 WRF 平均地表气压与 GLOBE 地表气压进行了比较，得出最大偏差为 1.5\%。
@@ -612,7 +612,7 @@ LNO$_{\ch{2}}$ 类型和 LNO$_{\ch{x}}$ 类型的净不确定性分别为 48\% �
 基于线性回归和求和法的平均结果为32 mol NO$_{\ch{2}}$每闪电、90 mol NO$_{\ch{x}}$每闪电、6 mol NO$_{\ch{2}}$每闪击 和 17 mol NO$_{\ch{x}}$每闪击。
 将相应的不确定性应用于这些平均值，本研究得出32 $\pm$ 15 mol NO$_{\ch{2}}$每闪电、90 $\pm$ 50 mol NO$_{\ch{x}}$每闪电、
 6 $\pm$ 3 mol NO$_{\ch{2}}$每闪击 和17 $\pm$ 10 mol NO$_{\ch{x}}$每闪击。
-这在当前文献估计（33--500 mol NO$_{\ch{x}}$每闪电）的范围内\citep{Schumann.2007,Beirle.2010,Bucsela.2010}。
+该结果处于当前文献估计（33--500 mol NO$_{\ch{x}}$每闪电）的范围内\citep{Schumann.2007,Beirle.2010,Bucsela.2010}。
 最近\citet{Bucsela.2010}研究中估算的LNO$_{\ch{x}}$产率为 100--250 mol NO$_{\ch{x}}$每闪电，高于但与本研究结果相重叠。
 \citet{Pickering.2016}估算的墨西哥湾LNO$_{\ch{x}}$产率为 80 $\pm$ 45 mol NO$_{\ch{x}}$每闪电，比本研究中美国大陆的结果低50\%。
 因为墨西哥湾上空有许多缺失数据，因此两个研究实际上是不同地区之间的比较。
