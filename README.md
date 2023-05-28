@@ -1,14 +1,14 @@
-# 张昕博士毕业论文 (PhD Thesis TeX Source code)
+# 张昕博士毕业论文 (Xin Zhang's PhD Thesis: TeX code)
 
-## 标题 Title
+## 标题 (Title)
 
 基于卫星遥感的闪电和对流输送对二氧化氮和臭氧垂直分布影响研究
 
 Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributions: Insights from Satellite Remote Sensing
 
-## 目录 Contents
+## 目录 (Contents)
 
-<details><summary> 点击显示完整目录 Click to see the full Content  </summary>
+<details><summary> 点击显示完整目录 (Click to see the full Content)  </summary>
 <p>
 
 - 绪论
@@ -75,9 +75,9 @@ Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributi
   </p>
   </details>
 
-## 致谢
+## 致谢 (Acknowledgements)
 
-<details><summary> 点击显示完整致谢 (Click to see the full Acknowledgement)  </summary>
+<details><summary> 点击显示完整致谢 (Click to see the full Acknowledgements)  </summary>
 <p>
 
 行文至此，本应长舒一气，谢天谢地，然唯觉十年一觉云中梦，似醒非醒百态生。
