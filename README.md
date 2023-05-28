@@ -6,9 +6,9 @@
 
 Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributions: Insights from Satellite Remote Sensing
 
-## 目录 (Contents)
+## 目录 (Table of Contents)
 
-<details><summary> 点击显示完整目录 (Click to see the full Content)  </summary>
+<details><summary> 点击显示完整目录 (Click to see "Table of Contents")  </summary>
 <p>
 
 - 绪论
@@ -77,7 +77,7 @@ Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributi
 
 ## 致谢 (Acknowledgements)
 
-<details><summary> 点击显示完整致谢 (Click to see the full Acknowledgements)  </summary>
+<details><summary> 点击显示完整致谢 (Click to see "Acknowledgements")  </summary>
 <p>
 
 行文至此，本应长舒一气，谢天谢地，然唯觉十年一觉云中梦，似醒非醒百态生。
