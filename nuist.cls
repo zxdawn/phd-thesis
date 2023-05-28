@@ -548,10 +548,10 @@
 			\; \\
 			\; \\
 			
-			\zihao{5}{~}
+			% \zihao{5}{~}
 			
 			% 中文标题
-			\setstretch{1.5}
+			\setstretch{1.3}
 			\zihao{-2}
 			\begin{tabularx}{1\linewidth}{r>{\bfseries\centering\arraybackslash}X}
 				& \nuist@title \\% \cline{2-2}
