@@ -6,9 +6,8 @@
 
 Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributions: Insights from Satellite Remote Sensing
 
-## <details><summary>(Click to expand) 目录  </summary>
+## <details><summary>(点击显示) 目录  </summary>
 <p>
-
 - 绪论
 
     - 研究背景及意义
