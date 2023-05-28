@@ -1,4 +1,4 @@
-# 张昕博士毕业论文 (Xin Zhang's PhD Thesis: TeX code)
+# 张昕博士毕业论文 (Xin Zhang's PhD Thesis: TeX Code)
 
 ## 标题 (Title)
 
