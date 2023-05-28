@@ -1,4 +1,13 @@
-# 闪电和对流输送对二氧化氮和臭氧垂直分布 
+# 张昕博士毕业论文TeX原稿
+
+## 标题
+
+基于卫星遥感的闪电和对流输送对二氧化氮和臭氧垂直分布影响研究
+
+Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributions: Insights from Satellite Remote Sensing
+
+## <details><summary>(Click to expand) 目录  </summary>
+<p>
 
 - 绪论
 
@@ -60,5 +69,10 @@
   - 主要结论
   - 论文特色与创新
   - 不足之处与展望
+  </p>
+  </details>
+
+## 致谢
+
 
 
