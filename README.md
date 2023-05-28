@@ -1,14 +1,14 @@
-# 张昕博士毕业论文TeX原稿
+# 张昕博士毕业论文 (PhD Thesis TeX Source code)
 
-## 标题
+## 标题 Title
 
 基于卫星遥感的闪电和对流输送对二氧化氮和臭氧垂直分布影响研究
 
 Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributions: Insights from Satellite Remote Sensing
 
-## 目录
+## 目录 Contents
 
-<details><summary> 点击显示完整目录  </summary>
+<details><summary> 点击显示完整目录 Click to see the full Content  </summary>
 <p>
 
 - 绪论
@@ -38,11 +38,9 @@ Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributi
   - 基于卫星遥感的闪电二氧化氮反演
     - 算法基础
     - 算法的应用条件
-
   - 反演结果的对比验证分析
     - 不同反演算法之间的差异性
     - 反演及产率计算中的不确定性分析
-
   - 本章小结
 
 - 闪电二氧化氮反演算法的应用
@@ -51,13 +49,11 @@ Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributi
     - 模式设置及闪电同化结果评估
     - 闪电氮氧化物的产率及其不确定性分析
     - 闪电二氧化氮对TROPOMI二氧化氮产品的影响 
-
   - 清洁地区(北极)
     - 闪电的分布
     - 闪电二氧化氮的计算
     - 闪电二氧化氮产率的海陆性差异
     - 氮氧化物不同排放源的贡献
-
   - 本章小结
 
 - 深对流对氮氧化物和臭氧垂直再分布的影响
@@ -66,11 +62,9 @@ Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributi
   - 对流条件下痕量气体的垂直分布
     - 二氧化氮
     - 臭氧
-
   - 深对流造成臭氧浓度变化的原因
     - 动力输送和化学反应的贡献
     - 闪电氮氧化物的贡献
-
   - 本章小结
 
 - 结论与展望
@@ -83,7 +77,7 @@ Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributi
 
 ## 致谢
 
-<details><summary> 点击显示完整致谢  </summary>
+<details><summary> 点击显示完整致谢 (Click to see the full Acknowledgement)  </summary>
 <p>
 
 行文至此，本应长舒一气，谢天谢地，然唯觉十年一觉云中梦，似醒非醒百态生。
@@ -116,4 +110,17 @@ Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributi
 
 </p>
 </details>
+
+## Publications
+
+- **Zhang, X.**, van der A, R., Ding, J., Eskes, H., van Geffen, J., Yin, Y., Anema, J., Vagasky, C., Lapierre, J.L., Kuang, X. Spaceborne observations of lightning NO2 in the Arctic [J]. **Environ. Sci. Technol.**, 2023, 57(6), 2322--2332, DOI: [10.1021/acs.est.2c07988](https://doi.org/10.1021/acs.est.2c07988).
+
+- **Zhang, X.**, Yin, Y., van der A, R., Eskes, H., van Geffen, J., Li, Y., Kuang, X., Lapierre, J.L., Chen, K., Zhen, Z., Hu, J. Influence of convection on the
+  upper-tropospheric O3 and NOx budget in southeastern China [J]. **Atmos. Chem. Phys.**, 2022, 22(9), 5925-5942,
+  DOI: [10.5194/acp-22-5925-2022](https://doi.org/10.5194/acp-22-5925-2022).
+
+- **Zhang, X.**, Yin, Y., Kukulies, J., Li, Y., Kuang, X., He, C., Lapierre, J.L., Jiang, D., Chen, J. Revisiting Lightning Activity and Parameterization Using Geostationary Satellite Observations [J]. **Remote Sens.**, 2021, 13(19), 3866, DOI: [10.3390/rs13193866](https://doi.org/10.3390/rs13193866).
+
+- **Zhang, X.**, Yin, Y., van der A, R., Lapierre, J.L., Chen, Q., Kuang, X., Yan, S., Chen, J., He, C., Shi, R. Estimates of lightning NOx production based on high-resolution OMI NO2 retrievals over the continental US [J]. **Atmos. Meas. Tech.}**, 2020, 13(4), 1709-1734,
+  DOI: [10.5194/amt-13-1709-2020](https://doi.org/10.5194/amt-13-1709-2020).
 
