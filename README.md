@@ -8,7 +8,7 @@ Impacts of Lightning and Convective Transport on  NO2 and O3 Vertical Distributi
 
 ## 摘要 (Abstract)
 
-<details><summary> 点击显示完整目录 (Click to see "Table of Contents")  </summary>
+<details><summary> 点击显示完整摘要 (Click to see "Abstract")  </summary>
 <p>
 深对流云是大气垂直输送的主要载体，能够在短时间内将污染气体从边界层输送至对流层上层甚至平流层下层，从而对区域和全球的大气环境和气候产生影响。此外，深对流中闪电产生的氮氧化物（LNOx）是对流层上层氮氧化物（NOx）的主要来源，然而，目前对于LNOx产率及其对臭氧（O3）的影响仍存在较大的不确定性。传统的气球探空和飞机观测等试验在定量LNOx排放方面面临较大的困难，然而，随着卫星遥感技术的发展，新的方法可以用于对LNOx排放的定量分析。本研究基于上述背景，综合运用卫星数据反演、数值模拟以及臭氧探空试验，确定了污染和清洁地区闪电产生的二氧化氮（LNO2）和LNOx的产率，并对比分析了观测和模拟数据中二氧化氮（NO2）与O3的垂直分布情况，以揭示深对流中动力输送和化学反应对O3浓度变化的贡献。
 
